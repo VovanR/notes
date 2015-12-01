@@ -150,3 +150,15 @@ if settings.DEBUG:
         (r'^500/$', server_error_view),
     )
 ```
+
+
+
+## Узнать что возвращает ajax-запрос
+
+`foo/apps/bar/views.py`
+
+```python
+return self.render_to_response({'pk': bar.pk})
+```
+
+Значит вернет `pk`
