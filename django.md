@@ -80,6 +80,7 @@ See: http://djbook.ru/apfs02.html
 
 
 ## PyJade
+See: https://github.com/syrusakbary/pyjade
 ```django
 - load static
 - load i18n
