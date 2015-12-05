@@ -6,6 +6,29 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
+    <style type="text/css">
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            position: relative;
+        }
+        a[href^="#anchor-"] {
+            position: absolute;
+            right: 100%;
+            cursor: pointer;
+            padding: 0 8px;
+            background-color: #fff;
+            font-family: serif;
+            color: #999;
+        }
+        a[href^="#anchor-"]::before {
+            display: inline-block;
+            content: '#';
+        }
+    </style>
 </head>
 <body>
 
@@ -35,6 +58,13 @@
 
     const {Grid, Row, Col, Panel, Nav, NavItem} = ReactBootstrap
     const {Router, Route, Link} = ReactRouter
+    const markedRenderer = new marked.Renderer()
+
+    markedRenderer.heading = (text, level) => {
+        const escapedText = text.toLowerCase().replace(/[^\wА-Яа-я]+/g, '-')
+        const id = `anchor-${escapedText}`
+        return `<h${level} id="${id}"><a href="#${id}"></a>${text}</h${level}>`
+    }
 
     class Menu extends React.Component {
         handleSelect(index) {
@@ -96,7 +126,8 @@
                         gfm: true,
                         highlight: code => {
                             return hljs.highlightAuto(code).value
-                        }
+                        },
+                        renderer: markedRenderer
                     }
                 )
                 this.setState()
@@ -138,7 +169,7 @@
     }
 
     ReactDOM.render(<App />, document.getElementById('app'))
-})();
+})()
 </script>
 </body>
 </html>
