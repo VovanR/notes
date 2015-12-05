@@ -2,10 +2,10 @@
 
 ----
 
-See: http://facebook.github.io/react/docs/getting-started.html
-See: http://facebook.github.io/react/docs/tutorial.html
-See: http://facebook.github.io/react/docs/addons.html
-See: http://stackoverflow.com/questions/tagged/reactjs?sort=votes&pageSize=15
+- See: http://facebook.github.io/react/docs/getting-started.html
+- See: http://facebook.github.io/react/docs/tutorial.html
+- See: http://facebook.github.io/react/docs/addons.html
+- See: http://stackoverflow.com/questions/tagged/reactjs?sort=votes&pageSize=15
 
 ```js
 var Color = React.createClass({

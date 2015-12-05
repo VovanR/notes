@@ -318,9 +318,9 @@ find ./ -type f -exec vresize.sh {} \;
 
 `montage` — одна из программ `imagick`, `-tile 10×1` — по 10 кадров в строке в 1 строку, `-geometry` 100×200 — ширина и высота кадров в результирующем файле, `money01.png ... money10.png` — исходные файлы кадров (могут быть разных размеров), `money.png` — файл результата (соответственно, получится файл размера 1000×200).
 
-See: http://andrey.ws/create-image-sprite-via-imagemagick
-See: http://www.imagemagick.org/Usage/montage/
-See: http://www.imagemagick.org/script/montage.php
+- See: http://andrey.ws/create-image-sprite-via-imagemagick
+- See: http://www.imagemagick.org/Usage/montage/
+- See: http://www.imagemagick.org/script/montage.php
 
 ```bash
 montage -background transparent -tile 1x7 -geometry 25x25 money01.png money02.png money03.png money04.png money05.png money06.png money07.png money08.png money09.png money10.png money.png
