@@ -16,6 +16,7 @@ stream.once('open', function (fd) {
 ## Изменяем версию пакета и публикуем ее
 - See: https://docs.npmjs.com/getting-started/publishing-npm-packages
 - See: https://docs.npmjs.com/misc/developers#before-publishing-make-sure-your-package-installs-and-works
+
 ```bash
 npm version 0.2.2
 git push
