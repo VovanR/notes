@@ -51,6 +51,12 @@
         .nav-pills > li > a {
             border-radius: 0;
         }
+        .rendered-note {
+        }
+        .rendered-note ul,
+        .rendered-note ol {
+            padding: 0;
+        }
     </style>
 </head>
 <body>
@@ -187,7 +193,7 @@
                         <Col md={9}>
                             <Panel>
                                 {active.data ? (
-                                    <div dangerouslySetInnerHTML={{__html: active.data}} />
+                                    <div className="rendered-note" dangerouslySetInnerHTML={{__html: active.data}} />
                                 ) : null}
                             </Panel>
                         </Col>
