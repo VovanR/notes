@@ -470,3 +470,11 @@ Git будет просто игнорировать все изменения, 
 ```shell
 git clone -b develop git@github.com:VovanR/notes.git
 ```
+
+
+## Замержить изменения из мастера, не переключаясь из текущей ветки
+Например, находимся в `feature/readme`
+```shell
+git fetch origin master:master
+git merge --no-ff master
+```
