@@ -6,7 +6,9 @@
 
 ```bash
 sudo apt-get install xclip
+uptime | xclip
 ```
+Вставлять скопированное средним кликом
 
 
 
