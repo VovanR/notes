@@ -271,6 +271,14 @@ ack-grep -i
 ```
 
 
+## SSH по PEM ключу
+
+```bash
+cmod 600 path/to/key.pem
+ssh username@ip -i path/to/key.pem
+```
+
+
 
 ## Монтируем шифрованный раздел
 
