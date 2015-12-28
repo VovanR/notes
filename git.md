@@ -124,6 +124,12 @@ git checkout v1^
 ```
 Вернуться к предшествующей версии
 
+### Удаление тэга
+```
+git tag -d v1
+git push origin :refs/tags/v1
+```
+
 ### Отмена локальных изменений (до индексации)
 ```
 git checkout hello.html
