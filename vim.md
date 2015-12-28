@@ -326,3 +326,16 @@ See: [vimregex.com](http://vimregex.com/)
 ### vim-jsdoc
 
 `Ctrl + l` — Вставить jsDoc
+
+
+
+## Как узнать какой плагин тормозит вим
+See: http://stackoverflow.com/a/12216578
+```
+:profile start profile.log
+:profile func *
+:profile file *
+" At this point do slow actions
+:profile pause
+:noautocmd qall!
+```
