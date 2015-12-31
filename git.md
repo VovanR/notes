@@ -239,6 +239,37 @@ git push -u origin --all
 ```
 
 
+## Конфликт двух ключей (когда два аккаунта на битбакет)
+```
+git pull
+    conq: repository access denied.
+    fatal: Could not read from remote repository.
+
+    Please make sure you have the correct access rights
+    and the repository exists.
+```
+Убеждаемся, что выбран не тот ключ
+```
+ssh -vT git@bitbucket.org
+```
+Добавляем конфиг `~/.ssh/config`
+```
+Host workid
+ HostName bitbucket.org
+ IdentityFile ~/.ssh/work
+Host personalid
+ HostName bitbucket.org
+ IdentityFile ~/.ssh/personal
+```
+Теперь в директории проекта правим в файле `.git/config`
+```diff
+[remote "origin"]
+-	url = git@bitbucket.org:foo/bar.git
++	url = git@workid:foo/bar.git
+```
+
+
+
 
 ## WARNING: gnome-keyring
 See: http://hongouru.blogspot.ru/2012/07/solved-warning-gnome-keyring-couldnt.html
