@@ -9,10 +9,12 @@ foo = foo.substring(0, foo.lastIndexOf('\n')); // 'a\nb\nc'
 ```
 
 
+
 ## Fetch
 ```javascript
 fetch('https://api.github.com/users/vovanr').then(x => x.json()).then(x => {console.log(x)})
 ```
+
 
 
 ### Array
@@ -43,10 +45,23 @@ foo.concat(bar); // [1, 2, 3, 4]
 ```
 
 
+
+### Обход массива
+```javascript
+var arr = ['a', 'b', 'c'];
+var i = arr.length;
+while (i--) {
+	arr[i] // 'c', 'b', 'a'
+}
+```
+
+
+
 ### Выделить текст инпута при фокусе
 ```html
 <input type="text" readonly onfocus="this.select();" onclick="this.select();" value="Hello World!">
 ```
+
 
 
 ### Выбор цвета, в соответствии со значение параметра `d`
@@ -66,4 +81,38 @@ function getColor(d) {
            d > 10   ? '#FED976' :
                       '#FFEDA0';
 }
+```
+
+
+
+### Округление числа
+```javascript
+/**
+ * Округление числа
+ *
+ * @param {Number} num Число с плавающей точкой
+ * @return {Number} Целое число
+ */
+var mathRound = function (num) {
+    return (0.5 + num) << 0;
+};
+```
+
+
+
+### Фрагмент документа:
+```javascript
+var frag = document.createDocumentFragment();
+
+var p = document.createElement('p');
+var t = document.createTextNode('first paragraph');
+p.appendChild(t);
+frag.appendChild(p);
+
+p = document.createElement('p');
+t = document.createTextNode('second paragraph');
+p.appendChild(t);
+frag.appendChild(p);
+
+document.body.appendChild(frag);
 ```
