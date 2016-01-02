@@ -41,3 +41,9 @@ foo.concat(bar); // [1, 2, 3, 4]
 // foo = [1, 2]
 // bar = [3, 4]
 ```
+
+
+### Выделить текст инпута при фокусе
+```html
+<input type="text" readonly onfocus="this.select();" onclick="this.select();" value="Hello World!">
+```
