@@ -2,6 +2,8 @@
 
 ----
 
+See: https://github.com/loverajoel/jstips
+
 ## Remove last line
 ```javascript
 var foo = 'a\nb\nc\nd';
