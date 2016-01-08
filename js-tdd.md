@@ -66,3 +66,7 @@ it('should fire `_bindScrollbar`', function () {
     assert.isTrue(m._bindScrollbar.calledOnce);
 });
 ```
+
+
+## Event
+See: https://github.com/react-bootstrap/react-bootstrap/pull/1579/files
