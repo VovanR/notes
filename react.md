@@ -20,7 +20,7 @@
 </head>
 <body>
 
-    . . .
+. . .
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.min.js"></script>
@@ -29,7 +29,7 @@ window.React || document.write('<script src="/static/js/react.min.js"><\/script>
 window.ReactDOM || document.write('<script src="/static/js/react-dom.min.js"><\/script>');
 </script>
 
-    . . .
+. . .
 
 </body>
 </html>
