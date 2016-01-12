@@ -7,6 +7,37 @@
 - See: http://facebook.github.io/react/docs/addons.html
 - See: http://stackoverflow.com/questions/tagged/reactjs?sort=votes&pageSize=15
 
+## Использование CDN
+- See: https://cdnjs.com/libraries/react/
+- See: https://facebook.github.io/react/downloads.html
+```html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+
+    . . .
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.min.js"></script>
+<script>
+window.React || document.write('<script src="/static/js/react.min.js"><\/script>');
+window.ReactDOM || document.write('<script src="/static/js/react-dom.min.js"><\/script>');
+</script>
+
+    . . .
+
+</body>
+</html>
+```
+
+
+
+
+
 ```js
 var Color = React.createClass({
 	render: function() {
