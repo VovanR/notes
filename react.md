@@ -10,6 +10,7 @@
 ## Использование CDN
 - See: https://cdnjs.com/libraries/react/
 - See: https://facebook.github.io/react/downloads.html
+
 ```html
 <!DOCTYPE html>
 <html lang="ru">
