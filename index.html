@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Notes</title>
 
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
     <style type="text/css">
@@ -78,10 +79,11 @@
 <div id="app">
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react-dom.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.28.1/react-bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-router/1.0.0/ReactRouter.min.js"></script>
+<script src="https://npmcdn.com/history/umd/History.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
@@ -93,6 +95,7 @@
 
     const {Grid, Row, Col, Panel, Nav, NavItem} = ReactBootstrap
     const {Router, Route, Link} = ReactRouter
+    const {createHistory, useBasename} = History
     const markedRenderer = new marked.Renderer()
 
     markedRenderer.heading = (text, level) => {
@@ -102,11 +105,16 @@
     }
 
     class Menu extends React.Component {
-        handleSelect(index) {
-            this.props.onSelect(index)
+        handleSelect(id, href) {
+            console.log(id, href);
+            this.props.onSelect(id)
+            history.pushState(null, href)
         }
 
         render() {
+            const notes = this.props.notes
+            let items = []
+
             return (
                 <Nav
                     bsStyle="pills"
@@ -114,12 +122,20 @@
                     activeKey={this.props.active}
                     onSelect={this.handleSelect.bind(this)}
                 >
-                    {this.props.notes.map((note, index) => (
-                        <NavItem
-                            eventKey={index}
-                            href={note.url}
+                    {Object.keys(notes).map((note, index) => (
+                        <Link
+                            to={notes[note].href}
                         >
-                            {note.name}
+                            {notes[note].name}
+                        </Link>
+                    ))}
+                    {Object.keys(notes).map((note, index) => (
+                        <NavItem
+                            key={index}
+                            eventKey={notes[note].id}
+                            href={notes[note].href}
+                        >
+                            {notes[note].name}
                         </NavItem>
                     ))}
                 </Nav>
@@ -127,57 +143,87 @@
         }
     }
 
+    const Notes = function () {
+        this._init();
+    }
+    Notes.prototype = {
+        _init: function () {
+            let items = {}
+            NOTES.forEach(note => {
+                const id = note.toLowerCase()
+                items[id] = {
+                    id: id,
+                    name: note,
+                    href: `/${id}`,
+                    url: new URL(`${id}.md`, location).href,
+                    data: null
+                }
+            })
+            this._notes = items
+        },
+
+        getNotes: function () {
+            return this._notes
+        },
+
+        getNote: function (noteId) {
+            let note = this._getNote(noteId)
+            if (note.data) {
+                return new Promise((resolve) => {resolve(note)})
+            } else {
+                return this._fetchNote(noteId)
+            }
+        },
+
+        _getNote: function (noteId) {
+            return this._notes[noteId]
+        },
+
+        _fetchNote: function (noteId) {
+            let note = this._getNote(noteId)
+
+            return fetch(note.url)
+                .then(response => {
+                    return response.text()
+                })
+                .then(data => {
+                    note.data = marked(
+                        data,
+                        {
+                            sanitize: true,
+                            gfm: true,
+                            highlight: code => {
+                                return hljs.highlightAuto(code).value
+                            },
+                            renderer: markedRenderer
+                        }
+                    )
+                    return note
+                })
+                .catch(() => {})
+        }
+    }
+    const notes = new Notes();
+
     class App extends React.Component {
         constructor() {
             super()
-            let collection = (() => {
-                return NOTES.map(note => {
-                    return {
-                        name: note,
-                        url: new URL(`${note.toLowerCase()}.md`, location).href,
-                        data: null
-                    }
-                })
-            })()
             this.state = {
-                notes: collection,
-                active: 0
+                notes: notes.getNotes(),
+                active: 'bash'
             }
-            this.fetchCurrentNote()
         }
 
-        fetchCurrentNote() {
-            let current = this.state.notes[this.state.active]
-            if (current.data) {
-                return
-            }
-            fetch(current.url).then(response => {
-                return response.text()
-            }).then(data => {
-                current.data = marked(
-                    data,
-                    {
-                        sanitize: true,
-                        gfm: true,
-                        highlight: code => {
-                            return hljs.highlightAuto(code).value
-                        },
-                        renderer: markedRenderer
-                    }
-                )
-                this.setState()
-            }).catch(() => {})
-        }
-
-        handleSelect(index) {
+        handleSelect(id) {
             this.setState({
-                active: index
-            }, () => {this.fetchCurrentNote()})
+                active: id
+            }, () => {
+                console.log('goto', id);
+            })
         }
 
         render() {
-            let {notes, active: activeIndex} = this.state
-            let active = notes[activeIndex]
+            let {notes, active} = this.state
             return (
                 <Grid>
                     <Row>
@@ -185,16 +231,14 @@
                             <Panel>
                                 <Menu
                                     notes={notes}
-                                    active={activeIndex}
+                                    active={active}
                                     onSelect={this.handleSelect.bind(this)}
                                 />
                             </Panel>
                         </Col>
                         <Col md={9}>
                             <Panel>
-                                {active.data ? (
-                                    <div className="rendered-note" dangerouslySetInnerHTML={{__html: active.data}} />
-                                ) : null}
+                                {this.props.children}
                             </Panel>
                         </Col>
                     </Row>
@@ -203,7 +247,40 @@
         }
     }
 
-    ReactDOM.render(<App />, document.getElementById('app'))
+    class Note extends React.Component {
+        constructor() {
+            super()
+            this.state = {
+                note: {}
+            }
+        }
+        componentDidMount() {
+            notes.getNote(this.props.params.id).then(note => {
+                this.setState({note: note})
+            })
+        }
+        render() {
+            return (
+                <div>
+                    {this.state.note.data ? (
+                        <div className="rendered-note" dangerouslySetInnerHTML={{__html: this.state.note.data}} />
+                    ) : null}
+                </div>
+            )
+        }
+    }
+
+    const history = useBasename(createHistory)({
+        basename: '/notes'
+    })
+
+    ReactDOM.render((
+        <Router history={history}>
+            <Route path="/" component={App}>
+                <Route path=":id" component={Note} />
+            </Route>
+        </Router>
+    ), document.getElementById('app'))
 })()
 </script>
 </body>
