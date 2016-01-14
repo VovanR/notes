@@ -380,6 +380,13 @@ convert $ARG -crop "191x143+12+11" $ARG
 ```
 
 
+## Обрезать прозрачную область картинки ImageMagick
+
+```bash
+convert images/restore.png -trim +repage images/restore.png
+```
+
+
 ## Создаем анимированную гифку
 
 ```bash
