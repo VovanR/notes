@@ -429,6 +429,12 @@ rsync -avz USER@HOST:/usr/local/www/data/foo.ru/www/data/ ./
 rsync -avz -e ssh USER@HOST:~/www/data ./
 ```
 
+### Загрузить файл на сервер
+
+```bash
+rsync -a www/css/main.css USER@HOST:www/css/
+```
+
 
 ### Бэкапим
 
