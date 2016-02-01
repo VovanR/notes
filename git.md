@@ -140,11 +140,6 @@ git checkout hello.html
 git revert HEAD --no-edit
 ```
 
-### Удаление тега
-```
-git tag -d foo
-```
-
 ### Изменение предыдущего коммита
 ```
 git commit --amend
