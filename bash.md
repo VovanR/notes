@@ -427,6 +427,7 @@ cat archive.?? > archive.tar.gz
 ```bash
 rsync -avz USER@HOST:/usr/local/www/data/foo.ru/www/data/ ./
 rsync -avz -e ssh USER@HOST:~/www/data ./
+rsync -avz -e "ssh -p 6666" USER@HOST:~/www/data ./
 ```
 
 ### Загрузить файл на сервер
