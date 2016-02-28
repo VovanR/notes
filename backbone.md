@@ -151,13 +151,18 @@ define([
     'backbone',
     'backboneLocalstorage',
     'models/todo'
-], function (_, Backbone, Store, Todo) {
+], function (
+    _,
+    Backbone,
+    Store,
+    Todo
+) {
     'use strict';
 
     var TodosCollection = Backbone.Collection.extend({
         // Reference to this collection's model.
         model: Todo,
-        // Save all of the todo items under the `"todos"` namespace.
+        // Save all of the todo items under the `'todos'` namespace.
         localStorage: new Store('todos-backbone'),
     });
 
@@ -220,13 +225,13 @@ editArticle: function (articles, id) {
 ```javascript
 edit: function () {
     this.model.save({
-        title: this.$("#container_edit_article #title").val(),
-        text: this.$("#container_edit_article #text").val(),
+        title: this.$('#container_edit_article #title').val(),
+        text: this.$('#container_edit_article #text').val(),
     }, {validate : true});
 
     // Перенаправляет на другую страницу
     var router = new Router();
-    router.navigate("articles", true);
+    router.navigate('articles', true);
 },
 ```
 
@@ -301,8 +306,8 @@ Backbone.trigger('prevent-scroll', false);
 
 ```javascript
 events: {
-  'submit .contact-form': 'onFormSubmit',
-  'click .btn-close-form': 'onFormClose',
+    'submit .contact-form': 'onFormSubmit',
+    'click .btn-close-form': 'onFormClose',
 },
 ```
 

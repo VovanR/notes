@@ -19,10 +19,10 @@ When stating a rule, the subject should be in the singular (e.g. "An external mo
 
 ```js
 class Foo {
-  x = 3;
-  print() {
-    console.log('x is ' + this.x);
-  }
+    x = 3;
+    print() {
+        console.log('x is ' + this.x);
+    }
 }
 
 var f = new Foo();
@@ -47,7 +47,7 @@ window.addEventListener('click', () => x.printThing(), 10);
 ### Use Instance Functions
 ```js
 class MyClass {
-    private status = "blah";
+    private status = 'blah';
 
     public run = () => { // <-- note syntax here
         alert(this.status);
@@ -132,11 +132,11 @@ class Greeter {
         this.greeting = message;
     }
     greet() {
-        return "Hello, " + this.greeting;
+        return 'Hello, ' + this.greeting;
     }
 }
 
-var greeter = new Greeter("world");
+var greeter = new Greeter('world');
 console.log(greeter.greet())
 ```
 
@@ -153,7 +153,7 @@ class Animal {
 class Snake extends Animal {
     constructor(name: string) { super(name); }
     move(distanceInMeters = 5) {
-        alert("Slithering...");
+        alert('Slithering...');
         super.move(distanceInMeters);
     }
 }
@@ -161,13 +161,13 @@ class Snake extends Animal {
 class Horse extends Animal {
     constructor(name: string) { super(name); }
     move(distanceInMeters = 45) {
-        alert("Galloping...");
+        alert('Galloping...');
         super.move(distanceInMeters);
     }
 }
 
-var sam = new Snake("Sammy the Python");
-var tom: Animal = new Horse("Tommy the Palomino");
+var sam = new Snake('Sammy the Python');
+var tom: Animal = new Horse('Tommy the Palomino');
 
 sam.move();
 tom.move(34);
@@ -191,23 +191,23 @@ say('pretty amazing');
 ## Управляющие комментарии
 See: http://webstandardsdays.ru/2015/05/21/pres/typescript/?full#myContacts
 ```js
-/// <reference path="file-name.d.ts" />
-/// <amd-module name="myName" />
-/// <amd-dependency path="dir/file" />
-/// <amd-dependency path="file" name="var"/>
-/// <require path="lib/crypt.d.ts" />
+/// <reference path='file-name.d.ts' />
+/// <amd-module name='myName' />
+/// <amd-dependency path='dir/file' />
+/// <amd-dependency path='file' name='var'/>
+/// <require path='lib/crypt.d.ts' />
 ```
 
 
 
 ```js
-/// <amd-module name="lib/md5" />
+/// <amd-module name='lib/md5' />
 function md5() { ... }
 export = md5;
 ```
 Компилируется в:
 ```js
-define("lib/md5", ["require", "exports"], function (require, exports) {
+define('lib/md5', ['require', 'exports'], function (require, exports) {
     function md5() { ... }
     return md5;
 });
@@ -216,22 +216,22 @@ define("lib/md5", ["require", "exports"], function (require, exports) {
 
 
 ```js
-/// <amd-dependency path="lib/global" />
+/// <amd-dependency path='lib/global' />
 ```
 Компилируется в:
 ```js
-define(["require", "exports", "lib/global"], function (require, exports) { ... });
+define(['require', 'exports', 'lib/global'], function (require, exports) { ... });
 ```
 
 
 
 ```js
-/// <amd-dependency path="legacy/base/view" name="View" />
+/// <amd-dependency path='legacy/base/view' name='View' />
 View.someDo();
 ```
 Компилируется в:
 ```js
-define(["require", "exports", "legacy/base/view"],
+define(['require', 'exports', 'legacy/base/view'],
     function (require, exports, View) {
         View.someDo();
     }
@@ -241,25 +241,25 @@ define(["require", "exports", "legacy/base/view"],
 
 
 ```js
-/// <reference path="legacy/base/view.d.ts" />
-/// <amd-dependency path="legacy/base/view" name="View" />
+/// <reference path='legacy/base/view.d.ts' />
+/// <amd-dependency path='legacy/base/view' name='View' />
 ```
 Эквивалентно записи:
 ```js
-/// <reference path="legacy/base/view.d.ts" />
-import View = require("legacy/base/view");
+/// <reference path='legacy/base/view.d.ts' />
+import View = require('legacy/base/view');
 ```
 
 
 
 ```js
-/// <reference no-default-lib="true" />
+/// <reference no-default-lib='true' />
 ```
 
 
 
 ```js
-declare module "lib/crypt" {
+declare module 'lib/crypt' {
     export function md5() :string;
     export function uid() :string;
 }
@@ -268,8 +268,8 @@ declare module "lib/crypt" {
 
 
 ```js
-/// <require path="lib/crypt.d.ts" />
-import crypt = require("lib/crypt");
+/// <require path='lib/crypt.d.ts' />
+import crypt = require('lib/crypt');
 
 class AppController { ... }
 ```
@@ -282,14 +282,14 @@ class AppController { ... }
 type int = number;
 
 abstract class A {
-   foo(): int { return bar(); }
-   abstract bar() : int;
+    foo(): int { return bar(); }
+    abstract bar() : int;
 }
 
 class B extends A {
-   bar() {
-      return 42;
-   }
+    bar() {
+        return 42;
+    }
 }
 
 new A(); // Error!
@@ -302,46 +302,43 @@ new B(); // OK
 ```js
 // Correct :)
 var ListItemWrapper = React.createClass({
-  render: function() {
-    return <li>{this.props.data.text}</li>;
-  }
+    render: function() {
+        return <li>{this.props.data.text}</li>;
+    }
 });
 var MyComponent = React.createClass({
-  render: function() {
-    return (
-      <ul>
-        {this.props.results.map(function(result) {
-           return <ListItemWrapper key={result.id} data={result}/>;
-        })}
-      </ul>
-    );
-  }
+    render: function() {
+        return (
+            <ul>
+                {this.props.results.map(function(result) {
+                    return <ListItemWrapper key={result.id} data={result}/>;
+                })}
+            </ul>
+        );
+    }
 });
 ```
 
 
 
-See: https://github.com/Microsoft/TypeScriptSamples/blob/master/todomvc/js/todos.ts
-
-
-
-See: http://staxmanade.com/2015/08/playing-with-typescript-and-jsx/
+- See: https://github.com/Microsoft/TypeScriptSamples/blob/master/todomvc/js/todos.ts
+- See: http://staxmanade.com/2015/08/playing-with-typescript-and-jsx/
 ```js
-/// <reference path="./typings/react/react.d.ts" />
+/// <reference path='./typings/react/react.d.ts' />
 import React = __React;
 declare var mountNode: any;
 
 interface HelloWorldProps extends React.Props<any> {
-  name: string;
+    name: string;
 }
 
 class HelloMessage extends React.Component<HelloWorldProps, {}> {
-  render() {
-    return <div>Hello {this.props.name}</div>;
-  }
+    render() {
+        return <div>Hello {this.props.name}</div>;
+    }
 }
 
-React.render(<HelloMessage name="John" />, mountNode);
+React.render(<HelloMessage name='John' />, mountNode);
 ```
 
 
@@ -349,7 +346,7 @@ React.render(<HelloMessage name="John" />, mountNode);
 See: http://blog.wolksoftware.com/working-with-react-and-typescript
 ```js
 class SomeComponent extends React.Component<ISomeComponentProps, ISomeComponentState> {
-  // ...
+    // ...
 }
 ```
 

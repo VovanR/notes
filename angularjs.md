@@ -51,11 +51,11 @@
 ```
 ```js
 function Ctrl($scope) {
-    $scope.message = "Waiting 2000ms for update";
+    $scope.message = 'Waiting 2000ms for update';
 
     setTimeout(function () {
         $scope.$apply(function () {
-            $scope.message = "Timeout called!";
+            $scope.message = 'Timeout called!';
         });
     }, 2000);
 }
