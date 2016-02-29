@@ -97,28 +97,35 @@
 <div class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
-            <span class="navbar-brand">Notes</span>
+            <span class="navbar-brand">
+                Notes
+            </span>
         </div>
-        <p class="navbar-text">Under construction</p>
+
+        <p class="navbar-text">
+            Under construction
+        </p>
+
         <ul class="nav navbar-nav navbar-right">
             <li>
-                <a href="https://github.com/VovanR/notes">View on GitHub</a>
+                <a href="https://github.com/VovanR/notes">
+                    View on GitHub
+                </a>
             </li>
         </ul>
     </div>
 </div>
 
-<div id="app">
-</div>
+<div id="app"></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react-dom.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.28.1/react-bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react-router/1.0.0/ReactRouter.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
-<script type="text/babel">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.28.3/react-bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-router/2.0.0/ReactRouter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
+
+<script type="text/babel" id="app-babel">
 (function () {
     'use strict'
 
@@ -161,12 +168,12 @@
                     stacked
                     activeKey={this.props.active}
                     onSelect={this.handleSelect.bind(this)}
-                >
+                    >
                     {this.props.notes.map((note, index) => (
                         <NavItem
                             eventKey={index}
                             href={note.url}
-                        >
+                            >
                             {note.name}
                         </NavItem>
                     ))}
@@ -235,13 +242,13 @@
                                     notes={notes}
                                     active={activeIndex}
                                     onSelect={this.handleSelect.bind(this)}
-                                />
+                                    />
                             </Panel>
                         </Col>
                         <Col md={9}>
                             <Panel>
                                 {active.data ? (
-                                    <div className="rendered-note" dangerouslySetInnerHTML={{__html: active.data}} />
+                                    <div className="rendered-note" dangerouslySetInnerHTML={{__html: active.data}}/>
                                 ) : null}
                             </Panel>
                         </Col>
@@ -254,5 +261,22 @@
     ReactDOM.render(<App />, document.getElementById('app'))
 })()
 </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.4.4/babel.min.js"></script>
+<script>
+(function () {
+    var babelrc = {
+        presets: [
+            'es2015',
+            'react'
+        ]
+    }
+    var code = document.getElementById('app-babel').innerHTML
+    var transpilledCode = Babel.transform(code, babelrc).code
+
+    document.write(`<script>${transpilledCode}<\/script>`)
+})()
+</script>
+
 </body>
 </html>
