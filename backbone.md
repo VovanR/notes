@@ -132,7 +132,7 @@ console.log(facilitiesPrototypesCollection.get('second'));
 
 
 
-## Когда берем данные из инпута - обрезаем конечные пробелы
+## Когда берем данные из инпута — обрезаем конечные пробелы
 ```javascript
 $('#new-todo').val().trim()
 ```

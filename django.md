@@ -162,4 +162,4 @@ if settings.DEBUG:
 return self.render_to_response({'pk': bar.pk})
 ```
 
-Значит вернет `pk`
+Значит вернёт `pk`

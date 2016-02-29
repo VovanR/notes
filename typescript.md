@@ -176,8 +176,8 @@ tom.move(34);
 
 
 ## Modules
-Internal - namespace
-External - module
+Internal — namespace
+External — module
 
 
 
@@ -277,7 +277,7 @@ class AppController { ... }
 
 
 ## Абстрактные классы
-От них нельзя создавать экземпляры - только расширять
+От них нельзя создавать экземпляры — только расширять
 ```js
 type int = number;
 

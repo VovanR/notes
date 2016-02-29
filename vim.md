@@ -260,14 +260,14 @@
 `:%s/Lol/ROFL/c` — Найти и заменить во всем файле
 
 `:s/\([A-Za-z]\+\)$/\1 {^M}/` — Найти и заменить
-- записать в переменную - `\(lol\)`
-- количество вхождений тоже со слешем - `\+` `\.` `\*`
-- использовать переменную - `\1`
-- перевод строки - `Ctrl + v + Enter` - получается `^M`
+- записать в переменную — `\(lol\)`
+- количество вхождений тоже со слешем — `\+` `\.` `\*`
+- использовать переменную — `\1`
+- перевод строки — `Ctrl + v + Enter` — получается `^M`
 
 `:range s[ubstitute]/pattern/string/cgiI` — For each line in the range replace a match of the pattern with the string where:
 - `c` — Confirm each substitution
-- `g` — Replace all occurrences in the line (without g - only first).
+- `g` — Replace all occurrences in the line (without g — only first).
 - `i` — Ignore case for the pattern.
 - `I` — Don't ignore case for the pattern.
 
