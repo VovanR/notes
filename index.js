@@ -75,25 +75,30 @@
 
 		fetchCurrentNote() {
 			let current = this.state.notes[this.state.active]
+
 			if (current.data) {
 				return
 			}
-			fetch(current.url).then(response => {
-				return response.text()
-			}).then(data => {
-				current.data = marked(
-					data,
-					{
-						sanitize: true,
-						gfm: true,
-						highlight: code => {
-							return hljs.highlightAuto(code).value
-						},
-						renderer: markedRenderer
-					}
-				)
-				this.setState()
-			}).catch(() => {})
+
+			fetch(current.url)
+				.then(response => {
+					return response.text()
+				})
+				.then(data => {
+					current.data = marked(
+						data,
+						{
+							sanitize: true,
+							gfm: true,
+							highlight: code => {
+								return hljs.highlightAuto(code).value
+							},
+							renderer: markedRenderer
+						}
+					)
+					this.setState()
+				})
+				.catch(() => {})
 		}
 
 		handleSelect(index) {
@@ -105,6 +110,7 @@
 		render() {
 			let {notes, active: activeIndex} = this.state
 			let active = notes[activeIndex]
+
 			return (
 				<Grid>
 					<Row>
@@ -117,10 +123,14 @@
 									/>
 							</Panel>
 						</Col>
+
 						<Col md={9}>
 							<Panel>
 								{active.data ? (
-									<div className="rendered-note" dangerouslySetInnerHTML={{__html: active.data}}/>
+									<div
+										className="rendered-note"
+										dangerouslySetInnerHTML={{__html: active.data}}
+										/>
 								) : null}
 							</Panel>
 						</Col>
