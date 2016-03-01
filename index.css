@@ -1,3 +1,9 @@
+.back-to-top {
+    display: block;
+    padding: 5px 10px;
+    opacity: 0.5;
+}
+
 .h1,
 .h2,
 .h3,
@@ -19,7 +25,7 @@ h6 {
     position: relative;
 }
 
-a[href^="#anchor-"] {
+.rendered-note a[href^="#anchor-"] {
     position: absolute;
     right: 100%;
     cursor: pointer;
@@ -28,7 +34,7 @@ a[href^="#anchor-"] {
     font-family: serif;
     color: #999;
 }
-a[href^="#anchor-"]::before {
+.rendered-note a[href^="#anchor-"]::before {
     display: inline-block;
     content: '#';
 }
