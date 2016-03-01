@@ -163,3 +163,15 @@ return self.render_to_response({'pk': bar.pk})
 ```
 
 Значит вернёт `pk`
+
+
+
+## Ручной сброс пароля
+```
+(env)vovanr@vovanr
+ > ./el/manage.py shell
+>>> from apps.users.models import User
+>>> a = User.objects.get(id = 1)
+>>> a.set_password('123456')
+>>> a.save()
+```
