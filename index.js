@@ -1,6 +1,7 @@
 (function () {
 	'use strict'
 
+	// Exists notes list
 	const NOTES = [
 		'AngularJS',
 		'Backbone',
@@ -18,38 +19,84 @@
 		'Vim'
 	]
 
-	const {Grid, Row, Col, Panel, Nav, NavItem} = ReactBootstrap
+	const {Grid, Row, Col, Panel} = ReactBootstrap
 	const {Router, Route, Link} = ReactRouter
 	const markedRenderer = new marked.Renderer()
 
+	// Note `h2` headers collection
+	let h2s = null
+
+	// Build note headers
 	markedRenderer.heading = (text, level) => {
 		const escapedText = text.toLowerCase().replace(/[^\wА-Яа-я]+/g, '-')
 		const id = `anchor-${escapedText}`
-		return `<h${level} id="${id}"><a href="#${id}"></a>${text}</h${level}>`
+		const url = `#${id}`
+
+		// Collect note `h2` headers
+		if (level === 2) {
+			h2s.push({
+				name: text,
+				url: url
+			})
+		}
+
+		return `<h${level} id="${id}"><a href="${url}"></a>${text}</h${level}>`
 	}
 
+	// Main menu
 	class Menu extends React.Component {
-		handleSelect(index) {
+		handleSelect(index, e) {
+			e.preventDefault()
 			this.props.onSelect(index)
 		}
 
 		render() {
 			return (
-				<Nav
-					bsStyle="pills"
-					stacked
-					activeKey={this.props.active}
-					onSelect={this.handleSelect.bind(this)}
+				<ul
+					className={"nav-menu"}
 					>
 					{this.props.notes.map((note, index) => (
-						<NavItem
-							eventKey={index}
-							href={note.url}
+						<li
+							key={index}
+							className={this.props.active === index ? 'active' : ''}
 							>
-							{note.name}
-						</NavItem>
+							<a
+								href={note.url}
+								onClick={this.handleSelect.bind(this, index)}
+								>
+								{note.name}
+							</a>
+							{note.h2 ? (
+								<SubMenu
+									items={note.h2}
+									/>
+							) : false}
+						</li>
 					))}
-				</Nav>
+				</ul>
+			)
+		}
+	}
+
+	// Submenu in main menu
+	class SubMenu extends React.Component {
+		render() {
+			return (
+				<ul
+					className={"nav-submenu"}
+					>
+					{this.props.items.map((item, index) => (
+						<li
+							key={index}
+							>
+							<a
+								href={item.url}
+								>
+								{item.name}
+							</a>
+						</li>
+					))}
+				</ul>
 			)
 		}
 	}
@@ -62,7 +109,8 @@
 					return {
 						name: note,
 						url: new URL(`${note.toLowerCase()}.md`, location).href,
-						data: null
+						data: null,
+						subitems: null
 					}
 				})
 			})()
@@ -85,6 +133,8 @@
 					return response.text()
 				})
 				.then(data => {
+					// Clear `h2` collection
+					h2s = []
 					current.data = marked(
 						data,
 						{
@@ -96,6 +146,8 @@
 							renderer: markedRenderer
 						}
 					)
+					// Write `h2` collection
+					current.h2 = h2s
 					this.setState()
 				})
 				.catch(() => {})

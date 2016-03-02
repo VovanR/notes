@@ -55,15 +55,43 @@ pre code {
     -webkit-box-shadow: none;
     box-shadow: none;
 }
-.navbar-default {
-    border: none;
+
+.nav-menu {
+    padding: 0;
 }
-.nav-pills > li > a {
-    border-radius: 0;
+.nav-menu li {
+    list-style-type: none;
+}
+.nav-menu li.active {
+}
+.nav-menu .active > a {
+    font-weight: bold;
+}
+.nav-menu .active .nav-submenu {
+    display: block;
+}
+.nav-menu a {
+    display: block;
     padding: 5px 10px;
+    text-decoration: none;
 }
-.nav-stacked > li + li {
-    margin-top: 0;
+
+.nav-submenu {
+    display: none;
+    padding: 0 0 0 25px;
+    font-size: 12px;
+}
+.nav-submenu li {
+    list-style-type: none;
+}
+.nav-submenu a {
+    display: block;
+    padding: 2px 5px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
 }
 
 .rendered-note {
