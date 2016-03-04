@@ -115,3 +115,28 @@ pre code {
 .rendered-note td {
     padding: 8px;
 }
+
+.navbar {
+    border-radius: 0;
+}
+.container > .navbar-header {
+    float: left;
+    margin-right: 0;
+    margin-left: 0;
+}
+.navbar-brand {
+    margin-left: -15px;
+}
+.navbar-text {
+    float: left;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+.navbar-right {
+    float: right;
+    margin: 0 -15px 0 0;
+}
+.navbar-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
