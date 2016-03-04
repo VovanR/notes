@@ -175,3 +175,20 @@ return self.render_to_response({'pk': bar.pk})
 >>> a.set_password('123456')
 >>> a.save()
 ```
+
+
+
+## Добавить рыбную страницу
+
+Создаем шаблон страницы `foo/templates/bar.html`
+
+Добавляем ее урл
+
+`foo/urls.py`
+```python
+from django.views.generic.base import TemplateView
+
+urlpatterns = [
+    url(r'^bar/$', TemplateView.as_view(template_name='bar.html')),
+]
+```
