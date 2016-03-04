@@ -1,7 +1,21 @@
 .back-to-top {
+    font-size: 12px;
+    height: 1.5em;
+}
+.back-to-top__link {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: block;
-    padding: 5px 10px;
-    opacity: 0.5;
+    text-align: center;
+    background-color: #f8f8f8;
+    border-top: 1px solid #e7e7e7;
+    color: #777;
+}
+.back-to-top__link:hover {
+    color: #333;
+    text-decoration: none;
 }
 
 .h1,

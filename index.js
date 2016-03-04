@@ -192,13 +192,6 @@
 									active={activeIndex}
 									onSelect={this.handleSelect.bind(this)}
 									/>
-
-								<a
-									className="back-to-top"
-									href="#anchor-top"
-									>
-									Back to top
-								</a>
 							</Panel>
 						</Col>
 
