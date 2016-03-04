@@ -510,3 +510,9 @@ git clone -b develop git@github.com:VovanR/notes.git
 git fetch origin master:master
 git merge --no-ff master
 ```
+
+
+## Скопировать изменения из другой ветки, не занося изменения в коммит
+```shell
+git checkout fix/typo ./
+```
