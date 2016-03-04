@@ -57,7 +57,25 @@
     </div>
 </div>
 
-<div id="app"></div>
+<div id="app">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="progress">
+                    <div
+                        class="progress-bar progress-bar-striped active"
+                        role="progressbar"
+                        style="width:100%;"
+                        aria-valuenow="100"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.min.js"></script>
@@ -76,7 +94,7 @@
         ]
     }
 
-    fetch('index.js')
+    fetch('index.js?v=2')
         .then(resp => {
             return resp.text()
         })

@@ -117,7 +117,7 @@
 			this.state = {
 				notes: collection,
 				active: 0,
-				isLoading: false
+				isLoading: true
 			}
 			this.fetchCurrentNote()
 		}
