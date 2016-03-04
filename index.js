@@ -19,7 +19,7 @@
 		'Vim'
 	]
 
-	const {Grid, Row, Col, Panel} = ReactBootstrap
+	const {Grid, Row, Col, Panel, ProgressBar} = ReactBootstrap
 	const {Router, Route, Link} = ReactRouter
 	const markedRenderer = new marked.Renderer()
 
@@ -116,7 +116,8 @@
 			})()
 			this.state = {
 				notes: collection,
-				active: 0
+				active: 0,
+				isLoading: false
 			}
 			this.fetchCurrentNote()
 		}
@@ -127,6 +128,10 @@
 			if (current.data) {
 				return
 			}
+
+			this.setState({
+				isLoading: true
+			})
 
 			fetch(current.url)
 				.then(response => {
@@ -148,24 +153,38 @@
 					)
 					// Write `h2` collection
 					current.h2 = h2s
-					this.setState()
+					this.setState({
+						isLoading: false
+					})
 				})
-				.catch(() => {})
+				.catch(() => {
+					this.setState({
+						isLoading: false
+					})
+				})
 		}
 
 		handleSelect(index) {
 			this.setState({
-				active: index
+				active: index,
 			}, () => {this.fetchCurrentNote()})
 		}
 
 		render() {
-			let {notes, active: activeIndex} = this.state
+			let {notes, active: activeIndex, isLoading} = this.state
 			let active = notes[activeIndex]
 
 			return (
 				<Grid>
 					<Row>
+						<Col md={12}>
+							<ProgressBar
+								active={isLoading ? true : false}
+								bsStyle={isLoading ? '' : 'success'}
+								now={100}
+								/>
+						</Col>
+
 						<Col md={3}>
 							<Panel>
 								<Menu
