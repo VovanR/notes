@@ -91,9 +91,8 @@
 							>
 							<a
 								href={item.url}
-								>
-								{item.name}
-							</a>
+								dangerouslySetInnerHTML={{__html: item.name}}
+								/>
 						</li>
 					))}
 				</ul>
