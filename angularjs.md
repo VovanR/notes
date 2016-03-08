@@ -133,7 +133,7 @@ angular.module('myApp', ['angularSoundManager'])
 
 
 
-## Событи на кнопку
+## Событие на кнопку
 ```html
 <button ng-click="editProject.save()" ng-disabled="myForm.$invalid" class="btn btn-primary">Save</button>
 ```
