@@ -516,3 +516,9 @@ git merge --no-ff master
 ```shell
 git checkout fix/typo ./
 ```
+
+
+## Посмотреть дифф одного коммита
+```shell
+git log -p <hash> -1
+```
