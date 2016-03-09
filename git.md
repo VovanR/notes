@@ -522,3 +522,7 @@ git checkout fix/typo ./
 ```shell
 git log -p <hash> -1
 ```
+или
+```shell
+git show <hash>
+```
