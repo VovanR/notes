@@ -10,6 +10,7 @@
 		'Git',
 		'JavaScript',
 		'JS-TDD',
+		'Linux',
 		'Node',
 		'Python',
 		'React',
