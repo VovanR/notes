@@ -8,6 +8,7 @@
 		'Bash',
 		'Django',
 		'Git',
+		'HTML',
 		'JavaScript',
 		'JS-TDD',
 		'Linux',
