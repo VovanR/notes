@@ -2,6 +2,11 @@
 
 ----
 
+## Solved by Flexbox
+See: http://philipwalton.github.io/solved-by-flexbox/
+
+
+
 ## Clear Fix
 
 ```css
