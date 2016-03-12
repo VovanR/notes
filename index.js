@@ -6,6 +6,7 @@
 		'AngularJS',
 		'Backbone',
 		'Bash',
+		'CSS',
 		'Django',
 		'Git',
 		'HTML',
