@@ -2,6 +2,8 @@
 
 ----
 
+- See: https://learnxinyminutes.com/docs/ru-ru/bash-ru/
+
 ## Копирование текста в консоле
 
 ```bash
