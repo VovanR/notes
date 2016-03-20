@@ -13,6 +13,7 @@
 		'JavaScript',
 		'JS-TDD',
 		'Linux',
+		'Markdown',
 		'Node',
 		'Python',
 		'React',
