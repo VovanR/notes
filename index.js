@@ -15,6 +15,7 @@
 		'Linux',
 		'Markdown',
 		'Node',
+		'Pug',
 		'Python',
 		'React',
 		'RegExp',
