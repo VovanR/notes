@@ -36,8 +36,8 @@ window.ReactDOM || document.write('<script src="/static/js/react-dom.min.js"><\/
 
 
 ```js
-var Color = React.createClass({
-	render: function() {
+const Color = React.createClass({
+	render() {
 		return (
 			<span style={{ backgroundColor: this.props.value }}>
 				{this.props.value}
@@ -71,8 +71,8 @@ ReactDOM.render(
 any nested elements as `this.props.children`
 ```js
 // tutorial4.js
-var Comment = React.createClass({
-	render: function() {
+const Comment = React.createClass({
+	render() {
 		return (
 			<div className="comment">
 				<h2 className="commentAuthor">
@@ -89,8 +89,8 @@ var Comment = React.createClass({
 ## Функция внутри
 ```js
 // tutorial6.js
-var Comment = React.createClass({
-	render: function() {
+const Comment = React.createClass({
+	render() {
 		return (
 			<div className="comment">
 				<h2 className="commentAuthor">
@@ -105,21 +105,21 @@ var Comment = React.createClass({
 
 ```js
 // tutorial7.js
-var Comment = React.createClass({
-	rawMarkup: function() {
+const Comment = React.createClass({
+	rawMarkup() {
 		var rawMarkup = marked(this.props.children.toString(), {sanitize: true});
 		return { __html: rawMarkup };
 	},
 
-	render: function() {
-	return (
-		<div className="comment">
-			<h2 className="commentAuthor">
-				{this.props.author}
-			</h2>
-			<span dangerouslySetInnerHTML={this.rawMarkup()} />
-		</div>
-	);
+	render() {
+		return (
+			<div className="comment">
+				<h2 className="commentAuthor">
+					{this.props.author}
+				</h2>
+				<span dangerouslySetInnerHTML={this.rawMarkup()} />
+			</div>
+		);
 	}
 });
 ```
@@ -137,11 +137,12 @@ ReactDOM.render(
 Получать данные с сервера
 ```js
 // tutorial13.js
-var CommentBox = React.createClass({
-	getInitialState: function() {
+const CommentBox = React.createClass({
+	getInitialState() {
 		return {data: []};
 	},
-	componentDidMount: function() {
+
+	componentDidMount() {
 		$.ajax({
 			url: this.props.url,
 			dataType: 'json',
@@ -154,7 +155,8 @@ var CommentBox = React.createClass({
 			}.bind(this)
 		});
 	},
-	render: function() {
+
+	render() {
 		return (
 			<div className="commentBox">
 				<h1>Comments</h1>
@@ -169,8 +171,8 @@ var CommentBox = React.createClass({
 Периодически опрашивать сервер на наличие изменений
 ```js
 // tutorial14.js
-var CommentBox = React.createClass({
-	loadCommentsFromServer: function() {
+const CommentBox = React.createClass({
+	loadCommentsFromServer() {
 		$.ajax({
 			url: this.props.url,
 			dataType: 'json',
@@ -183,14 +185,17 @@ var CommentBox = React.createClass({
 			}.bind(this)
 		});
 	},
-	getInitialState: function() {
+
+	getInitialState() {
 		return {data: []};
 	},
-	componentDidMount: function() {
+
+	componentDidMount() {
 		this.loadCommentsFromServer();
 		setInterval(this.loadCommentsFromServer, this.props.pollInterval);
 	},
-	render: function() {
+
+	render() {
 		return (
 			<div className="commentBox">
 				<h1>Comments</h1>
@@ -210,8 +215,8 @@ ReactDOM.render(
 Отправлять форму на сервер
 ```js
 // tutorial19.js
-var CommentBox = React.createClass({
-	loadCommentsFromServer: function() {
+const CommentBox = React.createClass({
+	loadCommentsFromServer() {
 		$.ajax({
 			url: this.props.url,
 			dataType: 'json',
@@ -224,7 +229,8 @@ var CommentBox = React.createClass({
 			}.bind(this)
 		});
 	},
-	handleCommentSubmit: function(comment) {
+
+	handleCommentSubmit(comment) {
 		$.ajax({
 			url: this.props.url,
 			dataType: 'json',
@@ -238,14 +244,17 @@ var CommentBox = React.createClass({
 			}.bind(this)
 		});
 	},
-	getInitialState: function() {
+
+	getInitialState() {
 		return {data: []};
 	},
-	componentDidMount: function() {
+
+	componentDidMount() {
 		this.loadCommentsFromServer();
 		setInterval(this.loadCommentsFromServer, this.props.pollInterval);
 	},
-	render: function() {
+
+	render() {
 		return (
 			<div className="commentBox">
 				<h1>Comments</h1>
@@ -316,15 +325,15 @@ handleKeyDown(event: React.KeyboardEvent) {
 
 
 ```js
-var UserGist = React.createClass({
-	getInitialState: function() {
+const UserGist = React.createClass({
+	getInitialState() {
 		return {
 			username: '',
 			lastGistUrl: ''
 		};
 	},
 
-	componentDidMount: function() {
+	componentDidMount() {
 		$.get(this.props.source, function(result) {
 			var lastGist = result[0];
 			if (this.isMounted()) {
@@ -336,7 +345,7 @@ var UserGist = React.createClass({
 		}.bind(this));
 	},
 
-	render: function() {
+	render() {
 		return (
 			<div>
 				`${this.state.username}'s last gist is`

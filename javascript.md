@@ -19,7 +19,7 @@ fetch('https://api.github.com/users/vovanr').then(x => x.json()).then(x => {cons
 
 
 
-### Array
+## Array
 
 ```javascript
 var foo = [1, 2, 3];
@@ -37,7 +37,9 @@ foo.push(5); // 4 (new foo.length)
 // foo = [4, 2, 5]
 ```
 
-#### concat
+
+
+### concat
 ```javascript
 var foo = [1, 2];
 var bar = [3, 4];
@@ -59,14 +61,14 @@ while (i--) {
 
 
 
-### Выделить текст инпута при фокусе
+## Выделить текст инпута при фокусе
 ```html
 <input type="text" readonly onfocus="this.select();" onclick="this.select();" value="Hello World!">
 ```
 
 
 
-### Выбор цвета, в соответствии со значение параметра `d`
+## Выбор цвета, в соответствии со значение параметра `d`
 See: http://leafletjs.com/examples/choropleth.html#adding-some-color
 ```javascript
 /**
@@ -87,7 +89,7 @@ function getColor(d) {
 
 
 
-### Округление числа
+## Округление числа
 ```javascript
 /**
  * Округление числа
@@ -102,7 +104,7 @@ var mathRound = function (num) {
 
 
 
-### Фрагмент документа:
+## Фрагмент документа:
 ```javascript
 var frag = document.createDocumentFragment();
 
@@ -117,4 +119,124 @@ p.appendChild(t);
 frag.appendChild(p);
 
 document.body.appendChild(frag);
+```
+
+
+
+## Задать `iframe` высоту его контента
+```js
+var iframe = element[0].childNodes[0];
+iframe.onload = function () {
+    var height;
+    height = iframe.contentWindow.document.body.offsetHeight;
+    var marginTop = iframe.contentWindow.window.getComputedStyle(iframe.contentWindow.document.body).marginTop;
+    marginTop = parseInt(marginTop, 10);
+    var marginBottom = iframe.contentWindow.window.getComputedStyle(iframe.contentWindow.document.body).marginBottom;
+    marginBottom = parseInt(marginBottom, 10);
+    iframe.style.height = height + marginTop + marginBottom + 'px';
+};
+```
+
+
+
+## Отключить увеличение страницы Ctrl+Mousewheel
+See: http://stackoverflow.com/a/29994607
+```js
+document.addEventListener('mousewheel', function (e) {
+    if (e.deltaY % 1 !== 0) {
+        e.preventDefault();
+    }
+});
+```
+
+
+
+## Date
+```js
+const date = new Date(model.created_at);
+const day = date.getDate();
+const month = ((date.getMonth() + 1).toString().length > 1 ? '' : '0') + (date.getMonth() + 1).toString();
+const year = date.getFullYear();
+const formatedDate = `${day}.${month}.${year}`;
+```
+
+
+
+## Ждем окончания загрузки страницы
+See: https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded
+```javascript
+document.addEventListener('DOMContentLoaded', function () {
+});
+```
+
+
+
+## Самое быстрое добавление класса элементу
+```javascript
+candidate.classList.add('one');
+// Далее по убывающей
+candidate.setAttribute('class', 'one');
+candidate.className = 'one';
+```
+
+
+
+## Самый быстрый способ получить строку
+```javascript
+var arr = ['item 1', 'item 2', 'item 3', ...];
+var list = '<ul><li>' + arr.join('</li><li>') + '</li></ul>';
+```
+
+
+
+## Оператор `for in`
+```javascript
+for (key in object) {
+    if (!object.hasOwnProperty(key)) continue;
+
+    console.log(object[key]);
+}
+
+for (key in object) if (object.hasOwnProperty(key)) {
+    console.log(object[key]);
+}
+```
+
+
+
+## Проверка в цикле
+```javascript
+for (var i = 0; i < 10; i++) {
+    if (не подходит) {
+        continue;
+    }
+    ...
+}
+```
+
+
+
+## Отключить выделение текста
+```html
+<script>
+if (document.getElementById('noselect')) {
+    disableSelection(document.getElementById('noselect'));
+}
+
+function disableSelection(target) {
+    if (typeof target.onselectstart !== 'undefined') {
+        target.onselectstart = function () {
+            return false;
+        };
+    } else if (typeof target.style.MozUserSelect !== 'undefined') {
+        target.style.MozUserSelect = 'none';
+    } else {
+        target.onmousedown = function () {
+            return false;
+        };
+    }
+
+    target.style.cursor = 'default';
+}
+</script>
 ```
