@@ -240,3 +240,98 @@ function disableSelection(target) {
 }
 </script>
 ```
+
+
+
+## Random
+Возвращает значение 0,1,2,3
+```js
+Math.floor(Math.random() * 4)
+```
+https://github.com/Microsoft/TypeScriptSamples/blob/master/jsx/src/app.tsx
+```js
+function getRandomGreeting() {
+    switch (Math.floor(Math.random() * 4)) {
+        case 0: return 'Hello';
+        case 1: return 'Howdy';
+        case 2: return 'Greetings to you';
+        case 3: return 'Hail';
+    }
+}
+```
+
+
+
+## Наследование
+See: https://youtu.be/4oudziatkLI?list=PL363QX7S8MfSxcHzvkNEqMYbOyhLeWwem
+```javascript
+var Person = {
+    constructor: function (name, age, gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        return this;
+    },
+    greet: function () {
+        console.log('Hi, my name is ' + this.name);
+    },
+};
+
+var WebDeveloper = Object.create(Person);
+WebDeveloper.constructor = function (name, age, gender, skills) {
+    Person.constructor.apply(this, arguments);
+    this.skills = skills || [];
+    return this;
+};
+
+var developer = Object.create(WebDeveloper).constructor('Jack', 21, 'male', ['html', 'css']);
+```
+
+
+
+## Classof
+See: https://youtu.be/a3X9uqCoxKY?list=PL363QX7S8MfSxcHzvkNEqMYbOyhLeWwem
+```javascript
+var classof = function (object) {
+    return Object.prototype.toString.call(object).slice(8, -1);
+};
+```
+
+
+
+## Вместо `e.stopPropagation()`
+```javascript
+if (e.isDefaultPrevented()) {
+    return false;
+}
+```
+
+
+
+## localStorage
+
+```js
+// Установка ключа
+localStorage.username = 'Ivan';
+...
+// Чтение ключа
+output_text = 'Добро пожаловать, ' + localStorage.username;
+```
+
+```js
+// Установка ключа
+localStorage['username'] = 'Ivan';
+...
+// Чтение ключа
+output_text = 'Добро пожаловать, ' + localStorage['username'];
+```
+
+```js
+// Установка ключа
+localStorage.setItem('username', 'Ivan');
+...
+// Чтение ключа
+output_text = 'Добро пожаловать, ' + localStorage.getItem('username');
+// Так же есть специальный метод для удаления ключа
+localStorage.removeItem('username');
+```
