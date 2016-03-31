@@ -29,7 +29,7 @@
 
 `d4w` — Удалить 4 слова
 
-`dfe` — Удалить до символа 'e' (включительно)
+`dfe` — Удалить до символа "e" (включительно)
 
 
 `:co30` — Копировать строку на 30 строку
@@ -83,7 +83,7 @@
 
 `C` — Изменить от позиции курсора до конца строки
 
-`r` `a` — Заменить символ на 'a' и вернуться в визуальный режим
+`r` `a` — Заменить символ на "a" и вернуться в визуальный режим
 
 `R` — Аналог Insert на клавиатуре
 
@@ -95,19 +95,19 @@
 
 ## Макрос
 
-`qq` — Начало записи макроса на символ 'q'
+`qq` — Начало записи макроса на символ "q"
 
 `q` — Конец записи
 
-`@q` — Воспроизведение макроса под символом 'q'
+`@q` — Воспроизведение макроса под символом "q"
 
 
 
 ## Bookmarks
 
-`mq` — Закладка на символ 'q'
+`mq` — Закладка на символ "q"
 
-`'q` — Перейти к закладке 'q'
+`'q` — Перейти к закладке "q"
 
 
 
@@ -147,7 +147,7 @@
 
 `^` — Первый символ строки
 
-`fN` `FN` — Перейти к символу 'N'
+`fN` `FN` — Перейти к символу "N"
 
 `{` — Начало параграфа
 
@@ -199,27 +199,27 @@
 
 ## Буфер
 
-`:b#` — Переключиться на предыдущий файл
+`:b#` || `Ctrl + 6` — Переключиться на предыдущий буфер
 
-`:bw` — Like |:bdelete|, but really delete the buffer.
+`:bw` — Like `:bdelete`, but really delete the buffer
 
-`:bd` — Unload buffer [N] (default: current buffer) and delete it from the buffer list. If the buffer was changed, this fails, unless when [!] is specified, in which case changes are lost. The file remains unaffected.
+`:bd` — Unload buffer [N] (default: current buffer) and delete it from the buffer list. If the buffer was changed, this fails, unless when [!] is specified, in which case changes are lost. The file remains unaffected
 
 
 `set incsearch`
 `set smartcase`
-`/\<step\>` — поиск слова step. Так отмечаются начало и конец слова
+`/\<step\>` — поиск слова "step". Так отмечаются начало и конец слова
 
 
 
 ## Encoding
-`:e ++enc=cp1251` — Перечитать файл в кодировке cp1251
+`:e ++enc=cp1251` — Перечитать файл в кодировке `cp1251`
 
 
 
 ## Fileformat
 
-`:e ++ff=dos` — Перечитать файл с окончанием строк CRLF
+`:e ++ff=dos` — Перечитать файл с окончанием строк `CRLF`
 
 `:e ++enc=cp1251 ++ff=dos`
 
@@ -287,7 +287,7 @@ See: [vimregex.com](http://vimregex.com/)
 
 `$` — the last line in the file
 
-`%` — the whole file. The same as 1,$
+`%` — the whole file. The same as `1,$`
 
 `'t` — position of mark "t"
 
