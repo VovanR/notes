@@ -348,6 +348,13 @@ console.log(copy); // { a: 1 }
 
 
 
+## Deep Clone object
+```js
+const DATA = JSON.parse(JSON.stringify(window.DATA));
+```
+
+
+
 ## Merge objects
 See: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Merging_objects
 ```js
