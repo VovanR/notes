@@ -366,3 +366,12 @@ var obj = Object.assign(o1, o2, o3);
 console.log(obj); // { a: 1, b: 2, c: 3 }
 console.log(o1);  // { a: 1, b: 2, c: 3 }, target object itself is changed.
 ```
+
+
+
+## forEach object
+```js
+Object.keys(items).forEach(id => {
+    console.log(items[id]);
+});
+```
