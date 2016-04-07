@@ -108,7 +108,7 @@
 	class App extends React.Component {
 		constructor() {
 			super()
-			let collection = (() => {
+			const collection = (() => {
 				return NOTES.map(note => {
 					return {
 						name: note,
@@ -120,14 +120,13 @@
 			})()
 			this.state = {
 				notes: collection,
-				active: 0,
-				isLoading: true
+				active: null,
+				isLoading: false
 			}
-			this.fetchCurrentNote()
 		}
 
 		fetchCurrentNote() {
-			let current = this.state.notes[this.state.active]
+			const current = this.state.notes[this.state.active]
 
 			if (current.data) {
 				return
@@ -175,8 +174,8 @@
 		}
 
 		render() {
-			let {notes, active: activeIndex, isLoading} = this.state
-			let active = notes[activeIndex]
+			const {notes, active: activeIndex, isLoading} = this.state
+			const active = activeIndex !== null ? notes[activeIndex] : {}
 
 			return (
 				<Grid>
