@@ -377,3 +377,10 @@ class GlobalNav extends React.Component {
 	}
 }
 ```
+
+
+
+## Тестирование test, tdd
+- See: https://facebook.github.io/react/docs/test-utils.html
+- See: https://github.com/VovanR/react-decinc/blob/master/test.js
+- See: https://github.com/reactjs/react-tabs/blob/master/lib/components/__tests__/Tabs-test.js
