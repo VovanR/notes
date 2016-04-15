@@ -355,6 +355,19 @@ const DATA = JSON.parse(JSON.stringify(window.DATA));
 
 
 
+## Clone Array `slice`
+```js
+const a = [1, 2];
+const b = a;
+const c = a.slice(); // Clone
+a[0] = 3;
+a === [3, 2]
+b === [3, 2]
+c === [1, 2] // Clone
+```
+
+
+
 ## Merge objects
 See: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Merging_objects
 ```js
