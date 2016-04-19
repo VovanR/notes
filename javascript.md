@@ -2,7 +2,12 @@
 
 ----
 
-See: https://github.com/loverajoel/jstips
+- See: https://github.com/loverajoel/jstips
+- See: https://github.com/oneuijs/You-Dont-Need-jQuery
+- See: http://codeguide.co
+- See: http://es6-features.org/
+- See: https://ponyfoo.com/articles/es6
+- See: https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
 
 ## Remove last line
 ```javascript

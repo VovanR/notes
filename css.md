@@ -2,10 +2,9 @@
 
 ----
 
-## Solved by Flexbox
-See: http://philipwalton.github.io/solved-by-flexbox/
-
-
+- See: http://philipwalton.github.io/solved-by-flexbox/
+- See: https://github.com/AllThingsSmitty/css-protips
+- See: http://codeguide.co
 
 ## Clear Fix
 
