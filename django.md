@@ -192,3 +192,14 @@ urlpatterns = [
     url(r'^bar/$', TemplateView.as_view(template_name='bar.html')),
 ]
 ```
+
+
+
+## Вывод строки по условию
+```python
+{% if not limits.limit %} disabled{% endif%}
+```
+or
+```python
+{{ ' disabled' if not limits.limit }}
+```
