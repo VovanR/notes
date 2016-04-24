@@ -69,6 +69,10 @@ sudo localedef -c -i ru_RU -f CP1251 ru_RU.CP1251
 sudo apt-get install htop iftop iotop tasksel alien filezilla meld gparted smartmontools virtualbox chromium-browser git git-gui libreoffice wine deja-dup poedit whois tree unrar exuberant-ctags silversearcher-ag tmux curl dos2unix cabextract xfce4-timer-plugin indicator-power ntp usb-creator-gtk ruby golang-go cmake xclip
 ```
 
+```shell
+sudo gem install tmuxinator
+```
+
 Фото, видео
 ```shell
 sudo apt-get install gimp pinta imagemagick optipng vlc inkscape hugin rawtherapee gcolor2
@@ -112,20 +116,21 @@ sudo dpkg -i ~/Downloads/dropbox_2015.10.28_amd64.deb
 
 
 ### NodeJS
-See: https://github.com/nodejs/node-v0.x-archive/wiki/Installing-Node.js-via-package-manager
+See: https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions
 ```shell
-curl -sL curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
-sudo apt-get install --yes nodejs
-npm i -g grunt-cli bower docpad jade js-beautify gulp npm-upgrade yo http-server
+curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+sudo apt-get install nodejs
+npm i -g bemstyla conventional-changelog gh-pages-deploy mancy npm vmd yo commitizen fixpack http-server mversion npm-upgrade
 ```
 
 
 
 ### Atom
-See: https://launchpad.net/~webupd8team/+archive/ubuntu/atom
+See: https://atom.io/
+
+Download .deb
 ```shell
-sudo add-apt-repository ppa:webupd8team/atom && sudo apt-get update
-sudo apt-get install atom
+sudo dpkg -i ~/Downloads/atom-amd64.deb
 ```
 See: https://github.com/atom/atom/blob/master/docs/build-instructions/linux.md#typeerror-unable-to-watch-path
 ```shell
