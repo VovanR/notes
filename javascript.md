@@ -393,3 +393,13 @@ Object.keys(items).forEach(id => {
     console.log(items[id]);
 });
 ```
+
+
+
+## Pure functions
+See: https://github.com/ghengeveld/react-redux-styleguide#pure-functions
+```js
+function inc(object) {
+    return {...object, value: object.value + 1};
+}
+```
