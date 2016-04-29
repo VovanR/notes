@@ -116,9 +116,9 @@ sudo dpkg -i ~/Downloads/dropbox_2015.10.28_amd64.deb
 
 
 ### NodeJS
-See: https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions
+See: https://github.com/nodesource/distributions#installation-instructions
 ```shell
-curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install nodejs
 npm i -g bemstyla conventional-changelog gh-pages-deploy mancy npm vmd yo commitizen fixpack http-server mversion npm-upgrade
 ```
