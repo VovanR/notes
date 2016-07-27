@@ -197,12 +197,12 @@ var list = '<ul><li>' + arr.join('</li><li>') + '</li></ul>';
 ## Оператор `for in`
 ```javascript
 for (key in object) {
-    if (!object.hasOwnProperty(key)) continue;
+    if (!{}.hasOwnProperty.call(object, key)) continue;
 
     console.log(object[key]);
 }
 
-for (key in object) if (object.hasOwnProperty(key)) {
+for (key in object) if ({}.hasOwnProperty.call(object, key)) {
     console.log(object[key]);
 }
 ```
