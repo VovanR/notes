@@ -94,6 +94,21 @@ function getColor(d) {
 
 
 
+## monkey-patching
+See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
+```js
+var originalfoo = someobject.foo;
+someobject.foo = function () {
+  // Do stuff before calling function
+  console.log(arguments);
+  // Call the function as it would have been called normally:
+  originalfoo.apply(this, arguments);
+  // Run stuff after, here.
+}
+```
+
+
+
 ## Округление числа
 ```javascript
 /**
