@@ -109,14 +109,12 @@
 		constructor() {
 			super()
 			const collection = (() => {
-				return NOTES.map(note => {
-					return {
-						name: note,
-						url: new URL(`${note.toLowerCase()}.md`, location).href,
-						data: null,
-						subitems: null
-					}
-				})
+				return NOTES.map(note => ({
+					name: note,
+					url: new URL(`${note.toLowerCase()}.md`, location).href,
+					data: null,
+					subitems: null
+				}))
 			})()
 			this.state = {
 				notes: collection,
@@ -137,9 +135,7 @@
 			})
 
 			fetch(current.url)
-				.then(response => {
-					return response.text()
-				})
+				.then(response => response.text())
 				.then(data => {
 					// Clear `h2` collection
 					h2s = []
@@ -148,9 +144,7 @@
 						{
 							sanitize: true,
 							gfm: true,
-							highlight: code => {
-								return hljs.highlightAuto(code).value
-							},
+							highlight: code => hljs.highlightAuto(code).value,
 							renderer: markedRenderer
 						}
 					)
