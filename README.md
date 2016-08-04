@@ -10,6 +10,6 @@
 npm i -g http-server
 git clone git@github.com:VovanR/notes.git
 cd notes
-http-server ./
+hs .
 ```
 Open [http://localhost:8080/](http://localhost:8080/)
