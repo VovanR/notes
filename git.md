@@ -11,7 +11,7 @@ See: http://habrahabr.ru/post/106912/
 - See: https://gun.io/blog/how-to-github-fork-branch-and-pull-request/
 - See: https://help.github.com/articles/syncing-a-fork
 
-Добавляем оригинальный проект как удаленный 'remote', названный 'upstream'
+Добавляем оригинальный проект как удаленный `remote`, названный `upstream`
 ```
 git remote add --track master upstream https://github.com/bevis-ui/docs.git
 ```
@@ -28,13 +28,23 @@ git checkout master
 ```
 
 Мержим изменения из `upstream/master`в локальный `master`.
-Это синхронизирует мастер с upstream репой, без потери локальных изменений.
+Это синхронизирует мастер с `upstream` репой, без потери локальных изменений.
 ```
 git rebase upstream/master
 ```
 или
 ```
 git merge upstream/master
+```
+
+Если при ребэйзе пришли конфликты, решаем их и продолжаем коммандой
+```
+git rebase --continue
+```
+
+Отправляем изменения
+```
+git push --force
 ```
 
 
