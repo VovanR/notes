@@ -21,6 +21,14 @@ exit
 
 
 
+## User Groups
+```
+groups
+sudo gpasswd --add username group
+```
+
+
+
 ## locale
 
 Доступные локали
