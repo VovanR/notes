@@ -203,3 +203,22 @@ or
 ```python
 {{ ' disabled' if not limits.limit }}
 ```
+
+
+
+## Изменить страницу авторизации
+See: https://docs.djangoproject.com/en/1.10/topics/auth/default/  
+`urls.py`:
+```python
+. . .
+
+from django.contrib.auth import views as auth_views
+
+urlpatterns = [
+    . . .
+
+    url(r'^admin\/login/$', auth_views.login, {'template_name': 'users/login.html'}),
+]
+```
+Copy template
+`.env/lib/python3.5/site-packages/django/contrib/admin/templates/admin/login.html`
