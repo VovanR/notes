@@ -121,3 +121,20 @@ See: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/The_native_fo
     <figcaption>Isabel loves the fluffy felines</figcaption>
 </figure>
 ```
+
+
+
+## Picture
+See: https://github.com/seokirill/posthtml-webp
+
+Before:
+```html
+<img src="image.jpg">
+```
+After:
+```html
+<picture>
+    <source type="image/webp" srcset="image.jpg.webp">
+    <img src="image.jpg">
+</picture>
+```
