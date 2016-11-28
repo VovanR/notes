@@ -62,6 +62,7 @@ See: [Markdown Tables Generator](http://www.tablesgenerator.com/markdown_tables)
 ```markdown
 100..500
 100–500 (текст на английском)
+−5…−4
 ```
 
 ## Год
