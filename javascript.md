@@ -421,3 +421,57 @@ function inc(object) {
     return {...object, value: object.value + 1};
 }
 ```
+
+
+
+## Web page screenshots
+Сделать скриншоты страниц  
+```
+npm i -g phantomjs webpage
+```
+
+```js
+var webpage = require('webpage');
+
+phantom.addCookie({
+    name: 'sessionid',
+    value: '<SESSION_ID>',
+    domain: '.example.com'
+});
+var ids = [
+    37,
+    204,
+    224
+];
+var length = ids.length;
+var lastIndex = length - 1;
+
+function screenshot(index, isLast) {
+    console.log('Item:', index);
+
+    var id = ids[index];
+
+    var page = webpage.create();
+    page.viewportSize = {
+        width: 1366,
+        height: 1800
+    };
+
+    page.open('https://example.com/admin/pages/' + id + '/preview/', function () {
+        setTimeout(function () {
+            page.render('screenshots/' + id + '.png');
+
+            var newIndex = index - 1;
+
+            if (isLast || newIndex < 0) {
+                phantom.exit();
+            } else {
+                isLast = newIndex === 0;
+                screenshot(newIndex, isLast);
+            }
+        }, 2000);
+    });
+}
+
+screenshot(lastIndex, false);
+```
