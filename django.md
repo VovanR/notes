@@ -48,10 +48,10 @@
 
 ## Blocks
 ```django
-{# b-page begin #}
-<div class="b-page">
+{# begin content #}
+<div class="content">
 </div>
-{# b-page end #}
+{# end content #}
 ```
 
 
@@ -169,7 +169,7 @@ return self.render_to_response({'pk': bar.pk})
 ## Ручной сброс пароля
 ```
 (env)vovanr@vovanr
- > ./el/manage.py shell
+ > ./manage.py shell
 >>> from apps.users.models import User
 >>> a = User.objects.get(id = 1)
 >>> a.set_password('123456')
@@ -222,3 +222,25 @@ urlpatterns = [
 ```
 Copy template
 `.env/lib/python3.5/site-packages/django/contrib/admin/templates/admin/login.html`
+```
+
+
+
+## Django Compressor Less.js (lessc) Source Map
+`settings/common.py`
+```python
+COMPRESS_ENABLED = True
+
+COMPRESS_PRECOMPILERS = [
+    ('text/less', 'node_modules/.bin/lessc --autoprefix {infile} {outfile}'),
+]
+```
+
+`settings/local.py`
+```python
+COMPRESS_ENABLED = False
+
+COMPRESS_PRECOMPILERS = [
+    ('text/less', 'node_modules/.bin/lessc --autoprefix {infile} {outfile} --source-map-less-inline --source-map-map-inline'),
+]
+```
