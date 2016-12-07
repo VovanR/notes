@@ -222,11 +222,11 @@ urlpatterns = [
 ```
 Copy template
 `.env/lib/python3.5/site-packages/django/contrib/admin/templates/admin/login.html`
-```
 
 
 
 ## Django Compressor Less.js (lessc) Source Map
+
 `settings/common.py`
 ```python
 COMPRESS_ENABLED = True
