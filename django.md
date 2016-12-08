@@ -244,3 +244,13 @@ COMPRESS_PRECOMPILERS = [
     ('text/less', 'node_modules/.bin/lessc --autoprefix {infile} {outfile} --source-map-less-inline --source-map-map-inline'),
 ]
 ```
+
+
+
+## Pluralize
+See: https://github.com/j2a/pytils
+```python
+{% load pytils_numeral %}
+
+{{ item.answers }} {{ item.answers|choose_plural:"сообщение, сообщения, сообщений" }}
+```
