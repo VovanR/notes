@@ -254,3 +254,20 @@ See: https://github.com/j2a/pytils
 
 {{ item.answers }} {{ item.answers|choose_plural:"сообщение, сообщения, сообщений" }}
 ```
+
+
+
+## Вывести первые несколько итемов из списка
+See: https://docs.djangoproject.com/en/dev/ref/templates/builtins/#slice
+```python
+{% for item in items|slice:":3" %}
+    <a
+        href="{% url 'foo:item' item.pk %}"
+        {% if item.name|length > 10 %}
+        title="{{ item.name }}"
+        {% endif %}
+        >
+        {{ item.name|truncatechars:10 }}
+    </a>
+{% endfor %}
+```
