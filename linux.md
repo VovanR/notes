@@ -74,7 +74,7 @@ sudo localedef -c -i ru_RU -f CP1251 ru_RU.CP1251
 
 ## Устанавливаем проги
 ```shell
-sudo apt-get install htop iftop iotop tasksel alien filezilla meld gparted smartmontools virtualbox chromium-browser git git-gui libreoffice wine deja-dup poedit whois tree unrar exuberant-ctags silversearcher-ag tmux curl dos2unix cabextract xfce4-timer-plugin indicator-power ntp usb-creator-gtk ruby golang-go cmake xclip
+sudo apt-get install htop iftop iotop tasksel alien filezilla meld gparted smartmontools virtualbox chromium-browser git git-gui libreoffice wine deja-dup poedit whois tree unrar exuberant-ctags ack-grep tmux curl dos2unix cabextract xfce4-timer-plugin indicator-power ntp usb-creator-gtk ruby golang-go cmake xclip
 ```
 
 ```shell
