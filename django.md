@@ -271,3 +271,12 @@ See: https://docs.djangoproject.com/en/dev/ref/templates/builtins/#slice
     </a>
 {% endfor %}
 ```
+
+
+
+## Copyrights
+```python
+<div class="copyrights">
+    © 2000 — {% now "Y" %} «Рога и Копыта».
+</div>
+```
