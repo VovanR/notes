@@ -277,6 +277,6 @@ See: https://docs.djangoproject.com/en/dev/ref/templates/builtins/#slice
 ## Copyrights
 ```python
 <div class="copyrights">
-    © 2000 — {% now "Y" %} «Рога и Копыта».
+    ©&nbsp;2000&nbsp;—&nbsp;{% now "Y" %} «Рога&nbsp;и&nbsp;Копыта».
 </div>
 ```
