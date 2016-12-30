@@ -11,7 +11,7 @@
 
 
 ## Thumbnail
-```django
+```python
 {% thumbnail form.image.value "150x100" crop="center" as im %}
     <a class="js-settings__thumb" href="{{ form.image.value.url }}">
         <img class="js-settings__preview" src="{{ im.url }}" alt="">
