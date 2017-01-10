@@ -309,3 +309,21 @@ ol li:nth-child(-n+14):nth-child(n+7) {
   white-space: nowrap;
 }
 ```
+
+
+
+## Language
+See: https://developer.mozilla.org/en-US/docs/Web/CSS/:lang
+```styl
+.block
+    color: blue
+
+        &__title
+            font-weight: bold
+
+    :lang(zh-CN) &
+        color: red
+
+        &__title
+            font-weight: normal
+```
