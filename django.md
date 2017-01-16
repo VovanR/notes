@@ -280,3 +280,49 @@ See: https://docs.djangoproject.com/en/dev/ref/templates/builtins/#slice
     ©&nbsp;2000&nbsp;—&nbsp;{% now "Y" %} «Рога&nbsp;и&nbsp;Копыта».
 </div>
 ```
+
+
+
+## Carousel
+See: https://docs.djangoproject.com/en/dev/ref/templates/builtins/#for
+```python
+<div class="carousel">
+    {% for logo in logo_list %}
+        {% if forloop.first %}
+            <div class="carousel__item">
+                <ul class="list">
+        {% endif %}
+
+        <li class="list__item">
+            <a
+                class="link"
+                href="{{ logo.url }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                >
+                <img
+                    class="logo"
+                    src="{{ logo.image.url }}"
+                    alt="logo.name"
+                    />
+            </a>
+        </li>
+
+        {% if forloop.last %}
+            {% for stub in logo_stubs %}
+                <li class="list__item"></li>
+            {% endfor %}
+        {% endif %}
+
+        {% if forloop.counter|divisibleby:"12" or forloop.last %}
+                </ul>
+            </div>
+
+            {% if not forloop.last %}
+                <div class="carousel__item">
+                    <ul class="list">
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+</div>
+```
