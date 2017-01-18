@@ -331,7 +331,7 @@ See: https://developer.mozilla.org/en-US/docs/Web/CSS/:lang
 
 
 ## 12 column width
-```css
+```
 100%
 91.66666666666666%
 83.33333333333334%
