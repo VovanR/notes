@@ -329,7 +329,7 @@ See: https://docs.djangoproject.com/en/dev/ref/templates/builtins/#for
 
 
 ## Times
-```
+```python
 {% for i in '12345' %}
     <li class="list__item">
         <a class="list__link" href="#">
@@ -342,7 +342,7 @@ See: https://docs.djangoproject.com/en/dev/ref/templates/builtins/#for
 {% endfor %}
 ```
 
-```
+```python
 {% for i in 'x'|rjust:"1000" %}
     <li class="list__item">
         <a class="list__link" href="#">
