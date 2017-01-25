@@ -326,3 +326,31 @@ See: https://docs.djangoproject.com/en/dev/ref/templates/builtins/#for
     {% endfor %}
 </div>
 ```
+
+
+## Times
+```
+{% for i in '12345' %}
+    <li class="list__item">
+        <a class="list__link" href="#">
+            <img
+                class="list__logo"
+                src="http://dummyimage.com/200x100/000/fff.png?text={{ i }}"
+                alt=""/>
+        </a>
+    </li>
+{% endfor %}
+```
+
+```
+{% for i in 'x'|rjust:"1000" %}
+    <li class="list__item">
+        <a class="list__link" href="#">
+            <img
+                class="list__logo"
+                src="http://dummyimage.com/200x100/000/fff.png"
+                alt=""/>
+        </a>
+    </li>
+{% endfor %}
+```
