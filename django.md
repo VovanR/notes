@@ -336,7 +336,8 @@ See: https://docs.djangoproject.com/en/dev/ref/templates/builtins/#for
             <img
                 class="list__logo"
                 src="http://dummyimage.com/200x100/000/fff.png?text={{ i }}"
-                alt=""/>
+                alt=""
+                />
         </a>
     </li>
 {% endfor %}
@@ -349,7 +350,8 @@ See: https://docs.djangoproject.com/en/dev/ref/templates/builtins/#for
             <img
                 class="list__logo"
                 src="http://dummyimage.com/200x100/000/fff.png"
-                alt=""/>
+                alt=""
+                />
         </a>
     </li>
 {% endfor %}
