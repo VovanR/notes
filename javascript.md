@@ -431,7 +431,7 @@ npm i -g phantomjs webpage
 ```
 
 ```js
-var webpage = require('webpage');
+var webshot = require('webshot');
 
 phantom.addCookie({
     name: 'sessionid',
@@ -451,26 +451,36 @@ function screenshot(index, isLast) {
 
     var id = ids[index];
 
-    var page = webpage.create();
-    page.viewportSize = {
-        width: 1366,
-        height: 1800
-    };
+	var options = {
+		screenSize: {
+			width: 1366,
+			height: 1800
+		},
+		shotSize: {
+			width: 'window',
+			height: 'all'
+		},
+		// renderDelay: 5000,
+		userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/2.1.1 (development) Safari/534.34'
+	};
 
-    page.open('https://example.com/admin/pages/' + id + '/preview/', function () {
-        setTimeout(function () {
-            page.render('screenshots/' + id + '.png');
+	webshot(
+		'https://example.com/admin/pages/' + id + '/preview/',
+		'screenshots/' + id + '.png',
+		options,
+		function () {
+			setTimeout(function () {
+				var newIndex = index - 1;
 
-            var newIndex = index - 1;
-
-            if (isLast || newIndex < 0) {
-                phantom.exit();
-            } else {
-                isLast = newIndex === 0;
-                screenshot(newIndex, isLast);
-            }
-        }, 2000);
-    });
+				if (isLast || newIndex < 0) {
+					console.log('exit');
+				} else {
+					isLast = newIndex === 0;
+					screenshot(newIndex, isLast);
+				}
+			}, 200);
+		}
+	);
 }
 
 screenshot(lastIndex, false);
