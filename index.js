@@ -50,20 +50,28 @@
 
 	// Main menu
 	class Menu extends React.Component {
+		constructor(props) {
+			super(props)
+			this.handleSelect = this.handleSelect.bind(this)
+		}
+
 		handleSelect(index, e) {
 			e.preventDefault()
 			this.props.onSelect(index)
 		}
 
 		render() {
+			const {
+				active,
+				notes
+			} = this.props
+
 			return (
-				<ul
-					className={"nav-menu"}
-					>
-					{this.props.notes.map((note, index) => (
+				<ul className="nav-menu">
+					{notes.map((note, index) => (
 						<li
 							key={index}
-							className={this.props.active === index ? 'active' : ''}
+							className={active === index ? 'active' : ''}
 							>
 							<a
 								href={note.url}
@@ -71,11 +79,8 @@
 								>
 								{note.name}
 							</a>
-							{note.h2 ? (
-								<SubMenu
-									items={note.h2}
-									/>
-							) : false}
+
+							{note.h2 ? (<SubMenu items={note.h2}/>) : false}
 						</li>
 					))}
 				</ul>
@@ -83,27 +88,18 @@
 		}
 	}
 
-	// Submenu in main menu
-	class SubMenu extends React.Component {
-		render() {
-			return (
-				<ul
-					className={"nav-submenu"}
-					>
-					{this.props.items.map((item, index) => (
-						<li
-							key={index}
-							>
-							<a
-								href={item.url}
-								dangerouslySetInnerHTML={{__html: item.name}}
-								/>
-						</li>
-					))}
-				</ul>
-			)
-		}
-	}
+	const SubMenu = props => (
+		<ul className="nav-submenu">
+			{props.items.map((item, index) => (
+				<li key={index}>
+					<a
+						href={item.url}
+						dangerouslySetInnerHTML={{__html: item.name}}
+						/>
+				</li>
+			))}
+		</ul>
+	)
 
 	class App extends React.Component {
 		constructor() {
@@ -121,6 +117,8 @@
 				active: null,
 				isLoading: false
 			}
+
+			this.handleSelect = this.handleSelect.bind(this)
 		}
 
 		fetchCurrentNote() {
@@ -130,9 +128,7 @@
 				return
 			}
 
-			this.setState({
-				isLoading: true
-			})
+			this.setState({isLoading: true})
 
 			fetch(current.url)
 				.then(response => response.text())
@@ -150,14 +146,10 @@
 					)
 					// Write `h2` collection
 					current.h2 = h2s
-					this.setState({
-						isLoading: false
-					})
+					this.setState({isLoading: false})
 				})
 				.catch(() => {
-					this.setState({
-						isLoading: false
-					})
+					this.setState({isLoading: false})
 				})
 		}
 
@@ -168,7 +160,11 @@
 		}
 
 		render() {
-			const {notes, active: activeIndex, isLoading} = this.state
+			const {
+				active: activeIndex,
+				isLoading,
+				notes
+			} = this.state
 			const active = activeIndex !== null ? notes[activeIndex] : {}
 
 			return (
@@ -187,7 +183,7 @@
 								<Menu
 									notes={notes}
 									active={activeIndex}
-									onSelect={this.handleSelect.bind(this)}
+									onSelect={this.handleSelect}
 									/>
 							</Panel>
 						</Col>
@@ -208,5 +204,5 @@
 		}
 	}
 
-	ReactDOM.render(<App />, document.getElementById('app'))
+	ReactDOM.render(<App/>, document.getElementById('app'))
 })()
