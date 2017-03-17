@@ -356,3 +356,28 @@ See: https://docs.djangoproject.com/en/dev/ref/templates/builtins/#for
     </li>
 {% endfor %}
 ```
+
+
+## Development
+### ENV
+```
+virtualenv --python=python3.5 .env
+source .env/bin/activate
+pip install -r requirements.txt --upgrade
+```
+### DB
+```
+sudo apt-get install postgresql-9.4
+sudo -u postgres psql
+create user PROJECTNAME with password 'PROJECTNAME';
+create database PROJECTNAME with owner PROJECTNAME;
+\q
+./manage.py migrate
+```
+### manage.py
+```
+./manage.py migrate
+./manage.py createsuperuser
+./manage.py runserver
+```
+open http://127.0.0.1:8000/
