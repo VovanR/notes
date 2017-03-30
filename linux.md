@@ -10,6 +10,13 @@ xflock4		Super + l
 
 
 
+## Узнать код клавиши
+```
+showkey -a
+```
+
+
+
 ## Поиск файлов
 ```
 locate -b foo
