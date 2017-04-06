@@ -402,3 +402,8 @@ See: https://github.com/neilff/react-redux-performance
 ## [React Intl](https://github.com/yahoo/react-intl)
 See: https://github.com/yahoo/react-intl/wiki  
 Для интернационализации (i18n)
+
+
+
+## [react-virtualized](https://github.com/bvaughn/react-virtualized)
+Рендерить только видимую часть больших списков
