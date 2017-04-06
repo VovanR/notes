@@ -388,5 +388,11 @@ class GlobalNav extends React.Component {
 
 
 ## [PureComponent](https://facebook.github.io/react/docs/react-api.html#react.purecomponent)
-Неглубокая сверка новых проперти и состояния. Хорошо сочетается с [Immutable.js](http://facebook.github.io/immutable-js/).
+Неглубокая сверка новых проперти и состояния. Хорошо сочетается с [Immutable.js](http://facebook.github.io/immutable-js/).  
 Массивы можно изменять `concat(['new-item'])`, вместо `push`.
+
+
+
+## [Reselect](https://github.com/reactjs/reselect)
+See: https://github.com/neilff/react-redux-performance  
+Для мемоизации вычисляемых значений
