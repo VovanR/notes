@@ -396,3 +396,9 @@ class GlobalNav extends React.Component {
 ## [Reselect](https://github.com/reactjs/reselect)
 See: https://github.com/neilff/react-redux-performance  
 Для мемоизации вычисляемых значений
+
+
+
+## [React Intl](https://github.com/yahoo/react-intl)
+See: https://github.com/yahoo/react-intl/wiki  
+Для интернационализации (i18n)
