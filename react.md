@@ -384,3 +384,9 @@ class GlobalNav extends React.Component {
 - See: https://facebook.github.io/react/docs/test-utils.html
 - See: https://github.com/VovanR/react-decinc/blob/master/test.js
 - See: https://github.com/reactjs/react-tabs/blob/master/lib/components/__tests__/Tabs-test.js
+
+
+
+## [PureComponent](https://facebook.github.io/react/docs/react-api.html#react.purecomponent)
+Неглубокая сверка новых проперти и состояния. Хорошо сочетается с [Immutable.js](http://facebook.github.io/immutable-js/).
+Массивы можно изменять `concat(['new-item'])`, вместо `push`.
