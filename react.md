@@ -389,7 +389,8 @@ class GlobalNav extends React.Component {
 
 ## [PureComponent](https://facebook.github.io/react/docs/react-api.html#react.purecomponent)
 Неглубокая сверка новых проперти и состояния. Хорошо сочетается с [Immutable.js](http://facebook.github.io/immutable-js/).  
-Массивы можно изменять `concat(['new-item'])`, вместо `push`.
+Массивы можно изменять `concat(['new-item'])`, вместо `push`.  
+Не использовать для контейнеров (`redux connect`), так как там так же переопределен `shouldComponentUpdate`
 
 
 
