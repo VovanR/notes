@@ -387,6 +387,15 @@ class GlobalNav extends React.Component {
 
 
 
+## [Enzyme](http://airbnb.io/enzyme/)
+Trigger input change event  
+See: https://github.com/airbnb/enzyme/issues/76#issuecomment-189606849
+```js
+wrapper.find('input').simulate('change', {target: {value: 'My new value'}});
+```
+
+
+
 ## [PureComponent](https://facebook.github.io/react/docs/react-api.html#react.purecomponent)
 Неглубокая сверка новых проперти и состояния. Хорошо сочетается с [Immutable.js](http://facebook.github.io/immutable-js/).  
 Массивы можно изменять `concat(['new-item'])`, вместо `push`.  
