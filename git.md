@@ -537,3 +537,27 @@ git log -p <hash> -1
 ```shell
 git show <hash>
 ```
+
+
+
+## Отменить rebase
+- See: http://stackoverflow.com/a/135614
+
+Смотрим последний коммит перед началом `rebase`
+```
+git reflog
+```
+В примере ниже это `HEAD@{5}`
+```
+95a7f9da HEAD@{0}: rebase finished: returning to refs/heads/dev/modal
+95a7f9da HEAD@{1}: rebase: Fix modal component types
+9f1342a4 HEAD@{2}: rebase: Refactoring with new modal component
+57a5576d HEAD@{3}: rebase: Add modal component
+f36d45a5 HEAD@{4}: pull --rebase upstream master: checkout f36d4sa54566sd464s8186d5143fad615423fs15
+a26459f6 HEAD@{5}: checkout: moving from master to dev/modal
+```
+Отменяем ребейз
+```
+git reset --hard HEAD@{5}
+```
+Можно посмотреть лог коммита, к которому мы возвращаемся `git log HEAD@{5}`
