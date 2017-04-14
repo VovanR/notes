@@ -424,6 +424,14 @@ function inc(object) {
 
 
 
+## Избежать проблем без `;`
+```js
+console.log(1)
+;[1,2].forEach(console.log)
+```
+
+
+
 ## Web page screenshots
 Сделать скриншоты страниц  
 ```
