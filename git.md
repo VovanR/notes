@@ -561,3 +561,23 @@ a26459f6 HEAD@{5}: checkout: moving from master to dev/modal
 git reset --hard HEAD@{5}
 ```
 Можно посмотреть лог коммита, к которому мы возвращаемся `git log HEAD@{5}`
+
+
+
+## Удалить коммит через интерактивный ребейз
+```
+git rebase -i HEAD~3
+```
+В открывшемся редакторе в первом столбце помечаем что нужно сделать
+
+
+
+## Игнорировать внесённые изменения
+- See: http://stackoverflow.com/a/3320183
+```
+git update-index --assume-unchanged ./index.js
+```
+Перестать игнорировать:
+```
+git update-index --no-assume-unchanged ./index.js
+```
