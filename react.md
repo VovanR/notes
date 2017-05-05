@@ -417,3 +417,53 @@ See: https://github.com/yahoo/react-intl/wiki
 
 ## [react-virtualized](https://github.com/bvaughn/react-virtualized)
 Рендерить только видимую часть больших списков
+
+
+
+## Jest
+### Redux action
+```js
+import * as actions from '../actions'
+
+describe('deleteItemsAction', () => {
+  test('delete', () => {
+    const dispatch = jest.fn()
+    const itemIds = [1, 2]
+    actions.deleteItemsAction(itemIds)(dispatch)
+
+    expect(dispatch).toHaveBeenCalledTimes(2)
+    expect(dispatch.mock.calls[0][0]).toEqual({
+      type: ITEM_REMOVED,
+      data: {
+        id: itemIds[0]
+      }
+    })
+  })
+})
+```
+
+Action dispatched action
+```js
+import * as actions from '../actions'
+
+describe('deleteItemsAction', () => {
+  test('delete', () => {
+    const spy = jest.spyOn(actions, 'delete')
+    const dispatch = jest.fn()
+    const itemIds = [1, 2]
+    actions.deleteItemsAction(itemIds)(dispatch)
+
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(spy).toHaveBeenCalledTimes(2)
+    expect(spy.mock.calls[0][0]).toEqual([
+      type: ITEM_REMOVED,
+      data: {
+        id: itemIds[0]
+      }
+    })
+
+    spy.mockReset()
+    spy.mockRestore()
+  })
+})
+```
