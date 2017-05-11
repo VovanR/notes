@@ -386,8 +386,8 @@ git remote prune origin
 
 ## Patch
 ```
-git diff > patch
-git apply ./patch
+git diff > patch.patch
+git apply ./patch.patch
 ```
 
 
@@ -407,7 +407,7 @@ git diff --cached <file_path>
 ## Восстановить файл, удаленный в каком-то коммите
 ## Откатить изменения файла, сделанные в каком-то коммите
 ```
-ghists
+git log --stat <file_path>
 ```
 Смотрим хэш коммита, в котором удален файл `81fce3a`. Добавляем `~1`
 ```
@@ -434,14 +434,7 @@ git show <some-branch-name>:<file_path>
 
 
 
-## Изменить сообщение коммита
-```
-git rebase -i <hash>
-```
-
-
-
-## Чтобы небыло дурацких коммитов о мерже, когда пришли изменения
+## Чтобы не было дурацких коммитов о мерже, когда пришли изменения
 > Merge branch 'feature/foo' into develop
 
 ```shell
@@ -561,6 +554,13 @@ a26459f6 HEAD@{5}: checkout: moving from master to dev/modal
 git reset --hard HEAD@{5}
 ```
 Можно посмотреть лог коммита, к которому мы возвращаемся `git log HEAD@{5}`
+
+
+
+## Изменить сообщение коммита
+```
+git rebase -i <hash>
+```
 
 
 
