@@ -572,6 +572,21 @@ git rebase -i HEAD~3
 
 
 
+## Удалить файл из коммита
+```
+ghists
+  cc98ddd
+git rebase -i HEAD~3
+  replace `pick` with `edit` before cc98ddd
+  exit `:wq`
+  remove from commit and ammend commit
+git commit --amend -v
+git rebase --continue
+git push --force
+```
+
+
+
 ## Игнорировать внесённые изменения
 - See: http://stackoverflow.com/a/3320183
 ```
