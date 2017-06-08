@@ -596,3 +596,12 @@ git update-index --assume-unchanged ./index.js
 ```
 git update-index --no-assume-unchanged ./index.js
 ```
+
+
+
+## Переименовать ветку (изменить название ветки)
+```
+git branch -m old_branch new_branch
+git push origin :old_branch
+git push --set-upstream origin new_branch
+```
