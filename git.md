@@ -605,3 +605,11 @@ git branch -m old_branch new_branch
 git push origin :old_branch
 git push --set-upstream origin new_branch
 ```
+
+
+
+## Отличия в stash от текущего состояния
+```
+git diff stash@{0} HEAD
+git diff --name-only stash@{0} HEAD
+```
