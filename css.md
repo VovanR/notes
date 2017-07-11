@@ -345,3 +345,21 @@ See: https://developer.mozilla.org/en-US/docs/Web/CSS/:lang
 16.666666666666664%
 8.333333333333332%
 ```
+
+
+
+## Штриховка
+```css
+.striped {
+    background-color: green;
+    background-image: linear-gradient(
+        -45deg,
+        transparent 50%,
+        rgba(255, 255, 255, 0.5) 50%,
+        rgba(255, 255, 255, 0.5) 60%,
+        transparent 60%,
+        transparent
+    );
+    background-size: 10px 10px;
+}
+```
