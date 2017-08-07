@@ -525,3 +525,35 @@ See: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objec
   0
 )
 ```
+
+
+## Concat lists with intersection
+See: https://jsfiddle.net/VovanR/4dyxszby/  
+Например при получении страницы с уже имеющимся итемом, чтобы не дублировать его
+```js
+/**
+ * Concat lists with intersection
+ * 
+ * @param newItems {Array}
+ * @param oldItems {Array}
+ * @returns {Array}
+ */
+function concatLists(newItems, oldItems) {
+  let result = []
+  const hash = Object.create(null)
+
+  oldItems.forEach(item => {
+    hash[item.id] = true
+    result.push(item)
+  })
+
+  newItems.forEach(item => {
+    if (hash[item.id]) {
+      return
+    }
+    result.push(item)
+  })
+
+  return result
+}
+```
