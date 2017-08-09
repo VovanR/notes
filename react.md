@@ -467,3 +467,13 @@ describe('deleteItemsAction', () => {
   })
 })
 ```
+
+
+
+## Профилирование
+- See: https://medium.freecodecamp.org/make-react-fast-again-tools-and-techniques-for-speeding-up-your-react-app-7ad39d3c1b82
+
+Добавить в адрес параметр `react_perf`  
+Например: `http://localhost:8080?react_perf`  
+Открываем **Chrome DevTools** вкладку **Performance**, жмём **Record**
+Нам интересна секция **User Timing**
