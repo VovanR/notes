@@ -604,6 +604,24 @@ esac
 
 
 
+### Download array
+See: https://github.com/oranja/diff-so-fancy/blob/96b6ca05777123865986aec98d2d7d03a73ec7ed/update-deps.sh
+```bash
+#!/bin/bash
+
+URL_BASE="https://url"
+FILES=( "Foo.md" "Bar.js" )
+
+for file in "${FILES[@]}";
+do
+  url="$URL_BASE/$file"
+  echo "$url"
+  curl -#Lo "lib/$file" "$url"
+done
+```
+
+
+
 ### Bash scripting
 
 ```
