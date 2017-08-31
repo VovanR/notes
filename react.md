@@ -477,3 +477,22 @@ describe('deleteItemsAction', () => {
 Например: `http://localhost:8080?react_perf`  
 Открываем **Chrome DevTools** вкладку **Performance**, жмём **Record**
 Нам интересна секция **User Timing**
+
+
+
+## ref
+```js
+export class Block extends PureComponent {
+  blockRefCallback = (block) => {
+    this.block = block
+  }
+
+  render() {
+    return (
+      <div
+        ref={this.blockRefCallback}
+      />
+    )
+  }
+}
+```
