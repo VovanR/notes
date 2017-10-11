@@ -9,17 +9,38 @@
 - See: https://ponyfoo.com/articles/es6
 - See: https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
 
-## Remove last line
+## String
+### Remove last line
 ```javascript
 var foo = 'a\nb\nc\nd';
-foo = foo.substring(0, foo.lastIndexOf('\n')); // 'a\nb\nc'
+foo = foo.substring(0, foo.lastIndexOf('\n')); //=> 'a\nb\nc'
+```
+
+### Remove first character
+```js
+var foo = 'foo';
+foo.substr(1); //=> 'oo'
+```
+
+### Remove last character
+```js
+var foo = 'foo';
+foo.slice(0, -1); //=> 'fo'
+```
+
+### Remove first and last character
+```js
+var foo = 'foo';
+foo.slice(1, -1); //=> 'o'
 ```
 
 
 
 ## Fetch
 ```javascript
-fetch('https://api.github.com/users/vovanr').then(x => x.json()).then(x => {console.log(x)})
+fetch('https://api.github.com/users/vovanr')
+    .then(x => x.json())
+    .then(x => {console.log(x)})
 ```
 
 
@@ -29,19 +50,19 @@ fetch('https://api.github.com/users/vovanr').then(x => x.json()).then(x => {cons
 ```javascript
 var foo = [1, 2, 3];
 
-foo.shift(); // 1 (removed item)
+foo.shift(); //=> 1 (removed item)
 // foo = [2, 3]
 
-foo.unshift(4); // 3 (new foo.length)
+foo.unshift(4); //=> 3 (new foo.length)
 // foo = [4, 2, 3]
 
-foo.pop(); // 3 (removed item)
+foo.pop(); //=> 3 (removed item)
 // foo = [4, 2]
 
-foo.push(5); // 4 (new foo.length)
+foo.push(5); //=> 4 (new foo.length)
 // foo = [4, 2, 5]
 
-foo.splice(foo.indexOf(2), 1, 3); // [2] (replaced items)
+foo.splice(foo.indexOf(2), 1, 3); //=> [2] (replaced items)
 // foo = [4, 3, 5]
 ```
 
@@ -51,9 +72,22 @@ foo.splice(foo.indexOf(2), 1, 3); // [2] (replaced items)
 ```javascript
 var foo = [1, 2];
 var bar = [3, 4];
-foo.concat(bar); // [1, 2, 3, 4]
+foo.concat(bar); //=> [1, 2, 3, 4] (new array)
 // foo = [1, 2]
 // bar = [3, 4]
+```
+
+
+
+### Clone Array `slice`
+```js
+const a = [1, 2];
+const b = a;
+const c = a.slice(); // Clone
+a[0] = 3;
+a === [3, 2]
+b === [3, 2]
+c === [1, 2] // Clone
 ```
 
 
@@ -63,7 +97,7 @@ foo.concat(bar); // [1, 2, 3, 4]
 var arr = ['a', 'b', 'c'];
 var i = arr.length;
 while (i--) {
-	arr[i] // 'c', 'b', 'a'
+	arr[i] //=> 'c', 'b', 'a'
 }
 ```
 
@@ -106,6 +140,18 @@ someobject.foo = function () {
   console.log(arguments);
   // Call the function as it would have been called normally:
   originalfoo.apply(this, arguments);
+  // Run stuff after, here.
+}
+```
+
+### Arrow function
+```js
+var originalfoo = someobject.foo;
+someobject.foo = (dispatch, getState, ...rest) => {
+  // Do stuff before calling function
+  console.log([dispatch, getState, ...rest]);
+  // Call the function as it would have been called normally:
+  originalfoo.apply(someobject, [dispatch, getState, ...rest]);
   // Run stuff after, here.
 }
 ```
@@ -378,19 +424,6 @@ const DATA = JSON.parse(JSON.stringify(window.DATA));
 
 
 
-## Clone Array `slice`
-```js
-const a = [1, 2];
-const b = a;
-const c = a.slice(); // Clone
-a[0] = 3;
-a === [3, 2]
-b === [3, 2]
-c === [1, 2] // Clone
-```
-
-
-
 ## Merge objects
 See: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Merging_objects
 ```js
@@ -520,8 +553,8 @@ See: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objec
 ```
 
 ```js
-[ 0, 1, 2, 3 ].reduce(
-  ( acc, cur ) => acc + cur,
+[0, 1, 2, 3].reduce(
+  (acc, cur) => acc + cur,
   0
 )
 ```
