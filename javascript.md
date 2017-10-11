@@ -4,10 +4,15 @@
 
 - See: https://github.com/loverajoel/jstips
 - See: https://github.com/oneuijs/You-Dont-Need-jQuery
+- See: https://github.com/HubSpot/youmightnotneedjquery
+- See: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore
+- See: https://github.com/getify/You-Dont-Know-JS
 - See: http://codeguide.co
 - See: http://es6-features.org/
 - See: https://ponyfoo.com/articles/es6
 - See: https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
+- See: https://github.com/h5bp/Front-end-Developer-Interview-Questions
+- See: https://github.com/you-dont-need/You-Dont-Need-JavaScript
 
 ## String
 ### Remove last line
@@ -232,7 +237,8 @@ const formatedDate = `${day}.${month}.${year}`;
 
 
 ## Ждем окончания загрузки страницы
-See: https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded
+- See: https://github.com/ded/domready
+- See: https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded
 ```javascript
 document.addEventListener('DOMContentLoaded', function () {
 });
