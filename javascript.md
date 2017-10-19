@@ -596,3 +596,23 @@ function concatLists(newItems, oldItems) {
   return result
 }
 ```
+
+
+## Symbol
+Using symbols for private atributes
+```js
+var _name = Symbol();
+class Person {
+    constructor(name) {
+        this[_name] = name;
+    }
+
+    get name() {
+        return this[_name];
+    }
+
+    set name(value) {
+        this[_name] = value;
+    }
+}
+```
