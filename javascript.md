@@ -13,6 +13,7 @@
 - See: https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
 - See: https://github.com/h5bp/Front-end-Developer-Interview-Questions
 - See: https://github.com/you-dont-need/You-Dont-Need-JavaScript
+- See: https://github.com/loiane/javascript-datastructures-algorithms
 
 ## String
 ### Remove last line
