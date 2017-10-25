@@ -4,7 +4,7 @@
 
 - See: https://learnxinyminutes.com/docs/ru-ru/bash-ru/
 
-## Копирование текста в консоле
+## Копирование текста в терминале
 
 ```bash
 sudo apt-get install xclip
@@ -102,7 +102,7 @@ tar cz README.md | nc -l -p 2214
 
 
 
-## Обращение к компу по сетке
+## Обращение к компьютеру по сети
 
 ```bash
 avahi-browse -a
@@ -138,6 +138,14 @@ find ./ -type f -name "*.js" -exec perl -pi -e "s/ {4,4}'AjaxLinks',?\n//g" '{}'
 ```bash
 find ./ -type f -name "*.js" -exec perl -pi -e 's/^    \$\, _\, Backbone/    \$,\n    _,\n    Backbone/g' '{}' \;
 ```
+
+
+### cut
+Вывести нужные колонки
+```bash
+cut -d ' ' -f3,5,8 ./foo.txt
+```
+Выводит 3, 5 и 8 колонки из файла. Разделитель задаётся через `-d`
 
 
 ### Tree ignore
