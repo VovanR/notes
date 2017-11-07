@@ -381,6 +381,10 @@ git gc
 ```
 git remote prune origin
 ```
+Показать какие ветки пропадут:
+```
+git remote prune origin --dry-run
+```
 
 
 
