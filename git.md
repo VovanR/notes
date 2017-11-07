@@ -354,7 +354,7 @@ git push origin :feature/sprite-speed
 git remote add origin <ssh://url>
 ```
 
-## Переименовали репу на гитхабе — переименуем ее и на компе
+## Переименовали репу на гитхабе — переименуем её и на компе
 ```
 git remote set-url origin <new_url>
 ```
@@ -377,7 +377,7 @@ git gc
 
 
 
-## Если удаленная ветка все еще отображается в `git branch -a`
+## Если удалённая ветка всё ещё отображается в `git branch -a`
 ```
 git remote prune origin
 ```
@@ -649,7 +649,7 @@ git stash show stash@{0}
 git checkout  stash@{0} -- ./src/index.js
 ```
 
-Отличия в stash от текущего состояния
+Отличия в `stash` от текущего состояния
 ```
 git diff stash@{0} HEAD
 ```
