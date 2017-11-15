@@ -3,6 +3,7 @@
 ----
 
 - See: https://learnxinyminutes.com/docs/ru-ru/bash-ru/
+- See: https://github.com/Idnan/bash-guide
 
 ## Копирование текста в терминале
 
