@@ -7,7 +7,7 @@
 
 ## Копирование текста в терминале
 
-```bash
+```shell
 sudo apt-get install xclip
 uptime | xclip
 ```
@@ -17,7 +17,7 @@ uptime | xclip
 
 ## Создать папку и сразу перейти в нее
 
-```bash
+```shell
 mkdir my-new-project && cd $_
 ```
 
@@ -25,7 +25,7 @@ mkdir my-new-project && cd $_
 
 ## Записать gif
 
-```bash
+```shell
 byzanz-record -c --duration 8 -w 400 -h 150 -x 67 -y 197 ./preview/example.gif
 ```
 
@@ -33,7 +33,7 @@ byzanz-record -c --duration 8 -w 400 -h 150 -x 67 -y 197 ./preview/example.gif
 
 ## Установка старой версии пакета
 
-```bash
+```shell
 apt-cache showpkg libnss3-tools
 sudo apt-get install libnss3-tools=2:3.15.1-1ubuntu1
 ```
@@ -42,31 +42,31 @@ sudo apt-get install libnss3-tools=2:3.15.1-1ubuntu1
 
 ## Удалить старое ядро
 
-```bash
+```shell
 ls /boot/
 sudo apt-get purge -f linux-image-3.5.0-17-generic
-sudo apt-get update; sudo apt-get upgrade; sudo apt-get dist-upgrade
+sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade
 ```
 
 
 
 ## Как добавлять и удалять драйверы и модули ядра в ОС Linux
 
-```bash
+```shell
 ls /lib/modules/$(uname -r)
 ```
 
 
 ### Добавление модуля foo
 
-```bash
+```shell
 sudo modprobe foo
 ```
 
 
 ### Список всех загруженных модулей
 
-```bash
+```shell
 lsmod
 ```
 
@@ -75,13 +75,13 @@ lsmod
 
 Добавьте опцию `-r` к команде `modprob`, чтобы удалить модуль
 
-```bash
+```shell
 sudo modprobe -r foo
 ```
 
 Так же можно использовать команду `rmmod`, которая является простой программой для удаления модуля из ядра Linux
 
-```bash
+```shell
 sudo rmmod foo
 ```
 
@@ -91,13 +91,13 @@ sudo rmmod foo
 
 Отправитель
 
-```bash
+```shell
 nc vovanr.local 2214 | tar xz
 ```
 
 Получатель
 
-```bash
+```shell
 tar cz README.md | nc -l -p 2214
 ```
 
@@ -105,7 +105,7 @@ tar cz README.md | nc -l -p 2214
 
 ## Обращение к компьютеру по сети
 
-```bash
+```shell
 avahi-browse -a
 ```
 
@@ -115,11 +115,11 @@ avahi-browse -a
 
 ### Список файлов
 
-```bash
+```shell
 find ./ -type f -exec echo {} \;
 ```
 
-```bash
+```shell
 find ./ -iregex '.*\(mp3\|mp4\|exe\)' -printf '%f\n'
 find ./ -iregex '.*\(mp3\|mp4\|exe\)' -printf '%f\0' | xargs -0 dosomething
 find ./ -iregex '.*\(mp3\|mp4\|exe\)' -exec subl {}\;
@@ -129,21 +129,21 @@ find ./ -iregex '.*\(mp3\|mp4\|exe\)'
 
 ### Найти и заменить в файлах
 
-```bash
+```shell
 find ./ -type f -name "*.js" -print0 | xargs -0 sed -i '' -e 's/foo/bar/g'
 find ./ -type f -name "*.js" -exec perl -pi -e "s/ {4,4}'AjaxLinks',?\n//g" '{}' \;
 ```
 
-Если в регекспе нет одинарных кавычек, то регексп оборачивается не в двойные, а одинарные:
+Если в регулярке нет одинарных кавычек, то она оборачивается не в двойные, а одинарные:
 
-```bash
+```shell
 find ./ -type f -name "*.js" -exec perl -pi -e 's/^    \$\, _\, Backbone/    \$,\n    _,\n    Backbone/g' '{}' \;
 ```
 
 
 ### cut
 Вывести нужные колонки
-```bash
+```shell
 cut -d ' ' -f3,5,8 ./foo.txt
 ```
 Выводит 3, 5 и 8 колонки из файла. Разделитель задаётся через `-d`
@@ -153,55 +153,55 @@ cut -d ' ' -f3,5,8 ./foo.txt
 
 Выводит дерево каталога, исключая 2 папки
 
-```bash
+```shell
 tree -I 'node_modules|vendor'
 ```
 
 
 ### Конвертировать line endings (конец строки) from Windows to Unix
 
-```bash
+```shell
 find ./ -type f -name "*.php" -exec dos2unix {} \;
 ```
 
 
 ### Удалить доки
 
-```bash
+```shell
 find ./ -type f -name "*.doc*" -exec rm {} \;
 ```
 
 
 ### Расширение файла в нижний регистр переименовать
 
-```bash
+```shell
 find ./ -type f -exec rename "s/\.JPG$/.jpg/" *.jpg {} \;
 ```
 
 
 ### Заменить пробелы на подчеркивания
 
-```bash
+```shell
 find ./ -type f -exec rename "s/ /_/" *.jpg {} \;
 ```
 
 
 ### Имена файлов из русского в транслит
 
-```bash
+```shell
 find ./ -type f -exec totranslit.sh {} \;
 ```
 
 И папки
 
-```bash
+```shell
 find ./ -type d -exec totranslit.sh {} \;
 ```
 
 
 ### Прочесть данные из файла экселя
 
-```bash
+```shell
 cat <(unzip -p /Users/bolk/Downloads/spisokl-gorodov.xlsx xl/sharedStrings.xml |
 awk -v RS=t '/^>.*<\/$/ {gsub("[<>/]", ""); print $0}' |
 tr "[:upper:]" "[:lower:]" |
@@ -212,13 +212,13 @@ pypy slovohod.py /dev/stdin моибуквы
 
 ### Зашифровать папку
 
-``` sh
+```shell
 tar -cvpj /path/to/directory | openssl aes-256-cbc -kfile /path/to/enc.key | split -d -b 4000m - backup.tar.bz2.enc.
 ```
 
 Расшифровать:
 
-```bash
+```shell
 cat backup.tar.bz2.enc.* | openssl aes-256-cbc -d -kfile /path/to/enc.key | tar xvjf -
 ```
 
@@ -227,7 +227,7 @@ cat backup.tar.bz2.enc.* | openssl aes-256-cbc -d -kfile /path/to/enc.key | tar 
 
 See: http://www.thegeekstuff.com/2010/04/unix-tar-command-examples/
 
-```bash
+```shell
 tar cvf archive_name.tar dirname/
 tar cvzf archive_name.tar.gz dirname/
 tar cvfj archive_name.tar.bz2 dirname/
@@ -236,7 +236,7 @@ tar cvfj archive_name.tar.bz2 dirname/
 
 ### Разархивация разархивировать
 
-```bash
+```shell
 tar xvf archive_name.tar
 tar xvfz archive_name.tar.gz
 tar xvfj archive_name.tar.bz2
@@ -244,7 +244,7 @@ tar xvfj archive_name.tar.bz2
 
 Выборочный файл или директорию
 
-```bash
+```shell
 tar xvf archive_file.tar /path/to/file
 tar xvf archive_file.tar /path/to/dir/
 tar xvf archive_file.tar /path/to/dir1/ /path/to/dir2/
@@ -256,35 +256,35 @@ tar xvfj archive_file.tar.bz2 /path/to/dir/
 
 Файлы по расширению
 
-```bash
+```shell
 tar xvf archive_file.tar --wildcards '*.pl'
 ```
 
 В выбранную директорию
 
-```bash
+```shell
 tar -xzf foo.tar.gz -C bar/
 ```
 
 
 ### Поиск текста в файлах
 
-```bash
+```shell
 ack-grep -lr fancybox ./
 ack-grep -r --type=js  fancybox ./
 ack-grep -r --ignore-dir=CACHE --type=js ^require ./ > lol.txt
 ```
 
-Игнор регистра букв
+Игнорировать регистра букв
 
-```bash
+```shell
 ack-grep -i
 ```
 
 
 ## SSH по PEM ключу
 
-```bash
+```shell
 cmod 600 path/to/key.pem
 ssh username@ip -i path/to/key.pem
 ```
@@ -293,7 +293,7 @@ ssh username@ip -i path/to/key.pem
 
 ## Монтируем шифрованный раздел
 
-```bash
+```shell
 sudo mkdir /media/myUSB
 sudo ecryptfs-unwrap-passphrase /media/DISK/.ecryptfs/USERNAME/.ecryptfs/wrapped-passphrase
 	system password
@@ -320,7 +320,7 @@ sudo umount -t ecryptfs /media/myUSB
 
 ## Вес размер каталога
 
-```bash
+```shell
 du -sh .git
 ```
 
@@ -330,7 +330,7 @@ du -sh .git
 
 ### Ресайз картинок
 
-```bash
+```shell
 find ./ -type f -exec vresize.sh {} \;
 ```
 
@@ -343,28 +343,27 @@ find ./ -type f -exec vresize.sh {} \;
 - See: http://www.imagemagick.org/Usage/montage/
 - See: http://www.imagemagick.org/script/montage.php
 
-```bash
+```shell
 montage -background transparent -tile 1x7 -geometry 25x25 money01.png money02.png money03.png money04.png money05.png money06.png money07.png money08.png money09.png money10.png money.png
 ```
 
-```bash
+```shell
 montage -background transparent -tile f1x -geometry +0+1 facebook.png  lj.png  mail.png  ok.png  twitter.png  vk.png  ya.png sprite-share-big.png
 ```
 
-```bash
+```shell
 montage -background transparent -tile x1 -geometry +0+0 attack-aniimation__strafe_* attack-aniimation__strafe.png
 ```
 
 
 ## Наложение ватермарки
-```bash
-composite -compose color-burn -gravity Center ~/Desktop/watermark/watermark.jpg ~/Desktop/watermark/photo.jpg ~/Desktop/result.jpg; open ~/Desktop/result.jpg;
+```shell
+composite -compose color-burn -gravity Center ./watermark.jpg ./photo.jpg ./result.jpg
 ```
 
 
-## Ресайз ImageMagick
-
-```bash
+## Ресайз картинки ImageMagick
+```shell
 identify -format "%wx%h" $ARG
 cat enter.txt | xargs sh ~/.local/bin/cropp.sh
 nano ~/.local/bin/cropp.sh
@@ -374,43 +373,44 @@ nano enter.txt
 
 595x490
 
-```bash
+```shell
 convert $ARG -crop "522x388+35+31" $ARG
 ```
 
 300x247
 
-```bash
+```shell
 convert $ARG -crop "263x196+18+16" $ARG
 ```
 
 218x180
 
-```bash
+```shell
 convert $ARG -crop "191x143+12+11" $ARG
 ```
 
 
 ## Обрезать прозрачную область картинки ImageMagick
 
-```bash
+```shell
 convert images/restore.png -trim +repage images/restore.png
 ```
 
 
 ## Создаем анимированную гифку
 
-```bash
+```shell
 convert -delay 32 -loop 0 anim* anim.gif
 ```
 
 
 ## base64
 
-```bash
-base64 -w 0 DSC_0251.JPG > DSC_0251.JPG.base64
-"data:image/jpeg;base64,<HASH>"
+```shell
+base64 -w 0 image.jpg > image.jpg.base64
 ```
+Выдаст `<HASH>`, добавляем данные о формате файла
+`"data:image/jpeg;base64,<HASH>"`
 
 
 
@@ -418,14 +418,14 @@ base64 -w 0 DSC_0251.JPG > DSC_0251.JPG.base64
 
 ### Нарезать большой архив на части
 
-```bash
+```shell
 split -b 100m archive.tar.gz archive.
 ```
 
 На выхлопе получим файлы по 100 метров с именами `archive.aa` `archive.ab` `archive.ac` ...
 Собрать все это в архив обратно:
 
-```bash
+```shell
 cat archive.?? > archive.tar.gz
 ```
 
@@ -433,9 +433,9 @@ cat archive.?? > archive.tar.gz
 
 ## rsync
 
-### Забрать каталог data с удаленного сервера
+### Забрать каталог `data` с удаленного сервера
 
-```bash
+```shell
 rsync -avz USER@HOST:/usr/local/www/data/foo.ru/www/data/ ./
 rsync -avz -e ssh USER@HOST:~/www/data ./
 rsync -avz -e "ssh -p 6666" USER@HOST:~/www/data ./
@@ -443,22 +443,22 @@ rsync -avz -e "ssh -p 6666" USER@HOST:~/www/data ./
 
 ### Загрузить файл на сервер
 
-```bash
+```shell
 rsync -a www/css/main.css USER@HOST:www/css/
 ```
 
 
 ### Бэкапим
 
-```bash
+```shell
 rsync -avz --progress --delete '/media/username/Documents/Мои документы' /media/My-Book-Live/backup --exclude ".*" --exclude "Thumbs.db"
 ```
 
 
 
-## SCP COPY OVER SSH
+## SCP copy over SSH
 
-```bash
+```shell
 scp -r USER@HOST:~/www/data ./
 ```
 
@@ -468,15 +468,15 @@ scp -r USER@HOST:~/www/data ./
 
 ### Скачать список файлов
 
-```bash
-wget -i LIST.TXT
+```shell
+wget -i list.txt
 ```
 
 
 
 ## patch
 
-```bash
+```shell
 patch <file_destination> <file_patch>
 ```
 
@@ -484,7 +484,7 @@ patch <file_destination> <file_patch>
 
 ## IP
 
-```bash
+```shell
 nslookup ya.ru
 ```
 
@@ -494,7 +494,7 @@ nslookup ya.ru
 
 See: http://serverfault.com/questions/20702/how-do-i-create-user-accounts-from-the-terminal-in-mac-os-x-10-5
 
-```bash
+```shell
 sudo dscl . list groups gid
 sudo dscl . list /Users uid
 ```
@@ -505,18 +505,18 @@ sudo dscl . list /Users uid
 
 ### Импортировать дамп
 
-```bash
+```shell
 mysql -f -h DBSRV -u USERNAME --default-character-set=utf8 DBNAME < dump.sql
 ```
 
 
 ### mysqldump
 
-Снять дамп базы данных на сервере
-Подключаемся по ssh
+Снять дамп базы данных на сервере  
+Подключаемся по `ssh`  
 Начинается с пробела — чтобы пароль не попал в `history`
 
-```bash
+```shell
  mysqldump -h DBSRV -u USERNAME -pPASSWORD --skip-opt --add-locks --lock-tables --extended-insert --create-options -cq DBNAME > dump.sql
 ```
 
@@ -524,11 +524,11 @@ mysql -f -h DBSRV -u USERNAME --default-character-set=utf8 DBNAME < dump.sql
 
 ## cron
 
-```bash
+```shell
 crontab -e
 ```
 
-```
+```cron
 MAILTO="mail@gmail.com"
 PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
 22 2      *       *       *      /usr/bin/php ~/www/example.com/req/cron/parce_1c.php
@@ -539,7 +539,7 @@ PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
 
 ## Список установленных пакетов
 
-```bash
+```shell
 dpkg --get-selections | grep -v deinstall
 ```
 
@@ -551,40 +551,40 @@ dpkg --get-selections | grep -v deinstall
 
 Список свернутых программ
 
-```bash
+```shell
 jobs
 ```
 
 Восстановить
 
-```bash
+```shell
 %1
 ```
 
-Продолжить выполнение проги в бэкграунде
+Продолжить выполнение программы в бэкграунде
 
-```bash
+```shell
 bg %1
 ```
 
 
 
-```bash
+```shell
 sudo update-alternatives --config x-cursor-theme
 sudo update-alternatives --config x-www-browser
 ```
 
 
-Переименовать комп (rename pc hostname)
+Переименовать компьютер (rename pc hostname)
 Вся инфа: просто `hostnamectl`
 
-```
+```shell
 sudo hostnamectl set-hostname vovanr-laptop
 ```
 
 Переименовать в хостах (вторая строка)
 
-```
+```shell
 sudo vim /etc/hosts
 ```
 
@@ -722,7 +722,7 @@ site=(${1//./ })
 
 
 ## Вывести все IP-адреса из файлов логов
-```
+```shell
 grep -roE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'
 ```
 
