@@ -1,6 +1,4 @@
 .back-to-top {
-    font-size: 12px;
-    height: 1.5em;
 }
 .back-to-top__link {
     position: fixed;
@@ -8,14 +6,8 @@
     left: 0;
     right: 0;
     display: block;
-    text-align: center;
-    background-color: #f8f8f8;
-    border-top: 1px solid #e7e7e7;
-    color: #777;
-}
-.back-to-top__link:hover {
-    color: #333;
-    text-decoration: none;
+    border-radius: 0;
+    padding: 0;
 }
 
 .h1,
@@ -55,9 +47,8 @@ h6 {
 
 pre {
     background-color: #fff;
-    border-color: #ddd;
-    border-radius: 0;
-    overflow: auto;
+    border: 1px solid #ddd;
+    padding: 7px 10px;
 }
 pre code {
     white-space: pre;
@@ -99,13 +90,14 @@ pre code {
     list-style-type: none;
 }
 .nav-submenu a {
-    display: block;
-    padding: 2px 5px;
+    --nav-submenu-first-line-indent: 0.7em;
+
+    display: inline-block;
+    padding: 7px 0;
     text-decoration: none;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 100%;
+    line-height: 1.2;
+    text-indent: calc(-1 * var(--nav-submenu-first-line-indent));
+    padding-left: var(--nav-submenu-first-line-indent);
 }
 
 .rendered-note {
@@ -131,26 +123,9 @@ pre code {
 }
 
 .navbar {
-    border-radius: 0;
+    margin-bottom: 20px;
 }
-.container > .navbar-header {
-    float: left;
-    margin-right: 0;
-    margin-left: 0;
-}
-.navbar-brand {
-    margin-left: -15px;
-}
-.navbar-text {
-    float: left;
-    margin-right: 15px;
-    margin-left: 15px;
-}
-.navbar-right {
-    float: right;
-    margin: 0 -15px 0 0;
-}
-.navbar-nav > li > a {
-    padding-top: 15px;
-    padding-bottom: 15px;
+
+.progress {
+    margin-bottom: 20px;
 }
