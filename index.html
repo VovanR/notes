@@ -28,14 +28,14 @@
     <meta name="msapplication-TileImage" content="/mstile-144x144.png?v=rMMKb0vWEj">
     <meta name="theme-color" content="#154489">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/styles/github.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
     <link rel="stylesheet" href="index.css?v=2">
 </head>
 <body>
 
 <a name="anchor-top"></a>
-<div class="navbar navbar-default">
+<div class="navbar navbar-dark bg-dark">
     <div class="container">
         <div class="navbar-header">
             <span class="navbar-brand">
@@ -43,17 +43,15 @@
             </span>
         </div>
 
-        <p class="navbar-text">
+        <span class="navbar-text">
             Under construction
-        </p>
+        </span>
 
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-                <a href="https://github.com/VovanR/notes">
-                    View on GitHub
-                </a>
-            </li>
-        </ul>
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="https://github.com/VovanR/notes">
+                View on GitHub
+            </a>
+        </div>
     </div>
 </div>
 
@@ -63,7 +61,7 @@
             <div class="col-md-12">
                 <div class="progress">
                     <div
-                        class="progress-bar progress-bar-success"
+                        class="progress-bar"
                         role="progressbar"
                         style="width: 100%;"
                         aria-valuenow="100"
@@ -79,19 +77,18 @@
 
 <div class="back-to-top">
     <a
-        class="back-to-top__link"
+        class="btn btn-sm btn-outline-secondary back-to-top__link"
         href="#anchor-top"
         >
         Back to top
     </a>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.30.7/react-bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react-router/2.0.0/ReactRouter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.1/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.1/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.31.5/react-bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.12.0/babel.min.js"></script>
 <script>

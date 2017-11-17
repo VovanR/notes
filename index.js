@@ -21,11 +21,10 @@
 		'RegExp',
 		'Tmux',
 		'TypeScript',
-		'Vim'
+		'Vim',
 	]
 
 	const {Grid, Row, Col, Panel, ProgressBar} = ReactBootstrap
-	const {Router, Route, Link} = ReactRouter
 	const markedRenderer = new marked.Renderer()
 
 	// Note `h2` headers collection
@@ -72,15 +71,15 @@
 						<li
 							key={index}
 							className={active === index ? 'active' : ''}
-							>
+						>
 							<a
 								href={note.url}
 								onClick={this.handleSelect.bind(this, index)}
-								>
+							>
 								{note.name}
 							</a>
 
-							{note.h2 ? (<SubMenu items={note.h2}/>) : false}
+							{note.h2 && <SubMenu items={note.h2}/>}
 						</li>
 					))}
 				</ul>
@@ -95,7 +94,7 @@
 					<a
 						href={item.url}
 						dangerouslySetInnerHTML={{__html: item.name}}
-						/>
+					/>
 				</li>
 			))}
 		</ul>
@@ -175,7 +174,7 @@
 								active={isLoading ? true : false}
 								bsStyle={isLoading ? '' : 'success'}
 								now={100}
-								/>
+							/>
 						</Col>
 
 						<Col md={3}>
@@ -184,7 +183,7 @@
 									notes={notes}
 									active={activeIndex}
 									onSelect={this.handleSelect}
-									/>
+								/>
 							</Panel>
 						</Col>
 
@@ -194,7 +193,7 @@
 									<div
 										className="rendered-note"
 										dangerouslySetInnerHTML={{__html: active.data}}
-										/>
+									/>
 								) : null}
 							</Panel>
 						</Col>
