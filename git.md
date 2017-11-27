@@ -2,6 +2,8 @@
 
 ----
 
+- See: https://github.com/Imangazaliev/git-tips
+
 ## Удачное ветвление git-flow
 See: http://habrahabr.ru/post/106912/
 
