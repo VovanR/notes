@@ -617,3 +617,29 @@ class Person {
     }
 }
 ```
+
+
+## Reselect
+See: https://github.com/reactjs/reselect
+```js
+import { createSelector } from 'reselect'
+import { fromJS } from 'immutable'
+import { selectData } from '../selectors'
+import { createIdMapFromList } from 'utils'
+
+export const selectItems = createSelector(
+  [selectData],
+  (data) => data.get('items')
+)
+
+export const getItemsIdMap = createSelector(
+  [selectItems],
+  (items) => fromJS(createIdMapFromList(items.toJS()))
+)
+
+export const getItemById = (id, state) => getItemsIdMap(state).get(id)
+```
+Usage
+```js
+const item = getItemById(33, getState())
+```
