@@ -652,7 +652,7 @@ git stash show stash@{0}
 
 Применить изменения из одного файла в стэше
 ```
-git checkout  stash@{0} -- ./src/index.js
+git checkout stash@{0} -- ./src/index.js
 ```
 
 Отличия в `stash` от текущего состояния
