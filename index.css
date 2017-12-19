@@ -101,6 +101,7 @@ pre code {
 }
 
 .rendered-note {
+    margin-bottom: 45px;
 }
 
 .rendered-note ul,
