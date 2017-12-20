@@ -149,12 +149,37 @@ cut -d ' ' -f3,5,8 ./foo.txt
 Выводит 3, 5 и 8 колонки из файла. Разделитель задаётся через `-d`
 
 
-### Tree ignore
-
+### tree
 Выводит дерево каталога, исключая 2 папки
-
 ```shell
 tree -I 'node_modules|vendor'
+```
+
+Показать структуру директории на 3 уровнями вглубь  
+С размерами файлов и включая скрытые директории
+```shell
+tree -LhaC 3
+```
+
+
+### head
+Вывести первые 5 строк
+```shell
+head -n5 <filename>
+```
+
+
+### tail
+Вывести последние 5 строк
+```shell
+tail -n5 <filename>
+```
+
+
+### column
+Отобразить разделенный запятыми файл в виде столбцов
+```shell
+column -s, -t <delimited_file>
 ```
 
 
@@ -196,6 +221,12 @@ find ./ -type f -exec totranslit.sh {} \;
 
 ```shell
 find ./ -type d -exec totranslit.sh {} \;
+```
+
+
+### sed
+```shell
+sed -i "s/{find}/{replace}/g" <filename>
 ```
 
 
