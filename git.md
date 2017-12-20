@@ -670,3 +670,31 @@ git diff --name-only stash@{0} HEAD
 See: https://github.com/VovanR/test-rebase/wiki  
 Бывает начинаешь фичу (**feature-2**), в которой нужны изменения из параллельно разрабатываемой фичи (**feature-1**).
 Подводный камни: если в **feature-1** удалить коммит через `rebase`, то, после мержа **feature-1** и ребейза **feature-2**, коммит может остаться в истории.
+
+
+
+## Удалить remove untracked files
+```shell
+git clean -f
+```
+
+Удалить файлы и директории
+```shell
+git clean -fd
+```
+
+Удалить `ignored` файлы
+```shell
+git clean -fX
+```
+
+Удалить `ignored` и `untracked` файлы
+```shell
+git clean -fX
+```
+
+Показать список файлов, которые будут удалены
+```shell
+git clean -n
+git clean --dry-run
+```
