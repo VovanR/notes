@@ -647,7 +647,7 @@ esac
 ### Download array
 See: https://github.com/oranja/diff-so-fancy/blob/96b6ca05777123865986aec98d2d7d03a73ec7ed/update-deps.sh
 ```bash
-#!/bin/bash
+#!/usr/bin/env bash
 
 URL_BASE="https://url"
 FILES=( "Foo.md" "Bar.js" )
