@@ -2,6 +2,17 @@
 
 ----
 
+## Обновление глобальных пакетов
+See: https://docs.npmjs.com/getting-started/updating-global-packages
+```shell
+npm outdated -g --depth=0
+```
+```shell
+npm update -g
+```
+
+
+
 ## Записать в файл
 ```javascript
 var stream = fs.createWriteStream(filePath);
@@ -17,7 +28,7 @@ stream.once('open', function (fd) {
 - See: https://docs.npmjs.com/getting-started/publishing-npm-packages
 - See: https://docs.npmjs.com/misc/developers#before-publishing-make-sure-your-package-installs-and-works
 
-```bash
+```shell
 npm version 0.2.2
 git push
 git push --tags
@@ -28,7 +39,7 @@ npm i -g bemstyla
 
 
 ## Для тестирования локального пакета (вместо `link`)
-```bash
+```shell
 cd ~/work/bemstyla/
 npm i -g .
 ```
@@ -36,14 +47,14 @@ npm i -g .
 
 
 ## Новый тэг в гите
-```bash
+```shell
 git tag -a v1.1.0
     1.1.0
 ```
 
 
 ## Авторизоваться в `npm`
-```bash
+```shell
 npm adduser
     username
     password
