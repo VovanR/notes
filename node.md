@@ -23,6 +23,12 @@ stream.once('open', function (fd) {
 ```
 
 
+## Прочитать файл
+```js
+const schemaRaw = fs.readFileSync('./schema.graphql', 'utf-8')
+```
+
+
 
 ## Изменяем версию пакета и публикуем ее
 - See: https://docs.npmjs.com/getting-started/publishing-npm-packages
