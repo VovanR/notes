@@ -19,6 +19,7 @@
 		'Python',
 		'React',
 		'RegExp',
+		'SVG',
 		'Tmux',
 		'TypeScript',
 		'Vim',
