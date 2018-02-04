@@ -22,6 +22,7 @@
 		'SVG',
 		'Tmux',
 		'TypeScript',
+		'Typography',
 		'Vim',
 	]
 
