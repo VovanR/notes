@@ -29,6 +29,21 @@ const schemaRaw = fs.readFileSync('./schema.graphql', 'utf-8')
 ```
 
 
+## Преобразовать файл
+```js
+const fs = require('fs');
+
+const items = fs.readFileSync('./items.json', 'utf-8')
+const itemsArray = JSON.parse(items)
+const slugsArray = itemsArray.map(item => item.slug)
+
+const urlsArray = slugsArray.map(slug => `https://example.com/static/img/items/64x64/${slug}.png`)
+const content = urlsArray.join('\n')
+
+fs.writeFile('./urls', content)
+```
+
+
 
 ## Изменяем версию пакета и публикуем ее
 - See: https://docs.npmjs.com/getting-started/publishing-npm-packages
