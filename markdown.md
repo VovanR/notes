@@ -57,3 +57,42 @@ See: [Markdown Tables Generator](http://www.tablesgenerator.com/markdown_tables)
 | /api/books/:id | PUT         | Обновление книги с идентификатором :id                         |
 | /api/books/:id | DELETE      | Удаление книги с идентификатором :id                           |
 ```
+
+
+## Collapse collapsable spoiler
+Single space before `<summary>` tag **is required!**<br>
+Single empty line before collapsed code **is required!**
+```markdown
+    <details>
+     <summary>Summary</summary>
+
+    ```js
+    const x = 1
+    ```
+    </details>
+```
+Demo:
+<details>
+ <summary>Summary</summary>
+
+```js
+const x = 1
+```
+</details>
+
+With default summary
+```markdown
+    <details>
+    
+    ```js
+    const x = 1
+    ```
+    </details>
+```
+Demo:
+<details>
+
+ ```js
+ const x = 1
+ ```
+</details>
