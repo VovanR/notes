@@ -60,6 +60,8 @@ See: [Markdown Tables Generator](http://www.tablesgenerator.com/markdown_tables)
 
 
 ## Collapse collapsable spoiler
+See: https://github.com/dear-github/dear-github/issues/166<br>
+
 Single space before `<summary>` tag **is required!**<br>
 Single empty line before collapsed code **is required!**
 ```markdown
