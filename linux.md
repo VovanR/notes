@@ -305,3 +305,10 @@ sudo pip2 install neovim
 ```shell
 sudo pip3 install neovim
 ```
+
+
+### Записать демо терминала (записать гифку .gif)
+See: https://github.com/marionebl/svg-term-cli
+```shell
+svg-term --cast=113643 --out examples/parrot.svg --window
+```
