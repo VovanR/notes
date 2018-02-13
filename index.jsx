@@ -1,4 +1,4 @@
-(function () {
+(function (React, ReactDOM, marked, hljs) {
 	'use strict'
 
 	// Exists notes list
@@ -25,6 +25,7 @@
 		'Typography',
 		'Vim',
 	]
+	const SITE_SOURCE_URL = 'https://github.com/VovanR/notes/blob/gh-pages/'
 
 	const {Grid, Row, Col, Panel, ProgressBar} = ReactBootstrap
 	const markedRenderer = new marked.Renderer()
@@ -53,6 +54,7 @@
 	class Menu extends React.Component {
 		constructor(props) {
 			super(props)
+
 			this.handleSelect = this.handleSelect.bind(this)
 		}
 
@@ -103,16 +105,21 @@
 	)
 
 	class App extends React.Component {
-		constructor() {
-			super()
-			const collection = (() => {
-				return NOTES.map(note => ({
+		constructor(props) {
+			super(props)
+
+			const collection = NOTES.map(note => {
+				const filename = `${note.toLowerCase()}.md`
+
+				return {
 					name: note,
-					url: new URL(`${note.toLowerCase()}.md`, location).href,
+					sourceURL: new URL(filename, SITE_SOURCE_URL).href,
+					url: new URL(filename, location).href,
 					data: null,
 					subitems: null
-				}))
-			})()
+				}
+			})
+
 			this.state = {
 				notes: collection,
 				active: null,
@@ -191,12 +198,24 @@
 
 						<Col md={9}>
 							<Panel>
-								{active.data ? (
+								{active.sourceURL && (
+									<div className="note-source">
+										<a
+											href={active.sourceURL}
+											target="_blank"
+											rel="noopener"
+										>
+											Note source code on GitHub
+										</a>
+									</div>
+								)}
+
+								{active.data && (
 									<div
 										className="rendered-note"
 										dangerouslySetInnerHTML={{__html: active.data}}
 									/>
-								) : null}
+								)}
 							</Panel>
 						</Col>
 					</Row>
@@ -206,4 +225,4 @@
 	}
 
 	ReactDOM.render(<App/>, document.getElementById('app'))
-})()
+})(React, ReactDOM, marked, hljs)
