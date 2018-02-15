@@ -2,6 +2,8 @@
 
 ----
 
+- See: https://github.com/tutsplus/how-to-hand-code-svg https://webdesign.tutsplus.com/tutorials/how-to-hand-code-svg--cms-30368
+
 ## Circle
 
 ```svg
