@@ -37,3 +37,11 @@ a{2,10}?e
 ```
 java(?:script)?
 ```
+
+
+
+## Удалить не буквы
+```js
+"o'dowd, roy mn.".replace(/[^\w ]/ig, '')
+//=> "odowd roy mn"
+```
