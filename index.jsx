@@ -14,6 +14,7 @@
 		'JavaScript',
 		'Linux',
 		'Markdown',
+		'MongoDB',
 		'Node',
 		'PostgreSQL',
 		'Pug',
