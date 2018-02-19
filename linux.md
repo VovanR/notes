@@ -10,6 +10,22 @@ xflock4		Super + l
 
 
 
+## Window manager shortcuts
+### XFCE
+`A` + `Tab` — for cycling and changing windows
+
+`Super` + `Tab` — for cycling windows for the same application
+
+`A` + `F5` — for maximizing windows horizontally
+
+`A` + `F6` — for maximizing windows vertically
+
+`A` + `F7` — for maximizing windows
+
+`A` + `Space` — for the window operations menu
+
+
+
 ## Узнать код клавиши
 ```
 showkey -a
