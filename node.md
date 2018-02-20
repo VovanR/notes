@@ -81,3 +81,8 @@ npm adduser
     password
     mail@gmail.com
 ```
+
+
+## Интерфейсы командной строки cli
+See: https://github.com/SBoudrias/Inquirer.js
+See: https://github.com/sindresorhus/fkill-cli/blob/master/cli.js
