@@ -3,18 +3,18 @@
 
 ## Add new note
 1. add `foo.md`
-  <pre lang="md"><code>
-  # Foo
+   <pre lang="md"><code>
+   # Foo
   
-  ----
+   ----
   
-  - See: https://www.postgresql.org/
+   - See: https://www.postgresql.org/
   
-  ## Install
-  ```shell
-  sudo apt-get install postgresql postgresql-contrib libpq5 libpq-dev pgadmin3
-  ```
-  </code></pre>
+   ## Install
+   ```shell
+   sudo apt-get install postgresql postgresql-contrib libpq5 libpq-dev pgadmin3
+   ```
+   </code></pre>
 
 1. append `Foo` to [`NOTES`](index.jsx#L5)
 
