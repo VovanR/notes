@@ -3,7 +3,7 @@
 
 ## Add new note
 1. add `foo.md`
-2. append `Foo` to [`NOTES`](index.js#L5)
+2. append `Foo` to [`NOTES`](index.jsx#L5)
 
 ## Edit gh-pages
 ```bash
