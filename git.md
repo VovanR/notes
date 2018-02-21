@@ -627,47 +627,56 @@ git push origin dev:dev
 Для этого сохраняем текущие изменения в `stash`, потом их можно будет восстановить:  
 
 Сохранить изменения
-```
+```shell
 git stash
 ```
 
 Восстановить изменения
-```
+```shell
 git stash pop
 ```
 
 Список сохранённых изменений
-```
+```shell
 git stash list
 ```
 
-Применить изменения, не удаляя из списка
+Удалить
+```shell
+git stash drop stash@{3}
 ```
+
+Применить изменения, не удаляя из списка
+```shell
 git stash apply
 ```
 
 Можно пользоваться индексом, например надо восстановить `stash@{3}`  
 Чем больше индекс, тем старее. Последний добавленный `stash` имеет индекс `stash@{0}`
-```
+```shell
 git stash apply stash@{3}
 ```
 
 Список изменённых файлов
-```
+```shell
 git stash show stash@{0}
+```
+Показать изменения в файлах (diff)
+```shell
+git stash show stash@{0} -p
 ```
 
 Применить изменения из одного файла в стэше
-```
+```shell
 git checkout stash@{0} -- ./src/index.js
 ```
 
 Отличия в `stash` от текущего состояния
-```
+```shell
 git diff stash@{0} HEAD
 ```
 Показать только имена файлов
-```
+```shell
 git diff --name-only stash@{0} HEAD
 ```
 
