@@ -2,6 +2,11 @@
 
 ----
 
+## Таблица поддержки ECMAScript версиями Node.js
+See: http://node.green/
+
+
+
 ## Обновление глобальных пакетов
 See: https://docs.npmjs.com/getting-started/updating-global-packages
 ```shell
