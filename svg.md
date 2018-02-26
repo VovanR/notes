@@ -11,3 +11,14 @@
     <circle cx="60" cy="60" r="50" fill="rgba(0, 0, 0, 0.72)"/>
 </svg>
 ```
+
+
+## Оптимизация
+See: https://github.com/svg/svgo
+```shell
+svgo test.svg
+```
+
+
+## Редактор
+See: https://inkscape.org/
