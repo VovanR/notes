@@ -56,13 +56,42 @@
 		constructor(props) {
 			super(props)
 
+			this.state = {
+				showSubmenu: true,
+			}
+
 			this.handleSelect = this.handleSelect.bind(this)
+		}
+
+		componentWillReceiveProps(nextProps) {
+			if (
+				this.props.isActive !== nextProps.isActive &&
+				this.state.showSubmenu === false
+			) {
+				this.setState({showSubmenu: true})
+			}
 		}
 
 		handleSelect(e) {
 			e.preventDefault()
 
-			this.props.onSelect(this.props.note.id)
+			const {
+				isActive,
+				note,
+				onSelect,
+			} = this.props
+
+			if (!isActive) {
+				onSelect(note.id)
+				return
+			}
+
+			if (isActive && note.h2) {
+				this.setState(prevState => ({
+					showSubmenu: !prevState.showSubmenu,
+				}))
+				return
+			}
 		}
 
 		render() {
@@ -83,7 +112,7 @@
 						{isLoading && <span className="nav-menu__spinner"/>}
 					</a>
 
-					{note.h2 && <SubMenu items={note.h2}/>}
+					{this.state.showSubmenu && note.h2 && <SubMenu items={note.h2}/>}
 				</li>
 			)
 		}
