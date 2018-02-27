@@ -163,24 +163,25 @@
 			return this.getNoteById(this.state.activeNoteId)
 		}
 
-		fetchCurrentNote() {
-			const currentNote = this.getActiveNote()
+		fetchCurrentNote(noteId) {
+			const loadingNote = this.getNoteById(noteId)
 
-			if (currentNote.data) {
+			if (loadingNote.data) {
+				this.setState({activeNoteId: noteId})
 				return
 			}
 
 			this.setState({
 				isLoading: true,
-				loadingNoteId: currentNote.id
+				loadingNoteId: loadingNote.id
 			})
 
-			fetch(currentNote.url)
+			fetch(loadingNote.url)
 				.then(response => response.text())
 				.then(data => {
 					// Clear `h2` collection
 					h2s = []
-					currentNote.data = marked(
+					loadingNote.data = marked(
 						data,
 						{
 							sanitize: true,
@@ -190,8 +191,9 @@
 						}
 					)
 					// Write `h2` collection
-					currentNote.h2 = h2s
+					loadingNote.h2 = h2s
 					this.setState({
+						activeNoteId: noteId,
 						isLoading: false,
 						loadingNoteId: null,
 					})
@@ -205,9 +207,7 @@
 		}
 
 		handleSelect(noteId) {
-			this.setState({
-				activeNoteId: noteId,
-			}, () => {this.fetchCurrentNote()})
+			this.fetchCurrentNote(noteId)
 		}
 
 		render() {
