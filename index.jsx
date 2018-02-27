@@ -29,7 +29,7 @@
 	]
 	const SITE_SOURCE_URL = 'https://github.com/VovanR/notes/blob/gh-pages/'
 
-	const {Grid, Row, Col, Panel, ProgressBar} = ReactBootstrap
+	const {Grid, Row, Col, Panel} = ReactBootstrap
 	const markedRenderer = new marked.Renderer()
 
 	// Note `h2` headers collection
@@ -52,41 +52,63 @@
 		return `<h${level} id="${id}"><a href="${url}"></a>${text}</h${level}>`
 	}
 
-	// Main menu
-	class Menu extends React.Component {
+	class MenuItem extends React.Component {
 		constructor(props) {
 			super(props)
 
 			this.handleSelect = this.handleSelect.bind(this)
 		}
 
-		handleSelect(index, e) {
+		handleSelect(e) {
 			e.preventDefault()
-			this.props.onSelect(index)
+
+			this.props.onSelect(this.props.note.id)
 		}
 
 		render() {
 			const {
-				active,
-				notes
+				isLoading,
+				isActive,
+				note,
+			} = this.props
+
+			return (
+				<li className={isActive ? 'active' : ''}>
+					<a
+						href={note.url}
+						onClick={this.handleSelect}
+					>
+						{note.name}
+
+						{isLoading && <span className="nav-menu__spinner"/>}
+					</a>
+
+					{note.h2 && <SubMenu items={note.h2}/>}
+				</li>
+			)
+		}
+	}
+
+	// Main menu
+	class Menu extends React.Component {
+		render() {
+			const {
+				activeNoteId,
+				loadingNoteId,
+				notes,
+				onSelect
 			} = this.props
 
 			return (
 				<ul className="nav-menu">
-					{notes.map((note, index) => (
-						<li
-							key={index}
-							className={active === index ? 'active' : ''}
-						>
-							<a
-								href={note.url}
-								onClick={this.handleSelect.bind(this, index)}
-							>
-								{note.name}
-							</a>
-
-							{note.h2 && <SubMenu items={note.h2}/>}
-						</li>
+					{notes.map(note => (
+						<MenuItem
+							key={note.id}
+							isLoading={note.id === loadingNoteId}
+							isActive={note.id === activeNoteId}
+							note={note}
+							onSelect={onSelect}
+						/>
 					))}
 				</ul>
 			)
@@ -114,6 +136,7 @@
 				const filename = `${note.toLowerCase()}.md`
 
 				return {
+					id: note,
 					name: note,
 					sourceURL: new URL(filename, SITE_SOURCE_URL).href,
 					url: new URL(filename, location).href,
@@ -124,28 +147,40 @@
 
 			this.state = {
 				notes: collection,
-				active: null,
-				isLoading: false
+				activeNoteId: null,
+				isLoading: false,
+				loadingNoteId: null,
 			}
 
 			this.handleSelect = this.handleSelect.bind(this)
 		}
 
-		fetchCurrentNote() {
-			const current = this.state.notes[this.state.active]
+		getNoteById(id) {
+			return this.state.notes.find(note => note.id === id)
+		}
 
-			if (current.data) {
+		getActiveNote() {
+			return this.getNoteById(this.state.activeNoteId)
+		}
+
+		fetchCurrentNote() {
+			const currentNote = this.getActiveNote()
+
+			if (currentNote.data) {
 				return
 			}
 
-			this.setState({isLoading: true})
+			this.setState({
+				isLoading: true,
+				loadingNoteId: currentNote.id
+			})
 
-			fetch(current.url)
+			fetch(currentNote.url)
 				.then(response => response.text())
 				.then(data => {
 					// Clear `h2` collection
 					h2s = []
-					current.data = marked(
+					currentNote.data = marked(
 						data,
 						{
 							sanitize: true,
@@ -155,44 +190,45 @@
 						}
 					)
 					// Write `h2` collection
-					current.h2 = h2s
-					this.setState({isLoading: false})
+					currentNote.h2 = h2s
+					this.setState({
+						isLoading: false,
+						loadingNoteId: null,
+					})
 				})
 				.catch(() => {
-					this.setState({isLoading: false})
+					this.setState({
+						isLoading: false,
+						loadingNoteId: null,
+					})
 				})
 		}
 
-		handleSelect(index) {
+		handleSelect(noteId) {
 			this.setState({
-				active: index,
+				activeNoteId: noteId,
 			}, () => {this.fetchCurrentNote()})
 		}
 
 		render() {
 			const {
-				active: activeIndex,
+				activeNoteId,
 				isLoading,
+				loadingNoteId,
 				notes
 			} = this.state
-			const active = activeIndex !== null ? notes[activeIndex] : {}
+			const active = activeNoteId !== null ? this.getActiveNote() : {}
 
 			return (
 				<Grid>
 					<Row>
-						<Col md={12}>
-							<ProgressBar
-								active={isLoading ? true : false}
-								bsStyle={isLoading ? '' : 'success'}
-								now={100}
-							/>
-						</Col>
-
 						<Col md={3}>
 							<Panel>
 								<Menu
 									notes={notes}
-									active={activeIndex}
+									activeNoteId={activeNoteId}
+									isLoading={isLoading}
+									loadingNoteId={loadingNoteId}
 									onSelect={this.handleSelect}
 								/>
 							</Panel>
@@ -203,6 +239,7 @@
 								{active.sourceURL && (
 									<div className="note-source">
 										<a
+											className="text-muted small"
 											href={active.sourceURL}
 											target="_blank"
 											rel="noopener"
