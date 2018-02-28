@@ -3,6 +3,7 @@
 ----
 
 - See: https://github.com/Imangazaliev/git-tips
+- See: https://githowto.com/ru/amending_commits
 
 ## Удачное ветвление git-flow
 See: http://habrahabr.ru/post/106912/
@@ -84,34 +85,31 @@ git push origin master
 
 
 
-## Git How-To
-See: http://githowto.com/ru/amending_commits
-
-### Настройка
-```
+## Настройка
+```shell
 git config --global user.name "Your Name"
 git config --global user.email "your_email@whatever.com"
 ```
 
 Unix/Mac:
-```
+```shell
 git config --global core.autocrlf input
 git config --global core.safecrlf true
 ```
 
 Windows:
-```
+```shell
 git config --global core.autocrlf true
 git config --global core.safecrlf true
 ```
 
 Global Ignore
-```
+```shell
 git config --global core.excludesfile ~/.gitignore_global
 ```
 
-### Создание проекта
-```
+## Создание проекта
+```shell
 mkdir hello
 cd hello
 touch hello.html
@@ -119,51 +117,64 @@ git init
 git add hello.html
 git commit -m "First Commit"
 ```
-Если вы опустите метку `-m` из командной строки, git перенесет вас в редактор
+Если вы опустите метку `-m` из командной строки, git перенесет вас в редактор<br>
 по вашему выбору. Редактор выбирается из следующего списка (в порядке приоритета)
 - переменная среды `GIT_EDITOR`
 - параметр конфигурации `core.editor`
 - переменная среды `VISUAL`
 - переменная среды `EDITOR`
 
-### Создание тегов версий
+## git tag (тэг, тег)
+Добавить тэг
+```shell
+git tag v0.1.0
 ```
-git tag v1
+Показать тэги
+```shell
 git tag
 ```
+Перейти к тэгу
+```shell
+git checkout v0.1.0
 ```
-git checkout v1^
+Перейти к предыдущему тэгу
+```shell
+git checkout v0.1.0^
 ```
-Вернуться к предшествующей версии
+Удаление тэга
+```shell
+git tag -d v0.1.0
+git push origin :refs/tags/v0.1.0
+```
 
-### Удаление тэга
-```
-git tag -d v1
-git push origin :refs/tags/v1
-```
-
-### Отмена локальных изменений (до индексации)
-```
+## Отмена локальных изменений (до индексации)
+```shell
 git checkout hello.html
 ```
 
-### Отмена коммитов
-```
+## Отмена коммитов
+```shell
 git revert HEAD --no-edit
 ```
 
-### Изменение предыдущего коммита
-```
+## Изменение предыдущего коммита
+```shell
 git commit --amend
 ```
 
-### Перемещение файлов
+Не открывать редактор сообщения коммита
+```shell
+git commit --amend --no-edit
 ```
+
+
+## Перемещение файлов
+```shell
 git mv hello.html lib/
 ```
 
-### Перебазирование `rebase`
-```
+## Перебазирование `rebase`
+```shell
 git checkout style
 git rebase master
 ```
@@ -173,38 +184,48 @@ git rebase master
 
 `rebase` для кратковременных, локальных веток, а слияние для веток в публичном репозитории.
 
-### Что такое `origin`
-```
+## Что такое `origin`
+```shell
 git remote
 git remote show origin
 ```
 
-### Удаленные ветки
-```
+## Удалённые ветки
+Локальные ветки
+```shell
 git branch
 ```
-Покажет только локальные ветки
-```
+Все ветки
+```shell
 git branch -a
 ```
-Выведет все ветки
 
-### Извлечение изменений из удаленной репы
+## Если удалённая ветка всё ещё отображается в `git branch -a`
+```shell
+git remote prune origin
 ```
+Показать какие ветки пропадут
+```shell
+git remote prune origin --dry-run
+```
+
+
+## Извлечение изменений из удаленной репы
+```shell
 git fetch
 ```
 
-### Слияние извлеченных изменений
-```
+## Слияние извлечённых изменений
+```shell
 git merge origin/master
 ```
 
-### Извлечение и слияние изменений
-```
+## Извлечение и слияние изменений
+```shell
 git pull
 ```
 эквивалентно двум коммандам
-```
+```shell
 git fetch
 git merge origin/master
 ```
@@ -379,17 +400,6 @@ git gc
 
 
 
-## Если удалённая ветка всё ещё отображается в `git branch -a`
-```
-git remote prune origin
-```
-Показать какие ветки пропадут:
-```
-git remote prune origin --dry-run
-```
-
-
-
 ## Patch
 ```
 git diff > patch.patch
@@ -410,37 +420,36 @@ git diff --cached <file_path>
 
 
 
-## Восстановить файл, удаленный в каком-то коммите
-## Откатить изменения файла, сделанные в каком-то коммите
-```
+## Восстановить файл, удаленный в каком-то коммите.<br> Откатить изменения файла, сделанные в каком-то коммите
+```shell
 git log --stat <file_path>
 ```
 Смотрим хэш коммита, в котором удален файл `81fce3a`. Добавляем `~1`
-```
+```shell
 git checkout 81fce3a~1 <file_path>
 ```
 или
-```
+```shell
 git checkout d67577f^ -- <file_path>
 ```
 
 
 
 ## log строки файла
-```
+```shell
 git log -L 1,1:<file_path>
 ```
 
 
 
 ## Посмотреть файл из другой ветки
-```
+```shell
 git show <some-branch-name>:<file_path>
 ```
 
 
 
-## Чтобы не было дурацких коммитов о мерже, когда пришли изменения
+## Чтобы не было коммитов о мерже, когда пришли изменения
 > Merge branch 'feature/foo' into develop
 
 ```shell
@@ -450,6 +459,7 @@ git pull --rebase
 
 
 ## Частичый коммит
+Можно коммитить часть изменений файла
 ```shell
 git add -p <file_path>
 ```
@@ -477,12 +487,17 @@ git reset --hard <hash>
 
 Отредактировать изменения и/или закоммитить файлы в другом порядке
 ```shell
-git reset {{some-start-point-hash}}
+git reset <some_start_point_hash>
 ```
 
 Взять три последних коммита и слить их в один большой коммит
 ```shell
-git reset --soft {{some-start-point-hash}}
+git reset --soft <some_start_point_hash>
+```
+
+Отменить последний коммит. При этом изменения из коммита появятся в индексе
+```shell
+git reset --soft HEAD^
 ```
 
 Отмена проиндексированных изменений (перед коммитом)
@@ -571,7 +586,7 @@ git rebase -i <hash>
 
 
 ## Удалить коммит через интерактивный ребейз
-```
+```shell
 git rebase -i HEAD~3
 ```
 В открывшемся редакторе в первом столбце помечаем что нужно сделать
@@ -579,9 +594,9 @@ git rebase -i HEAD~3
 
 
 ## Удалить файл из коммита
-```
-ghists
-  cc98ddd
+```shell
+git log --stat
+  commit cc98ddd
 git rebase -i HEAD~3
   replace `pick` with `edit` before cc98ddd
   exit `:wq`
@@ -595,18 +610,18 @@ git push --force
 
 ## Игнорировать внесённые изменения
 - See: http://stackoverflow.com/a/3320183
-```
+```shell
 git update-index --assume-unchanged ./index.js
 ```
 Перестать игнорировать:
-```
+```shell
 git update-index --no-assume-unchanged ./index.js
 ```
 
 
 
 ## Переименовать ветку (изменить название ветки)
-```
+```shell
 git branch -m old_branch new_branch
 git push origin :old_branch
 git push --set-upstream origin new_branch
@@ -615,7 +630,7 @@ git push --set-upstream origin new_branch
 
 ## Запушить ветку не переходя на неё
 Например: мы сейчас на ветке `master`, надо запушить изменения ветки `dev`, но не переходя на неё
-```
+```shell
 git push origin dev:dev
 ```
 
