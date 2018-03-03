@@ -91,3 +91,16 @@ npm adduser
 ## Интерфейсы командной строки cli
 See: https://github.com/SBoudrias/Inquirer.js
 See: https://github.com/sindresorhus/fkill-cli/blob/master/cli.js
+
+
+## Travis CI
+- See: https://travis-ci.org/
+```yaml
+language: node_js
+cache: yarn
+node_js:
+  - node
+  - "8"
+  - "6"
+```
+Node.js versions: https://docs.travis-ci.com/user/languages/javascript-with-nodejs/#Specifying-Node.js-versions
