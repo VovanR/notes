@@ -153,8 +153,14 @@ git checkout hello.html
 ```
 
 ## Отмена коммитов
+Отменить последний коммит. При этом появится новый отменяющий коммит.
+Сообщение такого будет `Revert "<reverted_commit_message>"\n\nThis reverts commmit <hash>`
 ```shell
 git revert HEAD --no-edit
+```
+Отменить последний коммит. При этом изменения из коммита появятся в индексе
+```shell
+git reset --soft HEAD^
 ```
 
 ## Изменение предыдущего коммита
