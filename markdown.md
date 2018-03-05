@@ -60,19 +60,19 @@ See: [Markdown Tables Generator](http://www.tablesgenerator.com/markdown_tables)
 
 
 ## Collapse collapsable spoiler
-See: https://github.com/dear-github/dear-github/issues/166<br>
+- See: https://github.com/dear-github/dear-github/issues/166
 
-Single space before `<summary>` tag **is required!**<br>
+Single space before `<summary>` tag **is required!**  
 Single empty line before collapsed code **is required!**
-```markdown
-    <details>
-     <summary>Summary</summary>
 
-    ```js
-    const x = 1
-    ```
-    </details>
-```
+	<details>
+	 <summary>Summary</summary>
+	
+	```js
+	const x = 1
+	```
+	</details>
+
 Demo:
 <details>
  <summary>Summary</summary>
@@ -83,14 +83,14 @@ const x = 1
 </details>
 
 With default summary
-```markdown
-    <details>
-    
-    ```js
-    const x = 1
-    ```
-    </details>
-```
+
+	<details>
+	
+	```js
+	const x = 1
+	```
+	</details>
+
 Demo:
 <details>
 
