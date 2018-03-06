@@ -20,8 +20,8 @@
 </head>
 <body>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.2.0/umd/react-dom.production.min.js"></script>
 <script>
 window.React || document.write('<script src="/static/js/react.min.js"><\/script>');
 window.ReactDOM || document.write('<script src="/static/js/react-dom.min.js"><\/script>');
@@ -36,7 +36,7 @@ window.ReactDOM || document.write('<script src="/static/js/react-dom.min.js"><\/
 
 
 ```js
-const Color = React.createClass({
+class Color extends React.Component {
 	render() {
 		return (
 			<span style={{ backgroundColor: this.props.value }}>
@@ -44,7 +44,7 @@ const Color = React.createClass({
 			</span>
 		);
 	}
-});
+}
 
 ReactDOM.render(
 	<Color value="#ff0000" />,
@@ -55,12 +55,10 @@ ReactDOM.render(
 
 
 ## Атрибуты
+See: https://reactjs.org/docs/dom-elements.html#differences-in-attributes
+
 - `class` -> `className`
 - `for` -> `htmlFor`
-
-
-
-## Special Non-DOM Attributes
 - `key`
 - `ref`
 - `dangerouslySetInnerHTML`
@@ -71,45 +69,47 @@ ReactDOM.render(
 any nested elements as `this.props.children`
 ```js
 // tutorial4.js
-const Comment = React.createClass({
+class Comment extends React.Component {
 	render() {
 		return (
 			<div className="comment">
 				<h2 className="commentAuthor">
 					{this.props.author}
 				</h2>
+
 				{this.props.children}
 			</div>
 		);
 	}
-});
+}
 ```
 
 
 ## Функция внутри
 ```js
 // tutorial6.js
-const Comment = React.createClass({
+class Comment extends React.Component {
 	render() {
 		return (
 			<div className="comment">
 				<h2 className="commentAuthor">
 					{this.props.author}
 				</h2>
+
 				{marked(this.props.children.toString())}
 			</div>
 		);
 	}
-});
+}
 ```
 
 ```js
 // tutorial7.js
-const Comment = React.createClass({
+class Comment extends React.Component {
 	rawMarkup() {
 		var rawMarkup = marked(this.props.children.toString(), {sanitize: true});
 		return { __html: rawMarkup };
-	},
+	}
 
 	render() {
 		return (
@@ -117,11 +117,12 @@ const Comment = React.createClass({
 				<h2 className="commentAuthor">
 					{this.props.author}
 				</h2>
+
 				<span dangerouslySetInnerHTML={this.rawMarkup()} />
 			</div>
 		);
 	}
-});
+}
 ```
 
 
@@ -137,10 +138,14 @@ ReactDOM.render(
 Получать данные с сервера
 ```js
 // tutorial13.js
-const CommentBox = React.createClass({
-	getInitialState() {
-		return {data: []};
-	},
+class CommentBox extends React.Component {
+	constructor(props) {
+		super(props)
+		
+		this.state = {
+			data: []
+		};
+	}
 
 	componentDidMount() {
 		$.ajax({
@@ -154,7 +159,7 @@ const CommentBox = React.createClass({
 				console.error(this.props.url, status, err.toString());
 			}.bind(this)
 		});
-	},
+	}
 
 	render() {
 		return (
@@ -165,13 +170,21 @@ const CommentBox = React.createClass({
 			</div>
 		);
 	}
-});
+}
 ```
 
 Периодически опрашивать сервер на наличие изменений
 ```js
 // tutorial14.js
-const CommentBox = React.createClass({
+class CommentBox extends React.Component {
+	constructor(props) {
+		super(props)
+		
+		this.state = {
+			data: []
+		};
+	}
+
 	loadCommentsFromServer() {
 		$.ajax({
 			url: this.props.url,
@@ -184,16 +197,12 @@ const CommentBox = React.createClass({
 				console.error(this.props.url, status, err.toString());
 			}.bind(this)
 		});
-	},
-
-	getInitialState() {
-		return {data: []};
-	},
+	}
 
 	componentDidMount() {
 		this.loadCommentsFromServer();
 		setInterval(this.loadCommentsFromServer, this.props.pollInterval);
-	},
+	}
 
 	render() {
 		return (
@@ -204,7 +213,7 @@ const CommentBox = React.createClass({
 			</div>
 		);
 	}
-});
+}
 
 ReactDOM.render(
 	<CommentBox url="/api/comments" pollInterval={2000} />,
@@ -215,7 +224,15 @@ ReactDOM.render(
 Отправлять форму на сервер
 ```js
 // tutorial19.js
-const CommentBox = React.createClass({
+class CommentBox extends React.Component {
+	constructor(props) {
+		super(props)
+		
+		this.state = {
+			data: []
+		};
+	}
+
 	loadCommentsFromServer() {
 		$.ajax({
 			url: this.props.url,
@@ -228,7 +245,7 @@ const CommentBox = React.createClass({
 				console.error(this.props.url, status, err.toString());
 			}.bind(this)
 		});
-	},
+	}
 
 	handleCommentSubmit(comment) {
 		$.ajax({
@@ -237,22 +254,18 @@ const CommentBox = React.createClass({
 			type: 'POST',
 			data: comment,
 			success: function(data) {
-			this.setState({data: data});
+				this.setState({data: data});
 			}.bind(this),
 			error: function(xhr, status, err) {
-			console.error(this.props.url, status, err.toString());
+				console.error(this.props.url, status, err.toString());
 			}.bind(this)
 		});
-	},
-
-	getInitialState() {
-		return {data: []};
-	},
+	}
 
 	componentDidMount() {
 		this.loadCommentsFromServer();
 		setInterval(this.loadCommentsFromServer, this.props.pollInterval);
-	},
+	}
 
 	render() {
 		return (
@@ -263,7 +276,7 @@ const CommentBox = React.createClass({
 			</div>
 		);
 	}
-});
+}
 ```
 
 
@@ -275,9 +288,10 @@ const CommentBox = React.createClass({
 See: http://facebook.github.io/react/tips/if-else-in-JSX.html
 ```js
 <div>
-	{(true
-		? <div>Showing true item</div>
-		: <div>Never showing false item</div>
+	{true ? (
+		<div>Showing true item</div>
+	) : (
+		<div>Never showing false item</div>
 	)}
 </div>
 ```
@@ -292,7 +306,7 @@ var content = <Container>{window.isLoggedIn ? <Nav /> : <Login />}</Container>;
 
 ```js
 <div>
-	{shouldIncludeChild ? <ChildComponent/> : false}
+	{shouldIncludeChild && <ChildComponent/>}
 </div>
 ```
 
@@ -325,16 +339,18 @@ handleKeyDown(event: React.KeyboardEvent) {
 
 
 ```js
-const UserGist = React.createClass({
-	getInitialState() {
-		return {
+class UserGist extends React.Component {
+	constructor(props) {
+		super(props)
+		
+		this.state = {
 			username: '',
 			lastGistUrl: ''
 		};
-	},
+	}
 
 	componentDidMount() {
-		$.get(this.props.source, function(result) {
+		$.get(this.props.source, (result) => {
 			var lastGist = result[0];
 			if (this.isMounted()) {
 				this.setState({
@@ -342,8 +358,8 @@ const UserGist = React.createClass({
 					lastGistUrl: lastGist.html_url
 				});
 			}
-		}.bind(this));
-	},
+		});
+	}
 
 	render() {
 		return (
@@ -353,7 +369,7 @@ const UserGist = React.createClass({
 			</div>
 		);
 	}
-});
+}
 
 ReactDOM.render(
 	<UserGist source="https://api.github.com/users/octocat/gists" />,
