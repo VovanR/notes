@@ -12,6 +12,11 @@ See: https://github.com/remy/html5demos
 
 
 
+## Accessibility
+- See: https://weblind.ru/
+
+
+
 ## Ссылка на e-mail
 See: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Email_links
 ```html
