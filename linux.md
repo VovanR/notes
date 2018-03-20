@@ -323,8 +323,28 @@ sudo pip3 install neovim
 ```
 
 
-### Записать демо терминала (записать гифку .gif)
+## Записать демо терминала (записать гифку .gif)
 See: https://github.com/marionebl/svg-term-cli
 ```shell
 svg-term --cast=113643 --out examples/parrot.svg --window
 ```
+
+
+
+## Screen
+See: https://www.rackaid.com/blog/linux-screen-tutorial-and-how-to/
+
+`C-a` — Переход к режиму управления
+
+`C-a` + `d` — Отключиться (detach) от окна
+
+`C-a` + `?` Справка
+
+`C-a` + `c` — Создать новое окно
+
+`C-a` + `n` — Переключиться на следующее окно
+
+`C-a` + `p` — Переключиться на предыдущее окно
+
+
+`screen -r` — Подключиться (re-attach) к сессии
