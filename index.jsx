@@ -15,6 +15,7 @@
 		'Linux',
 		'Markdown',
 		'MongoDB',
+		'Nginx',
 		'Node',
 		'PostgreSQL',
 		'Pug',
