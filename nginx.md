@@ -6,15 +6,13 @@
 
 ## Добавить сайт
 ```shell
-cd /etc/nginx/
-unlink sites-enabled/default
-cp sites-available/default sites-available/example-com
-cd sites-enabled
-ln -s /etc/nginx/sites-available/example-com
+unlink /etc/nginx/sites-enabled/default
+cp /etc/nginx/sites-available/default /etc/nginx/sites-available/example-com
+ln -s /etc/nginx/sites-available/example-com  /etc/nginx/sites-available/example-com
 service nginx restart
 ```
 
-`example-com`:
+`/etc/nginx/sites-available/example-com`
 ```nginx
 server {
     listen 80;
