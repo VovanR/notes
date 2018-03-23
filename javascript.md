@@ -647,4 +647,10 @@ const item = getItemById(33, getState())
 
 
 ## Open in CodePen
-See: https://github.com/atomiks/30-seconds-of-css/pull/56/files
+- See: https://github.com/atomiks/30-seconds-of-css/pull/56/files
+
+
+
+## Promise
+- See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+- See: https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html https://habrahabr.ru/company/mailru/blog/269465/
