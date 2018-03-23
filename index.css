@@ -11,6 +11,7 @@
     width: 48px;
     line-height: 42px;
     text-align: center;
+    border-bottom-width: 0;
 }
 
 .h1,
