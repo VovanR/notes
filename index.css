@@ -3,11 +3,14 @@
 .back-to-top__link {
     position: fixed;
     bottom: 0;
-    left: 0;
-    right: 0;
+    right: 16px;
     display: block;
     border-radius: 0;
     padding: 0;
+    height: 42px;
+    width: 48px;
+    line-height: 42px;
+    text-align: center;
 }
 
 .h1,
@@ -59,6 +62,13 @@ pre code {
     border: none;
     -webkit-box-shadow: none;
     box-shadow: none;
+}
+
+.nav-menu-panel {
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
+    overflow-y: auto;
 }
 
 .nav-menu {

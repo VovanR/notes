@@ -253,7 +253,7 @@
 				<Grid>
 					<Row>
 						<Col md={3}>
-							<Panel>
+							<Panel className="nav-menu-panel">
 								<Menu
 									notes={notes}
 									activeNoteId={activeNoteId}
