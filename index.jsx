@@ -31,6 +31,7 @@
 	const SITE_SOURCE_URL = 'https://github.com/VovanR/notes/blob/gh-pages/'
 
 	const {Grid, Row, Col, Panel} = ReactBootstrap
+	const {Scrollbars} = ReactCustomScrollbars
 	const markedRenderer = new marked.Renderer()
 
 	// Note `h2` headers collection
@@ -254,13 +255,15 @@
 					<Row>
 						<Col md={3}>
 							<Panel className="nav-menu-panel">
-								<Menu
-									notes={notes}
-									activeNoteId={activeNoteId}
-									isLoading={isLoading}
-									loadingNoteId={loadingNoteId}
-									onSelect={this.handleSelect}
-								/>
+								<Scrollbars>
+									<Menu
+										notes={notes}
+										activeNoteId={activeNoteId}
+										isLoading={isLoading}
+										loadingNoteId={loadingNoteId}
+										onSelect={this.handleSelect}
+									/>
+								</Scrollbars>
 							</Panel>
 						</Col>
 
