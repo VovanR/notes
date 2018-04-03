@@ -369,3 +369,19 @@ See: http://stackoverflow.com/a/12216578
 :profile pause
 :noautocmd qall!
 ```
+
+
+## Debug log
+```shell
+export NVIM_PYTHON_LOG_FILE=/tmp/log
+export NVIM_PYTHON_LOG_LEVEL=DEBUG
+nvim
+less /tmp/log_{PID}
+```
+
+
+## Check Health
+Информация о состоянии вима
+```
+:checkhealth
+```
