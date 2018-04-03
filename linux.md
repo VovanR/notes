@@ -309,17 +309,31 @@ sudo update-alternatives --config vim
 sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 sudo update-alternatives --config editor
 ```
-Смотрим версию пайтона, запустив
+
+### Build
+- See: https://github.com/neovim/neovim/wiki/Building-Neovim#optimized-builds
 ```shell
-python --version
+rm -r build
+make clean
+make CMAKE_BUILD_TYPE=Release
 ```
-See: https://neovim.io/doc/user/nvim_python.html
-```shell
-sudo pip2 install neovim
+
+### Python client to Neovim
+- See: https://github.com/neovim/python-client
+- See: https://github.com/zchee/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
+
+Смотрим версию пайтона в виме https://github.com/Shougo/deoplete.nvim#requirements
 ```
-или
+:echo has("python3")
+```
+Должно вернуть `1`
 ```shell
-sudo pip3 install neovim
+pip3 install --upgrade neovim
+```
+Если установлен `python3` и `python3-pip`, но нет команды `pip3`, то
+```shell
+sudo apt-get remove python3-pip
+sudo apt-get install python3-pip
 ```
 
 
