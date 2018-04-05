@@ -735,3 +735,33 @@ git clean -fX
 git clean -n
 git clean --dry-run
 ```
+
+
+## git bisect. Поиск коммита, в котором был поломан функционал
+Начинаем поиск
+```shell
+git bisect start
+```
+Помечаем, что в текущем месте проблема присутствует
+```shell
+git bisect bad
+```
+Помечаем коммит, в котором всё работало
+```shell
+git bisect good cc98ddd
+```
+Теперь смотрим наш функционал, если он сломан, выполняем `git bisect bad`, если исправен `git bisect good`
+
+В конце концов мы доберёмся до коммита, в котором было поломано:
+```shell
+git bisect good
+  d28c20f is the first bad commit
+```
+Смотрим что там было сделано
+```shell
+git show d28c20f
+```
+Заканчиваем поиск
+```shell
+git bisect reset
+```
