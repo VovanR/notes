@@ -304,6 +304,46 @@ Host personalid
 
 
 
+## Генерация нового GPG ключа
+- See: https://help.github.com/articles/generating-a-new-gpg-key/
+- See: https://help.github.com/articles/adding-a-new-gpg-key-to-your-github-account/#adding-a-gpg-key
+- See: https://help.github.com/articles/signing-commits-using-gpg/
+
+Список существующих ключей
+```shell
+gpg --list-secret-keys --keyid-format LONG
+```
+
+Создаем
+```shell
+gpg --full-gen-key
+  RSA and RSA
+  4096
+  key does not expire
+```
+
+Добавить ключ в гит
+```shell
+git config --global user.signingkey "1234567890123456"
+```
+
+Подписывать ключем все коммиты
+```shell
+git config --global commit.gpgSign true
+```
+
+Подписывать коммиты вручную
+```shell
+git commit -S -m "your commit message"
+```
+
+Добавление в башпрофиль
+```shell
+echo "export GPG_TTY=$(tty)" >> ~/.bashlocal
+```
+
+
+
 
 ## WARNING: gnome-keyring
 See: http://hongouru.blogspot.ru/2012/07/solved-warning-gnome-keyring-couldnt.html
