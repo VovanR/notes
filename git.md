@@ -805,3 +805,27 @@ git show d28c20f
 ```shell
 git bisect reset
 ```
+
+
+
+## Git worktree
+- See: https://git-scm.com/docs/git-worktree
+- See: https://stacktoheap.com/blog/2016/01/19/using-multiple-worktrees-with-git/
+
+Например необходимо срочно сделать фикс, но не хочется останавливать работу в текущей ветке
+```shell
+git worktree add -b emergency-fix ../temp master
+cd ../temp
+# make some fixes
+git commit -am "Fix some problem"
+git push
+cd -
+rm -rf ../temp
+git worktree prune
+```
+
+Показать список созданных
+```shell
+git worktree list
+```
+
