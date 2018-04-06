@@ -41,7 +41,10 @@ h6 {
     cursor: pointer;
     padding: 0 8px;
     font-family: serif;
-    color: #999;
+    color: rgba(0, 0, 0, 0.1);
+}
+.rendered-note a[href^="#anchor-"]:hover {
+    color: rgba(0, 0, 0, 0.25);
 }
 .rendered-note a[href^="#anchor-"]::before {
     display: inline-block;
@@ -173,4 +176,18 @@ pre code {
     to {
         transform: rotate(1turn);
     }
+}
+
+.rendered-note ul li {
+    list-style-type: none;
+    position: relative;
+}
+.rendered-note ul li::before {
+    display: inline-block;
+    content: '-';
+    color: rgba(0, 0, 0, 0.25);
+    font-size: 1em;
+    margin-left: -1em;
+    width: 1em;
+    line-height: 0;
 }
