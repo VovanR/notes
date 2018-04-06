@@ -6,7 +6,7 @@
 - See: https://githowto.com/ru/amending_commits
 
 ## Удачное ветвление git-flow
-See: http://habrahabr.ru/post/106912/
+- See: http://habrahabr.ru/post/106912/
 
 
 
@@ -15,38 +15,40 @@ See: http://habrahabr.ru/post/106912/
 - See: https://help.github.com/articles/syncing-a-fork
 
 Добавляем оригинальный проект как удаленный `remote`, названный `upstream`
-```
+```shell
 git remote add --track master upstream https://github.com/bevis-ui/docs.git
 ```
 
 Получить изменения из репозитория `upstream`.
+
 Коммиты в `master` хранятся в локальной ветке `upstream/master`
-```
+```shell
 git fetch upstream
 ```
 
 Переходим в мастер
-```
+```shell
 git checkout master
 ```
 
 Мержим изменения из `upstream/master`в локальный `master`.
+
 Это синхронизирует мастер с `upstream` репой, без потери локальных изменений.
-```
+```shell
 git rebase upstream/master
 ```
 или
-```
+```shell
 git merge upstream/master
 ```
 
 Если при ребэйзе пришли конфликты, решаем их и продолжаем коммандой
-```
+```shell
 git rebase --continue
 ```
 
 Отправляем изменения
-```
+```shell
 git push --force
 ```
 
@@ -57,12 +59,12 @@ git push --force
 - See: https://gun.io/blog/how-to-github-fork-branch-and-pull-request/
 
 Список удаленных реп нашего форка
-```
+```shell
 git remote -v
 ```
 
 Получаем новый удаленный `upstream` репозиторий, который будем синхронизованный с нашим
-```
+```shell
 git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
 ```
 
@@ -75,7 +77,7 @@ Fetch and Merge (скачать и слить)
 ведущего к репозиторию человека, отправившего пулл реквест,
 скачивания изменений с этого репозитория, объединения нужной ветви,
 исправления конфликтов и выгрузки обновлённой ветви обратно в исходный репозиторий:
-```
+```shell
 git checkout master
 git remote add username git://github.com/username/Spoon-Knife.git
 git fetch username
@@ -117,7 +119,7 @@ git init
 git add hello.html
 git commit -m "First Commit"
 ```
-Если вы опустите метку `-m` из командной строки, git перенесет вас в редактор<br>
+Если вы опустите метку `-m` из командной строки, git перенесет вас в редактор
 по вашему выбору. Редактор выбирается из следующего списка (в порядке приоритета)
 - переменная среды `GIT_EDITOR`
 - параметр конфигурации `core.editor`
@@ -129,18 +131,22 @@ git commit -m "First Commit"
 ```shell
 git tag v0.1.0
 ```
+
 Показать тэги
 ```shell
 git tag
 ```
+
 Перейти к тэгу
 ```shell
 git checkout v0.1.0
 ```
+
 Перейти к предыдущему тэгу
 ```shell
 git checkout v0.1.0^
 ```
+
 Удаление тэга
 ```shell
 git tag -d v0.1.0
@@ -158,6 +164,7 @@ git checkout hello.html
 ```shell
 git revert HEAD --no-edit
 ```
+
 Отменить последний коммит. При этом изменения из коммита появятся в индексе
 ```shell
 git reset --soft HEAD^
@@ -201,6 +208,7 @@ git remote show origin
 ```shell
 git branch
 ```
+
 Все ветки
 ```shell
 git branch -a
@@ -210,6 +218,7 @@ git branch -a
 ```shell
 git remote prune origin
 ```
+
 Показать какие ветки пропадут
 ```shell
 git remote prune origin --dry-run
@@ -230,6 +239,7 @@ git merge origin/master
 ```shell
 git pull
 ```
+
 эквивалентно двум коммандам
 ```shell
 git fetch
@@ -239,42 +249,43 @@ git merge origin/master
 
 
 ## Генерация нового ключа
-See: https://help.github.com/articles/error-permission-denied-publickey
-```
+- See: https://help.github.com/articles/error-permission-denied-publickey
+
+```shell
 ssh-keygen -f ~/.ssh/username -C "username"
 ```
 
 Посмотреть подключенный ssh ключ
-```
+```shell
 ssh-add -l
 	The agent has no identities.
 ```
 
 Если пусто, добавим
-```
+```shell
 ssh-add ~/.ssh/username
 	Identity added: /home/username/.ssh/username (/home/username/.ssh/username)
 ```
 
 Проверка используемого по-умолчанию ключа
-```
+```shell
 ssh-add -l
 	2048 flaksjfnlausernvenwajflkavnhriauhkajdf username (RSA)
 ```
 
 Проверка, что мы подключаемся к нужному серверу
-```
+```shell
 ssh -vT git@bitbucket.org
 ```
 
 Выкладываем репу на хаб
-```
+```shell
 git push -u origin --all
 ```
 
 
 ## Конфликт двух ключей (когда два аккаунта на битбакет)
-```
+```shell
 git pull
     conq: repository access denied.
     fatal: Could not read from remote repository.
@@ -282,10 +293,12 @@ git pull
     Please make sure you have the correct access rights
     and the repository exists.
 ```
+
 Убеждаемся, что выбран не тот ключ
-```
+```shell
 ssh -vT git@bitbucket.org
 ```
+
 Добавляем конфиг `~/.ssh/config`
 ```
 Host workid
@@ -295,6 +308,7 @@ Host personalid
  HostName bitbucket.org
  IdentityFile ~/.ssh/personal
 ```
+
 Теперь в директории проекта правим в файле `.git/config`
 ```diff
 [remote "origin"]
@@ -346,12 +360,13 @@ echo "export GPG_TTY=$(tty)" >> ~/.bashlocal
 
 
 ## WARNING: gnome-keyring
-See: http://hongouru.blogspot.ru/2012/07/solved-warning-gnome-keyring-couldnt.html
+- See: http://hongouru.blogspot.ru/2012/07/solved-warning-gnome-keyring-couldnt.html
+
 ```
 WARNING: gnome-keyring:: couldn't connect to: /tmp/keyring-b31scS/pkcs11: No such file or directory
 ```
 
-```
+```shell
 sudo vim /etc/xdg/autostart/gnome-keyring-pkcs11.desktop
 ```
 
@@ -368,7 +383,7 @@ OnlyShowIn=GNOME;Unity;XFCE;
 
 
 ## Чтобы в гит не попадали изменения прав доступа на файлы
-```
+```shell
 git config --local core.fileMode false
 ```
 
@@ -377,61 +392,61 @@ git config --local core.fileMode false
 ## Git init
 
 Создать ветку разработки
-```
+```shell
 git checkout -b develop
 ```
 
 Отправить ветку разработки на сервер
-```
+```shell
 git push origin develop
 ```
 
 Создать ветку фичи от ветки разработки
-```
+```shell
 git checkout -b feature/sprite-speed develop
 ```
 
 Когда разработка фичи закончена — переходит в ветку разработки
-```
+```shell
 git checkout develop
 ```
 
 Мержим с сохранением истории ветки фичи
-```
+```shell
 git merge --no-ff feature/sprite-speed
 ```
 
 Удаляем ветку фичи
-```
+```shell
 git branch -d feature/sprite-speed
 ```
 
 Отправляем изменения на сервер
-```
+```shell
 git push origin develop
 ```
 
 Удаляем ветку фичи на сервере
-```
+```shell
 git push origin :feature/sprite-speed
 ```
 
 
 
 ## Меняем удаленную репу
-```
+```shell
 git remote add origin <ssh://url>
 ```
 
 ## Переименовали репу на гитхабе — переименуем её и на компе
-```
+```shell
 git remote set-url origin <new_url>
 ```
 
 
 
 ## Добавление модуля
-```
+```shell
 git submodule add https://github.com/gilsondev/searchtasks.vim.git vim/bundle/searchtasks.vim
 git submodule update --init --recursive
 git submodule foreach git pull
@@ -440,14 +455,14 @@ git submodule foreach git pull
 
 
 ## Сбор мусора
-```
+```shell
 git gc
 ```
 
 
 
 ## Patch
-```
+```shell
 git diff > patch.patch
 git apply ./patch.patch
 ```
@@ -455,12 +470,12 @@ git apply ./patch.patch
 
 
 ## Сравнить измененный файл с веткой 'master'
-```
+```shell
 git diff master~20:project/file.js project/file.js
 ```
 
 ## Показать изменения добавленного в коммит файла
-```
+```shell
 git diff --cached <file_path>
 ```
 
@@ -470,10 +485,12 @@ git diff --cached <file_path>
 ```shell
 git log --stat <file_path>
 ```
+
 Смотрим хэш коммита, в котором удален файл `81fce3a`. Добавляем `~1`
 ```shell
 git checkout 81fce3a~1 <file_path>
 ```
+
 или
 ```shell
 git checkout d67577f^ -- <file_path>
@@ -517,6 +534,7 @@ git add -p <file_path>
 git describe
     v1.2.0-8-g0b83ff8
 ```
+
 ```shell
 git describe --contains cc98ddd
     1.1.0^2~2^2
@@ -593,6 +611,7 @@ git checkout fix/typo ./
 ```shell
 git log -p <hash> -1
 ```
+
 или
 ```shell
 git show <hash>
@@ -604,9 +623,10 @@ git show <hash>
 - See: http://stackoverflow.com/a/135614
 
 Смотрим последний коммит перед началом `rebase`
-```
+```shell
 git reflog
 ```
+
 В примере ниже это `HEAD@{5}`
 ```
 95a7f9da HEAD@{0}: rebase finished: returning to refs/heads/dev/modal
@@ -616,8 +636,9 @@ git reflog
 f36d45a5 HEAD@{4}: pull --rebase upstream master: checkout f36d4sa54566sd464s8186d5143fad615423fs15
 a26459f6 HEAD@{5}: checkout: moving from master to dev/modal
 ```
+
 Отменяем ребейз
-```
+```shell
 git reset --hard HEAD@{5}
 ```
 Можно посмотреть лог коммита, к которому мы возвращаемся `git log HEAD@{5}`
@@ -625,7 +646,7 @@ git reset --hard HEAD@{5}
 
 
 ## Изменить сообщение коммита
-```
+```shell
 git rebase -i <hash>
 ```
 
@@ -656,6 +677,7 @@ git push --force
 
 ## Игнорировать внесённые изменения
 - See: http://stackoverflow.com/a/3320183
+
 ```shell
 git update-index --assume-unchanged ./index.js
 ```
@@ -722,6 +744,7 @@ git stash apply stash@{3}
 ```shell
 git stash show stash@{0}
 ```
+
 Показать изменения в файлах (diff)
 ```shell
 git stash show stash@{0} -p
@@ -736,6 +759,7 @@ git checkout stash@{0} -- ./src/index.js
 ```shell
 git diff stash@{0} HEAD
 ```
+
 Показать только имена файлов
 ```shell
 git diff --name-only stash@{0} HEAD
@@ -744,8 +768,10 @@ git diff --name-only stash@{0} HEAD
 
 
 ## Фича от фичи
-See: https://github.com/VovanR/test-rebase/wiki  
+- See: https://github.com/VovanR/test-rebase/wiki  
+
 Бывает начинаешь фичу (**feature-2**), в которой нужны изменения из параллельно разрабатываемой фичи (**feature-1**).
+
 Подводный камни: если в **feature-1** удалить коммит через `rebase`, то, после мержа **feature-1** и ребейза **feature-2**, коммит может остаться в истории.
 
 
@@ -782,14 +808,17 @@ git clean --dry-run
 ```shell
 git bisect start
 ```
+
 Помечаем, что в текущем месте проблема присутствует
 ```shell
 git bisect bad
 ```
+
 Помечаем коммит, в котором всё работало
 ```shell
 git bisect good cc98ddd
 ```
+
 Теперь смотрим наш функционал, если он сломан, выполняем `git bisect bad`, если исправен `git bisect good`
 
 В конце концов мы доберёмся до коммита, в котором было поломано:
@@ -797,10 +826,12 @@ git bisect good cc98ddd
 git bisect good
   d28c20f is the first bad commit
 ```
+
 Смотрим что там было сделано
 ```shell
 git show d28c20f
 ```
+
 Заканчиваем поиск
 ```shell
 git bisect reset
@@ -828,4 +859,3 @@ git worktree prune
 ```shell
 git worktree list
 ```
-
