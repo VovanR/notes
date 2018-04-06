@@ -654,3 +654,75 @@ const item = getItemById(33, getState())
 ## Promise
 - See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 - See: https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html https://habrahabr.ru/company/mailru/blog/269465/
+
+
+
+## Cookies
+- See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
+- See: https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie
+- See: https://flaviocopes.com/cookies/
+
+- https://github.com/js-cookie/js-cookie
+- https://github.com/expressjs/cookie-parser
+
+- 4KB
+- Приватны для домена
+- Лимит 20 на домен (зависит от браузера)
+
+```js
+document.cookie
+//=> "cookies=true; FOO=123245; BAR=1234"
+```
+
+```js
+document.cookie = "yummy_cookie=choco"; 
+document.cookie = "tasty_cookie=strawberry"; 
+console.log(document.cookie); 
+// logs "yummy_cookie=choco; tasty_cookie=strawberry"
+```
+
+Значение надо кодировать с `encodeURIComponent()`, чтобы экранировать пробелы и тп
+
+### Установить срок годности
+Конкретное время
+```js
+document.cookie = 'foo=bar; expires=Fri, 06 Apr 2018 11:52:28 GMT'
+```
+```js
+const date = new Date()
+date.setHours(date.getHours() + 1)
+document.cookie = 'foo=bar; expires='  + date.toUTCString()
+```
+
+Через какое-то время в секундах. Например на 1 час:
+```js
+document.cookie = 'foo=bar; max-age=3600'
+```
+
+### path
+```js
+document.cookie = 'foo=bar; path="/admin"'
+```
+Если не установить, то `path` будет равен текущему. Глобальные куки `path="/"`
+
+### domain
+```js
+document.cookie = 'foo=bar; domain="example.com"'
+```
+
+### Secure
+Доступны только по `HTTPS`
+```js
+document.cookie = 'foo=bar; Secure'
+```
+
+### HttpOnly
+Доступны только для сервера. Недоступны по `document.cookie`
+```js
+document.cookie = 'foo=bar; HttpOnly'
+```
+
+### Удаление
+```js
+document.cookie = 'foo=; expires=Thu, 01 Jan 1970 00:00:00 UTC;'
+```
