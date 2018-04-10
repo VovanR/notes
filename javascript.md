@@ -726,3 +726,12 @@ document.cookie = 'foo=bar; HttpOnly'
 ```js
 document.cookie = 'foo=; expires=Thu, 01 Jan 1970 00:00:00 UTC;'
 ```
+
+
+## noop
+```js
+/**
+ * No operation
+ */
+exports.noop = function() {};
+```
