@@ -2,6 +2,8 @@
 
 ----
 
+- See: https://bespoyasov.ru/ttt-tdd
+
 ## Prevent default
 ```javascript
 it('should preventDefault', function () {
