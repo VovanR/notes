@@ -7,6 +7,17 @@
 - See: http://facebook.github.io/react/docs/addons.html
 - See: http://stackoverflow.com/questions/tagged/reactjs?sort=votes&pageSize=15
 
+## Атрибуты
+- See: https://reactjs.org/docs/dom-elements.html#differences-in-attributes
+
+- `class` -> `className`
+- `for` -> `htmlFor`
+- `key`
+- `ref`
+- `dangerouslySetInnerHTML`
+
+
+
 ## Использование CDN
 - See: https://cdnjs.com/libraries/react/
 - See: https://facebook.github.io/react/downloads.html
@@ -34,9 +45,9 @@ window.ReactDOM || document.write('<script src="/static/js/react-dom.min.js"><\/
 
 
 
-
+## Style
 ```js
-class Color extends React.Component {
+class Color extends PureComponent {
 	render() {
 		return (
 			<span style={{ backgroundColor: this.props.value }}>
@@ -51,17 +62,6 @@ ReactDOM.render(
 	document.getElementById('container')
 );
 ```
-
-
-
-## Атрибуты
-See: https://reactjs.org/docs/dom-elements.html#differences-in-attributes
-
-- `class` -> `className`
-- `for` -> `htmlFor`
-- `key`
-- `ref`
-- `dangerouslySetInnerHTML`
 
 
 
@@ -498,17 +498,25 @@ describe('deleteItemsAction', () => {
 
 ## ref
 ```js
-export class Block extends PureComponent {
-  blockRefCallback = (block) => {
-    this.block = block
-  }
+export class Button extends PureComponent {
+	setButtonRef = (ref) => {
+		this.buttonRef = ref
+	}
 
-  render() {
-    return (
-      <div
-        ref={this.blockRefCallback}
-      />
-    )
-  }
+	render() {
+		return (
+			<button
+				ref={this.setButtonRef}
+				type="button"
+			>
+				Click
+			</button>
+		)
+	}
 }
 ```
+
+
+
+## Шаблоны проектирования в React
+- See: https://medium.freecodecamp.org/evolving-patterns-in-react-116140e5fe8f https://habrahabr.ru/company/ruvds/blog/349198/

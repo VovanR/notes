@@ -86,14 +86,14 @@ foo.concat(bar); //=> [1, 2, 3, 4] (new array)
 
 
 ### Clone Array `slice`
-```js
+```javascript
 const a = [1, 2];
-const b = a;
-const c = a.slice(); // Clone
+const b = a; // link
+const c = a.slice(); // clone
 a[0] = 3;
-a === [3, 2]
-b === [3, 2]
-c === [1, 2] // Clone
+// a = [3, 2]
+// b = [3, 2] // link
+// c = [1, 2] // clone
 ```
 
 
@@ -111,13 +111,20 @@ while (i--) {
 
 ## Выделить текст инпута при фокусе
 ```html
-<input type="text" readonly onfocus="this.select();" onclick="this.select();" value="Hello World!">
+<input
+    type="text"
+    readonly
+    onfocus="this.select();"
+    onclick="this.select();"
+    value="Hello World!"
+>
 ```
 
 
 
-## Выбор цвета, в соответствии со значение параметра `d`
-See: http://leafletjs.com/examples/choropleth.html#adding-some-color
+## Выбор цвета, в соответствии со значением параметра `d`
+- See: http://leafletjs.com/examples/choropleth.html#adding-some-color
+
 ```javascript
 /**
  * @param {Number} d
@@ -138,7 +145,8 @@ function getColor(d) {
 
 
 ## monkey-patching
-See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
+- See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
+
 ```js
 var originalfoo = someobject.foo;
 someobject.foo = function () {
@@ -149,6 +157,8 @@ someobject.foo = function () {
   // Run stuff after, here.
 }
 ```
+
+
 
 ### Arrow function
 ```js
@@ -215,7 +225,8 @@ iframe.onload = function () {
 
 
 ## Отключить увеличение страницы Ctrl+Mousewheel
-See: http://stackoverflow.com/a/29994607
+- See: http://stackoverflow.com/a/29994607
+
 ```js
 document.addEventListener('mousewheel', function (e) {
     if (e.deltaY % 1 !== 0) {
@@ -237,9 +248,10 @@ const formatedDate = `${day}.${month}.${year}`;
 
 
 
-## Ждем окончания загрузки страницы
+## Ждём окончания загрузки страницы
 - See: https://github.com/ded/domready
 - See: https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded
+
 ```javascript
 document.addEventListener('DOMContentLoaded', function () {
 });
@@ -286,7 +298,7 @@ for (var i = 0; i < 10; i++) {
     if (не подходит) {
         continue;
     }
-    ...
+    // ...
 }
 ```
 
@@ -320,11 +332,13 @@ function disableSelection(target) {
 
 
 ## Random
-Возвращает значение 0,1,2,3
+Возвращает 0, 1, 2 или 3
 ```js
 Math.floor(Math.random() * 4)
 ```
-https://github.com/Microsoft/TypeScriptSamples/blob/master/jsx/src/app.tsx
+
+- See: https://github.com/Microsoft/TypeScriptSamples/blob/master/jsx/src/app.tsx
+
 ```js
 function getRandomGreeting() {
     switch (Math.floor(Math.random() * 4)) {
@@ -339,7 +353,8 @@ function getRandomGreeting() {
 
 
 ## Наследование
-See: https://youtu.be/4oudziatkLI?list=PL363QX7S8MfSxcHzvkNEqMYbOyhLeWwem
+- See: https://youtu.be/4oudziatkLI?list=PL363QX7S8MfSxcHzvkNEqMYbOyhLeWwem
+
 ```javascript
 var Person = {
     constructor: function (name, age, gender) {
@@ -366,7 +381,8 @@ var developer = Object.create(WebDeveloper).constructor('Jack', 21, 'male', ['ht
 
 
 ## Classof
-See: https://youtu.be/a3X9uqCoxKY?list=PL363QX7S8MfSxcHzvkNEqMYbOyhLeWwem
+- See: https://youtu.be/a3X9uqCoxKY?list=PL363QX7S8MfSxcHzvkNEqMYbOyhLeWwem
+
 ```javascript
 var classof = function (object) {
     return Object.prototype.toString.call(object).slice(8, -1);
@@ -389,23 +405,15 @@ if (e.isDefaultPrevented()) {
 ```js
 // Установка ключа
 localStorage.username = 'Ivan';
-...
+
 // Чтение ключа
 output_text = 'Добро пожаловать, ' + localStorage.username;
 ```
 
 ```js
 // Установка ключа
-localStorage['username'] = 'Ivan';
-...
-// Чтение ключа
-output_text = 'Добро пожаловать, ' + localStorage['username'];
-```
-
-```js
-// Установка ключа
 localStorage.setItem('username', 'Ivan');
-...
+
 // Чтение ключа
 output_text = 'Добро пожаловать, ' + localStorage.getItem('username');
 // Так же есть специальный метод для удаления ключа
@@ -415,7 +423,8 @@ localStorage.removeItem('username');
 
 
 ## Clone object
-See: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Cloning_an_object
+- See: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Cloning_an_object
+
 ```js
 var obj = { a: 1 };
 var copy = Object.assign({}, obj);
@@ -432,15 +441,16 @@ const DATA = JSON.parse(JSON.stringify(window.DATA));
 
 
 ## Merge objects
-See: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Merging_objects
+- See: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Merging_objects
+
 ```js
 var o1 = { a: 1 };
 var o2 = { b: 2 };
 var o3 = { c: 3 };
 
 var obj = Object.assign(o1, o2, o3);
-console.log(obj); // { a: 1, b: 2, c: 3 }
-console.log(o1);  // { a: 1, b: 2, c: 3 }, target object itself is changed.
+console.log(obj); //=> { a: 1, b: 2, c: 3 }
+console.log(o1);  //=> { a: 1, b: 2, c: 3 }, target object itself is changed.
 ```
 
 
@@ -455,10 +465,14 @@ Object.keys(items).forEach(id => {
 
 
 ## Pure functions
-See: https://github.com/ghengeveld/react-redux-styleguide#pure-functions
+- See: https://github.com/ghengeveld/react-redux-styleguide#pure-functions
+
 ```js
 function inc(object) {
-    return {...object, value: object.value + 1};
+    return {
+        ...object,
+        value: object.value + 1
+    };
 }
 ```
 
@@ -474,7 +488,7 @@ console.log(1)
 
 ## Web page screenshots
 Сделать скриншоты страниц  
-```
+```shell
 npm i -g phantomjs webpage
 ```
 
@@ -537,13 +551,16 @@ screenshot(lastIndex, false);
 
 
 ## reduce
-See: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+- See: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+
+
 - `callback`
   - `accumulator`
   - `currentValue`
   - `currentIndex`
   - `array`
 - `initialValue`
+
 ```js
 [0, 1, 2, 3].reduce(function(sum, value) {
   return sum + value
@@ -568,7 +585,8 @@ See: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objec
 
 
 ## Concat lists with intersection
-See: https://jsfiddle.net/VovanR/4dyxszby/  
+- See: https://jsfiddle.net/VovanR/4dyxszby/  
+
 Например при получении страницы с уже имеющимся итемом, чтобы не дублировать его
 ```js
 /**
@@ -620,7 +638,8 @@ class Person {
 
 
 ## Reselect
-See: https://github.com/reactjs/reselect
+- See: https://github.com/reactjs/reselect
+
 ```js
 import { createSelector } from 'reselect'
 import { fromJS } from 'immutable'
@@ -639,6 +658,7 @@ export const getItemsIdMap = createSelector(
 
 export const getItemById = (id, state) => getItemsIdMap(state).get(id)
 ```
+
 Usage
 ```js
 const item = getItemById(33, getState())
@@ -688,6 +708,7 @@ console.log(document.cookie);
 ```js
 document.cookie = 'foo=bar; expires=Fri, 06 Apr 2018 11:52:28 GMT'
 ```
+
 ```js
 const date = new Date()
 date.setHours(date.getHours() + 1)

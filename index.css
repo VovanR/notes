@@ -50,6 +50,9 @@ h6 {
     display: inline-block;
     content: '#';
 }
+.rendered-note *:hover > a[href^="#anchor-"] {
+    color: rgba(0, 0, 0, 0.25);
+}
 
 pre {
     background-color: #fff;
