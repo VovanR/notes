@@ -2,7 +2,7 @@
 
 ----
 
-See: https://www.postgresql.org/
+- See: https://www.postgresql.org/
 
 ## Install
 ```shell

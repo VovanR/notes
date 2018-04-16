@@ -27,14 +27,14 @@ xflock4		Super + l
 
 
 ## Узнать код клавиши
-```
+```shell
 showkey -a
 ```
 
 
 
 ## Поиск файлов
-```
+```shell
 locate -b foo
 ```
 
@@ -125,6 +125,7 @@ sudo apt-get install tuxguitar tuxguitar-alsa tuxguitar-oss tuxguitar-jsa
 ```shell
 sudo apt-get install python python3 python-dev python3-dev postgresql postgresql-contrib libpq5 redis-server python-virtualenv rabbitmq-server libpq-dev pgadmin3 python3-pip libxml2-dev libxslt1-dev libmemcached-dev
 ```
+
 ```shell
 sudo update-alternatives --install /usr/bin/exctags exctags /usr/bin/ctags-exuberant 10
 ```
@@ -137,7 +138,8 @@ sudo apt-get install xubuntu-restricted-extras
 
 
 ### Oracle JDK/JRE
-See: http://www.webupd8.org/2012/01/install-oracle-java-jdk-7-in-ubuntu-via.html
+- See: http://www.webupd8.org/2012/01/install-oracle-java-jdk-7-in-ubuntu-via.html
+
 ```shell
 sudo add-apt-repository ppa:webupd8team/java && sudo apt-get update
 sudo apt-get install oracle-java8-installer oracle-java8-set-default
@@ -146,7 +148,8 @@ sudo apt-get install oracle-java8-installer oracle-java8-set-default
 
 
 ### Dropbox
-See: https://www.dropbox.com/install
+- See: https://www.dropbox.com/install
+
 ```shell
 sudo dpkg -i ~/Downloads/dropbox_2015.10.28_amd64.deb
 ```
@@ -154,7 +157,8 @@ sudo dpkg -i ~/Downloads/dropbox_2015.10.28_amd64.deb
 
 
 ### NodeJS
-See: https://github.com/nodesource/distributions#installation-instructions
+- See: https://github.com/nodesource/distributions#installation-instructions
+
 ```shell
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 sudo apt-get install -y nodejs
@@ -164,13 +168,15 @@ npm i -g bemstyla conventional-changelog gh-pages-deploy mancy npm vmd yo commit
 
 
 ### Atom
-See: https://atom.io/
+- See: https://atom.io/
 
 Download .deb
 ```shell
 sudo dpkg -i ~/Downloads/atom-amd64.deb
 ```
-See: https://github.com/atom/atom/blob/master/docs/build-instructions/linux.md#typeerror-unable-to-watch-path
+
+- See: https://github.com/atom/atom/blob/master/docs/build-instructions/linux.md#typeerror-unable-to-watch-path
+
 ```shell
 sudo sysctl fs.inotify.max_user_watches=32768
 echo 32768 | sudo tee -a /proc/sys/fs/inotify/max_user_watches
@@ -247,6 +253,7 @@ export GIST_ACCESS_TOKEN=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 sudo apt-get install cabextract
 wget http://www.kegel.com/wine/winetricks && chmod +x winetricks && sudo mv winetricks /usr/local/bin/
 ```
+
 ```nohighlight
 ~/.bashlocal
 export WINEARCH=win32
@@ -295,12 +302,14 @@ mkdir -p ~/.fonts/truetype
 
 
 ## Neovim
-https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu
+- See: https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu
+
 ```shell
 sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt-get update
 sudo apt-get install neovim python-dev python-pip python3-dev python3-pip
 ```
+
 ```shell
 sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
 sudo update-alternatives --config vi
@@ -312,6 +321,7 @@ sudo update-alternatives --config editor
 
 ### Build
 - See: https://github.com/neovim/neovim/wiki/Building-Neovim#optimized-builds
+
 ```shell
 rm -r build
 make clean
@@ -326,10 +336,12 @@ make CMAKE_BUILD_TYPE=Release
 ```
 :echo has("python3")
 ```
+
 Должно вернуть `1`
 ```shell
 pip3 install --upgrade neovim
 ```
+
 Если установлен `python3` и `python3-pip`, но нет команды `pip3`, то
 ```shell
 sudo apt-get remove python3-pip
@@ -338,7 +350,8 @@ sudo apt-get install python3-pip
 
 
 ## Записать демо терминала (записать гифку .gif)
-See: https://github.com/marionebl/svg-term-cli
+- See: https://github.com/marionebl/svg-term-cli
+
 ```shell
 svg-term --cast=113643 --out examples/parrot.svg --window
 ```
@@ -346,7 +359,7 @@ svg-term --cast=113643 --out examples/parrot.svg --window
 
 
 ## Screen
-See: https://www.rackaid.com/blog/linux-screen-tutorial-and-how-to/
+- See: https://www.rackaid.com/blog/linux-screen-tutorial-and-how-to/
 
 `C-a` — Переход к режиму управления
 
