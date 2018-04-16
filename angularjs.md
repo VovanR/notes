@@ -8,7 +8,7 @@
 - See: [AngularJS and scope.$apply](http://jimhoskins.com/2012/12/17/angularjs-and-apply.html)
 - See: [AngularJS Sticky Notes Pt 2 – Isolated Scope](http://onehungrymind.com/angularjs-sticky-notes-pt-2-isolated-scope/)
 - See: [scope: { biTitle: '=', title: '@', bar: '=' },](http://stackoverflow.com/questions/14050195/what-is-the-difference-between-and-in-directive-scope)
-- See: [Директивы в Angularjs для начинающих. Часть 1](http://habrahabr.ru/post/179755/)
+- See: [Директивы в AngularJS для начинающих. Часть 1](http://habrahabr.ru/post/179755/)
 
 
 

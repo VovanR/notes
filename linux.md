@@ -156,7 +156,7 @@ sudo dpkg -i ~/Downloads/dropbox_2015.10.28_amd64.deb
 
 
 
-### NodeJS
+### Node.js
 - See: https://github.com/nodesource/distributions#installation-instructions
 
 ```shell
@@ -170,7 +170,7 @@ npm i -g bemstyla conventional-changelog gh-pages-deploy mancy npm vmd yo commit
 ### Atom
 - See: https://atom.io/
 
-Download .deb
+Download `.deb`
 ```shell
 sudo dpkg -i ~/Downloads/atom-amd64.deb
 ```

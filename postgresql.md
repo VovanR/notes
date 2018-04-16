@@ -90,24 +90,24 @@ postgres=# \list
 psql -l
 ```
 
-Подключиться к бд
+Подключиться к БД
 ```sql
 postgres=# \connect 'example-db'
 ```
 
-Показать таблицы бд
+Показать таблицы БД
 ```sql
 postgres=# \dt
 ```
 
 
-## Переименовать бд
+## Переименовать БД
 ```sql
 postgres=# ALTER DATABASE 'example-db' RENAME TO 'renamed-example-db';
 ```
 
 
-## Удалить бд
+## Удалить БД
 ```sql
 postgres=# DROP DATABASE 'example-db';
 ```

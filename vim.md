@@ -235,7 +235,7 @@
 
 
 
-## Fileformat
+## File format
 
 `:e ++ff=dos` — Перечитать файл с окончанием строк `CRLF`
 
@@ -335,25 +335,25 @@ See: [vimregex.com](http://vimregex.com/)
 
 
 
-### nerdtree
+### `nerdtree`
 
-`R` — Nerdtree Обновить список файлов
-
-
-
-### vim-jsdoc
-
-`Ctrl + l` — Вставить jsDoc
+`R` — Обновить список файлов
 
 
 
-### ctrlp.vim
+### `vim-jsdoc`
+
+`Ctrl + l` — Вставить JSDoc
+
+
+
+### `ctrlp.vim`
 
 `Ctrl + p` — Перейти к файлу
 
 
 
-### bufexplorer
+### `bufexplorer`
 
 `\` + `bs` — Сплит окна по вертикали
 
