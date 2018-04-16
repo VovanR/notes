@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "hs .",
+    "test": "yaspeller --dictionary ./dictionary.json ./*.md"
+  },
+  "dependencies": {
+    "http-server": "^0.11.1",
+    "yaspeller": "^4.0.3"
+  }
+}

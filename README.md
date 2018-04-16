@@ -18,11 +18,11 @@
 
 1. append `Foo` to [`NOTES`](index.jsx#L5)
 
-## Edit gh-pages
-```bash
-npm i -g http-server
+## Edit `gh-pages`
+```shell
 git clone git@github.com:VovanR/notes.git
 cd notes
-hs .
+npm i
+npm start
 ```
 Open [http://localhost:8080/](http://localhost:8080/)
