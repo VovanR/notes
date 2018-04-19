@@ -57,19 +57,19 @@ fetch('https://api.github.com/users/vovanr')
 var foo = [1, 2, 3];
 
 foo.shift(); //=> 1 (removed item)
-// foo = [2, 3]
+console.log(foo); //=> [2, 3]
 
 foo.unshift(4); //=> 3 (new foo.length)
-// foo = [4, 2, 3]
+console.log(foo); //=> [4, 2, 3]
 
 foo.pop(); //=> 3 (removed item)
-// foo = [4, 2]
+console.log(foo); //=> [4, 2]
 
 foo.push(5); //=> 4 (new foo.length)
-// foo = [4, 2, 5]
+console.log(foo); //=> [4, 2, 5]
 
 foo.splice(foo.indexOf(2), 1, 3); //=> [2] (replaced items)
-// foo = [4, 3, 5]
+console.log(foo); //=> [4, 3, 5]
 ```
 
 
