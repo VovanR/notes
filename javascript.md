@@ -756,3 +756,17 @@ document.cookie = 'foo=; expires=Thu, 01 Jan 1970 00:00:00 UTC;'
  */
 exports.noop = function() {};
 ```
+
+
+## Кортежи
+- See: https://medium.com/@frontman/%D0%BA%D0%BE%D1%80%D1%82%D0%B5%D0%B6%D0%B8-%D0%B2-javascript-%D0%B8-typescript-74950fac15c3
+
+```js
+const tuple = (...args) => Object.freeze(args);
+```
+
+```js
+const tup = tuple(1, 2, 3);
+tup[0] = 13; // ничего не произойдет
+console.log(tup); //=> [1,2,3]
+```
