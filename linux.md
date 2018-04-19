@@ -280,10 +280,12 @@ sudo update-alternatives --config x-www-browser
 
 
 ## Fonts
-http://sourcefoundry.org/hack/
+- See: http://sourcefoundry.org/hack/
+
 ```shell
 mkdir -p ~/.fonts/truetype
 ```
+
 ```nohighlight
 ~/.fonts/
 └── truetype

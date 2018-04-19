@@ -2,7 +2,7 @@
 
 ----
 
-See: https://docs.mongodb.com/manual/reference/program/mongo/
+- See: https://docs.mongodb.com/manual/reference/program/mongo/
 
 ## Install
 ```shell
@@ -23,7 +23,7 @@ mongo
 ```
 
 
-## Подключиться к бд
+## Подключиться к БД
 ```
 > var l = connect('example-db')
 ```

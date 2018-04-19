@@ -324,7 +324,7 @@ render() {
 
 
 
-## Event keyCode which
+## Event `keyCode` `which`
 ```js
 handleKeyDown(event: React.KeyboardEvent) {
 	if (event.which === ESCAPE_KEY) {
@@ -396,7 +396,7 @@ class GlobalNav extends React.Component {
 
 
 
-## Тестирование test, tdd
+## Тестирование test, TDD
 - See: https://facebook.github.io/react/docs/test-utils.html
 - See: https://github.com/VovanR/react-decinc/blob/master/test.js
 - See: https://github.com/reactjs/react-tabs/blob/master/lib/components/__tests__/Tabs-test.js
@@ -404,15 +404,16 @@ class GlobalNav extends React.Component {
 
 
 ## [Enzyme](http://airbnb.io/enzyme/)
+- See: https://github.com/airbnb/enzyme/issues/76#issuecomment-189606849
+
 Trigger input change event  
-See: https://github.com/airbnb/enzyme/issues/76#issuecomment-189606849
 ```js
 wrapper.find('input').simulate('change', {target: {value: 'My new value'}});
 ```
 
 
 
-## [PureComponent](https://facebook.github.io/react/docs/react-api.html#react.purecomponent)
+## [`PureComponent`](https://facebook.github.io/react/docs/react-api.html#react.purecomponent)
 Неглубокая сверка новых проперти и состояния. Хорошо сочетается с [Immutable.js](http://facebook.github.io/immutable-js/).  
 Массивы можно изменять `concat(['new-item'])`, вместо `push`.  
 Не использовать для контейнеров (`redux connect`), так как там так же переопределен `shouldComponentUpdate`
@@ -420,14 +421,16 @@ wrapper.find('input').simulate('change', {target: {value: 'My new value'}});
 
 
 ## [Reselect](https://github.com/reactjs/reselect)
-See: https://github.com/neilff/react-redux-performance  
+- See: https://github.com/neilff/react-redux-performance  
+
 Для мемоизации вычисляемых значений
 
 
 
 ## [React Intl](https://github.com/yahoo/react-intl)
-See: https://github.com/yahoo/react-intl/wiki  
-Для интернационализации (i18n)
+- See: https://github.com/yahoo/react-intl/wiki  
+
+Для интернационализации i18n
 
 
 

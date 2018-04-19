@@ -618,7 +618,8 @@ function concatLists(newItems, oldItems) {
 
 
 ## Symbol
-Using symbols for private atributes
+Using symbols for private attributes
+
 ```js
 var _name = Symbol();
 class Person {
@@ -701,7 +702,7 @@ console.log(document.cookie);
 // logs "yummy_cookie=choco; tasty_cookie=strawberry"
 ```
 
-Значение надо кодировать с `encodeURIComponent()`, чтобы экранировать пробелы и тп
+Значение надо кодировать с `encodeURIComponent()`, чтобы экранировать пробелы и т.п.
 
 ### Установить срок годности
 Конкретное время
@@ -720,24 +721,24 @@ document.cookie = 'foo=bar; expires='  + date.toUTCString()
 document.cookie = 'foo=bar; max-age=3600'
 ```
 
-### path
+### `path`
 ```js
 document.cookie = 'foo=bar; path="/admin"'
 ```
 Если не установить, то `path` будет равен текущему. Глобальные куки `path="/"`
 
-### domain
+### `domain`
 ```js
 document.cookie = 'foo=bar; domain="example.com"'
 ```
 
-### Secure
+### `Secure`
 Доступны только по `HTTPS`
 ```js
 document.cookie = 'foo=bar; Secure'
 ```
 
-### HttpOnly
+### `HttpOnly`
 Доступны только для сервера. Недоступны по `document.cookie`
 ```js
 document.cookie = 'foo=bar; HttpOnly'
@@ -749,7 +750,7 @@ document.cookie = 'foo=; expires=Thu, 01 Jan 1970 00:00:00 UTC;'
 ```
 
 
-## noop
+## No operation `noop`
 ```js
 /**
  * No operation

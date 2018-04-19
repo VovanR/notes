@@ -73,18 +73,18 @@
   `Prefix` combination twice consecutively.
 
 `bind-key [key] [command]`
-— Creates a keybinding that executes the specified
+— Creates a key binding that executes the specified
   command. Can be shortened to bind
 
 `bind-key -r [key] [command]`
-— Creates a keybinding that is repeatable, meaning you
-  only need to press the P REFIX key once, and you can press
+— Creates a key binding that is repeatable, meaning you
+  only need to press the PREFIX key once, and you can press
   the assigned key repeatedly afterwards. This is useful
   for commands where you want to cycle through elements
   or resize panes. Can be shortened to bind .
 
 `unbind-key [key]`
-— Removes a defined keybinding so it can be bound to a
+— Removes a defined key binding so it can be bound to a
   different command. Can be shortened to unbind .
 
 `display-message or display`

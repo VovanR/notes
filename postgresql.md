@@ -31,7 +31,7 @@ psql postgres -U user_name
 
 
 ## User
-По-умолчанию создан пользователь `postgres`
+По умолчанию создан пользователь `postgres`
 ```shell
 psql postgres
 ```
@@ -41,7 +41,7 @@ psql postgres
 postgres=# \du
 ```
 
-По-умолчанию пользователь `postgres` не имеет пароля, установим
+По умолчанию пользователь `postgres` не имеет пароля, установим
 ```sql
 postgres=# \password postgres
 ```

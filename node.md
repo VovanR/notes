@@ -3,15 +3,17 @@
 ----
 
 ## Таблица поддержки ECMAScript версиями Node.js
-See: http://node.green/
+- See: http://node.green/
 
 
 
 ## Обновление глобальных пакетов
-See: https://docs.npmjs.com/getting-started/updating-global-packages
+- See: https://docs.npmjs.com/getting-started/updating-global-packages
+
 ```shell
 npm outdated -g --depth=0
 ```
+
 ```shell
 npm update -g
 ```
@@ -88,13 +90,14 @@ npm adduser
 ```
 
 
-## Интерфейсы командной строки cli
-See: https://github.com/SBoudrias/Inquirer.js
-See: https://github.com/sindresorhus/fkill-cli/blob/master/cli.js
+## Интерфейсы командной строки (cli)
+- See: https://github.com/SBoudrias/Inquirer.js
+- See: https://github.com/sindresorhus/fkill-cli/blob/master/cli.js
 
 
 ## Travis CI
 - See: https://travis-ci.org/
+
 ```yaml
 language: node_js
 cache: yarn

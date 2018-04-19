@@ -3,18 +3,18 @@
 ----
 
 - See: http://frontender.info/7-battle-tested-backbonejs-rules-for-amazing-web-apps/
-- Plugins: https://github.com/jashkenas/backbone/wiki/Extensions,-Plugins,-Resources
+- See: https://github.com/jashkenas/backbone/wiki/Extensions,-Plugins,-Resources
 
 ## REST-сервер должен обеспечивать следующий интерфейс
-See: page 118
+- See: page 118
 
-| url              | HTTP Method   | Operation                                                        |
-|------------------|---------------|------------------------------------------------------------------|
-| `/api/books`     | `GET`         | Считывание массива книг                                          |
-| `/api/books/:id` | `GET`         | Считывание книги с идентификатором `:id`                         |
-| `/api/books`     | `POST`        | Добавление новой книги и ее возвратс добавленным атрибутом `:id` |
-| `/api/books/:id` | `PUT`         | Обновление книги с идентификатором `:id`                         |
-| `/api/books/:id` | `DELETE`      | Удаление книги с идентификатором `:id`                           |
+| url              | HTTP Method   | Operation                                                         |
+|------------------|---------------|-------------------------------------------------------------------|
+| `/api/books`     | `GET`         | Считывание массива книг                                           |
+| `/api/books/:id` | `GET`         | Считывание книги с идентификатором `:id`                          |
+| `/api/books`     | `POST`        | Добавление новой книги и ее возврат с добавленным атрибутом `:id` |
+| `/api/books/:id` | `PUT`         | Обновление книги с идентификатором `:id`                          |
+| `/api/books/:id` | `DELETE`      | Удаление книги с идентификатором `:id`                            |
 
 ```javascript
 app.Library = Backbone.Collection.extend({
@@ -33,7 +33,7 @@ console.log(this.model.attributes);
 console.log(this.model.toJSON());
 ```
 
-Динамические свойства модели по-умолчанию
+Динамические свойства модели по умолчанию
 ```javascript
 var User = Backbone.Model.extend({
     urlRoot: 'User',
@@ -101,7 +101,7 @@ _.invoke(Todos.completed(), 'destroy');
 
 
 ## Доступ по айдишнику
-Моделе коллекции определить свойство айди
+Модели коллекции определить свойство айди
 ```javascript
 var FacilitiePrototypeModel = Backbone.Model.extend({
     defaults: {
@@ -474,7 +474,7 @@ start();
 
 
 
-### Добавдяем эвенты вьюшке после создания экземпляря
+### Добавляем события вьюшке после создания экземпляря
 ```javascript
 App.Views.Block = Backbone.View.extend({
 
