@@ -90,7 +90,7 @@ npm adduser
 ```
 
 
-## Интерфейсы командной строки (cli)
+## Интерфейсы командной строки (CLI)
 - See: https://github.com/SBoudrias/Inquirer.js
 - See: https://github.com/sindresorhus/fkill-cli/blob/master/cli.js
 

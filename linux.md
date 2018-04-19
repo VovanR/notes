@@ -40,19 +40,19 @@ locate -b foo
 
 
 
-## sudo
+## Установка `sudo`
 ```shell
 su
 apt-get install sudo
 adduser username sudo
 exit
 ```
-!RELOGIN
+Перезагрузить систему
 
 
 
 ## User Groups
-```
+```shell
 groups
 sudo gpasswd --add username group
 ```
@@ -95,7 +95,7 @@ sudo locale-gen ru_RU ru_RU.UTF-8 ru_RU ru_RU.UTF-8
 sudo dpkg-reconfigure locales
 ```
 
-Установка CP1251
+Установка `CP1251`
 ```shell
 sudo localedef -c -i ru_RU -f CP1251 ru_RU.CP1251
 ```
@@ -130,7 +130,7 @@ sudo apt-get install python python3 python-dev python3-dev postgresql postgresql
 sudo update-alternatives --install /usr/bin/exctags exctags /usr/bin/ctags-exuberant 10
 ```
 
-Если не устанавливали проприетарщину
+Если не устанавливали проприетарные дополнения. Например для проигрывания `.mp3`
 ```shell
 sudo apt-get install xubuntu-restricted-extras
 ```
@@ -182,7 +182,7 @@ sudo sysctl fs.inotify.max_user_watches=32768
 echo 32768 | sudo tee -a /proc/sys/fs/inotify/max_user_watches
 ```
 
-Замена редактора по-умолчанию
+Замена редактора по умолчанию
 ```shell
 sudo vim /usr/share/applications/defaults.list
 :%s/gedit.desktop/atom.desktop
@@ -229,7 +229,7 @@ alias jade2html="jade @1; js-beautify --type "html" --config ~/.config/dotfiles/
 
 
 ### IE
-[modern.ie](https://dev.windows.com/en-us/microsoft-edge/tools/vms/linux/)
+[`modern.ie`](https://dev.windows.com/en-us/microsoft-edge/tools/vms/linux/)
 
 
 
@@ -260,9 +260,9 @@ export WINEARCH=win32
 export WINEPREFIX=$HOME/.mynewwine32prefix/
 ```
 
-run `winecfg` and `winetricks`
+Запустить `winecfg` и `winetricks`
 
-unarchive `~/Downloads/winetricks.tar.gz` to `~/.cache/winetricks`
+Разархивировать `~/Downloads/winetricks.tar.gz` в `~/.cache/winetricks`
 ```shell
 winetricks gdiplus ie6 msxml3 vcrun2005sp1 vcrun2008 fontsmooth-rgb msxml6 vcrun2010 atmlib
 cp ~/Downloads/*.dll ~/.mynewwine32prefix/drive_c/windows/system32/
@@ -334,7 +334,7 @@ make CMAKE_BUILD_TYPE=Release
 - See: https://github.com/neovim/python-client
 - See: https://github.com/zchee/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
 
-Смотрим версию пайтона в виме https://github.com/Shougo/deoplete.nvim#requirements
+Смотрим версию Пайтона в Виме https://github.com/Shougo/deoplete.nvim#requirements
 ```
 :echo has("python3")
 ```

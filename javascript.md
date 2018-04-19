@@ -74,7 +74,7 @@ console.log(foo); //=> [4, 3, 5]
 
 
 
-### concat
+### `concat`
 ```javascript
 var foo = [1, 2];
 var bar = [3, 4];
@@ -224,7 +224,7 @@ iframe.onload = function () {
 
 
 
-## Отключить увеличение страницы Ctrl+Mousewheel
+## Отключить увеличение страницы Ctrl + Mouse wheel
 - See: http://stackoverflow.com/a/29994607
 
 ```js
@@ -380,7 +380,7 @@ var developer = Object.create(WebDeveloper).constructor('Jack', 21, 'male', ['ht
 
 
 
-## Classof
+## Class of
 - See: https://youtu.be/a3X9uqCoxKY?list=PL363QX7S8MfSxcHzvkNEqMYbOyhLeWwem
 
 ```javascript
@@ -400,7 +400,7 @@ if (e.isDefaultPrevented()) {
 
 
 
-## localStorage
+## `localStorage`
 
 ```js
 // Установка ключа
@@ -455,7 +455,7 @@ console.log(o1);  //=> { a: 1, b: 2, c: 3 }, target object itself is changed.
 
 
 
-## forEach object
+## object `forEach`
 ```js
 Object.keys(items).forEach(id => {
     console.log(items[id]);
@@ -584,10 +584,10 @@ screenshot(lastIndex, false);
 ```
 
 
-## Concat lists with intersection
+## Concatenate lists with intersection
 - See: https://jsfiddle.net/VovanR/4dyxszby/  
 
-Например при получении страницы с уже имеющимся итемом, чтобы не дублировать его
+Например при получении страницы с уже имеющимся элементом, чтобы не дублировать его
 ```js
 /**
  * Concat lists with intersection
@@ -686,7 +686,7 @@ const item = getItemById(33, getState())
 - https://github.com/js-cookie/js-cookie
 - https://github.com/expressjs/cookie-parser
 
-- 4KB
+- 4 KB
 - Приватны для домена
 - Лимит 20 на домен (зависит от браузера)
 

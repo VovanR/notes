@@ -3,12 +3,12 @@
 ----
 
 ## Polyfills
-See: https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills
+- See: https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills
 
 
 
 ## HTML5 demos
-See: https://github.com/remy/html5demos
+- See: https://github.com/remy/html5demos
 
 
 
@@ -18,7 +18,8 @@ See: https://github.com/remy/html5demos
 
 
 ## Ссылка на e-mail
-See: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Email_links
+- See: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Email_links
+
 ```html
 <a href="mailto:nobody@mozilla.ru">nobody@mozilla.ru</a>
 ```
@@ -40,7 +41,7 @@ mailto:nowhere@mozilla.org?subject=Newsletter%20subscription%20request&body=Plea
 
 
 ## Form
-See: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/My_first_HTML_form
+- See: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/My_first_HTML_form
 
 Атрибут `action` обязателен
 
@@ -52,7 +53,8 @@ See: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/My_first_HTML
 </form>
 ```
 
-See: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/How_to_structure_an_HTML_form/Example
+- See: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/How_to_structure_an_HTML_form/Example
+
 ```html
 <form action="">
 	<section>
@@ -92,13 +94,13 @@ See: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/How_to_struct
 
 
 ## Inputs
-See: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/The_native_form_widgets
+- See: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/The_native_form_widgets
 
 
 
 ## Flash link
 
-Надо добавить тэгу object:
+Надо добавить тэгу `object`:
 
 `style="pointer-events:none;"`
 
@@ -130,12 +132,13 @@ See: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/The_native_fo
 
 
 ## Picture
-See: https://github.com/seokirill/posthtml-webp
+- See: https://github.com/seokirill/posthtml-webp
 
 Before:
 ```html
 <img src="image.jpg">
 ```
+
 After:
 ```html
 <picture>

@@ -15,18 +15,20 @@ return self.render_to_response({'pk': user.pk})
 
 
 ## Развернуть проект
-```
+```shell
 virtualenv --python=python3 env
 source env/bin/activate
 pip install -r requirements.txt
 ```
+
 Запуск проекта
-```
+```shell
 source env/bin/activate
 python ./server.py
 ```
-Обовление зависимостей
-```
+
+Обновление зависимостей
+```shell
 source env/bin/activate
 pip install -r requirements.txt --upgrade
 ```
