@@ -109,6 +109,16 @@ while (i--) {
 
 
 
+### Сортировка массива объектов по массиву ID
+```js
+var m = [{id: 8}, {id: 2}, {id: 3}];
+var s = [3, 2, 8];
+m.sort((a, b) => s.indexOf(a.id) - s.indexOf(b.id));
+console.log(m); //=> [{id: 3}, {id: 2}, {id: 8}]
+```
+
+
+
 ## Выделить текст инпута при фокусе
 ```html
 <input
