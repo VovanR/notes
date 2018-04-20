@@ -134,7 +134,7 @@ find ./ -type f -name "*.js" -print0 | xargs -0 sed -i '' -e 's/foo/bar/g'
 find ./ -type f -name "*.js" -exec perl -pi -e "s/ {4,4}'AjaxLinks',?\n//g" '{}' \;
 ```
 
-Если в регулярке нет одинарных кавычек, то она оборачивается не в двойные, а одинарные:
+Если в регулярном выражении нет одинарных кавычек, то она оборачивается не в двойные, а одинарные:
 
 ```shell
 find ./ -type f -name "*.js" -exec perl -pi -e 's/^    \$\, _\, Backbone/    \$,\n    _,\n    Backbone/g' '{}' \;
@@ -211,7 +211,7 @@ find ./ -type f -exec rename "s/ /_/" *.jpg {} \;
 ```
 
 
-### Имена файлов из русского в транслит
+### Транслитерация кириллистических имен файлов
 
 ```shell
 find ./ -type f -exec totranslit.sh {} \;
@@ -224,13 +224,13 @@ find ./ -type d -exec totranslit.sh {} \;
 ```
 
 
-### sed
+### `sed`
 ```shell
 sed -i "s/{find}/{replace}/g" <filename>
 ```
 
 
-### Прочесть данные из файла экселя
+### Прочесть данные из файла Экселя
 
 ```shell
 cat <(unzip -p /Users/bolk/Downloads/spisokl-gorodov.xlsx xl/sharedStrings.xml |
@@ -313,7 +313,7 @@ ack-grep -i
 ```
 
 
-## SSH по PEM ключу
+## SSH по PEM-ключу
 
 ```shell
 cmod 600 path/to/key.pem
@@ -395,7 +395,7 @@ montage -background transparent -tile x1 -geometry +0+0 attack-aniimation__straf
 ```
 
 
-## Наложение ватермарки
+## Наложение водяного знака (watermark, вотермарк)
 ```shell
 composite -compose color-burn -gravity Center ./watermark.jpg ./photo.jpg ./result.jpg
 ```
@@ -410,19 +410,19 @@ sourcer
 nano enter.txt
 ```
 
-595x490
+`595x490`
 
 ```shell
 convert $ARG -crop "522x388+35+31" $ARG
 ```
 
-300x247
+`300x247`
 
 ```shell
 convert $ARG -crop "263x196+18+16" $ARG
 ```
 
-218x180
+`218x180`
 
 ```shell
 convert $ARG -crop "191x143+12+11" $ARG
@@ -443,7 +443,7 @@ convert -delay 32 -loop 0 anim* anim.gif
 ```
 
 
-## base64
+## `base64`
 
 ```shell
 base64 -w 0 image.jpg > image.jpg.base64
@@ -470,7 +470,7 @@ cat archive.?? > archive.tar.gz
 
 
 
-## rsync
+## `rsync`
 
 ### Забрать каталог `data` с удаленного сервера
 
@@ -487,7 +487,7 @@ rsync -a www/css/main.css USER@HOST:www/css/
 ```
 
 
-### Бэкапим
+### Бэкапим папку "Мои документы"
 
 ```shell
 rsync -avz --progress --delete '/media/username/Documents/Мои документы' /media/My-Book-Live/backup --exclude ".*" --exclude "Thumbs.db"
@@ -495,7 +495,7 @@ rsync -avz --progress --delete '/media/username/Documents/Мои докумен�
 
 
 
-## SCP copy over SSH
+## `scp` copy over SSH
 
 ```shell
 scp -r USER@HOST:~/www/data ./
@@ -503,7 +503,7 @@ scp -r USER@HOST:~/www/data ./
 
 
 
-## wget
+## `wget`
 
 ### Скачать список файлов
 
@@ -529,9 +529,9 @@ nslookup ya.ru
 
 
 
-## Addgroup in Mac
+## Add group in Mac
 
-See: http://serverfault.com/questions/20702/how-do-i-create-user-accounts-from-the-terminal-in-mac-os-x-10-5
+- See: http://serverfault.com/questions/20702/how-do-i-create-user-accounts-from-the-terminal-in-mac-os-x-10-5
 
 ```shell
 sudo dscl . list groups gid
@@ -561,7 +561,7 @@ mysql -f -h DBSRV -u USERNAME --default-character-set=utf8 DBNAME < dump.sql
 
 
 
-## cron
+## `cron`
 
 ```shell
 crontab -e
@@ -600,7 +600,7 @@ jobs
 %1
 ```
 
-Продолжить выполнение программы в бэкграунде
+Продолжить выполнение программы в фоне
 
 ```shell
 bg %1
@@ -614,8 +614,8 @@ sudo update-alternatives --config x-www-browser
 ```
 
 
-Переименовать компьютер (rename PC hostname)
-Вся инфа: просто `hostnamectl`
+Переименовать компьютер (rename PC `hostname`)
+Вся информация: просто `hostnamectl`
 
 ```shell
 sudo hostnamectl set-hostname vovanr-laptop
@@ -772,7 +772,7 @@ grep -roE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'
 
 ## Управление в терминале
 
-### emacs mode
+### Emacs mode
 
 `C-r` — Поиск по истории
 
@@ -839,10 +839,6 @@ set -o emacs
 
 
 
-## TODO
-
-
-
 ## Shell
 - Don't parse the output of `ls`. See [here](http://mywiki.wooledge.org/ParsingLs) for details and
   alternatives
@@ -851,9 +847,8 @@ set -o emacs
 - Don't use `echo` with options, escapes, or variables (use `printf` for those
   cases)
 - Don't use a `/bin/sh` [shebang]http://en.wikipedia.org/wiki/Shebang_(Unix) unless you plan to test and run your
-  script on at least: Actual Sh, Dash in POSIX-compatible mode (as it
-  will be run on Debian), and Bash in POSIX-compatible mode (as it will
-  be run on OSX)
+  script on at least: Actual SH, Dash in POSIX-compatible mode (as it
+  will be run on Debian), and Bash in POSIX-compatible mode (as it will be run on OS X)
 - Don't use any non-POSIX [features](http://mywiki.wooledge.org/Bashism) when using a `/bin/sh`
   [shebang]http://en.wikipedia.org/wiki/Shebang_(Unix)
 - If calling `cd`, have code to handle a failure to change directories
@@ -878,7 +873,7 @@ set -o emacs
 - Use quotes around every `"$variable"` and `"$( ... )"` expression
   unless you want them to be word-split and/or interpreted as globs
 - Use the `local` keyword with function-scoped variables
-- Identify common problems with [shellcheck](http://www.shellcheck.net/)
+- Identify common problems with [`shellcheck`](http://www.shellcheck.net/)
 
 
 
