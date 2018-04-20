@@ -100,8 +100,8 @@ _.invoke(Todos.completed(), 'destroy');
 ```
 
 
-## Доступ по айдишнику
-Модели коллекции определить свойство айди
+## Доступ по ID
+Модели коллекции определить свойство ID
 ```javascript
 var FacilitiePrototypeModel = Backbone.Model.extend({
     defaults: {
@@ -139,7 +139,7 @@ $('#new-todo').val().trim()
 
 
 
-## LocalStorage
+## Local Storage
 ```javascript
 backboneLocalstorage: '../bower_components/backbone.localStorage/backbone.localStorage',
 ```
@@ -474,7 +474,7 @@ start();
 
 
 
-### Добавляем события вьюшке после создания экземпляря
+### Добавляем события вьюшке после создания экземпляра
 ```javascript
 App.Views.Block = Backbone.View.extend({
 

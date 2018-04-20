@@ -540,7 +540,7 @@ sudo dscl . list /Users uid
 
 
 
-## mysql
+## MySQL
 
 ### Импортировать дамп
 
@@ -549,7 +549,7 @@ mysql -f -h DBSRV -u USERNAME --default-character-set=utf8 DBNAME < dump.sql
 ```
 
 
-### mysqldump
+### `mysqldump`
 
 Снять дамп базы данных на сервере
 Подключаемся по `ssh`
@@ -584,7 +584,7 @@ dpkg --get-selections | grep -v deinstall
 
 
 
-## Свернуть программу в консоле
+## Свернуть программу в консоли
 
 `Ctrl + z`
 
@@ -614,7 +614,7 @@ sudo update-alternatives --config x-www-browser
 ```
 
 
-Переименовать компьютер (rename pc hostname)
+Переименовать компьютер (rename PC hostname)
 Вся инфа: просто `hostnamectl`
 
 ```shell

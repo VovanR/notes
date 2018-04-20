@@ -255,7 +255,7 @@ git merge origin/master
 ssh-keygen -f ~/.ssh/username -C "username"
 ```
 
-Посмотреть подключенный ssh ключ
+Посмотреть подключенный SSH ключ
 ```shell
 ssh-add -l
 	The agent has no identities.

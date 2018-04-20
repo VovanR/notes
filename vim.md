@@ -115,7 +115,7 @@
 
 Через `Ctrl + k`:
 
-`-1` = `‐` Hyphnes
+`-1` = `‐` Hyphens
 
 `-2` = `−` Minus sign
 

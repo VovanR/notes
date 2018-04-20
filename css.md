@@ -199,7 +199,7 @@ pre {
 
 
 
-## SVG version of grayscale filter: desaturate.svg
+## SVG version of grayscale filter: `desaturate.svg`
 
 ```html
 <!-- SVG version of grayscale filter: desaturate.svg -->
@@ -215,7 +215,7 @@ pre {
 
 
 
-See: http://css-tricks.com/snippets/css/retina-display-media-query/
+- See: http://css-tricks.com/snippets/css/retina-display-media-query/
 
 ```css
 @media
@@ -241,9 +241,11 @@ only screen and (                min-resolution: 2dppx) {
 }
 ```
 
-Устанавливаем позиционирование относитель родительского элемента, устанавливаем положение посередине (50%) и затем `translateY` (2D преобразование) поднимает элемент на 50% от высоты оного вверх.
+Устанавливаем позиционирование относительно родительского элемента, устанавливаем положение посередине (50%)
+и затем `translateY` (2D-преобразование) поднимает элемент на 50% от высоты оного вверх.
 
-И, чтобы избежать размытия из-за расположения на "half-pixel", родительскому элементу устанавливаем параметр сохранения размеров:
+И, чтобы избежать размытия из-за расположения на "half-pixel",
+родительскому элементу устанавливаем параметр сохранения размеров:
 ```css
 .parent {
     transform-style: preserve-3d;
@@ -285,16 +287,18 @@ only screen and (                min-resolution: 2dppx) {
 
 
 
-The equivalent of `appearance: none;` for IE10/11 is:
-See: https://github.com/LeaVerou/stretchy/issues/7#issuecomment-125593467
+The equivalent of `appearance: none;` for IE 10/11 is:
+- See: https://github.com/LeaVerou/stretchy/issues/7#issuecomment-125593467
+
 ```css
 select::-ms-expand {
    display: none;
 }
 ```
 
-диапазон элементов
-В Safari из-за бага такой приём работать не будет. Однако, решение всё таки есть — Matt Pomaski починил это. Нужно всего лишь перечислить элементы выборки в другом порядке:
+Диапазон элементов
+В Safari из-за бага такой приём работать не будет. Однако, решение всё таки есть — Matt Pomaski починил это.
+Нужно всего лишь перечислить элементы выборки в другом порядке:
 ```css
 ol li:nth-child(-n+14):nth-child(n+7) {
   background: lightpink;
@@ -313,7 +317,8 @@ ol li:nth-child(-n+14):nth-child(n+7) {
 
 
 ## Language
-See: https://developer.mozilla.org/en-US/docs/Web/CSS/:lang
+- See: https://developer.mozilla.org/en-US/docs/Web/CSS/:lang
+
 ```styl
 .block
     color: blue

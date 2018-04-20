@@ -56,8 +56,9 @@
 
 
 
-## Сжатие html
-See: https://docs.djangoproject.com/en/1.7/ref/templates/builtins/
+## Сжатие HTML
+- See: https://docs.djangoproject.com/en/1.7/ref/templates/builtins/
+
 ```django
 {% spaceless %}
 {% endspaceless %}
@@ -65,7 +66,8 @@ See: https://docs.djangoproject.com/en/1.7/ref/templates/builtins/
 
 
 ## jQuery Templating
-See: http://tothinkornottothink.com/post/4282971041/using-jquery-templating-icanhaz-js-with-django
+- See: http://tothinkornottothink.com/post/4282971041/using-jquery-templating-icanhaz-js-with-django
+
 ```django
 {% verbatim %}
 <script id="user" type="text/html">
@@ -75,12 +77,13 @@ See: http://tothinkornottothink.com/post/4282971041/using-jquery-templating-ican
 ```
 
 
-See: http://djbook.ru/apfs02.html
+- See: http://djbook.ru/apfs02.html
 
 
 
-## PyJade
-See: https://github.com/syrusakbary/pyjade
+## `PyJade`
+- See: https://github.com/syrusakbary/pyjade
+
 ```django
 - load static
 - load i18n
@@ -120,20 +123,20 @@ span.b-foo__favorite.js-foo__favorite.b-icon(
 
 
 ## 404 or 500
-### Error pages on devel (404 and 505)
+### Error pages on `devel` (404 and 505)
 Set `DEBUG` to `False` in `foo/settings/devel.py`
 
-```sh
+```shell
 python manage.py runserver --settings foo.settings.devel --insecure
 ```
 Open http://127.0.0.1:8000/404
 
 
-See: http://uxscrutiny.com/2014/03/404-and-500-errors-in-django/
+- See: http://uxscrutiny.com/2014/03/404-and-500-errors-in-django/
 
 Problem: You’d like to see what your 404/500 error pages look like when `DEBUG=FALSE`
 
-Potential fix: One easy hack to ‘trigger’ django to show 404/500 pages is to add the routes to your `url.py`:
+Potential fix: One easy hack to 'trigger' Django to show 404/500 pages is to add the routes to your `url.py`:
 ```python
 from django.views.generic.base import TemplateView
 if settings.DEBUG:
@@ -143,7 +146,7 @@ if settings.DEBUG:
     )
 ```
 
-Если нужно отображать джанговскую дефолтную 500
+Если нужно отображать 500 ошибку по умолчанию
 ```python
 from django.views.defaults import server_error as server_error_view
 if settings.DEBUG:
@@ -154,7 +157,7 @@ if settings.DEBUG:
 
 
 
-## Узнать что возвращает ajax-запрос
+## Узнать что возвращает AJAX-запрос
 
 `foo/apps/bar/views.py`
 
@@ -207,7 +210,8 @@ or
 
 
 ## Изменить страницу авторизации
-See: https://docs.djangoproject.com/en/1.10/topics/auth/default/  
+- See: https://docs.djangoproject.com/en/1.10/topics/auth/default/  
+
 `urls.py`:
 ```python
 . . .
@@ -225,7 +229,7 @@ Copy template
 
 
 
-## Django Compressor Less.js (lessc) Source Map
+## Django Compressor Less.js (`lessc`) Source Map
 
 `settings/common.py`
 ```python
@@ -248,7 +252,8 @@ COMPRESS_PRECOMPILERS = [
 
 
 ## Pluralize
-See: https://github.com/j2a/pytils
+- See: https://github.com/j2a/pytils
+
 ```python
 {% load pytils_numeral %}
 
@@ -257,8 +262,9 @@ See: https://github.com/j2a/pytils
 
 
 
-## Вывести первые несколько итемов из списка
-See: https://docs.djangoproject.com/en/dev/ref/templates/builtins/#slice
+## Вывести первые несколько элементов списка
+- See: https://docs.djangoproject.com/en/dev/ref/templates/builtins/#slice
+
 ```python
 {% for item in items|slice:":3" %}
     <a
@@ -284,7 +290,8 @@ See: https://docs.djangoproject.com/en/dev/ref/templates/builtins/#slice
 
 
 ## Carousel
-See: https://docs.djangoproject.com/en/dev/ref/templates/builtins/#for
+- See: https://docs.djangoproject.com/en/dev/ref/templates/builtins/#for
+
 ```python
 <div class="carousel">
     {% for logo in logo_list %}
@@ -359,14 +366,15 @@ See: https://docs.djangoproject.com/en/dev/ref/templates/builtins/#for
 
 
 ## Development
-### ENV
-```
+### `ENV`
+```shell
 virtualenv --python=python3.5 .env
 source .env/bin/activate
 pip install -r requirements.txt --upgrade
 ```
-### DB
-```
+
+### База данных
+```shell
 sudo apt-get install postgresql-9.4
 sudo -u postgres psql
 create user PROJECTNAME with password 'PROJECTNAME';
@@ -374,10 +382,12 @@ create database PROJECTNAME with owner PROJECTNAME;
 \q
 ./manage.py migrate
 ```
+
 ### manage.py
-```
+```shell
 ./manage.py migrate
 ./manage.py createsuperuser
 ./manage.py runserver
 ```
+
 open http://127.0.0.1:8000/
