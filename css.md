@@ -368,3 +368,17 @@ ol li:nth-child(-n+14):nth-child(n+7) {
     background-size: 10px 10px;
 }
 ```
+
+
+
+## `calc` сделать значение переменной отрицательным. Negative variable
+```css
+.a {
+  --width: 1.25em;
+  --margin-left: 0.325em;
+
+  width: var(--width);
+  margin-right: calc(-1 * (var(--width) + var(--margin-left)));
+  margin-left: var(--margin-left);
+}
+```
