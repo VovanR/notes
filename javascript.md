@@ -781,3 +781,13 @@ const tup = tuple(1, 2, 3);
 tup[0] = 13; // ничего не произойдет
 console.log(tup); //=> [1,2,3]
 ```
+
+
+
+## Throw Error. Failing fast
+- See: https://molily.de/robust-javascript/#failing-fast
+
+```js
+throw new TypeError('Expected `hour` type to be a `number`');
+throw new RangeError('Expected `hour` to be a number from 0 to 23');
+```
