@@ -3,7 +3,7 @@
 ----
 
 - Official site: https://www.vim.org/
-- Official repo: https://github.com/vim/vim
+- Official repository: https://github.com/vim/vim
 - Vim Cheat Sheet: https://vim.rtorr.com/
 - Vim documentation: http://vimdoc.sourceforge.net/htmldoc/
 

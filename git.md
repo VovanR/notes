@@ -42,7 +42,7 @@ git rebase upstream/master
 git merge upstream/master
 ```
 
-Если при ребэйзе пришли конфликты, решаем их и продолжаем коммандой
+Если при ребейзе пришли конфликты, решаем их и продолжаем командой
 ```shell
 git rebase --continue
 ```
@@ -70,11 +70,11 @@ git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.gi
 
 
 
-## Принятие пулл реквеста
+## Принятие пуллреквеста
 Fetch and Merge (скачать и слить)
 
 Основной метод вливания изменений. Он требует добавления `remote`,
-ведущего к репозиторию человека, отправившего пулл реквест,
+ведущего к репозиторию человека, отправившего пуллреквест,
 скачивания изменений с этого репозитория, объединения нужной ветви,
 исправления конфликтов и выгрузки обновлённой ветви обратно в исходный репозиторий:
 ```shell
@@ -240,7 +240,7 @@ git merge origin/master
 git pull
 ```
 
-эквивалентно двум коммандам
+эквивалентно двум командам
 ```shell
 git fetch
 git merge origin/master
@@ -267,7 +267,7 @@ ssh-add ~/.ssh/username
 	Identity added: /home/username/.ssh/username (/home/username/.ssh/username)
 ```
 
-Проверка используемого по-умолчанию ключа
+Проверка используемого по умолчанию ключа
 ```shell
 ssh-add -l
 	2048 flaksjfnlausernvenwajflkavnhriauhkajdf username (RSA)
@@ -278,13 +278,13 @@ ssh-add -l
 ssh -vT git@bitbucket.org
 ```
 
-Выкладываем репу на хаб
+Выкладываем репу на Гитхаб
 ```shell
 git push -u origin --all
 ```
 
 
-## Конфликт двух ключей (когда два аккаунта на битбакет)
+## Конфликт двух ключей (когда два аккаунта на Битбакет)
 ```shell
 git pull
     conq: repository access denied.
@@ -318,7 +318,7 @@ Host personalid
 
 
 
-## Генерация нового GPG ключа
+## Генерация нового `GPG` ключа
 - See: https://help.github.com/articles/generating-a-new-gpg-key/
 - See: https://help.github.com/articles/adding-a-new-gpg-key-to-your-github-account/#adding-a-gpg-key
 - See: https://help.github.com/articles/signing-commits-using-gpg/
@@ -341,7 +341,7 @@ gpg --full-gen-key
 git config --global user.signingkey "1234567890123456"
 ```
 
-Подписывать ключем все коммиты
+Подписывать ключом все коммиты
 ```shell
 git config --global commit.gpgSign true
 ```
@@ -351,7 +351,7 @@ git config --global commit.gpgSign true
 git commit -S -m "your commit message"
 ```
 
-Добавление в башпрофиль
+Добавление в баш профиль
 ```shell
 echo "export GPG_TTY=$(tty)" >> ~/.bashlocal
 ```
@@ -513,7 +513,7 @@ git show <some-branch-name>:<file_path>
 
 
 ## Чтобы не было коммитов о мерже, когда пришли изменения
-> Merge branch 'feature/foo' into develop
+`Merge branch 'feature/foo' into develop`
 
 ```shell
 git pull --rebase
@@ -521,7 +521,7 @@ git pull --rebase
 
 
 
-## Частичый коммит
+## Частичный коммит
 Можно коммитить часть изменений файла
 ```shell
 git add -p <file_path>
@@ -619,7 +619,7 @@ git show <hash>
 
 
 
-## Отменить rebase
+## Отменить `rebase`
 - See: http://stackoverflow.com/a/135614
 
 Смотрим последний коммит перед началом `rebase`
@@ -703,7 +703,7 @@ git push origin dev:dev
 ```
 
 
-## git stash
+## `git stash`
 
 ### Как пользоваться
 Изменили файл. Надо переключиться на другую ветку, но работу над файлом не закончили.  
@@ -776,7 +776,7 @@ git diff --name-only stash@{0} HEAD
 
 
 
-## Удалить remove untracked files
+## Удалить remove `untracked` files
 ```shell
 git clean -f
 ```
@@ -803,7 +803,7 @@ git clean --dry-run
 ```
 
 
-## git bisect. Поиск коммита, в котором был поломан функционал
+## `git bisect`. Поиск коммита, в котором был поломан функционал
 Начинаем поиск
 ```shell
 git bisect start
@@ -839,7 +839,7 @@ git bisect reset
 
 
 
-## Git worktree
+## `git worktree`
 - See: https://git-scm.com/docs/git-worktree
 - See: https://stacktoheap.com/blog/2016/01/19/using-multiple-worktrees-with-git/
 

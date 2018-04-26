@@ -57,7 +57,7 @@ ls /lib/modules/$(uname -r)
 ```
 
 
-### Добавление модуля foo
+### Добавление модуля
 
 ```shell
 sudo modprobe foo
@@ -71,7 +71,7 @@ lsmod
 ```
 
 
-### Удаление модуля foo
+### Удаление модуля
 
 Добавьте опцию `-r` к команде `modprob`, чтобы удалить модуль
 
@@ -211,7 +211,7 @@ find ./ -type f -exec rename "s/ /_/" *.jpg {} \;
 ```
 
 
-### Транслитерация кириллистических имен файлов
+### Транслитерация кириллических имён файлов
 
 ```shell
 find ./ -type f -exec totranslit.sh {} \;
@@ -230,7 +230,7 @@ sed -i "s/{find}/{replace}/g" <filename>
 ```
 
 
-### Прочесть данные из файла Экселя
+### Прочесть данные из файла Экселя (Excel)
 
 ```shell
 cat <(unzip -p /Users/bolk/Downloads/spisokl-gorodov.xlsx xl/sharedStrings.xml |
@@ -748,7 +748,7 @@ echo -e "last argument of last sh:\t"$_
 
 
 
-### Разбить имя сайта на массив, если аргумент задан с субдоменом (v2.example)
+### Разбить имя сайта на массив, если аргумент задан с субдоменом (`v2.example`)
 
 ```bash
 site=(${1//./ })
