@@ -506,3 +506,33 @@ less /tmp/log_{PID}
 ```
 :checkhealth
 ```
+
+
+## `vimdiff`
+- See: http://vimdoc.sourceforge.net/htmldoc/diff.html
+
+```shell
+vimdiff file1 file2 [file3 [file4]]
+```
+
+Аналогично
+```shell
+vim -d file1 file2 [file3 [file4]]
+```
+
+### Навигация
+
+`]c` — Следующее различие
+
+`[c` — Предыдущее различие
+
+
+### Редактирование
+
+`do` — (Diff Obtain) Принять изменение в текущий файл
+
+`dp` — (Diff Put) Отправить изменение в другой файл
+
+`:diffupdate` — Обновить файлы
+
+`ZQ` — Выйти без принятия изменений
