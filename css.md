@@ -215,6 +215,7 @@ pre {
 
 
 
+# Retina display media query
 - See: http://css-tricks.com/snippets/css/retina-display-media-query/
 
 ```css
@@ -255,10 +256,11 @@ only screen and (                min-resolution: 2dppx) {
 
 
 ## Маска прозрачности строки текста
+
 ```html
 <style>
     .clip-player._subtitles_inline .clip-player__content-frame-text-scroller {
-        /* Для эбкитов применяем проприетарщину */
+        /* Для вэбкитов применяем маску линейным градиентом */
         -webkit-mask-image: -webkit-linear-gradient(
             top, transparent, white 20%, white 80%, transparent 100%
         );
@@ -296,12 +298,13 @@ select::-ms-expand {
 }
 ```
 
-Диапазон элементов
-В Safari из-за бага такой приём работать не будет. Однако, решение всё таки есть — Matt Pomaski починил это.
-Нужно всего лишь перечислить элементы выборки в другом порядке:
+
+
+## Диапазон элементов
+Раскрасить элементы 7-14
 ```css
 ol li:nth-child(-n+14):nth-child(n+7) {
-  background: lightpink;
+  background-color: lightpink;
 }
 ```
 
@@ -317,7 +320,7 @@ ol li:nth-child(-n+14):nth-child(n+7) {
 
 
 ## Language
-- See: https://developer.mozilla.org/en-US/docs/Web/CSS/:lang
+- See: [`:lang()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:lang)
 
 ```styl
 .block

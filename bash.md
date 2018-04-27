@@ -847,7 +847,7 @@ set -o emacs
 - Don't use `echo` with options, escapes, or variables (use `printf` for those
   cases)
 - Don't use a `/bin/sh` [shebang]http://en.wikipedia.org/wiki/Shebang_(Unix) unless you plan to test and run your
-  script on at least: Actual SH, Dash in POSIX-compatible mode (as it
+  script on at least: Actual `SH`, Dash in POSIX-compatible mode (as it
   will be run on Debian), and Bash in POSIX-compatible mode (as it will be run on OS X)
 - Don't use any non-POSIX [features](http://mywiki.wooledge.org/Bashism) when using a `/bin/sh`
   [shebang]http://en.wikipedia.org/wiki/Shebang_(Unix)
