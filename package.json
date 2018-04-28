@@ -2,10 +2,17 @@
   "private": true,
   "scripts": {
     "start": "hs .",
-    "test": "yaspeller --dictionary ./dictionary.json ./*.md"
+    "test": "npm run test:spellcheck && npm run test:js",
+    "test:spellcheck": "yaspeller --dictionary ./dictionary.json ./*.md",
+    "test:js": "xo"
   },
   "dependencies": {
     "http-server": "^0.11.1",
+    "xo": "^0.20.3",
     "yaspeller": "^4.0.3"
+  },
+  "xo": {
+    "semicolon": false,
+    "envs": ["browser"]
   }
 }

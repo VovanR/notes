@@ -1,4 +1,6 @@
-(function (React, ReactDOM, marked, hljs) {
+/* global React, ReactDOM, ReactBootstrap, ReactCustomScrollbars, marked, hljs */
+
+(function () {
 	'use strict'
 
 	// Exists notes list
@@ -26,7 +28,7 @@
 		'Tmux',
 		'TypeScript',
 		'Typography',
-		'Vim',
+		'Vim'
 	]
 	const SITE_SOURCE_URL = 'https://github.com/VovanR/notes/blob/gh-pages/'
 
@@ -47,21 +49,30 @@
 		if (level === 2) {
 			h2s.push({
 				name: text,
-				url: url
+				url
 			})
 		}
 
 		return `<h${level} id="${id}"><a href="${url}"></a>${text}</h${level}>`
 	}
 
-	const e = React.createElement;
+	const e = React.createElement
+
+	const SubMenu = props => e('ul', {className: 'nav-submenu'},
+		props.items.map((item, index) => e('li', {key: index},
+			e('a', {
+				href: item.url,
+				dangerouslySetInnerHTML: {__html: item.name}
+			})
+		))
+	)
 
 	class MenuItem extends React.Component {
 		constructor(props) {
 			super(props)
 
 			this.state = {
-				showSubmenu: true,
+				showSubmenu: true
 			}
 
 			this.handleSelect = this.handleSelect.bind(this)
@@ -82,7 +93,7 @@
 			const {
 				isActive,
 				note,
-				onSelect,
+				onSelect
 			} = this.props
 
 			if (!isActive) {
@@ -92,9 +103,8 @@
 
 			if (isActive && note.h2) {
 				this.setState(prevState => ({
-					showSubmenu: !prevState.showSubmenu,
+					showSubmenu: !prevState.showSubmenu
 				}))
-				return
 			}
 		}
 
@@ -102,7 +112,7 @@
 			const {
 				isLoading,
 				isActive,
-				note,
+				note
 			} = this.props
 
 			return e(
@@ -125,7 +135,7 @@
 					)
 				),
 				this.state.showSubmenu && note.h2 && e(SubMenu, {items: note.h2})
-			);
+			)
 		}
 	}
 
@@ -146,21 +156,12 @@
 					key: note.id,
 					isLoading: note.id === loadingNoteId,
 					isActive: note.id === activeNoteId,
-					note: note,
-					onSelect: onSelect
+					note,
+					onSelect
 				}))
-			);
+			)
 		}
 	}
-
-	const SubMenu = props => e('ul', {className: 'nav-submenu'},
-		props.items.map((item, index) => e('li', {key: index},
-			e('a', {
-				href: item.url,
-				dangerouslySetInnerHTML: {__html: item.name},
-			})
-		))
-	)
 
 	class App extends React.Component {
 		constructor(props) {
@@ -183,7 +184,7 @@
 				notes: collection,
 				activeNoteId: null,
 				isLoading: false,
-				loadingNoteId: null,
+				loadingNoteId: null
 			}
 
 			this.handleSelect = this.handleSelect.bind(this)
@@ -229,13 +230,13 @@
 					this.setState({
 						activeNoteId: noteId,
 						isLoading: false,
-						loadingNoteId: null,
+						loadingNoteId: null
 					})
 				})
 				.catch(() => {
 					this.setState({
 						isLoading: false,
-						loadingNoteId: null,
+						loadingNoteId: null
 					})
 				})
 		}
@@ -251,7 +252,7 @@
 				loadingNoteId,
 				notes
 			} = this.state
-			const active = activeNoteId !== null ? this.getActiveNote() : {}
+			const active = activeNoteId === null ? {} : this.getActiveNote()
 
 			return e(Grid, {},
 				e(Row, {},
@@ -259,10 +260,10 @@
 						e(Panel, {className: 'nav-menu-panel'},
 							e(Scrollbars, {},
 								e(Menu, {
-									notes: notes,
-									activeNoteId: activeNoteId,
-									isLoading: isLoading,
-									loadingNoteId: loadingNoteId,
+									notes,
+									activeNoteId,
+									isLoading,
+									loadingNoteId,
 									onSelect: this.handleSelect
 								})
 							)
@@ -286,9 +287,9 @@
 						)
 					)
 				)
-			);
+			)
 		}
 	}
 
 	ReactDOM.render(e(App), document.getElementById('app'))
-})(React, ReactDOM, marked, hljs)
+})()
