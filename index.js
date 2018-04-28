@@ -54,6 +54,8 @@
 		return `<h${level} id="${id}"><a href="${url}"></a>${text}</h${level}>`
 	}
 
+	const e = React.createElement;
+
 	class MenuItem extends React.Component {
 		constructor(props) {
 			super(props)
@@ -103,20 +105,27 @@
 				note,
 			} = this.props
 
-			return (
-				<li className={isActive ? 'active' : ''}>
-					<a
-						href={note.url}
-						onClick={this.handleSelect}
-					>
-						{note.name}
-
-						{isLoading && <span className="nav-menu__spinner"/>}
-					</a>
-
-					{this.state.showSubmenu && note.h2 && <SubMenu items={note.h2}/>}
-				</li>
-			)
+			return e(
+				'li',
+				{
+					className: isActive ? 'active' : ''
+				},
+				e(
+					'a',
+					{
+						href: note.url,
+						onClick: this.handleSelect
+					},
+					note.name,
+					isLoading && e(
+						'span',
+						{
+							className: 'nav-menu__spinner'
+						}
+					)
+				),
+				this.state.showSubmenu && note.h2 && e(SubMenu, {items: note.h2})
+			);
 		}
 	}
 
@@ -130,33 +139,27 @@
 				onSelect
 			} = this.props
 
-			return (
-				<ul className="nav-menu">
-					{notes.map(note => (
-						<MenuItem
-							key={note.id}
-							isLoading={note.id === loadingNoteId}
-							isActive={note.id === activeNoteId}
-							note={note}
-							onSelect={onSelect}
-						/>
-					))}
-				</ul>
-			)
+			return e(
+				'ul',
+				{className: 'nav-menu'},
+				notes.map(note => e(MenuItem, {
+					key: note.id,
+					isLoading: note.id === loadingNoteId,
+					isActive: note.id === activeNoteId,
+					note: note,
+					onSelect: onSelect
+				}))
+			);
 		}
 	}
 
-	const SubMenu = props => (
-		<ul className="nav-submenu">
-			{props.items.map((item, index) => (
-				<li key={index}>
-					<a
-						href={item.url}
-						dangerouslySetInnerHTML={{__html: item.name}}
-					/>
-				</li>
-			))}
-		</ul>
+	const SubMenu = props => e('ul', {className: 'nav-submenu'},
+		props.items.map((item, index) => e('li', {key: index},
+			e('a', {
+				href: item.url,
+				dangerouslySetInnerHTML: {__html: item.name},
+			})
+		))
 	)
 
 	class App extends React.Component {
@@ -250,51 +253,42 @@
 			} = this.state
 			const active = activeNoteId !== null ? this.getActiveNote() : {}
 
-			return (
-				<Grid>
-					<Row>
-						<Col md={3}>
-							<Panel className="nav-menu-panel">
-								<Scrollbars>
-									<Menu
-										notes={notes}
-										activeNoteId={activeNoteId}
-										isLoading={isLoading}
-										loadingNoteId={loadingNoteId}
-										onSelect={this.handleSelect}
-									/>
-								</Scrollbars>
-							</Panel>
-						</Col>
+			return e(Grid, {},
+				e(Row, {},
+					e(Col, {md: 3},
+						e(Panel, {className: 'nav-menu-panel'},
+							e(Scrollbars, {},
+								e(Menu, {
+									notes: notes,
+									activeNoteId: activeNoteId,
+									isLoading: isLoading,
+									loadingNoteId: loadingNoteId,
+									onSelect: this.handleSelect
+								})
+							)
+						)
+					),
 
-						<Col md={9}>
-							<Panel>
-								{active.sourceURL && (
-									<div className="note-source">
-										<a
-											className="text-muted small"
-											href={active.sourceURL}
-											target="_blank"
-											rel="noopener"
-										>
-											Note source code on GitHub
-										</a>
-									</div>
-								)}
-
-								{active.data && (
-									<div
-										className="rendered-note"
-										dangerouslySetInnerHTML={{__html: active.data}}
-									/>
-								)}
-							</Panel>
-						</Col>
-					</Row>
-				</Grid>
-			)
+					e(Col, {md: 9},
+						e(Panel, {},
+							active.sourceURL && e('div', {className: 'note-source'},
+								e('a', {
+									className: 'text-muted small',
+									href: active.sourceURL,
+									target: '_blank',
+									rel: 'noopener'
+								}, 'Note source code on GitHub')
+							),
+							active.data && e('div', {
+								className: 'rendered-note',
+								dangerouslySetInnerHTML: {__html: active.data}
+							})
+						)
+					)
+				)
+			);
 		}
 	}
 
-	ReactDOM.render(<App/>, document.getElementById('app'))
+	ReactDOM.render(e(App), document.getElementById('app'))
 })(React, ReactDOM, marked, hljs)
