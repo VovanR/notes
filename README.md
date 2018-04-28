@@ -23,7 +23,7 @@ Demo: https://vovanr.github.io/notes
    ```
    </code></pre>
 
-1. append `Foo` to [`NOTES`](index.jsx#L5)
+1. append `Foo` to [`NOTES`](index.js#L7)
 
 ## Edit `gh-pages`
 ```shell
