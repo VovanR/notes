@@ -6,6 +6,8 @@
 - See: http://facebook.github.io/react/docs/tutorial.html
 - See: http://facebook.github.io/react/docs/addons.html
 - See: http://stackoverflow.com/questions/tagged/reactjs?sort=votes&pageSize=15
+- See: [Шаблоны проектирования в React](https://medium.freecodecamp.org/evolving-patterns-in-react-116140e5fe8f) [перевод](https://habrahabr.ru/company/ruvds/blog/349198/)
+- See: [React Patterns](https://reactpatterns.com/) [source](https://github.com/chantastic/reactpatterns.com)
 
 ## Атрибуты
 - See: https://reactjs.org/docs/dom-elements.html#differences-in-attributes
@@ -520,8 +522,3 @@ export class Button extends PureComponent {
 	}
 }
 ```
-
-
-
-## Шаблоны проектирования в React
-- See: https://medium.freecodecamp.org/evolving-patterns-in-react-116140e5fe8f https://habrahabr.ru/company/ruvds/blog/349198/
