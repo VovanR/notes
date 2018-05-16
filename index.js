@@ -9,6 +9,7 @@
 		'Backbone',
 		'Bash',
 		'CSS',
+		'CMD',
 		'Django',
 		'Git',
 		'HTML',
