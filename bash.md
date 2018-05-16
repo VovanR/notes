@@ -4,6 +4,25 @@
 
 - See: https://learnxinyminutes.com/docs/ru-ru/bash-ru/
 - See: https://github.com/Idnan/bash-guide
+- See: https://devhints.io/bash
+
+
+
+## Создать копию файла с добавлением `.bak` в конце имени
+
+```shell
+sudo cp /etc/ssh/sshd_config{,.bak}
+```
+
+
+
+## Открытые порты
+
+```shell
+netstat -ntlp | grep LISTEN
+```
+
+
 
 ## Копирование текста в терминале
 
@@ -637,13 +656,40 @@ sudo vim /etc/hosts
 
 
 
+## Вывести все IP-адреса из файлов логов
+
+```shell
+grep -roE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'
+```
+
 
 
 ## Скрипты
 
+### Shebang
+
+- See: http://en.wikipedia.org/wiki/Shebang_(Unix)
+
+```bash
+#!/usr/bin/env bash
+
+echo "Hello World!"
+```
+
+
+
+## Bash
+- Prefer `${var,,}` and `${var^^}` over `tr` for changing case
+- Prefer `${var//from/to}` over `sed` for simple string replacements
+- Prefer `[[` over `test` or `[`
+- Prefer process substitution over a pipe in `while read` loops
+- Use `((` or `let`, not `$((` when you don't need the result
+
+
+
 ### Help
 
-See: https://github.com/github/hub/blob/master/script/install.sh
+- See: https://github.com/github/hub/blob/master/script/install.sh
 
 ```bash
 #!/usr/bin/env bash
@@ -661,7 +707,9 @@ esac
 
 
 ### Download array
-See: https://github.com/oranja/diff-so-fancy/blob/96b6ca05777123865986aec98d2d7d03a73ec7ed/update-deps.sh
+
+- See: https://github.com/oranja/diff-so-fancy/blob/96b6ca05777123865986aec98d2d7d03a73ec7ed/update-deps.sh
+
 ```bash
 #!/usr/bin/env bash
 
@@ -678,11 +726,11 @@ done
 
 
 
-### Bash scripting
+### if else
+
 - See: https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html
 
 ```
-# if else
 [ -a FILE ] Правда если FILE существует.
 [ -b FILE ] Правда если FILE существует и это специальный блоковый файл.
 [ -c FILE ] Правда если FILE существует и это специальный знаковый файл.
@@ -769,15 +817,6 @@ site=(${1//./ })
 
 
 
-## Вывести все IP-адреса из файлов логов
-```shell
-grep -roE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'
-```
-
-
-
-
-
 ## Управление в терминале
 
 ### Emacs mode
@@ -828,6 +867,7 @@ grep -roE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'
 
 
 ### vi mode
+
 Включить
 ```shell
 set -o vi
@@ -848,12 +888,12 @@ set -o emacs
 
 
 ## Shell
-- Don't parse the output of `ls`. See [here](http://mywiki.wooledge.org/ParsingLs) for details and
-  alternatives
-- Don't use `cat` to provide a file on `stdin` to a process that accepts
-  file arguments itself
-- Don't use `echo` with options, escapes, or variables (use `printf` for those
-  cases)
+
+- See: https://github.com/thoughtbot/guides/tree/master/best-practices#shell
+
+- Don't parse the output of `ls`. See [here](http://mywiki.wooledge.org/ParsingLs) for details and alternatives
+- Don't use `cat` to provide a file on `stdin` to a process that accepts file arguments itself
+- Don't use `echo` with options, escapes, or variables (use `printf` for those cases)
 - Don't use a `/bin/sh` [shebang]http://en.wikipedia.org/wiki/Shebang_(Unix) unless you plan to test and run your
   script on at least: Actual `SH`, Dash in POSIX-compatible mode (as it
   will be run on Debian), and Bash in POSIX-compatible mode (as it will be run on OS X)
@@ -869,86 +909,75 @@ set -o emacs
 - Prefer `mktemp` over using `$$` to "uniquely" name a temporary file
 - Prefer `sed '/re/!d; s//.../'` to `grep re | sed 's/re/.../'`
 - Prefer `sed 'cmd; cmd'` to `sed -e 'cmd' -e 'cmd'`
-- Prefer checking exit statuses over output in `if` statements (`if grep
-  -q ...; `, not `if [ -n "$(grep ...)" ];`)
-- Prefer reading environment variables over process output (`$TTY` not
-  `$(tty)`, `$PWD` not `$(pwd)`, etc)
+- Prefer checking exit statuses over output in `if` statements (`if grep -q ...; `, not `if [ -n "$(grep ...)" ];`)
+- Prefer reading environment variables over process output (`$TTY` not `$(tty)`, `$PWD` not `$(pwd)`, etc)
 - Use `$( ... )`, not backticks for capturing command output
 - Use `$(( ... ))`, not `expr` for executing arithmetic expressions
-- Use `1` and `0`, not `true` and `false` to represent boolean
-  variables
+- Use `1` and `0`, not `true` and `false` to represent boolean variables
 - Use `find -print0 | xargs -0`, not `find | xargs`
-- Use quotes around every `"$variable"` and `"$( ... )"` expression
-  unless you want them to be word-split and/or interpreted as globs
+- Use quotes around every `"$variable"` and `"$( ... )"` expression unless you want them to be word-split and/or interpreted as globs
 - Use the `local` keyword with function-scoped variables
 - Identify common problems with [`shellcheck`](http://www.shellcheck.net/)
 
 
+## Советы
 
-## Bash
-- Prefer `${var,,}` and `${var^^}` over `tr` for changing case
-- Prefer `${var//from/to}` over `sed` for simple string replacements
-- Prefer `[[` over `test` or `[`
-- Prefer process substitution over a pipe in `while read` loops
-- Use `((` or `let`, not `$((` when you don't need the result
+- See: http://habrahabr.ru/blogs/linux/118279/
 
+очень простой способ передать файлы с машины на машину — `tar cz. | nc -l -p 2214` (на передающей стороне) и `nc <адрес> 2214 | tar xz` (на принимающей).
+`2214` — номер порта, выбирается по желанию. в разных версиях `nc` нужно писать `nc -l -p` или `nc -l`
 
+в локальной сети из дефолтно-настроенных убунт, можно обращаться к машинам по имени, а не по айпи: `username-desktop.local` отрезольвится в `ip` машины, которую назвали `username-desktop`. это магия `mdns`, спасибо *Apple*
 
-```
-очень простой способ передать файлы с машины на машину — tar cz. | nc -l -p 2214 (на передающей стороне) и nc адрес 2214 | tar xz (на принимающей). 2214 — номер порта, выбирается по желанию. в разных версиях nc нужно писать nc -l -p или nc -l
+`avahi-browse -a` быстро покажет список имен машин с в локальной сети, а ключ `-r` покажет сразу и их `ip`. как и в предыдущем хинте, требуется `avahi`, он есть в дефолтной убунте. сама команда — в пакете `avahi-utils`
 
-в локальной сети из дефолтно-настроенных убунт, можно обращаться к машинам по имени, а не по айпи: username-desktop.local отрезольвится в ip машины, которую назвали username-desktop. это магия mdns, спасибо apple
+пользуйтесь `Ctrl-R` в консоли, чтобы не жать «вверх» по сто раз
+`history` не резиновый. если что-то было забито в историю интерпретатора, рано или поздно оттуда может исчезнуть, не полагайтесь на него, как на справочник
 
-avahi-browse -a быстро покажет список имен машин с в локальной сети, а ключ -r покажет сразу и их ip. как и в предыдущем хинте, требуется avahi, он есть в дефолтной убунте. сама команда — в пакете avahi-utils
-
-пользуйтесь ctrl-R в консоли, чтобы не жать «вверх» по сто раз
-history не резиновый. если что-то было забито в историю интерпретатора, рано или поздно оттуда может исчезнуть, не полагайтесь на него, как на справочник
-
-используйте set -e в скриптах. неотработавший «cd» во временный каталог может надолго испортить настроение содержимое /home
+используйте `set -e` в скриптах. неотработавший `cd` во временный каталог может надолго испортить настроение содержимое `/home`
 
 проверяйте код возврата
 
-чтобы вернуться в предыдущий каталог, есть команда cd -. в zsh еще есть команда d еще есть команда dirs -v, показывающая историю переходов. еще в zsh можно делать вот так: cd -2
+чтобы вернуться в предыдущий каталог, есть команда `cd -`. в `zsh` еще есть команда `d` еще есть команда `dirs -v`, показывающая историю переходов. еще в `zsh` можно делать вот так: `cd -2`
 
-пишите в скриптах длинные --варианты параметров
-не пишите в скриптах rm -rf $VAR/
+пишите в скриптах длинные `--варианты` параметров
+не пишите в скриптах `rm -rf $VAR/`
 
-используйте visudo для редактирования sudoers
+используйте `visudo` для редактирования `sudoers`
 
-потеряли пароль рута? при загрузке укажите ядру параметр init=/bin/bash и сбростье пароль через passwd
+потеряли пароль рута? при загрузке укажите ядру параметр `init=/bin/bash` и сбростье пароль через `passwd`
 
-у грепа есть полезный параметр --color
+у `grep` есть полезный параметр `--color`
 
-команда, чтобы перечитать отредактированный файл с переменными окружения: source /etc/environment .
+команда, чтобы перечитать отредактированный файл с переменными окружения: `source /etc/environment`.
 
-пользуйтесь bash -x для отладки скриптов
+пользуйтесь `bash -x` для отладки скриптов
 
-пользуйтесь strace для отладки всего остального. от лишнего выхлопа спасет параметр -e имявызова
-не путайте /bin/sh и /bin/bash, это не всегда одно и то же. особенно в дебиане, особенно в убунте
+пользуйтесь `strace` для отладки всего остального. от лишнего выхлопа спасет параметр `-e имя_вызова`
+не путайте `/bin/sh` и `/bin/bash`, это не всегда одно и то же. особенно в дебиане, особенно в убунте
 
-если на команду повешен алиас, то запустить ее «настоящую» можно, добавив в начале бэкслеш например: \ls
+если на команду повешен алиас, то запустить ее «настоящую» можно, добавив в начале бэкслеш например: `\ls`
 
-если терминал переклинило после некорректного выхода из псевдографической программы иили вырвашегося на просторы stdout мусора, есть волшебная команда reset
+если терминал переклинило после некорректного выхода из псевдографической программы иили вырвашегося на просторы `stdout` мусора, есть волшебная команда `reset`
 
-exec >file в скрипте перенаправит его вывод в файл и не перезапустит скрипт
+`exec >file` в скрипте перенаправит его вывод в файл и не перезапустит скрипт
 
-используйте в скриптах mktemp для создания временных файлов и каталогов
+используйте в скриптах `mktemp` для создания временных файлов и каталогов
 
-пишите переменные вот так: ${VAR}
+пишите переменные вот так: `${VAR}`
 
-VAR=X и export VAR=X — разные вещи
+`VAR=X` и `export VAR=X` — разные вещи
 
-dd может показывать, сколько он уже скопировал, если пнуть его черз kill -USR1
+`dd` может показывать, сколько он уже скопировал, если пнуть его черз `kill -USR1`
 
-kill может принимать аргументом номер задачи, а не только идентификатор процесса: kill %1
+`kill` может принимать аргументом номер задачи, а не только идентификатор процесса: `kill %1`
 
-jobs, bg, fg, disown — тоже так умеют
+`jobs`, `bg`, `fg`, `disown` — тоже так умеют
 
-если «вышли» из программы через ctrl-Z, вернуться можно командой fg
+если «вышли» из программы через `Ctrl-Z`, вернуться можно командой `fg`
 
-watch и repeat уже написаны, не надо велосипедить их через while true
+`watch` и `repeat` уже написаны, не надо велосипедить их через `while true`
 
-at тоже уже написан, а sleep понимает время не только в секундах
+`at` тоже уже написан, а `sleep` понимает время не только в секундах
 
-sudo echo > file открывает файл на запись не с правами рута. это делается так: sudo sh -c 'echo > file'
-```
+`sudo echo > file` открывает файл на запись не с правами рута. это делается так: `sudo sh -c 'echo > file'`
