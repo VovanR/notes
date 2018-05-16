@@ -339,6 +339,12 @@
 
 ## Буфер
 
+`:buffers` || `:ls` || `:files` ― Список буферов
+
+`:buffer 1` || `:b 1` || `1` + `Ctrl + 6` ― Открыть буфер по номеру
+
+`:buffer README.md` || `:b README.md` ― Открыть буфер по имени
+
 `:b#` || `Ctrl + 6` — Переключиться на предыдущий буфер
 
 `:bw` — Like `:bdelete`, but really delete the buffer
