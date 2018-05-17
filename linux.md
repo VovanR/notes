@@ -377,3 +377,14 @@ svg-term --cast=113643 --out examples/parrot.svg --window
 
 
 `screen -r` — Подключиться (re-attach) к сессии
+
+
+
+## VPN OpenVPN
+
+```shell
+sudo apt-get install network-manager-openvpn network-manager-openvpn-gnome
+```
+
+Добавить соединение  
+*Settings* → *Network Connections* → *Add a new connection* → *OpenVPN*
