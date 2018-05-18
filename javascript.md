@@ -693,9 +693,11 @@ const item = getItemById(33, getState())
 - See: https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie
 - See: https://flaviocopes.com/cookies/
 
+**Библиотеки:**
 - https://github.com/js-cookie/js-cookie
 - https://github.com/expressjs/cookie-parser
 
+**Свойства:**
 - 4 KB
 - Приватны для домена
 - Лимит 20 на домен (зависит от браузера)
