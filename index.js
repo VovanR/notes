@@ -10,6 +10,7 @@
 		'Bash',
 		'CSS',
 		'CMD',
+		'CoffeeScript@1',
 		'Django',
 		'Docker',
 		'Git',
