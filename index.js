@@ -11,6 +11,7 @@
 		'CSS',
 		'CMD',
 		'Django',
+		'Docker',
 		'Git',
 		'HTML',
 		'JS-TDD',
