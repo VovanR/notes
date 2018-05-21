@@ -380,7 +380,7 @@ svg-term --cast=113643 --out examples/parrot.svg --window
 
 
 
-## VPN OpenVPN
+## Xubuntu connect to VPN OpenVPN
 
 ```shell
 sudo apt-get install network-manager-openvpn network-manager-openvpn-gnome
@@ -388,3 +388,9 @@ sudo apt-get install network-manager-openvpn network-manager-openvpn-gnome
 
 Добавить соединение  
 *Settings* → *Network Connections* → *Add a new connection* → *OpenVPN*
+
+
+
+## Подключение к серверу по SSH
+
+- See: https://www.digitalocean.com/community/tutorials/how-to-use-ssh-to-connect-to-a-remote-server-in-ubuntu#how-to-configure-ssh
