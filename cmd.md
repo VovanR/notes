@@ -34,6 +34,19 @@ MKLINK [[/D] | [/H] | [/J]] Link Target
 ```
 
 
+### Удалить ссылку
+
+Ссылку на директорию
+```
+rmdir E:\foo\bar /q
+```
+
+Ссылку на файл
+```
+del E:\foo\bar
+```
+
+
 
 ## Fix current directory when running script as administartor
 
