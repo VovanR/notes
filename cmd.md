@@ -32,3 +32,19 @@ MKLINK [[/D] | [/H] | [/J]] Link Target
     Link    specifies the new symbolic link name.
     Target  specifies the path (relative or absolute) that the new link refers to.
 ```
+
+
+
+## Fix current directory when running script as administartor
+
+- See: https://www.codeproject.com/Tips/119828/Running-a-bat-file-as-administrator-Correcting-cur
+
+Если запустить скрипт `.bat` файла от администратора, то текущая директория `%cd` будет указывать на `system32`  
+Надо добавить следующие 2 строки
+
+```bat
+@setlocal enableextensions
+@cd /d "%~dp0"
+
+echo %cd%
+```
