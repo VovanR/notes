@@ -61,3 +61,55 @@ del E:\foo\bar
 
 echo %cd%
 ```
+
+
+
+## Переменные `%variable%`
+
+```bat
+set filepath=%cd%\foo\bar
+
+if exist del %filepath%
+```
+
+
+
+## Удалить директорию, символическую ссылку или файл
+
+```bat
+set filepath=%cd%\foo\bar
+
+if exist %filepath% rmdir %filepath% /q
+if exist %filepath% del %filepath%
+```
+
+
+
+## Комментарии `REM`
+
+```bat
+REM Run this script as administrator
+
+echo "Hello World!"
+```
+
+Не выводить комментарии в консоль. Добавить `@echo off`
+```bat
+@echo off
+
+REM Run this script as administrator
+
+echo "Hello World!"
+```
+
+
+
+## Остановить выполнение скрипта
+
+Например, после выполнения показать сообщение. По умолчанию консоль закрывается после выполнения скрипта
+
+```bat
+echo "Hello World!"
+
+pause
+```
