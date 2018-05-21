@@ -22,6 +22,10 @@ sudo cp /etc/ssh/sshd_config{,.bak}
 netstat -ntlp | grep LISTEN
 ```
 
+```shell
+netstat -atun
+```
+
 
 
 ## Копирование текста в терминале
