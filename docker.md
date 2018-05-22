@@ -53,7 +53,7 @@ docker attach my_docker_container
 
 
 
-## Установка *Docker* на виртуалку с *Ubuntu Server*
+## Установка *Docker* на виртуальную машину с *Ubuntu Server*
 
 Установить *VirtualBox*
 
@@ -61,11 +61,11 @@ docker attach my_docker_container
 sudo apt-get install virtualbox
 ```
 
-Создать виртуалку с [Ubuntu 18.04 bionic](https://www.ubuntu.com/download/server)
+Создать виртуальную машину с [Ubuntu 18.04 LTS (Bionic Beaver)](https://www.ubuntu.com/download/server)
 
 Запускаем виртуальную машину
 
-- See: [Install Docker CE](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce)
+- See: [Install Docker CE](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce)
 
 ```shell
 sudo apt-get update

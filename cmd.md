@@ -48,7 +48,7 @@ del E:\foo\bar
 
 
 
-## Fix current directory when running script as administartor
+## Fix current directory when running script as administrator
 
 - See: https://www.codeproject.com/Tips/119828/Running-a-bat-file-as-administrator-Correcting-cur
 

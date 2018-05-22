@@ -1,4 +1,4 @@
-# CoffeeScript v1
+# CoffeeScript v. 1
 
 ----
 
