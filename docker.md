@@ -53,6 +53,24 @@ docker attach my_docker_container
 
 
 
+## Перезагрузить Nginx в запущенном контейнере
+
+- See: https://www.shellhacks.com/docker-reload-nginx-inside-container/
+
+```shell
+docker container exec <container> nginx -s reload
+```
+
+
+
+## Проверить корректность Nginx конфига
+
+```shell
+docker container exec <container> nginx -t
+```
+
+
+
 ## Установка *Docker* на виртуальную машину с *Ubuntu Server*
 
 Установить *VirtualBox*
