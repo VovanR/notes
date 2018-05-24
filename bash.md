@@ -985,3 +985,29 @@ set -o emacs
 `at` тоже уже написан, а `sleep` понимает время не только в секундах
 
 `sudo echo > file` открывает файл на запись не с правами рута. это делается так: `sudo sh -c 'echo > file'`
+
+
+
+## CASE
+
+- See: https://www.shellhacks.com/case-statement-bash-example/
+
+```bash
+printf 'Which Linux distribution do you know? '
+read DISTR
+
+case $DISTR in
+    ubuntu)
+       echo "I know it! It is an operating system based on Debian."
+       ;;
+    centos|rhel)
+       echo "Hey! It is my favorite Server OS!"
+       ;;
+    windows)
+       echo "Very funny..."
+       ;;
+    *)
+       echo "Hmm, seems i've never used it."
+       ;;
+esac
+```
