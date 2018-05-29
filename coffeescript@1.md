@@ -90,3 +90,26 @@ date = if friday then sue else jill
 ```javascript
 date = friday ? sue : jill;
 ```
+
+
+
+## Присвоить значение аргумента
+
+Присвоит `this.foo` значение аргумента `foo`
+```coffeescript
+(@foo) =>
+```
+
+```javascript
+(function(_this) {
+  return (function(foo) {
+    _this.foo = foo;
+  });
+})(this);
+```
+
+Например
+```javascript
+getFooData()
+  .then((@foo) =>)
+```
