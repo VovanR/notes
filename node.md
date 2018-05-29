@@ -2,12 +2,10 @@
 
 ----
 
-## Таблица поддержки ECMAScript версиями Node.js
-- See: http://node.green/
-
-
+- See: [Таблица поддержки ECMAScript версиями Node.js](http://node.green/)
 
 ## Обновление глобальных пакетов
+
 - See: https://docs.npmjs.com/getting-started/updating-global-packages
 
 ```shell
@@ -52,7 +50,16 @@ fs.writeFile('./urls', content)
 
 
 
+## Проверить как будет выглядеть опубликованный пакет
+
+```shell
+npm pack
+```
+
+
+
 ## Изменяем версию пакета и публикуем ее
+
 - See: https://docs.npmjs.com/getting-started/publishing-npm-packages
 - See: https://docs.npmjs.com/misc/developers#before-publishing-make-sure-your-package-installs-and-works
 
