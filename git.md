@@ -126,6 +126,8 @@ git commit -m "First Commit"
 - переменная среды `VISUAL`
 - переменная среды `EDITOR`
 
+
+
 ## git tag (тэг, тег)
 Добавить тэг
 ```shell
@@ -152,6 +154,22 @@ git checkout v0.1.0^
 git tag -d v0.1.0
 git push origin :refs/tags/v0.1.0
 ```
+
+
+
+## В какой тэг входит коммит
+
+```shell
+git describe
+    v1.2.0-8-g0b83ff8
+```
+
+```shell
+git describe --contains cc98ddd
+    1.1.0^2~2^2
+```
+
+
 
 ## Отмена локальных изменений (до индексации)
 ```shell
@@ -525,19 +543,6 @@ git pull --rebase
 Можно коммитить часть изменений файла
 ```shell
 git add -p <file_path>
-```
-
-
-
-## В какой тэг входит коммит
-```shell
-git describe
-    v1.2.0-8-g0b83ff8
-```
-
-```shell
-git describe --contains cc98ddd
-    1.1.0^2~2^2
 ```
 
 
