@@ -93,6 +93,29 @@ date = friday ? sue : jill;
 
 
 
+## Operators and Aliases
+
+- `is`, `==` — `===`
+- `isnt`, `!=` — `!==`
+- `not` — `!`
+- `and` — `&&`
+- `or` — `||`
+- `on`, `yes` — `true`
+- `off`, `no` — `false`
+- `unless` — as inverse of `if`
+  ```coffeescript
+  unless foo
+	console.log 'no foo'
+  ```
+  ```javascript
+  if (!foo) {
+    console.log('no foo');
+  }
+  ```
+- `@` — `this`
+
+
+
 ## Присвоить значение аргумента
 
 Присвоит `this.foo` значение аргумента `foo`
