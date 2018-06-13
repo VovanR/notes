@@ -10,6 +10,7 @@
 - See: [React Patterns](https://reactpatterns.com/) [source](https://github.com/chantastic/reactpatterns.com)
 
 ## Атрибуты
+
 - See: https://reactjs.org/docs/dom-elements.html#differences-in-attributes
 
 - `class` -> `className`
@@ -21,6 +22,7 @@
 
 
 ## Использование CDN
+
 - See: https://cdnjs.com/libraries/react/
 - See: https://facebook.github.io/react/downloads.html
 
@@ -48,6 +50,7 @@ window.ReactDOM || document.write('<script src="/static/js/react-dom.min.js"><\/
 
 
 ## Style
+
 ```js
 class Color extends PureComponent {
 	render() {
@@ -68,6 +71,7 @@ ReactDOM.render(
 
 
 ## Using props
+
 any nested elements as `this.props.children`
 ```js
 // tutorial4.js
@@ -88,6 +92,7 @@ class Comment extends React.Component {
 
 
 ## Функция внутри
+
 ```js
 // tutorial6.js
 class Comment extends React.Component {
@@ -129,6 +134,7 @@ class Comment extends React.Component {
 
 
 ## Fetching from the server
+
 ```js
 // tutorial11.js
 ReactDOM.render(
@@ -287,7 +293,9 @@ class CommentBox extends React.Component {
 
 
 ## If-Else in JSX
-See: http://facebook.github.io/react/tips/if-else-in-JSX.html
+
+- See: http://facebook.github.io/react/tips/if-else-in-JSX.html
+
 ```js
 <div>
 	{true ? (
@@ -382,6 +390,7 @@ ReactDOM.render(
 
 
 ## Пробел между компонентами в JSX
+
 Добавляем `{' '}`
 ```js
 class GlobalNav extends React.Component {
@@ -399,6 +408,7 @@ class GlobalNav extends React.Component {
 
 
 ## Тестирование test, TDD
+
 - See: https://facebook.github.io/react/docs/test-utils.html
 - See: https://github.com/VovanR/react-decinc/blob/master/test.js
 - See: https://github.com/reactjs/react-tabs/blob/master/lib/components/__tests__/Tabs-test.js
@@ -406,6 +416,7 @@ class GlobalNav extends React.Component {
 
 
 ## [Enzyme](http://airbnb.io/enzyme/)
+
 - See: https://github.com/airbnb/enzyme/issues/76#issuecomment-189606849
 
 Trigger input change event  
@@ -425,6 +436,7 @@ wrapper.find('input').simulate('change', {target: {value: 'My new value'}});
 
 
 ## [Reselect](https://github.com/reactjs/reselect)
+
 - See: https://github.com/neilff/react-redux-performance  
 
 Для мемоизации вычисляемых значений
@@ -445,6 +457,7 @@ wrapper.find('input').simulate('change', {target: {value: 'My new value'}});
 
 ## Jest
 ### Redux action
+
 ```js
 import * as actions from '../actions'
 
@@ -494,6 +507,7 @@ describe('deleteItemsAction', () => {
 
 
 ## Профилирование
+
 - See: https://medium.freecodecamp.org/make-react-fast-again-tools-and-techniques-for-speeding-up-your-react-app-7ad39d3c1b82
 
 Добавить в адрес параметр `react_perf`  
@@ -521,4 +535,17 @@ export class Button extends PureComponent {
 		)
 	}
 }
+```
+
+
+
+## `<textarea>`
+
+- See: https://reactjs.org/docs/forms.html
+
+```jsx
+<textarea
+	value={this.state.value}
+	onChange={this.handleChange}
+/>
 ```
