@@ -793,3 +793,70 @@ console.log(tup); //=> [1,2,3]
 throw new TypeError('Expected `hour` type to be a `number`');
 throw new RangeError('Expected `hour` to be a number from 0 to 23');
 ```
+
+
+
+## Нэйминг
+
+- See: https://habr.com/post/172091/
+- See: https://ymatuhin.ru/front-end/how-to-name-variables/
+
+### Булево
+
+`disabled` / `enabled`
+
+
+### Функция проверка условие
+
+`isOnline`
+`isDisabled`
+
+
+### Функция сравнения
+
+`compareDate`
+
+
+### Функция преобразования
+
+`prepareFetchData`
+
+
+### Функция вычислений
+
+`calculateDays`
+
+
+### Константа
+
+```js
+BUTTON_VARIANT = {
+    DANGER: 'danger',
+    WARNING: 'warning',
+}
+```
+
+
+### Метод
+
+`getName`
+
+
+### Обработчик события
+
+HIA (Handle Item Action)
+
+`handleClick`
+`handleListItemClick`
+
+
+### Класс
+
+
+### Переменная
+
+
+### Каррирование
+
+`curriedSum`
+`curriedProcessInputData`
