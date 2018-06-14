@@ -112,6 +112,14 @@ date = friday ? sue : jill;
     console.log('no foo');
   }
   ```
+  ```coffeescript
+  return unless e.target.validity.valid
+  ```
+  ```javascript
+  if (!e.target.validity.valid) {
+    return;
+  }
+  ```
 - `@` — `this`
 
 
