@@ -17,6 +17,7 @@
 		'HTML',
 		'JS-TDD',
 		'JavaScript',
+		'jQuery',
 		'Linux',
 		'Markdown',
 		'MongoDB',
