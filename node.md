@@ -114,3 +114,18 @@ node_js:
   - "6"
 ```
 Node.js versions: https://docs.travis-ci.com/user/languages/javascript-with-nodejs/#Specifying-Node.js-versions
+
+
+
+## `NODE_PATH` environment
+
+- See: [Modules. Loading from the global folders](https://nodejs.org/api/modules.html#modules_loading_from_the_global_folders)
+- See: [node-path-environment-variable-demo](https://github.com/inside-demo/node-path-environment-variable-demo)
+
+```json
+{
+  "scripts": {
+    "dev": "cross-env NODE_PATH=\"./utils:./node_modules\" NODE_ENV=development gulp serve"
+  }
+}
+```
