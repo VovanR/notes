@@ -14,27 +14,34 @@
 - See: https://github.com/h5bp/Front-end-Developer-Interview-Questions
 - See: https://github.com/you-dont-need/You-Dont-Need-JavaScript
 - See: https://github.com/loiane/javascript-datastructures-algorithms
+- See: [Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
+- See: [Шаблоны проектирования в JavaScript](https://medium.com/@marina.kovalyova/java-script-design-patterns-569c627d25f9)
 
 ## String
+
 ### Remove last line
+
 ```javascript
 var foo = 'a\nb\nc\nd';
 foo = foo.substring(0, foo.lastIndexOf('\n')); //=> 'a\nb\nc'
 ```
 
 ### Remove first character
+
 ```js
 var foo = 'foo';
 foo.substr(1); //=> 'oo'
 ```
 
 ### Remove last character
+
 ```js
 var foo = 'foo';
 foo.slice(0, -1); //=> 'fo'
 ```
 
 ### Remove first and last character
+
 ```js
 var foo = 'foo';
 foo.slice(1, -1); //=> 'o'
@@ -43,6 +50,7 @@ foo.slice(1, -1); //=> 'o'
 
 
 ## Fetch
+
 ```javascript
 fetch('https://api.github.com/users/vovanr')
     .then(x => x.json())
@@ -75,6 +83,7 @@ console.log(foo); //=> [4, 3, 5]
 
 
 ### `concat`
+
 ```javascript
 var foo = [1, 2];
 var bar = [3, 4];
@@ -86,6 +95,7 @@ foo.concat(bar); //=> [1, 2, 3, 4] (new array)
 
 
 ### Clone Array `slice`
+
 ```javascript
 const a = [1, 2];
 const b = a; // link
@@ -99,6 +109,7 @@ a[0] = 3;
 
 
 ### Обход массива
+
 ```javascript
 var arr = ['a', 'b', 'c'];
 var i = arr.length;
@@ -110,6 +121,7 @@ while (i--) {
 
 
 ### Сортировка массива объектов по массиву ID
+
 ```js
 var m = [{id: 8}, {id: 2}, {id: 3}];
 var s = [3, 2, 8];
@@ -120,6 +132,7 @@ console.log(m); //=> [{id: 3}, {id: 2}, {id: 8}]
 
 
 ## Выделить текст инпута при фокусе
+
 ```html
 <input
     type="text"
@@ -133,6 +146,7 @@ console.log(m); //=> [{id: 3}, {id: 2}, {id: 8}]
 
 
 ## Выбор цвета, в соответствии со значением параметра `d`
+
 - See: http://leafletjs.com/examples/choropleth.html#adding-some-color
 
 ```javascript
@@ -155,6 +169,7 @@ function getColor(d) {
 
 
 ## monkey-patching
+
 - See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
 
 ```js
@@ -171,6 +186,7 @@ someobject.foo = function () {
 
 
 ### Arrow function
+
 ```js
 var originalfoo = someobject.foo;
 someobject.foo = (dispatch, getState, ...rest) => {
@@ -185,6 +201,7 @@ someobject.foo = (dispatch, getState, ...rest) => {
 
 
 ## Округление числа
+
 ```javascript
 /**
  * Округление числа
@@ -199,7 +216,8 @@ var mathRound = function (num) {
 
 
 
-## Фрагмент документа:
+## Фрагмент документа
+
 ```javascript
 var frag = document.createDocumentFragment();
 
@@ -219,6 +237,7 @@ document.body.appendChild(frag);
 
 
 ## Задать `iframe` высоту его контента
+
 ```js
 var iframe = element[0].childNodes[0];
 iframe.onload = function () {
@@ -235,6 +254,7 @@ iframe.onload = function () {
 
 
 ## Отключить увеличение страницы Ctrl + Mouse wheel
+
 - See: http://stackoverflow.com/a/29994607
 
 ```js
@@ -248,6 +268,7 @@ document.addEventListener('mousewheel', function (e) {
 
 
 ## Date
+
 ```js
 const date = new Date(model.created_at);
 const day = date.getDate();
@@ -259,6 +280,7 @@ const formatedDate = `${day}.${month}.${year}`;
 
 
 ## Ждём окончания загрузки страницы
+
 - See: https://github.com/ded/domready
 - See: https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded
 
@@ -270,6 +292,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 ## Самое быстрое добавление класса элементу
+
 ```javascript
 candidate.classList.add('one');
 // Далее по убывающей
@@ -280,6 +303,7 @@ candidate.className = 'one';
 
 
 ## Самый быстрый способ получить строку
+
 ```javascript
 var arr = ['item 1', 'item 2', 'item 3', ...];
 var list = '<ul><li>' + arr.join('</li><li>') + '</li></ul>';
@@ -288,6 +312,7 @@ var list = '<ul><li>' + arr.join('</li><li>') + '</li></ul>';
 
 
 ## Оператор `for in`
+
 ```javascript
 for (key in object) {
     if (!{}.hasOwnProperty.call(object, key)) continue;
@@ -303,6 +328,7 @@ for (key in object) if ({}.hasOwnProperty.call(object, key)) {
 
 
 ## Проверка в цикле
+
 ```javascript
 for (var i = 0; i < 10; i++) {
     if (не подходит) {
@@ -315,6 +341,7 @@ for (var i = 0; i < 10; i++) {
 
 
 ## Отключить выделение текста
+
 ```html
 <script>
 if (document.getElementById('noselect')) {
@@ -342,7 +369,9 @@ function disableSelection(target) {
 
 
 ## Random
-Возвращает 0, 1, 2 или 3
+
+Возвращает `0`, `1`, `2` или `3`
+
 ```js
 Math.floor(Math.random() * 4)
 ```
@@ -363,6 +392,7 @@ function getRandomGreeting() {
 
 
 ## Наследование
+
 - See: https://youtu.be/4oudziatkLI?list=PL363QX7S8MfSxcHzvkNEqMYbOyhLeWwem
 
 ```javascript
@@ -391,6 +421,7 @@ var developer = Object.create(WebDeveloper).constructor('Jack', 21, 'male', ['ht
 
 
 ## Class of
+
 - See: https://youtu.be/a3X9uqCoxKY?list=PL363QX7S8MfSxcHzvkNEqMYbOyhLeWwem
 
 ```javascript
@@ -402,8 +433,11 @@ var classof = function (object) {
 
 
 ## Вместо `e.stopPropagation()`
+
+- See: https://developer.mozilla.org/en-US/docs/Web/API/Event/defaultPrevented
+
 ```javascript
-if (e.isDefaultPrevented()) {
+if (e.defaultPrevented) {
     return false;
 }
 ```
@@ -433,6 +467,7 @@ localStorage.removeItem('username');
 
 
 ## Clone object
+
 - See: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Cloning_an_object
 
 ```js
@@ -444,6 +479,7 @@ console.log(copy); // { a: 1 }
 
 
 ## Deep Clone object
+
 ```js
 const DATA = JSON.parse(JSON.stringify(window.DATA));
 ```
@@ -451,6 +487,7 @@ const DATA = JSON.parse(JSON.stringify(window.DATA));
 
 
 ## Merge objects
+
 - See: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Merging_objects
 
 ```js
@@ -466,6 +503,7 @@ console.log(o1);  //=> { a: 1, b: 2, c: 3 }, target object itself is changed.
 
 
 ## object `forEach`
+
 ```js
 Object.keys(items).forEach(id => {
     console.log(items[id]);
@@ -475,6 +513,7 @@ Object.keys(items).forEach(id => {
 
 
 ## Pure functions
+
 - See: https://github.com/ghengeveld/react-redux-styleguide#pure-functions
 
 ```js
@@ -489,6 +528,7 @@ function inc(object) {
 
 
 ## Избежать проблем без `;`
+
 ```js
 console.log(1)
 ;[1,2].forEach(console.log)
@@ -497,7 +537,9 @@ console.log(1)
 
 
 ## Web page screenshots
-Сделать скриншоты страниц  
+
+Сделать скриншоты страниц
+
 ```shell
 npm i -g phantomjs webpage
 ```
@@ -561,6 +603,7 @@ screenshot(lastIndex, false);
 
 
 ## reduce
+
 - See: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 
 
@@ -595,6 +638,7 @@ screenshot(lastIndex, false);
 
 
 ## Concatenate lists with intersection
+
 - See: https://jsfiddle.net/VovanR/4dyxszby/  
 
 Например при получении страницы с уже имеющимся элементом, чтобы не дублировать его
@@ -628,6 +672,7 @@ function concatLists(newItems, oldItems) {
 
 
 ## Symbol
+
 Using symbols for private attributes
 
 ```js
@@ -649,6 +694,7 @@ class Person {
 
 
 ## Reselect
+
 - See: https://github.com/reactjs/reselect
 
 ```js
@@ -678,24 +724,30 @@ const item = getItemById(33, getState())
 
 
 ## Open in CodePen
+
 - See: https://github.com/atomiks/30-seconds-of-css/pull/56/files
 
 
 
 ## Promise
+
 - See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 - See: https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html https://habrahabr.ru/company/mailru/blog/269465/
 
 
 
 ## Cookies
+
 - See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
 - See: https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie
 - See: https://flaviocopes.com/cookies/
 
+
 **Библиотеки:**
+
 - https://github.com/js-cookie/js-cookie
 - https://github.com/expressjs/cookie-parser
+
 
 **Свойства:**
 - 4 KB
@@ -717,6 +769,7 @@ console.log(document.cookie);
 Значение надо кодировать с `encodeURIComponent()`, чтобы экранировать пробелы и т.п.
 
 ### Установить срок годности
+
 Конкретное время
 ```js
 document.cookie = 'foo=bar; expires=Fri, 06 Apr 2018 11:52:28 GMT'
@@ -733,36 +786,48 @@ document.cookie = 'foo=bar; expires='  + date.toUTCString()
 document.cookie = 'foo=bar; max-age=3600'
 ```
 
+
 ### `path`
+
 ```js
 document.cookie = 'foo=bar; path="/admin"'
 ```
 Если не установить, то `path` будет равен текущему. Глобальные куки `path="/"`
 
+
 ### `domain`
+
 ```js
 document.cookie = 'foo=bar; domain="example.com"'
 ```
 
+
 ### `Secure`
+
 Доступны только по `HTTPS`
 ```js
 document.cookie = 'foo=bar; Secure'
 ```
 
+
 ### `HttpOnly`
+
 Доступны только для сервера. Недоступны по `document.cookie`
 ```js
 document.cookie = 'foo=bar; HttpOnly'
 ```
 
+
 ### Удаление
+
 ```js
 document.cookie = 'foo=; expires=Thu, 01 Jan 1970 00:00:00 UTC;'
 ```
 
 
+
 ## No operation `noop`
+
 ```js
 /**
  * No operation
@@ -771,7 +836,9 @@ exports.noop = function() {};
 ```
 
 
+
 ## Кортежи
+
 - See: https://medium.com/@frontman/%D0%BA%D0%BE%D1%80%D1%82%D0%B5%D0%B6%D0%B8-%D0%B2-javascript-%D0%B8-typescript-74950fac15c3
 
 ```js
@@ -787,6 +854,7 @@ console.log(tup); //=> [1,2,3]
 
 
 ## Throw Error. Failing fast
+
 - See: https://molily.de/robust-javascript/#failing-fast
 
 ```js
