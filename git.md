@@ -477,6 +477,17 @@ git submodule foreach git pull
 git gc
 ```
 
+Если выдает ошибку https://stackoverflow.com/questions/37145151/how-to-handle-git-gc-fatal-bad-object-refs-remotes-origin-head-error-failed-to
+```
+fatal: bad object refs/remotes/origin/HEAD
+error: failed to run repack
+```
+
+Запустить
+```shell
+git remote set-head origin --auto
+```
+
 
 
 ## Patch
