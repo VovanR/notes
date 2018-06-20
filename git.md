@@ -875,6 +875,31 @@ git worktree list
 
 
 
+## `git-filter-branch` - Rewrite branches
+
+- See: https://help.github.com/articles/removing-sensitive-data-from-a-repository/
+- See: https://git-scm.com/docs/git-filter-branch
+
+```shell
+git filter-branch --force --index-filter \
+'git rm --cached --ignore-unmatch PATH-TO-YOUR-FILE-WITH-SENSITIVE-DATA' \
+--prune-empty --tag-name-filter cat -- --all
+```
+
+### BFG
+
+- See: https://rtyley.github.io/bfg-repo-cleaner/
+
+```shell
+bfg --delete-files assets/fonts/helvetica.otf
+```
+
+```shell
+bfg --replace-text passwords.txt
+```
+
+
+
 ## `git push --force-with-lease`
 
 - See: https://developer.atlassian.com/blog/2015/04/force-with-lease/
