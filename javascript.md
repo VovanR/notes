@@ -864,7 +864,7 @@ throw new RangeError('Expected `hour` to be a number from 0 to 23');
 
 
 
-## Нэйминг
+## Нэйминг (именование)
 
 - See: https://habr.com/post/172091/
 - See: https://ymatuhin.ru/front-end/how-to-name-variables/
