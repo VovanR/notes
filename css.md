@@ -385,3 +385,32 @@ ol li:nth-child(-n+14):nth-child(n+7) {
   margin-left: var(--margin-left);
 }
 ```
+
+
+
+## Variable fonts
+
+- See: [Вариативные шрифты](http://css.yoksel.ru/opentype-variable-fonts/)
+- See: [How to start with variable fonts on the web](https://www.zeichenschatz.net/typografie/how-to-start-with-variable-fonts-on-the-web.html)
+- See: [How to use variable fonts in the real world](http://clagnut.com/blog/2390)
+- See: [Silly hover effects and the future of web typography](https://pixelambacht.nl/2017/variable-hover-effects/)
+
+```css
+html {
+  font-family: 'SourceSans' sans-serif;
+   font-weight: 400;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: 'SourceSansVariable', sans-serif;
+    font-variation-settings: "wght" 400;
+  }
+}
+```
+
+```css
+.thin-and-narrow {
+    font-variation-settings: "wght" 100, "wdth" 100;
+}
+```
