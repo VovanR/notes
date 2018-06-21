@@ -544,3 +544,21 @@ vim -d file1 file2 [file3 [file4]]
 `:diffupdate` — Обновить файлы
 
 `ZQ` — Выйти без принятия изменений
+
+
+
+## Копирование по SSH
+
+- See: https://superuser.com/a/326882
+- See: [Clipboard over SSH with Vim](https://defuse.ca/blog/clipboard-over-ssh-with-vim.html)
+
+```shell
+ssh -Y myserver
+```
+
+Добавить в конфиг `~/.ssh/config`
+```
+Host myserver
+    ForwardX11 yes
+    ForwardX11Trusted yes
+```
