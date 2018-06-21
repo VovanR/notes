@@ -4,6 +4,11 @@
 
 ## Submenu show on hover
 
+- See: https://jsfiddle.net/VovanR/bp2w594y/
+- See: https://github.com/CWSpear/bootstrap-hover-dropdown
+- See: https://github.com/kybarg/bootstrap-dropdown-hover
+- See: https://github.com/istvan-ujjmeszaros/bootstrap-dropdown-hover
+
 jQuery and Bootstrap
 
 ```html
