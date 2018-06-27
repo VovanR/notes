@@ -2,6 +2,8 @@
 
 ----
 
+- See: [Design Patterns and Widgets](https://www.w3.org/TR/wai-aria-practices/#aria_ex)
+
 ## Polyfills
 - See: https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills
 
