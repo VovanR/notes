@@ -8,6 +8,11 @@
 - See: https://blog.docker.com/2015/04/tips-for-deploying-nginx-official-image-with-docker/
 - See: [Исчерпывающее руководство по написанию `Dockerfile` для веб-приложений на Node.js](https://medium.com/devschacht/praveen-durairaj-an-exhaustive-guide-to-writing-dockerfiles-for-node-js-web-apps-7b033bcc0b4f)
 
+## Examples
+
+- See: https://github.com/rstacruz/cheatsheets/pull/583/files
+
+
 ## Docker Toolbox
 
 Docker machine IP-address
