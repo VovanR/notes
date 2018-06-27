@@ -160,7 +160,7 @@ sudo dpkg -i ~/Downloads/dropbox_2015.10.28_amd64.deb
 - See: https://github.com/nodesource/distributions#installation-instructions
 
 ```shell
-curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
 npm i -g bemstyla conventional-changelog gh-pages-deploy mancy npm vmd yo commitizen fixpack http-server mversion npm-upgrade create-react-app
 ```
