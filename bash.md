@@ -753,7 +753,11 @@ done
 
 ### if else
 
+- See: https://ryanstutorials.net/bash-scripting-tutorial/bash-if-statements.php
+- See: http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html
 - See: https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html
+
+Пробелы у скобок обязательны `[ EXPRESSION ]`!
 
 ```
 [ -a FILE ] Правда если FILE существует.
@@ -792,6 +796,50 @@ done
 [ EXPR1 -a EXPR2 ] правда, если оба выражения EXPR1 и EXPR2 справедливы.
 [ EXPR1 -o EXPR2 ] правда, если хотя бы одно выражение EXPR1 или EXPR2 справедливы.
 ```
+
+
+#### Регистронезависимое сравнение (Case insensitive comparision)
+
+- `${var,,}` — Приводит строку в нижний регистр
+- `${var^^}` — Приводит строку в верхний регистр
+
+```bash
+if [ ${VAR,,} == "true" ]; then
+  echo "True!"
+fi
+```
+
+Проверка, что переменная включена
+```bash
+if [ $variable == "1" ] || [ ${variable,,} == "true" ]; then
+  echo 1
+else
+  echo 0
+fi
+```
+
+
+#### Несколько условий
+
+```bash
+if [ EXPR1 ] && [ EXPR1 ] || [ EXPR1 ]; then
+```
+
+или
+```bash
+if [[ EXPR1 && EXPR1 || EXPR1 ]]; then
+```
+
+
+#### Если переменная равна `'1'` и файл существует
+```bash
+if [ $VAR == "1" ] && [ -a $FILE ]; then
+    echo "if"
+else
+    echo "else"
+fi
+```
+
 
 
 
