@@ -256,9 +256,30 @@ find ./ -type d -exec totranslit.sh {} \;
 
 
 ### `sed`
+
+- See: https://unix.stackexchange.com/a/49438
+- See: https://stackoverflow.com/a/6790967/1284255
+
+Заменить в файле
 ```shell
 sed -i "s/{find}/{replace}/g" <filename>
 ```
+
+Заменить в файле и создать оригинальную копию с расширением `.bak`
+```shell
+sed -i.bak "s/{find}/{replace}/g" <filename>
+```
+
+Заменить строку `{find}` в файле `<filename>` на содержимое другого файла `<replace-file>`
+```shell
+sed -e '/{find}/ {' -e 'r <replace-file>' -e 'd' -e '}' -i <filename>
+```
+
+Заменить подстроку `FOO_BAR` в файле `foo-bar.txt` на содержимое другого файла `bar-baz.txt`
+```shell
+sed -e "s/FOO_BAR/$(<bar-baz.txt sed -e 's/[\&/]/\\&/g' -e 's/$/\\n/' | tr -d '\n')/g" -i foo-bar.txt
+```
+
 
 
 ### Прочесть данные из файла Экселя (Excel)
