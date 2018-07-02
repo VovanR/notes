@@ -886,6 +886,9 @@ EOF
 
 ### Exit Status:
 
+- See: http://bencane.com/2014/09/02/understanding-exit-codes-and-how-to-use-them-in-bash-scripts/
+- See: [Linux and Unix exit code tutorial with examples](https://shapeshed.com/unix-exit-codes/)
+
 ```bash
 echo -e "Error: Directory does not exists"
 exit 2
