@@ -1011,6 +1011,24 @@ print_something () {
 
 
 
+#### Разбить длинные строки
+
+- See: https://google.github.io/styleguide/shell.xml?showone=Line_Length_and_Long_Strings#Line_Length_and_Long_Strings
+
+```bash
+# DO use 'here document's
+cat <<END;
+I am an exceptionally long
+string.
+END
+
+# Embedded newlines are ok too
+long_string="I am an exceptionally
+  long string."
+```
+
+
+
 ## Управление в терминале
 
 ### Emacs mode
@@ -1085,6 +1103,7 @@ set -o emacs
 
 - See: https://github.com/thoughtbot/guides/tree/master/best-practices#shell
 
+
 - Don't parse the output of `ls`. See [here](http://mywiki.wooledge.org/ParsingLs) for details and alternatives
 - Don't use `cat` to provide a file on `stdin` to a process that accepts file arguments itself
 - Don't use `echo` with options, escapes, or variables (use `printf` for those cases)
@@ -1095,7 +1114,7 @@ set -o emacs
   [shebang]http://en.wikipedia.org/wiki/Shebang_(Unix)
 - If calling `cd`, have code to handle a failure to change directories
 - If calling `rm` with a variable, ensure the variable is not empty
-- Prefer "$@" over "$\*" unless you know exactly what you're doing
+- Prefer `"$@"` over `"$\*"` unless you know exactly what you're doing
 - Prefer `awk '/re/ { ... }'` to `grep re | awk '{ ... }'`
 - Prefer `find -exec {} +` to `find -print0 | xargs -0`
 - Prefer `for` loops over `while read` loops
@@ -1181,6 +1200,7 @@ set -o emacs
 ## CASE
 
 - See: https://www.shellhacks.com/case-statement-bash-example/
+- See: https://google.github.io/styleguide/shell.xml?showone=Case_statement#Case_statement
 
 ```bash
 printf 'Which Linux distribution do you know? '
