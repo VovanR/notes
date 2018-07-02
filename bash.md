@@ -964,6 +964,53 @@ site=(${1//./ })
 
 
 
+### Функции
+
+- See: https://ryanstutorials.net/bash-scripting-tutorial/bash-functions.php
+
+```bash
+function_name () {
+  <commands>
+}
+```
+
+или
+```bash
+function function_name {
+  <commands>
+}
+```
+
+#### Аргументы функции
+
+```bash
+print_something () {
+  echo $1
+}
+```
+
+#### Локальные переменные и область видимости
+
+```bash
+function_name () {
+  local foo="foo"
+  local bar="bar"
+}
+```
+
+#### Возвращаемые значения
+
+```bash
+print_something () {
+  echo Hello $1
+  return 5
+}
+```
+
+Возвращаемый статус можно прочитать после вызова функции с помощью переменной `$?`
+
+
+
 ## Управление в терминале
 
 ### Emacs mode
