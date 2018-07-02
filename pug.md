@@ -4,7 +4,8 @@
 
 Jade has been renamed to Pug
 
-See: https://github.com/pugjs/pug
+- See: https://pugjs.org
+- See: https://github.com/pugjs/pug
 
 ## Разбить массив
 ```pug
