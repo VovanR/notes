@@ -842,6 +842,18 @@ fi
 
 
 
+### `for in`
+
+```bash
+arguments=$@
+ 
+for ARG in $arguments; do
+  convert $ARG -resize "200x1000" $ARG
+done
+```
+
+
+
 
 ### Exit Status:
 
