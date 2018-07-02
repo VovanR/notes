@@ -105,3 +105,16 @@ sudo apt-get install docker.io
 sudo service docker status
 docker --version
 ```
+
+
+
+## Узнать версию программы на запущенном контейнере
+
+```shell
+docker exec -it <container_name> sh
+```
+
+Запустится шелл, где можно проверить версии
+```shell
+perl --version
+```
