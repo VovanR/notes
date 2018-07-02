@@ -928,3 +928,16 @@ HIA (Handle Item Action)
 
 `curriedSum`
 `curriedProcessInputData`
+
+
+
+## webpack
+
+- See: [Shimming](https://webpack.js.org/guides/shimming/)
+
+
+
+## Babel
+
+- See: [babel-polyfill](https://babeljs.io/docs/en/babel-polyfill/)
+- See: [babel-plugin-transform-runtime](https://babeljs.io/docs/en/babel-plugin-transform-runtime)
