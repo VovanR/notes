@@ -905,6 +905,36 @@ exit 0
 
 
 
+### Redirection `stdin`, `stdout`, `stderr`
+
+- See: http://wiki.bash-hackers.org/howto/redirection_tutorial
+- See: https://stackoverflow.com/questions/2990414/echo-that-outputs-to-stderr
+- See: https://www.tldp.org/LDP/abs/html/io-redirection.html
+- See: https://google.github.io/styleguide/shell.xml?showone=STDOUT_vs_STDERR#STDOUT_vs_STDERR
+
+- `0` — `stdin`
+- `1` — `stdout`
+- `2` — `stderr`
+  ```shell
+  echo "my errz" >&2
+  ```
+  или
+  ```shell
+  echo "my errz" > /dev/stderr
+  ```
+  ```bash
+  err() {
+    echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')]: $@" >&2
+  }
+
+  if ! do_something; then
+    err "Unable to do_something"
+    exit "${E_DID_NOTHING}"
+  fi
+  ```
+
+
+
 ### Для отладки
 
 ```bash
