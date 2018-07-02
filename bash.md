@@ -854,6 +854,35 @@ done
 
 
 
+### `--help` для скрипта
+
+- See: https://github.com/reconquest/tests.sh/blob/master/tests.sh#L1714
+
+```bash
+_show_usage() {
+    cat <<EOF
+foo.sh --- short description
+
+foo.sh more info about script
+
+Usage:
+    foo.sh -h
+
+Options:
+    -h | --help  Show this help.
+EOF
+}
+```
+
+
+
+### Script documentation
+
+#### `shdoc`
+
+- See: https://github.com/reconquest/shdoc
+
+
 
 ### Exit Status:
 
