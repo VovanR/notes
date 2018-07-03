@@ -167,6 +167,31 @@
 		}
 	}
 
+	const renderDiv = (props, className) => e('div', {...props, className})
+
+	class CustomScrollbars extends React.Component {
+		renderTrackVertical(props) {
+			return renderDiv(props, 'custom-scrollbars__track custom-scrollbars__track_vertical')
+		}
+
+		renderThumbVertical(props) {
+			return renderDiv(props, 'custom-scrollbars__thumb custom-scrollbars__thumb_vertical')
+		}
+
+		renderView(props) {
+			return renderDiv(props, 'custom-scrollbars__view')
+		}
+
+		render() {
+			return e(Scrollbars, {
+				renderTrackVertical: this.renderTrackVertical,
+				renderThumbVertical: this.renderThumbVertical,
+				renderView: this.renderView,
+				className: 'custom-scrollbars'
+			}, this.props.children)
+		}
+	}
+
 	class App extends React.Component {
 		constructor(props) {
 			super(props)
@@ -262,7 +287,7 @@
 				e(Row, {},
 					e(Col, {md: 3},
 						e(Panel, {className: 'nav-menu-panel'},
-							e(Scrollbars, {},
+							e(CustomScrollbars, {},
 								e(Menu, {
 									notes,
 									activeNoteId,

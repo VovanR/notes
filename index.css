@@ -194,3 +194,48 @@ pre code {
     width: 1em;
     line-height: 0;
 }
+
+
+.custom-scrollbars {
+}
+
+.custom-scrollbars:hover .custom-scrollbars__thumb {
+    background-color: rgba(38, 50, 56, 0.1);
+}
+
+.custom-scrollbars__track {
+    box-sizing: border-box;
+    padding: 7px;
+}
+
+.custom-scrollbars__track:hover {
+    padding: 5px;
+}
+
+.custom-scrollbars__track:hover .custom-scrollbars__thumb {
+    background-color: rgba(38, 50, 56, 0.2);
+}
+
+.custom-scrollbars__track_vertical {
+    width: 16px !important;
+    height: 100%;
+    right: 0;
+}
+
+.custom-scrollbars__view {
+}
+
+.custom-scrollbars__view:hover .custom-scrollbars__thumb {
+    background-color: blue;
+}
+
+.custom-scrollbars__thumb {
+    transition: background-color ease 0.25s;
+}
+
+.custom-scrollbars__thumb:hover {
+    background-color: rgba(38, 50, 56, 0.3);
+}
+
+.custom-scrollbars__thumb_vertical {
+}
