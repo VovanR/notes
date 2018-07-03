@@ -307,7 +307,7 @@
 									href: active.sourceURL,
 									target: '_blank',
 									rel: 'noopener'
-								}, 'Note source code on GitHub')
+								}, 'Edit on GitHub')
 							),
 							active.data && e('div', {
 								className: 'rendered-note',
