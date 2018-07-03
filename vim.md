@@ -2,10 +2,10 @@
 
 ----
 
-- Official site: https://www.vim.org/
-- Official repository: https://github.com/vim/vim
-- Vim Cheat Sheet: https://vim.rtorr.com/
-- Vim documentation: http://vimdoc.sourceforge.net/htmldoc/
+- See: [Official site](https://www.vim.org/)
+- See: [Official repository](https://github.com/vim/vim)
+- See: [Vim Cheat Sheet](https://vim.rtorr.com/)
+- See: [Vim documentation](http://vimdoc.sourceforge.net/htmldoc/)
 
 `V` — Выделение строки
 

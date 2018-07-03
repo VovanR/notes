@@ -1,8 +1,8 @@
 # Markdown
 
-- See: https://github.github.com/gfm/
-
 ----
+
+- See: https://github.github.com/gfm/
 
 ```markdown
 > Blockquote
