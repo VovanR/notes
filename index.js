@@ -34,7 +34,7 @@
 		'Typography',
 		'Vim'
 	]
-	const SITE_SOURCE_URL = 'https://github.com/VovanR/notes/blob/gh-pages/'
+	const SITE_SOURCE_URL = 'https://github.com/VovanR/notes/blob/master/'
 
 	const {Grid, Row, Col, Panel} = ReactBootstrap
 	const {Scrollbars} = ReactCustomScrollbars
