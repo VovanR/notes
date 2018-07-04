@@ -134,6 +134,11 @@ git commit -m "First Commit"
 git tag v0.1.0
 ```
 
+Запушить тэг
+```shell
+git push origin v0.1.0
+```
+
 Показать тэги
 ```shell
 git tag
