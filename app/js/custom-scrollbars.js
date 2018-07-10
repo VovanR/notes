@@ -24,7 +24,7 @@ class CustomScrollbars extends React.Component {
 			renderTrackVertical: this.renderTrackVertical,
 			renderThumbVertical: this.renderThumbVertical,
 			renderView: this.renderView,
-			className: 'custom-scrollbars'
+			className: 'custom-scrollbars ' + (this.props.className || '')
 		}, this.props.children)
 	}
 }

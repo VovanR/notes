@@ -189,7 +189,7 @@ class App extends React.Component {
 								autoFocus: true
 							})
 						),
-						e(CustomScrollbars, {},
+						e(CustomScrollbars, {className: 'nav-menu-panel__scrollbars'},
 							e(Menu, {
 								notes: filteredNotes,
 								activeNoteId,

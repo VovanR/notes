@@ -1,5 +1,12 @@
 .nav-menu-panel {
+  display: flex;
+  flex-direction: column;
   position: sticky;
   top: 0;
   height: 100vh;
+}
+
+.nav-menu-panel__scrollbars {
+  flex: 1 0 auto;
+  height: auto !important;
 }
