@@ -6,6 +6,17 @@
 - See: https://github.com/AllThingsSmitty/css-protips
 - See: http://codeguide.co
 
+## Import `@import`
+
+- See: https://developer.mozilla.org/en-US/docs/Web/CSS/@import
+
+```css
+@import "variables.css";
+@import "base.css";
+```
+
+
+
 ## Clear Fix
 
 ```css
