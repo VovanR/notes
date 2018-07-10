@@ -74,8 +74,18 @@ pre code {
     position: sticky;
     top: 0;
     height: 100vh;
-    overflow-y: auto;
 }
+
+
+.notes-filter {
+    padding-top: 5px;
+    padding-right: 7px;
+    padding-bottom: 15px;
+}
+
+.notes-filter__input {
+}
+
 
 .nav-menu {
     padding: 0;
@@ -118,6 +128,10 @@ pre code {
 
 .note-source {
     text-align: right;
+    float: right;
+    position: relative;
+    z-index: 1;
+    margin-top: 22px;
 }
 
 .rendered-note {

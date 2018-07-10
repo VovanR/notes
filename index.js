@@ -213,10 +213,13 @@
 				notes: collection,
 				activeNoteId: null,
 				isLoading: false,
-				loadingNoteId: null
+				loadingNoteId: null,
+				notesFilterValue: ''
 			}
 
 			this.handleSelect = this.handleSelect.bind(this)
+			this.handleFilterNotes = this.handleFilterNotes.bind(this)
+			this.handleFilterNotesKeyDown = this.handleFilterNotesKeyDown.bind(this)
 		}
 
 		getNoteById(id) {
@@ -270,8 +273,55 @@
 				})
 		}
 
-		handleSelect(noteId) {
+		setCurrentNote(noteId) {
 			this.fetchCurrentNote(noteId)
+		}
+
+		handleSelect(noteId) {
+			this.setCurrentNote(noteId)
+		}
+
+		handleFilterNotes(e) {
+			this.setState({notesFilterValue: e.target.value})
+		}
+
+		handleFilterNotesKeyDown(e) {
+			switch (e.key) {
+				case 'Enter':
+					this.setFirstFilteredNoteAsCurrent()
+					break
+				case 'Escape':
+					this.clearFilter()
+					break
+				default:
+					break
+			}
+		}
+
+		setFirstFilteredNoteAsCurrent() {
+			const filteredNotes = this.getFilteredNotes()
+			if (filteredNotes.length > 0) {
+				this.setCurrentNote(this.getFilteredNotes()[0].id)
+			}
+		}
+
+		clearFilter() {
+			this.setState({notesFilterValue: ''})
+		}
+
+		getFilteredNotes() {
+			const {
+				notes,
+				notesFilterValue
+			} = this.state
+
+			const regexp = new RegExp(notesFilterValue, 'gi')
+
+			const filteredNotes = notes.filter(note => {
+				return regexp.test(note.name)
+			})
+
+			return filteredNotes
 		}
 
 		render() {
@@ -279,17 +329,33 @@
 				activeNoteId,
 				isLoading,
 				loadingNoteId,
-				notes
+				notesFilterValue
 			} = this.state
 			const active = activeNoteId === null ? {} : this.getActiveNote()
+
+			const filteredNotes = this.getFilteredNotes()
 
 			return e(Grid, {},
 				e(Row, {},
 					e(Col, {md: 3},
 						e(Panel, {className: 'nav-menu-panel'},
+							e('div', {className: 'notes-filter'},
+								e('input', {
+									type: 'text',
+									className: 'notes-filter__input form-control',
+									value: notesFilterValue,
+									onChange: this.handleFilterNotes,
+									onKeyDown: this.handleFilterNotesKeyDown,
+									autoComplete: 'off',
+									autocorrect: 'off',
+									autoCapitalize: 'off',
+									cpellcheck: 'false',
+									autoFocus: true
+								})
+							),
 							e(CustomScrollbars, {},
 								e(Menu, {
-									notes,
+									notes: filteredNotes,
 									activeNoteId,
 									isLoading,
 									loadingNoteId,
