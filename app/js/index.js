@@ -3,6 +3,7 @@
 import {NOTES, SITE_SOURCE_URL} from './constants.js'
 import {e} from './utils.js'
 import CustomScrollbars from './custom-scrollbars.js'
+import NotesFilter from './notes-filter.js'
 import Menu from './menu.js'
 
 const {Grid, Row, Col, Panel} = ReactBootstrap
@@ -55,7 +56,7 @@ class App extends React.Component {
 
 		this.handleSelect = this.handleSelect.bind(this)
 		this.handleFilterNotes = this.handleFilterNotes.bind(this)
-		this.handleFilterNotesKeyDown = this.handleFilterNotesKeyDown.bind(this)
+		this.handleFilterSubmit = this.handleFilterSubmit.bind(this)
 	}
 
 	getNoteById(id) {
@@ -117,21 +118,12 @@ class App extends React.Component {
 		this.setCurrentNote(noteId)
 	}
 
-	handleFilterNotes(e) {
-		this.setState({notesFilterValue: e.target.value})
+	handleFilterNotes(value) {
+		this.setState({notesFilterValue: value})
 	}
 
-	handleFilterNotesKeyDown(e) {
-		switch (e.key) {
-			case 'Enter':
-				this.setFirstFilteredNoteAsCurrent()
-				break
-			case 'Escape':
-				this.clearFilter()
-				break
-			default:
-				break
-		}
+	handleFilterSubmit() {
+		this.setFirstFilteredNoteAsCurrent()
 	}
 
 	setFirstFilteredNoteAsCurrent() {
@@ -139,10 +131,6 @@ class App extends React.Component {
 		if (filteredNotes.length > 0) {
 			this.setCurrentNote(this.getFilteredNotes()[0].id)
 		}
-	}
-
-	clearFilter() {
-		this.setState({notesFilterValue: ''})
 	}
 
 	getFilteredNotes() {
@@ -164,8 +152,7 @@ class App extends React.Component {
 		const {
 			activeNoteId,
 			isLoading,
-			loadingNoteId,
-			notesFilterValue
+			loadingNoteId
 		} = this.state
 		const active = activeNoteId === null ? {} : this.getActiveNote()
 
@@ -175,20 +162,10 @@ class App extends React.Component {
 			e(Row, {},
 				e(Col, {md: 3},
 					e(Panel, {className: 'nav-menu-panel'},
-						e('div', {className: 'notes-filter'},
-							e('input', {
-								type: 'text',
-								className: 'notes-filter__input form-control',
-								value: notesFilterValue,
-								onChange: this.handleFilterNotes,
-								onKeyDown: this.handleFilterNotesKeyDown,
-								autoComplete: 'off',
-								autocorrect: 'off',
-								autoCapitalize: 'off',
-								cpellcheck: 'false',
-								autoFocus: true
-							})
-						),
+						e(NotesFilter, {
+							onSubmit: this.handleFilterSubmit,
+							onChange: this.handleFilterNotes
+						}),
 						e(CustomScrollbars, {className: 'nav-menu-panel__scrollbars'},
 							e(Menu, {
 								notes: filteredNotes,
