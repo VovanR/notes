@@ -8,11 +8,13 @@
   },
   "dependencies": {
     "http-server": "^0.11.1",
-    "xo": "^0.20.3",
-    "yaspeller": "^4.0.3"
+    "xo": "^0.21.1",
+    "yaspeller": "^4.2.0"
   },
   "xo": {
     "semicolon": false,
-    "envs": ["browser"]
+    "envs": [
+      "browser"
+    ]
   }
 }
