@@ -18,6 +18,9 @@
     "semicolon": false,
     "envs": [
       "browser"
-    ]
+    ],
+    "rules": {
+      "import/extensions": 0
+    }
   }
 }
