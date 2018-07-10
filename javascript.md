@@ -941,3 +941,18 @@ HIA (Handle Item Action)
 
 - See: [babel-polyfill](https://babeljs.io/docs/en/babel-polyfill/)
 - See: [babel-plugin-transform-runtime](https://babeljs.io/docs/en/babel-plugin-transform-runtime)
+
+
+
+## ES6 Modules
+
+- See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-type
+- See: https://hacks.mozilla.org/2015/08/es6-in-depth-modules/
+
+```html
+<script type="module" src="js/index.js"></script>
+```
+
+```js
+import Settings from './settings.js';
+```
