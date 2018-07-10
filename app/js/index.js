@@ -5,6 +5,7 @@ import {e} from './utils.js'
 import CustomScrollbars from './custom-scrollbars.js'
 import NotesFilter from './notes-filter.js'
 import Menu from './menu.js'
+import Copyright from './copyright.js'
 
 const {Grid, Row, Col, Panel} = ReactBootstrap
 const markedRenderer = new marked.Renderer()
@@ -174,7 +175,8 @@ class App extends React.Component {
 								loadingNoteId,
 								onSelect: this.handleSelect
 							})
-						)
+						),
+						e(Copyright)
 					)
 				),
 
