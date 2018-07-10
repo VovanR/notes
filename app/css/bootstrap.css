@@ -1,0 +1,21 @@
+.form-control {
+  border-radius: 0;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.panel {
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+.progress {
+  margin-bottom: 20px;
+}
