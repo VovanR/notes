@@ -1,0 +1,15 @@
+.back-to-top {
+}
+
+.back-to-top__link {
+  position: fixed;
+  bottom: 0;
+  right: 16px;
+  display: block;
+  padding: 0;
+  height: 42px;
+  width: 48px;
+  line-height: 42px;
+  text-align: center;
+  border-bottom-width: 0;
+}

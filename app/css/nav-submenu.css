@@ -1,0 +1,20 @@
+.nav-submenu {
+  display: none;
+  padding: 0 0 0 20px;
+  font-size: 12px;
+}
+
+.nav-submenu li {
+  list-style-type: none;
+}
+
+.nav-submenu a {
+  --nav-submenu-first-line-indent: 0.7em;
+
+  display: inline-block;
+  padding: 7px 0;
+  text-decoration: none;
+  line-height: 1.2;
+  text-indent: calc(-1 * var(--nav-submenu-first-line-indent));
+  padding-left: var(--nav-submenu-first-line-indent);
+}

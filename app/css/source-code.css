@@ -1,0 +1,10 @@
+pre {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 7px 10px;
+}
+
+pre code {
+  white-space: pre;
+  word-wrap: normal;
+}
