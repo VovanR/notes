@@ -2,12 +2,15 @@
   "private": true,
   "scripts": {
     "start": "hs .",
-    "test": "npm run test:js && npm run test:spellcheck",
+    "test": "npm run test:js && npm run test:css && npm run test:spellcheck",
     "test:spellcheck": "yaspeller --dictionary ./dictionary.json ./*.md",
-    "test:js": "xo"
+    "test:js": "xo",
+    "test:css": "stylelint app/css/*.css"
   },
   "dependencies": {
     "http-server": "^0.11.1",
+    "stylelint": "^9.3.0",
+    "stylelint-config-standard": "^18.2.0",
     "xo": "^0.21.1",
     "yaspeller": "^4.2.0"
   },
