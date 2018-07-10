@@ -132,7 +132,7 @@ Node.js versions: https://docs.travis-ci.com/user/languages/javascript-with-node
 
 
 
-## Install version
+## Install package version
 
 ```shell
 npm install bootstrap@3
