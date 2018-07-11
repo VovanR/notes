@@ -425,3 +425,24 @@ html {
     font-variation-settings: "wght" 100, "wdth" 100;
 }
 ```
+
+
+
+## Animation
+
+```css
+.timer-set_state_pause {
+  opacity: 1;
+  animation: pause-impulse 0.3s cubic-bezier(0.75, 0, 0.5, 1) 0.1s infinite alternate;
+}
+
+@keyframes pause-impulse {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.5;
+  }
+}
+```
