@@ -985,3 +985,19 @@ function batchDownload(urls) {
     document.body.removeChild($link);
 }
 ```
+
+
+
+## Defer
+
+- See: https://github.com/visionmedia/batch/blob/master/index.js#L12-L18
+
+```js
+/**
+ * Defer
+ */
+
+var defer = typeof process !== 'undefined' && process && typeof process.nextTick === 'function'
+  ? process.nextTick
+  : fn => setTimeout(fn);
+```
