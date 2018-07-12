@@ -4,5 +4,58 @@
   padding-bottom: 15px;
 }
 
+.notes-filter__container {
+  position: relative;
+}
+
 .notes-filter__input {
+  padding-right: 40px;
+}
+
+.notes-filter__clear {
+  color: #ff5722;
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  bottom: 1px;
+  border: none;
+  background: transparent;
+  padding: 0 14px;
+}
+
+.notes-filter__input[value=""] ~ .notes-filter__clear {
+  display: none;
+}
+
+.notes-filter__focus-help {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  bottom: 1px;
+  padding: 5px 14px;
+  color: #bdbdbd;
+  font-size: 14px;
+  font-family: monospace;
+  user-select: none;
+  cursor: text;
+}
+
+.notes-filter__focus-help::before {
+  --padding: 5px;
+
+  content: '';
+  display: block;
+  position: absolute;
+  top: var(--padding);
+  right: var(--padding);
+  bottom: var(--padding);
+  left: var(--padding);
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+}
+
+.notes-filter__input:not([value=""]) ~ .notes-filter__focus-help {
+  display: none;
 }

@@ -14,19 +14,25 @@ class NotesFilter extends React.Component {
 
 		this.handleChange = this.handleChange.bind(this)
 		this.handleKeyDown = this.handleKeyDown.bind(this)
+		this.handleClickClear = this.handleClickClear.bind(this)
+		this.handleClickHelp = this.handleClickHelp.bind(this)
 		this.setInputRef = this.setInputRef.bind(this)
 	}
 
 	componentDidMount() {
-		document.addEventListener('keyup', (e) => {
+		document.addEventListener('keyup', e => {
 			if (e.code === 'Slash') {
-				this.inputRef.focus()
+				this.focusInput()
 			}
 		})
 	}
 
 	setInputRef(ref) {
 		this.inputRef = ref
+	}
+
+	focusInput() {
+		this.inputRef.focus()
 	}
 
 	handleChange(e) {
@@ -46,6 +52,14 @@ class NotesFilter extends React.Component {
 		}
 	}
 
+	handleClickClear() {
+		this.resetValue()
+	}
+
+	handleClickHelp() {
+		this.focusInput()
+	}
+
 	resetValue() {
 		this.setValue('')
 	}
@@ -55,26 +69,39 @@ class NotesFilter extends React.Component {
 			this.props.onChange(value)
 		})
 	}
-	
+
 	render() {
 		const {
 			value
 		} = this.state
 
 		return e('div', {className: 'notes-filter'},
-			e('input', {
-				ref: this.setInputRef,
-				type: 'text',
-				className: 'notes-filter__input form-control',
-				value,
-				onChange: this.handleChange,
-				onKeyDown: this.handleKeyDown,
-				autoComplete: 'off',
-				autocorrect: 'off',
-				autoCapitalize: 'off',
-				cpellcheck: 'false',
-				autoFocus: true
-			})
+			e('div', {className: 'notes-filter__container'},
+				e('input', {
+					ref: this.setInputRef,
+					type: 'text',
+					className: 'form-control notes-filter__input',
+					value,
+					onChange: this.handleChange,
+					onKeyDown: this.handleKeyDown,
+					autoComplete: 'off',
+					autocorrect: 'off',
+					autoCapitalize: 'off',
+					cpellcheck: 'false',
+					autoFocus: true
+				}),
+				e('button', {
+					className: 'btn notes-filter__clear',
+					type: 'button',
+					title: 'Clear filter',
+					onClick: this.handleClickClear
+				}, '×'),
+				e('span', {
+					className: 'notes-filter__focus-help',
+					title: 'Press `/` key to focus on filter',
+					onClick: this.handleClickHelp
+				}, '/')
+			)
 		)
 	}
 }
