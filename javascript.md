@@ -956,3 +956,32 @@ HIA (Handle Item Action)
 ```js
 import Settings from './settings.js';
 ```
+
+
+
+## Batch downloading
+
+- See: https://github.com/sindresorhus/multi-download
+
+Скачать много файлов
+
+```js
+/**
+ * Download list of files
+ *
+ * @param {Array} urls
+ */
+function batchDownload(urls) {
+    const $link = document.createElement('a');
+    $link.setAttribute('download', null);
+    $link.style.display = 'none';
+    document.body.appendChild($link);
+
+    urls.forEach(url => {
+        $link.setAttribute('href', url);
+        $link.click();
+    });
+
+    document.body.removeChild($link);
+}
+```
