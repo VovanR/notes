@@ -1,6 +1,6 @@
 // Exists notes list
 export const NOTES = [
-	'AngularJS',
+	'AngularJS@1',
 	'Backbone',
 	'Bash',
 	'CSS',
