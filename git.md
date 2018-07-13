@@ -950,3 +950,15 @@ git fetch
 ```shell
 git push --force-with-lease
 ```
+
+
+
+## `git-cherry-pick`
+
+- See: https://git-scm.com/docs/git-cherry-pick
+- See: http://think-like-a-git.net/sections/rebase-from-the-ground-up/cherry-picking-explained.html
+
+```shell
+git checkout -b new-release-branch
+git cherry-pick <commit-1> <commit-4> <commit-15>
+```
