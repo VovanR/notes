@@ -1001,3 +1001,49 @@ var defer = typeof process !== 'undefined' && process && typeof process.nextTick
   ? process.nextTick
   : fn => setTimeout(fn);
 ```
+
+
+
+## `NodeList` and `forEach`
+
+- See: https://developer.mozilla.org/en-US/docs/Web/API/NodeList
+
+[`NodeList`](https://developer.mozilla.org/en-US/docs/Web/API/NodeList)
+```js
+const nodes = document.querySelectorAll('p');
+```
+
+[`forEach`](https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach)
+```js
+nodes.forEach(node => {
+    node.style.color = 'red';
+});
+```
+
+[`Array.prototype.forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+```js
+Array.prototype.forEach.call(nodes, node => {
+    node.style.color = 'red';
+});
+```
+
+[`Array.from`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
+```js
+Array.from(nodes).forEach(node => {
+    node.style.color = 'red';
+});
+```
+
+[`for..of`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+```js
+for (let node of nodes) {
+    node.style.color = 'red';
+}
+```
+
+`for`
+```js
+for (let i = 0; i < nodes.length; i += 1) {
+    nodes[i].style.color = 'red';
+}
+```
