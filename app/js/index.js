@@ -139,7 +139,9 @@ class App extends React.Component {
 			notesFilterValue
 		} = this.state
 
-		const regexp = new RegExp(notesFilterValue, 'gi')
+		// From 'jspt' makes 'j.*s.*p.*t' to match 'JavaScript'
+		const pattern = notesFilterValue.split('').join('.*')
+		const regexp = new RegExp(pattern, 'i')
 
 		const filteredNotes = notes.filter(note => {
 			return regexp.test(note.name)
