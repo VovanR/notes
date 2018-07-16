@@ -94,6 +94,7 @@ class NotesFilter extends React.Component {
 					className: 'btn notes-filter__clear',
 					type: 'button',
 					title: 'Clear filter',
+					tabIndex: -1,
 					onClick: this.handleClickClear
 				}, '×'),
 				e('span', {
