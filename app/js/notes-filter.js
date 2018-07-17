@@ -22,6 +22,7 @@ class NotesFilter extends React.Component {
 	componentDidMount() {
 		document.addEventListener('keyup', e => {
 			if (e.code === 'Slash') {
+				this.resetValue()
 				this.focusInput()
 			}
 		})
