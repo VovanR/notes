@@ -30,4 +30,5 @@ export const NOTES = [
 	'Vim'
 ]
 
-export const SITE_SOURCE_URL = 'https://github.com/VovanR/notes/blob/master/'
+export const REPOSITORY_URL = 'https://github.com/VovanR/notes'
+export const SITE_SOURCE_URL = `${REPOSITORY_URL}/blob/master/`

@@ -5,6 +5,8 @@ import {e} from './utils.js'
 import CustomScrollbars from './custom-scrollbars.js'
 import NotesFilter from './notes-filter.js'
 import Menu from './menu.js'
+import Note from './note.js'
+import EmptyNote from './empty-note.js'
 
 const {Grid, Row, Col, Panel} = ReactBootstrap
 const markedRenderer = new marked.Renderer()
@@ -191,18 +193,11 @@ class App extends React.Component {
 
 				e(Col, {md: 9},
 					e(Panel, {},
-						active.sourceURL && e('div', {className: 'note-source'},
-							e('a', {
-								className: 'text-muted small',
-								href: active.sourceURL,
-								target: '_blank',
-								rel: 'noopener'
-							}, 'Edit on GitHub')
-						),
-						active.data && e('div', {
-							className: 'rendered-note',
-							dangerouslySetInnerHTML: {__html: active.data}
-						})
+						active.data ?
+							e(Note, {
+								htmlData: active.data,
+								url: active.sourceURL
+							}) : e(EmptyNote)
 					)
 				)
 			)
