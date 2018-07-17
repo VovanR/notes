@@ -15,6 +15,7 @@ h3 {
 
 h1 {
   margin-top: 0;
+  color: #37474f;
 }
 
 h1,
@@ -24,6 +25,24 @@ h4,
 h5,
 h6 {
   position: relative;
+}
+
+/**
+ * Block Quote
+ */
+
+.rendered-note blockquote {
+  position: relative;
+}
+
+.rendered-note blockquote::before {
+  position: absolute;
+  right: 100%;
+  display: inline-block;
+  content: '>';
+  color: rgba(0, 0, 0, 0.25);
+  font-size: 1em;
+  width: 1em;
 }
 
 .rendered-note ul,
@@ -86,6 +105,7 @@ h6 {
 .rendered-note a[href^="#anchor-"]::before {
   display: inline-block;
   content: '#';
+  font-size: 0.9em;
 }
 
 .rendered-note *:hover > a[href^="#anchor-"] {
