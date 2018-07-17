@@ -29,6 +29,24 @@ markedRenderer.heading = (text, level) => {
 	return `<h${level} id="${id}"><a href="${url}"></a>${text}</h${level}>`
 }
 
+const processMDNote = text => {
+	// Clear `h2` collection
+	h2s = []
+	const data = marked(
+		text,
+		{
+			sanitize: true,
+			gfm: true,
+			highlight: code => hljs.highlightAuto(code).value,
+			renderer: markedRenderer
+		}
+	)
+	// Write `h2` collection
+	const h2 = h2s
+
+	return {data, h2}
+}
+
 class App extends React.Component {
 	constructor(props) {
 		super(props)
@@ -82,20 +100,11 @@ class App extends React.Component {
 
 		fetch(loadingNote.url)
 			.then(response => response.text())
-			.then(data => {
-				// Clear `h2` collection
-				h2s = []
-				loadingNote.data = marked(
-					data,
-					{
-						sanitize: true,
-						gfm: true,
-						highlight: code => hljs.highlightAuto(code).value,
-						renderer: markedRenderer
-					}
-				)
-				// Write `h2` collection
-				loadingNote.h2 = h2s
+			.then(text => {
+				const {data, h2} = processMDNote(text)
+				loadingNote.data = data
+				loadingNote.h2 = h2
+
 				this.setState({
 					activeNoteId: noteId,
 					isLoading: false,
