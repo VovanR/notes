@@ -23,13 +23,13 @@ Demo: https://vovanr.github.io/notes
    ```
    </code></pre>
 
-1. append `Foo` to [`NOTES`](index.js#L7)
+1. append `Foo` to [`NOTES`](https://github.com/VovanR/notes/blob/master/app/js/constants.js#L2)
 
 ## Edit `gh-pages`
 ```shell
 git clone git@github.com:VovanR/notes.git
 cd notes
-npm i
+npm install
 npm start
 ```
 Open [http://localhost:8080/](http://localhost:8080/)

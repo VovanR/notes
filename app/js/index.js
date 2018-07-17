@@ -1,6 +1,6 @@
 /* global React, ReactDOM, ReactBootstrap, marked, hljs */
 
-import {NOTES, SITE_SOURCE_URL} from './constants.js'
+import {NOTES, REPOSITORY_URL, SITE_SOURCE_URL} from './constants.js'
 import {e} from './utils.js'
 import CustomScrollbars from './custom-scrollbars.js'
 import NotesFilter from './notes-filter.js'
@@ -68,6 +68,10 @@ class App extends React.Component {
 
 		this.state = {
 			notes: collection,
+			readme: {
+				url: new URL('README.md', location).href,
+				data: null
+			},
 			activeNoteId: null,
 			isLoading: false,
 			loadingNoteId: null,
@@ -77,6 +81,23 @@ class App extends React.Component {
 		this.handleSelect = this.handleSelect.bind(this)
 		this.handleFilterNotes = this.handleFilterNotes.bind(this)
 		this.handleFilterSubmit = this.handleFilterSubmit.bind(this)
+	}
+
+	componentWillMount() {
+		const {readme} = this.state
+
+		this.setState({isLoading: true})
+
+		fetch(readme.url)
+			.then(response => response.text())
+			.then(text => {
+				const {data, h2} = processMDNote(text)
+				readme.data = data
+				readme.h2 = h2
+
+				this.setState({isLoading: false})
+			})
+			.catch(() => this.setState({isLoading: false}))
 	}
 
 	getNoteById(id) {
@@ -165,6 +186,7 @@ class App extends React.Component {
 		const {
 			activeNoteId,
 			isLoading,
+			readme,
 			loadingNoteId
 		} = this.state
 		const active = activeNoteId === null ? {} : this.getActiveNote()
@@ -197,7 +219,12 @@ class App extends React.Component {
 							e(Note, {
 								htmlData: active.data,
 								url: active.sourceURL
-							}) : e(EmptyNote)
+							}) : readme.data ?
+								e(Note, {
+									htmlData: readme.data,
+									url: REPOSITORY_URL,
+									urlName: 'See on GitHub'
+								}) : e(EmptyNote)
 					)
 				)
 			)
