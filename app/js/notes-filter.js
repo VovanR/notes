@@ -85,7 +85,7 @@ class NotesFilter extends React.Component {
 					onChange: this.handleChange,
 					onKeyDown: this.handleKeyDown,
 					autoComplete: 'off',
-					autocorrect: 'off',
+					autoCorrect: 'off',
 					autoCapitalize: 'off',
 					cpellcheck: 'false',
 					autoFocus: true
