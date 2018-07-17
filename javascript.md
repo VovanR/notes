@@ -912,7 +912,7 @@ BUTTON_VARIANT = {
 
 ### Обработчик события
 
-HIA (Handle Item Action)
+`HIA` (Handle Item Action)
 
 `handleClick`
 `handleListItemClick`
