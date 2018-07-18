@@ -148,3 +148,20 @@ After:
     <img src="image.jpg">
 </picture>
 ```
+
+
+
+## `srcset`
+
+- See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-srcset
+- See: [Responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
+
+```html
+<img
+    src="box-icon-70x70.png"
+    srcSet="box-icon-70x70@x2.png 2x, box-icon-70x70@x3.png 3x"
+    width="70"
+    height="70"
+    alt="Box logo"
+/>
+```
