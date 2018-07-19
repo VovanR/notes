@@ -151,7 +151,14 @@ class App extends React.Component {
 	}
 
 	handleFilterNotes(value) {
-		this.setState({notesFilterValue: value})
+		if (value === '') {
+			this.setState({
+				notesFilterValue: value,
+				activeNoteId: null
+			})
+		} else {
+			this.setState({notesFilterValue: value})
+		}
 	}
 
 	handleFilterSubmit() {
