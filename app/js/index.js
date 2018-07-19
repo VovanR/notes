@@ -37,7 +37,7 @@ const processMDNote = text => {
 	const data = marked(
 		text,
 		{
-			sanitize: true,
+			sanitize: false,
 			gfm: true,
 			highlight: code => hljs.highlightAuto(code).value,
 			renderer: markedRenderer
