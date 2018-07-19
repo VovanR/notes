@@ -1047,3 +1047,17 @@ for (let i = 0; i < nodes.length; i += 1) {
     nodes[i].style.color = 'red';
 }
 ```
+
+
+
+## Mithril v0.2.5
+
+### SVG icons
+
+```js
+function createIcon(svg, className, onClick) {
+    return m('div', {'class': className, onclick: onClick},
+        m.trust(`<svg class='svg-icon__cnt'><use xlink:href='${svg.id}'></use></svg>`)
+    )
+}
+```
