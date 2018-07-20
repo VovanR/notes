@@ -391,6 +391,18 @@ function getRandomGreeting() {
 
 
 
+## Оставить целое
+
+```js
+Math.floor(100.999)
+//=> 100
+
+100.999 | 0
+//=> 100
+```
+
+
+
 ## Наследование
 
 - See: https://youtu.be/4oudziatkLI?list=PL363QX7S8MfSxcHzvkNEqMYbOyhLeWwem
