@@ -1062,7 +1062,7 @@ for (let i = 0; i < nodes.length; i += 1) {
 
 
 
-## Mithril v0.2.5
+## Mithril version 0.2.5
 
 ### SVG icons
 
