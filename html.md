@@ -165,3 +165,29 @@ After:
     alt="Box logo"
 />
 ```
+
+
+
+## Aria described by
+
+- See: https://www.smashingmagazine.com/2018/06/placeholder-attribute/
+
+```html
+<div class="input-wrapper">
+  <label for="employee-id">
+    Your employee ID number
+  </label>
+
+  <p
+    id="employee-id-hint"
+    class="input-hint">
+    Can be found on your employee intranet profile. Example: <samp>a1234567-89</samp>.
+  </p>
+
+  <input
+    id="employee-id"
+    aria-describedby="employee-id-hint"
+    name="id-number"
+    type="text" />
+</div>
+```
