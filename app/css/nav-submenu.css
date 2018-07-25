@@ -6,15 +6,16 @@
 
 .nav-submenu li {
   list-style-type: none;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .nav-submenu a {
   --nav-submenu-first-line-indent: 0.7em;
 
-  display: inline-block;
+  display: block;
   padding: 7px 0;
   text-decoration: none;
   line-height: 1.2;
   text-indent: calc(-1 * var(--nav-submenu-first-line-indent));
-  padding-left: var(--nav-submenu-first-line-indent);
+  padding-left: calc(var(--nav-submenu-first-line-indent) * 2);
 }
