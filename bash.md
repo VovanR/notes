@@ -242,6 +242,17 @@ find ./ -type f -exec rename "s/ /_/" *.jpg {} \;
 ```
 
 
+### Добавить префикс (prefix)
+
+```shell
+find ./ -type f -exec rename "s/^/svg-/" *.svg {} \;
+```
+
+```shell
+for filename in *.svg; do mv "$filename" "svg-$filename"; done;
+```
+
+
 ### Транслитерация кириллических имён файлов
 
 ```shell
