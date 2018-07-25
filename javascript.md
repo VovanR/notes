@@ -1073,3 +1073,14 @@ function createIcon(svg, className, onClick) {
     )
 }
 ```
+
+
+
+## Ramda
+
+- See: https://ramdajs.com/docs/
+
+```js
+R.pipe(R.filter(R.identity), R.flatten)([null, undefined, [], [1, 3], [4]]);
+//=> [1, 3, 4]
+```
