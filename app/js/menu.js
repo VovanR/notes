@@ -12,16 +12,16 @@ class Menu extends React.Component {
 			onSelect
 		} = this.props
 
-		return e(
-			'ul',
-			{className: 'nav-menu'},
-			notes.map(note => e(MenuItem, {
-				key: note.id,
-				isLoading: note.id === loadingNoteId,
-				isActive: note.id === activeNoteId,
-				note,
-				onSelect
-			}))
+		return e('nav', {className: 'nav-menu'},
+			e('ul', {},
+				notes.map(note => e(MenuItem, {
+					key: note.id,
+					isLoading: note.id === loadingNoteId,
+					isActive: note.id === activeNoteId,
+					note,
+					onSelect
+				}))
+			)
 		)
 	}
 }
