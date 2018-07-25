@@ -416,8 +416,9 @@ class GlobalNav extends React.Component {
 
 
 
-## [Enzyme](http://airbnb.io/enzyme/)
+## Enzyme
 
+- See: http://airbnb.io/enzyme/
 - See: https://github.com/airbnb/enzyme/issues/76#issuecomment-189606849
 
 Trigger input change event  
@@ -427,7 +428,10 @@ wrapper.find('input').simulate('change', {target: {value: 'My new value'}});
 
 
 
-## [`PureComponent`](https://facebook.github.io/react/docs/react-api.html#react.purecomponent)
+## `PureComponent`
+
+- See: https://facebook.github.io/react/docs/react-api.html#react.purecomponent
+
 Неглубокая сверка новых параметров и состояния. Хорошо сочетается с [Immutable.js](http://facebook.github.io/immutable-js/).  
 
 Массивы можно изменять `concat(['new-item'])`, вместо `push`.  
@@ -436,23 +440,28 @@ wrapper.find('input').simulate('change', {target: {value: 'My new value'}});
 
 
 
-## [Reselect](https://github.com/reactjs/reselect)
+## Reselect
 
+- See: https://github.com/reactjs/reselect
 - See: https://github.com/neilff/react-redux-performance  
 
 Для мемоизации вычисляемых значений
 
 
 
-## [React Intl](https://github.com/yahoo/react-intl)
+## React Intl
+
+- See: https://github.com/yahoo/react-intl
 - See: https://github.com/yahoo/react-intl/wiki  
 
 Для интернационализации i18n
 
 
 
-## [`react-virtualized`](https://github.com/bvaughn/react-virtualized)
-Рендерить только видимую часть больших списков
+## Рендерить только видимую часть больших списков
+
+- See: [`react-virtualized`](https://github.com/bvaughn/react-virtualized)
+- See: [`react-window`](https://github.com/bvaughn/react-window)
 
 
 
