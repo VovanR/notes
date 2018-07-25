@@ -14,11 +14,14 @@
 
 
 ## Оптимизация
-See: https://github.com/svg/svgo
+
+- See: https://github.com/svg/svgo
+
 ```shell
 svgo test.svg
 ```
 
 
 ## Редактор
-See: https://inkscape.org/
+
+- See: https://inkscape.org/
