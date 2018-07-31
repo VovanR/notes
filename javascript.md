@@ -1084,3 +1084,11 @@ function createIcon(svg, className, onClick) {
 R.pipe(R.filter(R.identity), R.flatten)([null, undefined, [], [1, 3], [4]]);
 //=> [1, 3, 4]
 ```
+
+
+
+## RequireJS
+
+- See: https://requirejs.org/
+- See: https://github.com/requirejs/requirejs
+- See: https://github.com/requirejs/text
