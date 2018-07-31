@@ -559,3 +559,10 @@ export class Button extends PureComponent {
 	onChange={this.handleChange}
 />
 ```
+
+
+
+## Redux
+
+- See: [Flux Standard Action utilities for Redux](https://github.com/redux-utilities/redux-actions)
+- See: [Ducks: Redux Reducer Bundles](https://github.com/erikras/ducks-modular-redux)
