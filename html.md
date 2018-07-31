@@ -191,3 +191,54 @@ After:
     type="text" />
 </div>
 ```
+
+
+
+## Autofill `autocomplete` attribute
+
+- See: [Create Amazing Password Forms](https://www.chromium.org/developers/design-documents/create-amazing-password-forms)
+- See: [Autofill](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill)
+
+```html
+<fieldset>
+    <legend>Create your account</legend>
+
+    <p>
+        <label>
+            Username:
+            <input name="username" autocomplete="username" spellcheck="false" autocorrect="off" autocapitalize="off">
+        </label>
+    </p>
+    <p>
+        <label>
+            Password:
+            <input name="password" type="password" autocomplete="new-password" spellcheck="false" autocorrect="off" autocapitalize="off">
+        </label>
+    </p>
+    <p>
+        <label>
+            Confirm password:
+            <input name="confirm-password" type="password" autocomplete="new-password" spellcheck="false" autocorrect="off" autocapitalize="off">
+        </label>
+    </p>
+</fieldset>
+```
+
+```html
+<fieldset>
+    <legend>Log in</legend>
+
+    <p>
+        <label>
+            Username:
+            <input name="username" autocomplete="username" spellcheck="false" autocorrect="off" autocapitalize="off">
+        </label>
+    </p>
+    <p>
+        <label>
+            Password:
+            <input name="password" type="password" autocomplete="current-password" spellcheck="false" autocorrect="off" autocapitalize="off">
+        </label>
+    </p>
+</fieldset>
+```
