@@ -144,3 +144,19 @@ date = friday ? sue : jill;
 getFooData()
   .then((@foo) =>)
 ```
+
+
+
+## Имя ключа
+
+```coffeescript
+foo = {
+    "#{bar}": false
+}
+```
+
+```js
+foo = {
+    [bar]: false
+}
+```
