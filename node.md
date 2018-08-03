@@ -4,6 +4,18 @@
 
 - See: [Таблица поддержки ECMAScript версиями Node.js](http://node.green/)
 
+## Генераторы документации
+
+- See: [Docusaurus](https://github.com/facebook/Docusaurus)
+
+
+
+## UI
+
+- See: [Ring UI](https://github.com/JetBrains/ring-ui)
+
+
+
 ## Обновление глобальных пакетов
 
 - See: https://docs.npmjs.com/getting-started/updating-global-packages
