@@ -5,6 +5,7 @@
 - See: http://philipwalton.github.io/solved-by-flexbox/
 - See: https://github.com/AllThingsSmitty/css-protips
 - See: http://codeguide.co
+- See: https://atomiks.github.io/30-seconds-of-css
 
 ## Import `@import`
 
@@ -113,6 +114,7 @@ LESS use:
 .float-left {
     float: left;
 }
+
 .float-right {
     float: right;
 }
@@ -120,6 +122,7 @@ LESS use:
 .hide {
     display: none;
 }
+
 .show {
     display: block;
 }
@@ -130,18 +133,18 @@ LESS use:
 }
 
 table tr:nth-child(even) {
-    background: rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.1);
 }
 
 a {
-    padding: 0 .5em;
-    margin: 0 -.5em;
+    padding: 0 0.5em;
+    margin: 0 0-.5em;
 }
 
-*, *:before, *:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 .break {
