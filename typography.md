@@ -8,9 +8,8 @@
 - See: https://github.com/A/textr
 - See: https://github.com/iamstarkov/typographic-base
 - See: https://ilyabirman.ru/projects/typography-layout/
-
-## Правила русского языка
-- See: http://therules.ru/
+- See: [Расстановка мягких переносов](http://quittance.ru/hyphenator.php)
+- See: [Правила русского языка](http://therules.ru/)
 
 ## Диапазон
 ```markdown
@@ -39,6 +38,7 @@
 - See: http://www.artlebedev.ru/kovodstvo/sections/158/
 - See: http://habrahabr.ru/post/20588/
 - See: http://knigaonlain.ru/article/index.php?id_article=95
+
 ```markdown
 Длинное `—`
 Среднее `–`
@@ -120,7 +120,8 @@
 ```
 
 ## Отрицательные арабские века
-See: http://ilyabirman.ru/meanwhile/all/otricatelnye-arabskie-veka/
+- See: http://ilyabirman.ru/meanwhile/all/otricatelnye-arabskie-veka/
+
 ```markdown
 создана между −1 и 5 веками
 ```
