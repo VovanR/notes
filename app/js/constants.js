@@ -9,6 +9,7 @@ export const NOTES = [
 	'Django',
 	'Docker',
 	'Git',
+	'GraphQL',
 	'HTML',
 	'JS-TDD',
 	'JavaScript',
