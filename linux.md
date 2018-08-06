@@ -400,3 +400,31 @@ sudo apt-get install network-manager-openvpn network-manager-openvpn-gnome
 ## Подключение к серверу по SSH
 
 - See: https://www.digitalocean.com/community/tutorials/how-to-use-ssh-to-connect-to-a-remote-server-in-ubuntu#how-to-configure-ssh
+
+
+
+## Rust
+
+- See: https://www.rust-lang.org/en-US/install.html
+
+### Install
+
+```shell
+curl https://sh.rustup.rs -sSf | sh
+```
+
+### Version
+
+```shell
+rustc --version
+```
+
+### Upgrade
+
+```shell
+rustup update stable
+```
+
+### Cargo
+
+- See: https://github.com/rust-lang/cargo
