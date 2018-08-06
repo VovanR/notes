@@ -49,7 +49,24 @@ mkdir my-new-project && cd $_
 ## Записать gif
 
 ```shell
+sudo apt-get install byzanz
+```
+
+```shell
 byzanz-record -c --duration 8 -w 400 -h 150 -x 67 -y 197 ./preview/example.gif
+```
+
+Записать весь экран
+```shell
+byzanz-record --duration=8 ./test.gif
+```
+
+
+
+## Оптимизация gif
+
+```shell
+sudo apt-get install gifsicle
 ```
 
 
