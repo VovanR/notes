@@ -190,6 +190,12 @@ sudo vim /usr/share/applications/defaults.list
 
 
 
+### Visual Studio Code
+
+- See: https://code.visualstudio.com/docs/setup/linux
+
+
+
 ### LESS
 ```shell
 lessc styles.less styles.css
