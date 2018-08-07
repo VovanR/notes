@@ -16,6 +16,8 @@
 - See: https://github.com/loiane/javascript-datastructures-algorithms
 - See: [Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
 - See: [Шаблоны проектирования в JavaScript](https://medium.com/@marina.kovalyova/java-script-design-patterns-569c627d25f9)
+- See: [Content Security Policies](https://frontendian.co/csp)
+- See: [CORS](https://frontendian.co/cors)
 
 ## String
 
