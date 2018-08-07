@@ -1064,6 +1064,21 @@ for (let i = 0; i < nodes.length; i += 1) {
 
 
 
+## Синтезатор речи
+
+- See: https://codepen.io/nalgeon/pen/LBJNXG
+
+```js
+function speak(text) {
+  const message = new SpeechSynthesisUtterance();
+  message.lang = "ru-RU";
+  message.text = text;
+  window.speechSynthesis.speak(message);
+}
+```
+
+
+
 ## Mithril version 0.2.5
 
 ### SVG icons
