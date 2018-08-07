@@ -160,3 +160,20 @@ foo = {
     [bar]: false
 }
 ```
+
+
+
+## Массив объектов
+
+```coffeescript
+controls = [
+    name: 'firstName'
+    value: 'Foo'
+  ,
+    name: 'lastName'
+    value: 'Bar'
+  ,
+    name: 'middleName'
+    value: ''
+]
+```
