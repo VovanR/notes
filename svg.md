@@ -44,6 +44,22 @@
 ```
 
 
+## Градиент
+
+```svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="gradient">
+      <stop offset="0%"  stop-color="hsla(152, 100%, 50%, 1)"/>
+      <stop offset="90%" stop-color="hsla(177, 100%, 50%, 1)"/>
+    </linearGradient>
+  </defs>
+
+  <circle r="94" cx="128" cy="128" fill="url(#gradient)"/>
+</svg>
+```
+
+
 ## Icon
 
 ```svg
