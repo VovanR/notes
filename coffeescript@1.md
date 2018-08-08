@@ -3,6 +3,7 @@
 ----
 
 - See: http://coffeescript.org/v1/
+- See: [CoffeeScript Cookbook](https://coffeescript-cookbook.github.io/)
 
 ## The Existential Operator
 
