@@ -26,6 +26,24 @@
 ```
 
 
+## Маска
+
+```svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <mask id="hole">
+      <rect width="100%" height="100%" fill="#fff"/>
+      <circle r="48" cx="128" cy="128" fill="#000"/>
+    </mask>
+  </defs>
+
+  <g mask="url(#hole)">
+    <circle r="100" cx="128" cy="128" fill="hsla(254, 100%, 50%, 1)"/>
+  </g>
+</svg>
+```
+
+
 ## Icon
 
 ```svg
