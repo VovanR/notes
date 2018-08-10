@@ -549,6 +549,29 @@ export class Button extends PureComponent {
 
 
 
+## Ignore events from children of component
+
+```jsx
+handleKeyDown = (e) => {
+    // Ignore events from children
+    if (e.currentTarget !== e.target) {
+        return
+    }
+
+    if (e.keyCode === KEY_CODE.BACKSPACE) {
+        e.preventDefault()
+        this.handleClickDelete()
+    } else if (e.keyCode === KEY_CODE.ESC) {
+        e.preventDefault()
+        if (this.chipRef) {
+            this.chipRef.blur()
+        }
+    }
+}
+```
+
+
+
 ## `<textarea>`
 
 - See: https://reactjs.org/docs/forms.html
