@@ -106,6 +106,16 @@ LESS use:
 
 
 
+## Less css
+
+### Less fix oberwriting `calc()`. Не компилировать вычисленное значение в теле `calc()`
+
+```less
+height: ~"calc(100% - 3em)";
+```
+
+
+
 ## A Collection of Handy CSS Snippets
 
 ```css
