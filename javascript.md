@@ -916,6 +916,17 @@ import Settings from './settings.js';
 
 
 
+## Modules export library utilities
+
+In `index.js`
+```js
+export { default as foo } from './foo';
+export { default as bar } from './bar';
+export { default as baz } from './baz';
+```
+
+
+
 ## Batch downloading
 
 - See: https://github.com/sindresorhus/multi-download
