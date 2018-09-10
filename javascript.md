@@ -313,22 +313,6 @@ var list = '<ul><li>' + arr.join('</li><li>') + '</li></ul>';
 
 
 
-## Оператор `for in`
-
-```javascript
-for (key in object) {
-    if (!{}.hasOwnProperty.call(object, key)) continue;
-
-    console.log(object[key]);
-}
-
-for (key in object) if ({}.hasOwnProperty.call(object, key)) {
-    console.log(object[key]);
-}
-```
-
-
-
 ## Проверка в цикле
 
 ```javascript
@@ -522,6 +506,32 @@ console.log(o1);  //=> { a: 1, b: 2, c: 3 }, target object itself is changed.
 Object.keys(items).forEach(id => {
     console.log(items[id]);
 });
+```
+
+
+
+## Оператор `for in`
+
+- See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
+
+```javascript
+for (key in object) {
+    if (!Object.prototype.hasOwnProperty.call(object, key)) {
+        continue;
+    }
+
+    console.log(object[key]);
+}
+
+for (key in object) {
+    if (!Object.prototype.hasOwnProperty.call(object, key)) continue;
+
+    console.log(object[key]);
+}
+
+for (key in object) if (Object.prototype.hasOwnProperty.call(object, key)) {
+    console.log(object[key]);
+}
 ```
 
 
@@ -1109,3 +1119,9 @@ R.pipe(R.filter(R.identity), R.flatten)([null, undefined, [], [1, 3], [4]]);
 - See: https://requirejs.org/
 - See: https://github.com/requirejs/requirejs
 - See: https://github.com/requirejs/text
+
+
+
+## Web Components
+
+- See: [How to build a simple Camera component](https://frontendnews.io/editions/2018-08-15-simple-camera-component)
