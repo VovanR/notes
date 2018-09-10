@@ -160,7 +160,7 @@ After:
 ```html
 <img
     src="box-icon-70x70.png"
-    srcSet="box-icon-70x70@x2.png 2x, box-icon-70x70@x3.png 3x"
+    srcset="box-icon-70x70@x2.png 2x, box-icon-70x70@x3.png 3x"
     width="70"
     height="70"
     alt="Box logo"
