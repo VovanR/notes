@@ -464,6 +464,48 @@ localStorage.removeItem('username');
 
 
 
+## `URLSearchParams`
+
+- See: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
+- See: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/URLSearchParams
+- See: [Polyfill for the `URLSearchParams` API](https://github.com/WebReflection/url-search-params)
+
+Для работы с `search` параметрами
+
+```js
+const searchParams = new URLSearchParams()
+searchParams.set('foo', 1)
+searchParams.set('bar', 2)
+searchParams.toString() //=> 'foo=1&bar=2'
+searchParams.has('foo') //=> true
+searchParams.set('foo', 99)
+searchParams.toString() //=> 'foo=99&bar=2'
+searchParams.append('bar', 3)
+searchParams.toString() //=> 'foo=99&bar=2&bar=3'
+searchParams.get('foo') //=> '99'
+searchParams.getAll('bar') //=> ['2', '3']
+searchParams.delete('bar')
+searchParams.toString() //=> 'foo=99'
+```
+
+```js
+const searchParams = new URLSearchParams('foo=1&bar=2')
+
+for (let p of searchParams) {
+  console.log(p);
+}
+//=> ["foo", "99"]
+//=> ["bar", "2"]
+```
+
+```js
+new URLSearchParams('foo=1&bar=2')
+new URLSearchParams([['foo', 1], ['bar', 2]])
+new URLSearchParams({foo: 1, bar: 2})
+```
+
+
+
 ## Clone object
 
 - See: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Cloning_an_object
