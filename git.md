@@ -4,13 +4,12 @@
 
 - See: https://github.com/Imangazaliev/git-tips
 - See: https://githowto.com/ru/amending_commits
-
-## Удачное ветвление git-flow
-- See: http://habrahabr.ru/post/106912/
+- See: [Удачное ветвление git-flow](https://habr.com/post/106912/)
 
 
 
 ## Влить изменения в форк из оригинального репозитория (Syncing a fork)
+
 - See: https://gun.io/blog/how-to-github-fork-branch-and-pull-request/
 - See: https://help.github.com/articles/syncing-a-fork
 
@@ -55,6 +54,7 @@ git push --force
 
 
 ## Configuring a remote for a fork
+
 - See: https://help.github.com/articles/configuring-a-remote-for-a-fork
 - See: https://gun.io/blog/how-to-github-fork-branch-and-pull-request/
 
@@ -71,11 +71,12 @@ git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.gi
 
 
 ## Принятие пулреквеста
+
 Fetch and Merge (скачать и слить)
 
-Основной метод вливания изменений. Он требует добавления `remote`,
-ведущего к репозиторию человека, отправившего пулреквест,
-скачивания изменений с этого репозитория, объединения нужной ветви,
+Основной метод вливания изменений. Он требует добавления `remote`,  
+ведущего к репозиторию человека, отправившего пулреквест,  
+скачивания изменений с этого репозитория, объединения нужной ветви,  
 исправления конфликтов и выгрузки обновлённой ветви обратно в исходный репозиторий:
 ```shell
 git checkout master
@@ -88,6 +89,7 @@ git push origin master
 
 
 ## Настройка
+
 ```shell
 git config --global user.name "Your Name"
 git config --global user.email "your_email@whatever.com"
@@ -111,6 +113,7 @@ git config --global core.excludesfile ~/.gitignore_global
 ```
 
 ## Создание проекта
+
 ```shell
 mkdir hello
 cd hello
@@ -129,6 +132,7 @@ git commit -m "First Commit"
 
 
 ## git tag (тэг, тег)
+
 Добавить тэг
 ```shell
 git tag v0.1.0
@@ -177,12 +181,16 @@ git describe --contains cc98ddd
 
 
 ## Отмена локальных изменений (до индексации)
+
 ```shell
 git checkout hello.html
 ```
 
+
+
 ## Отмена коммитов
-Отменить последний коммит. При этом появится новый отменяющий коммит.
+
+Отменить последний коммит. При этом появится новый отменяющий коммит.  
 Сообщение такого будет `Revert "<reverted_commit_message>"\n\nThis reverts commmit <hash>`
 ```shell
 git revert HEAD --no-edit
@@ -193,7 +201,10 @@ git revert HEAD --no-edit
 git reset --soft HEAD^
 ```
 
+
+
 ## Изменение предыдущего коммита
+
 ```shell
 git commit --amend
 ```
@@ -204,12 +215,17 @@ git commit --amend --no-edit
 ```
 
 
+
 ## Перемещение файлов
+
 ```shell
 git mv hello.html lib/
 ```
 
+
+
 ## Перебазирование `rebase`
+
 ```shell
 git checkout style
 git rebase master
@@ -220,13 +236,19 @@ git rebase master
 
 `rebase` для кратковременных, локальных веток, а слияние для веток в публичном репозитории.
 
+
+
 ## Что такое `origin`
+
 ```shell
 git remote
 git remote show origin
 ```
 
+
+
 ## Удалённые ветки
+
 Локальные ветки
 ```shell
 git branch
@@ -237,7 +259,10 @@ git branch
 git branch -a
 ```
 
+
+
 ## Если удалённая ветка всё ещё отображается в `git branch -a`
+
 ```shell
 git remote prune origin
 ```
@@ -248,17 +273,25 @@ git remote prune origin --dry-run
 ```
 
 
+
 ## Извлечение изменений из удаленной репы
+
 ```shell
 git fetch
 ```
 
+
+
 ## Слияние извлечённых изменений
+
 ```shell
 git merge origin/master
 ```
 
+
+
 ## Извлечение и слияние изменений
+
 ```shell
 git pull
 ```
@@ -272,6 +305,7 @@ git merge origin/master
 
 
 ## Генерация нового ключа
+
 - See: https://help.github.com/articles/error-permission-denied-publickey
 
 ```shell
@@ -307,7 +341,9 @@ git push -u origin --all
 ```
 
 
+
 ## Конфликт двух ключей (когда два аккаунта на Битбакет)
+
 ```shell
 git pull
     conq: repository access denied.
@@ -342,6 +378,7 @@ Host personalid
 
 
 ## Генерация нового `GPG` ключа
+
 - See: https://help.github.com/articles/generating-a-new-gpg-key/
 - See: https://help.github.com/articles/adding-a-new-gpg-key-to-your-github-account/#adding-a-gpg-key
 - See: https://help.github.com/articles/signing-commits-using-gpg/
@@ -381,8 +418,8 @@ echo "export GPG_TTY=$(tty)" >> ~/.bashlocal
 
 
 
-
 ## WARNING: gnome-keyring
+
 - See: http://hongouru.blogspot.ru/2012/07/solved-warning-gnome-keyring-couldnt.html
 
 ```
@@ -406,6 +443,7 @@ OnlyShowIn=GNOME;Unity;XFCE;
 
 
 ## Чтобы в гит не попадали изменения прав доступа на файлы
+
 ```shell
 git config --local core.fileMode false
 ```
@@ -457,11 +495,15 @@ git push origin :feature/sprite-speed
 
 
 ## Меняем удаленную репу
+
 ```shell
 git remote add origin <ssh://url>
 ```
 
+
+
 ## Переименовали репу на Гитхабе — переименуем её и на компе
+
 ```shell
 git remote set-url origin <new_url>
 ```
@@ -469,6 +511,7 @@ git remote set-url origin <new_url>
 
 
 ## Добавление модуля
+
 ```shell
 git submodule add https://github.com/gilsondev/searchtasks.vim.git vim/bundle/searchtasks.vim
 git submodule update --init --recursive
@@ -478,6 +521,7 @@ git submodule foreach git pull
 
 
 ## Сбор мусора
+
 ```shell
 git gc
 ```
@@ -496,6 +540,7 @@ git remote set-head origin --auto
 
 
 ## Patch
+
 ```shell
 git diff > patch.patch
 git apply ./patch.patch
@@ -504,11 +549,15 @@ git apply ./patch.patch
 
 
 ## Сравнить измененный файл с веткой 'master'
+
 ```shell
 git diff master~20:project/file.js project/file.js
 ```
 
+
+
 ## Показать изменения добавленного в коммит файла
+
 ```shell
 git diff --cached <file_path>
 ```
@@ -516,6 +565,7 @@ git diff --cached <file_path>
 
 
 ## Восстановить файл, удаленный в каком-то коммите. Откатить изменения файла, сделанные в каком-то коммите
+
 ```shell
 git log --stat <file_path>
 ```
@@ -533,6 +583,7 @@ git checkout d67577f^ -- <file_path>
 
 
 ## log строки файла
+
 ```shell
 git log -L 1,1:<file_path>
 ```
@@ -540,6 +591,7 @@ git log -L 1,1:<file_path>
 
 
 ## Посмотреть файл из другой ветки
+
 ```shell
 git show <some-branch-name>:<file_path>
 ```
@@ -547,6 +599,7 @@ git show <some-branch-name>:<file_path>
 
 
 ## Чтобы не было коммитов о мерже, когда пришли изменения
+
 `Merge branch 'feature/foo' into develop`
 
 ```shell
@@ -556,6 +609,7 @@ git pull --rebase
 
 
 ## Частичный коммит
+
 Можно коммитить часть изменений файла
 ```shell
 git add -p <file_path>
@@ -564,6 +618,7 @@ git add -p <file_path>
 
 
 ## Сброс изменений
+
 Отменить все внесённые изменения и начать работу с чистого листа (самый частый случай)
 ```shell
 git reset --hard HEAD
@@ -599,6 +654,7 @@ git clean -df
 
 
 ## Игнорирование пробелов
+
 Чтобы в диффах не видеть изменения табуляции и прочего
 
 Пример команды: `git diff -w` или `git blame -w`
@@ -609,12 +665,15 @@ Git будет просто игнорировать все изменения, 
 
 
 ## Клонировать репозиторий с конкретной веткой
+
 ```shell
 git clone -b develop git@github.com:VovanR/notes.git
 ```
 
 
+
 ## Замержить изменения из мастера, не переключаясь из текущей ветки
+
 Например, находимся в `feature/readme`
 ```shell
 git fetch origin master:master
@@ -622,13 +681,17 @@ git merge --no-ff master
 ```
 
 
+
 ## Скопировать изменения из другой ветки, не занося изменения в коммит
+
 ```shell
 git checkout fix/typo ./
 ```
 
 
+
 ## Посмотреть дифф одного коммита
+
 ```shell
 git log -p <hash> -1
 ```
@@ -641,6 +704,7 @@ git show <hash>
 
 
 ## Отменить `rebase`
+
 - See: http://stackoverflow.com/a/135614
 
 Смотрим последний коммит перед началом `rebase`
@@ -676,6 +740,7 @@ git reflog -p
 
 
 ## Изменить сообщение коммита
+
 ```shell
 git rebase -i <hash>
 ```
@@ -683,6 +748,7 @@ git rebase -i <hash>
 
 
 ## Удалить коммит через интерактивный ребейз
+
 ```shell
 git rebase -i HEAD~3
 ```
@@ -691,6 +757,7 @@ git rebase -i HEAD~3
 
 
 ## Удалить файл из коммита
+
 ```shell
 git log --stat
   commit cc98ddd
@@ -706,6 +773,7 @@ git push --force
 
 
 ## Игнорировать внесённые изменения
+
 - See: http://stackoverflow.com/a/3320183
 
 ```shell
@@ -719,6 +787,7 @@ git update-index --no-assume-unchanged ./index.js
 
 
 ## Переименовать ветку (изменить название ветки)
+
 ```shell
 git branch -m old_branch new_branch
 git push origin :old_branch
@@ -727,15 +796,18 @@ git push --set-upstream origin new_branch
 
 
 ## Запушить ветку не переходя на неё
+
 Например: мы сейчас на ветке `master`, надо запушить изменения ветки `dev`, но не переходя на неё
 ```shell
 git push origin dev:dev
 ```
 
 
+
 ## `git stash`
 
 ### Как пользоваться
+
 Изменили файл. Надо переключиться на другую ветку, но работу над файлом не закончили.  
 Для этого сохраняем текущие изменения в `stash`, потом их можно будет восстановить:  
 
@@ -806,6 +878,7 @@ git diff --name-only stash@{0} HEAD
 
 
 ## Фича от фичи
+
 - See: https://github.com/VovanR/test-rebase/wiki  
 
 Бывает начинаешь фичу (**feature-2**), в которой нужны изменения из параллельно разрабатываемой фичи (**feature-1**).
@@ -815,6 +888,7 @@ git diff --name-only stash@{0} HEAD
 
 
 ## Удалить remove `untracked` files
+
 ```shell
 git clean -f
 ```
@@ -841,7 +915,9 @@ git clean --dry-run
 ```
 
 
+
 ## `git bisect`. Поиск коммита, в котором был поломан функционал
+
 Начинаем поиск
 ```shell
 git bisect start
@@ -878,6 +954,7 @@ git bisect reset
 
 
 ## `git worktree`
+
 - See: https://git-scm.com/docs/git-worktree
 - See: https://stacktoheap.com/blog/2016/01/19/using-multiple-worktrees-with-git/
 
@@ -910,6 +987,7 @@ git filter-branch --force --index-filter \
 'git rm --cached --ignore-unmatch PATH-TO-YOUR-FILE-WITH-SENSITIVE-DATA' \
 --prune-empty --tag-name-filter cat -- --all
 ```
+
 
 ### `BFG`
 
