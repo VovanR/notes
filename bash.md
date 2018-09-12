@@ -167,6 +167,13 @@ find ./ -iregex '.*\(mp3\|mp4\|exe\)'
 ```
 
 
+### Количество файлов определённого типа в проекте
+
+```shell
+find ./ -type f -name "*.coffee" -not -path "*node_modules*" | wc -l
+```
+
+
 ### Найти и заменить в файлах
 
 ```shell
