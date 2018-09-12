@@ -17,6 +17,7 @@
 
 ## Accessibility
 - See: https://weblind.ru/
+- See: [Accessible Breadcrumb Navigation Pattern](https://scottaohara.github.io/a11y_breadcrumbs/)
 
 
 
