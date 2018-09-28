@@ -398,6 +398,18 @@ ol li:nth-child(-n+14):nth-child(n+7) {
 
 
 
+## Конический градиент
+```css
+.gray {
+  background-image: conic-gradient(#eee 0.1turn, #eee 326deg);
+}
+.hue-wheel {
+  background-image: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+}
+```
+
+
+
 ## `calc` сделать значение переменной отрицательным. Negative variable
 ```css
 .a {
