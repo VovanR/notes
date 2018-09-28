@@ -311,6 +311,18 @@ var arr = ['item 1', 'item 2', 'item 3', ...];
 var list = '<ul><li>' + arr.join('</li><li>') + '</li></ul>';
 ```
 
+```js
+/**
+ * @param {Array} arr
+ * @returns {string}
+ *
+ * @example
+ * createList(['Foo', 'Bar'])
+ * //=> '<ul><li>Foo</li><li>Bar</li></ul>'
+ */
+const createList = (arr) => arr.length > 0 ? `<ul><li>${arr.join('</li><li>')}</ul></li>` : ''
+```
+
 
 
 ## Проверка в цикле
