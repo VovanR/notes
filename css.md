@@ -471,3 +471,44 @@ html {
   }
 }
 ```
+
+
+
+## css flex overflow ellipsis
+
+- See: https://css-tricks.com/flexbox-truncated-text/
+
+```html
+<div class="container">
+    <div class="content">
+        <span class="name">Long string</span>
+    </div>
+
+    <div class="actions">
+        <a href="#">Click Me!</a>
+    </div>
+</div>
+```
+
+```css
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    flex-grow: 1;
+    min-width: 0; /* or some value */
+}
+
+.name {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.actions {
+    flex-shrink: 0;
+}
+```
