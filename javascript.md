@@ -1123,3 +1123,9 @@ R.pipe(R.filter(R.identity), R.flatten)([null, undefined, [], [1, 3], [4]]);
 ## Web Components
 
 - See: [How to build a simple Camera component](https://frontendnews.io/editions/2018-08-15-simple-camera-component)
+
+
+
+## Превью загружаемой картинки
+
+- See: [Showing thumbnails of user-selected images](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications#Example_Using_object_URLs_to_display_images)
