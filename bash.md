@@ -1272,3 +1272,94 @@ set -e
 
 . . .
 ```
+
+
+
+## cURL
+
+- See: https://www.youtube.com/watch?time_continue=4885&v=FTlsMkImku4
+- See: http://httpstat.us
+- See: https://postman-echo.com
+
+```shell
+curl -i https://vovanr.com/
+```
+
+Только заголовки ответа
+```shell
+curl -I https://vovanr.com/
+```
+
+Сохранить заголовки в файл
+```shell
+curl -D headers.txt https://vovanr.com/
+```
+
+Несколько запросов
+```shell
+curl httpstat.us/200 -: -i httpstat.us/300 -: -I httpstat.us/400
+```
+
+Диапазон адресов
+```shell
+curl httpstat.us/[500-510]
+```
+
+Скачать файл
+```shell
+curl https://curl.haxx.se/logo/curl-logo.svg > logo-1.svg
+curl -o logo-2.svg https://curl.haxx.se/logo/curl-logo.svg
+curl -O https://curl.haxx.se/logo/curl-logo.svg
+```
+
+Редирект 301
+```shell
+curl -IL curl.haxx.se
+```
+
+GET + querystring
+```shell
+curl https://postman-echo.com/get?foo=1&bar=2
+curl -G -d foo=1 -d bar=2 https://postman-echo.com/get
+```
+
+POST
+```shell
+curl -X POST -d foo=1 -d bar=2 https://postman-echo.com/post
+curl -X POST -d "Hello world!" https://postman-echo.com/post
+curl -X POST -d '{foo: 1}' -H "Content-Type: application/json" https://postman-echo.com/post
+curl -X POST -d @filename.json -H "Content-Type: application/json" https://postman-echo.com/post
+curl -X POST -F data=@filename.json https://postman-echo.com/post
+```
+
+### Авторизация
+
+- HTTP Basic
+- Digest
+- Cookie
+- Kerberos
+- OAuth 2
+
+HTTP Basic
+```shell
+curl -u postman https://postman:password@postman-echo.com/basic-auth
+curl -u postman https://postman-echo.com/basic-auth
+curl -u postman:password https://postman-echo.com/basic-auth
+```
+
+OAuth 2
+```shell
+curl https://cloud.arrival.com/api/v1/user -H 'authorization: Bearer -JSDFHLKSDHF'
+```
+
+### Аргументы из файла
+```shell
+curl -K config.txt 'https://example.com/'
+```
+
+`config.txt`:
+```
+-H "content-type: application/json"
+-H "authorization: Bearer -JSDFHLKSDHF"
+--compressed
+```
