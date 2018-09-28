@@ -4,6 +4,7 @@
 
 - See: [Design Patterns and Widgets](https://www.w3.org/TR/wai-aria-practices/#aria_ex)
 - See: [Nutrition Cards for Accessible Components](https://davatron5000.github.io/a11y-nutrition-cards/)
+- See: [The A11Y Project](https://a11yproject.com/)
 
 ## Polyfills
 - See: https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills
