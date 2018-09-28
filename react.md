@@ -9,6 +9,19 @@
 - See: [Шаблоны проектирования в React](https://medium.freecodecamp.org/evolving-patterns-in-react-116140e5fe8f) [перевод](https://habrahabr.ru/company/ruvds/blog/349198/)
 - See: [React Patterns](https://reactpatterns.com/) [source](https://github.com/chantastic/reactpatterns.com)
 
+
+
+## UI
+
+- See: [Material-UI](https://material-ui.com/)
+- See: [Ring UI](https://github.com/JetBrains/ring-ui)
+
+
+## Libraries
+
+- See: https://github.com/malte-wessel/react-custom-scrollbars
+
+
 ## Атрибуты
 
 - See: https://reactjs.org/docs/dom-elements.html#differences-in-attributes
