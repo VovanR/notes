@@ -313,3 +313,27 @@ After:
   </nav>
 </aside>
 ```
+
+
+
+## Элемент `<article>`
+
+- See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article
+
+
+
+## Элемент `<time>`
+
+- See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time
+
+Например для элемента "дата публикации"
+
+```html
+<footer>
+  <p>
+    Posted on
+    <time datetime="2015-05-15 19:00">May 15</time>
+    by Staff.
+  </p>
+</footer>
+```
