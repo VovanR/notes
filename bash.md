@@ -1312,18 +1312,18 @@ curl -o logo-2.svg https://curl.haxx.se/logo/curl-logo.svg
 curl -O https://curl.haxx.se/logo/curl-logo.svg
 ```
 
-Редирект 301
+Редирект `301`
 ```shell
 curl -IL curl.haxx.se
 ```
 
-GET + querystring
+`GET + querystring`
 ```shell
 curl https://postman-echo.com/get?foo=1&bar=2
 curl -G -d foo=1 -d bar=2 https://postman-echo.com/get
 ```
 
-POST
+`POST`
 ```shell
 curl -X POST -d foo=1 -d bar=2 https://postman-echo.com/post
 curl -X POST -d "Hello world!" https://postman-echo.com/post
