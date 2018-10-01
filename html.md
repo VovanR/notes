@@ -267,3 +267,49 @@ After:
 </body>
 </html>
 ```
+
+
+
+## Элемент `<nav>`
+
+- See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav
+
+Блок навигации по сайту. 
+
+```html
+<nav class="menu">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+```
+
+Документ может содержать несколько элементов `<nav>`.
+Например один для навигации по сайту, второй для навигации по странице.
+В этом случае надо добавить атрибут `aria-labeledby` чтобы пометить навигацию для скринридеров
+
+- See: [Labeling section content](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#Labeling_section_content#Labeling_section_content)
+
+```html
+<header>
+  <nav aria-labeledby="primary-navigation">
+    <h2 id="primary-navigation">
+      Primary navigation
+    </h2>
+
+    <!-- navigation items -->
+  </nav>
+</header>
+
+<aside>
+  <nav aria-labeledby="page-navigation">
+    <h2 id="page-navigation">
+      Page navigation
+    </h2>
+
+    <!-- navigation items -->
+  </nav>
+</aside>
+```
