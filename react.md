@@ -19,7 +19,21 @@
 
 ## Libraries
 
+### Полоса прокрутки (scrollbar)
 - See: https://github.com/malte-wessel/react-custom-scrollbars
+
+### Всплывающая подсказка (tooltip) и выпадающее меню (dropdown)
+- See: https://github.com/atomiks/tippy.js-react
+
+### Формы
+- See: https://github.com/jaredpalmer/formik
+
+### Обработка клика вне компонента
+- See: https://github.com/Pomax/react-onclickoutside
+
+### Управление фокусом
+- See: https://github.com/theKashey/react-focus-lock
+
 
 
 ## Атрибуты
