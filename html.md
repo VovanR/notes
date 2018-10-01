@@ -288,9 +288,10 @@ After:
 
 Документ может содержать несколько элементов `<nav>`.
 Например один для навигации по сайту, второй для навигации по странице.
-В этом случае надо добавить атрибут `aria-labeledby` чтобы пометить навигацию для скринридеров
+В этом случае надо добавить атрибут `aria-labeledby` или `aria-label` чтобы пометить навигацию для скринридеров
 
 - See: [Labeling section content](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#Labeling_section_content#Labeling_section_content)
+- See: https://code.visualstudio.com/docs/nodejs/reactjs-tutorial
 
 ```html
 <header>
@@ -304,13 +305,21 @@ After:
 </header>
 
 <aside>
-  <nav aria-labeledby="page-navigation">
-    <h2 id="page-navigation">
-      Page navigation
-    </h2>
+    <nav id="docs-subnavbar" aria-label="On Page Navigation">
+        <h4 tabindex="0">
+            <span class="sr-only">In this article there are 6 sections</span>
+            <span aria-hidden="true">In this article</span>
+        </h4>
 
-    <!-- navigation items -->
-  </nav>
+        <ul class="nav">
+            <li><a href="#_welcome-to-react">Welcome to React</a></li>
+            <li><a href="#_hello-world">Hello World!</a></li>
+            <li><a href="#_debugging-react">Debugging React</a></li>
+            <li><a href="#_linting">Linting</a></li>
+            <li><a href="#_popular-starter-kits">Popular Starter Kits</a></li>
+            <li class="active"><a href="#_common-questions">Common Questions</a></li>
+        </ul>
+    </nav>
 </aside>
 ```
 
