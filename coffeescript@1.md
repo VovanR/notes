@@ -4,7 +4,7 @@
 
 - See: http://coffeescript.org/v1/
 - See: [CoffeeScript Cookbook](https://coffeescript-cookbook.github.io/)
-- See: [decaffeinate · CoffeeScript in, ES6 out](https://decaffeinate-project.org/repl/)
+- See: [`decaffeinate` · CoffeeScript in, ES6 out](https://decaffeinate-project.org/repl/)
 
 ## The Existential Operator
 
