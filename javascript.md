@@ -1129,3 +1129,57 @@ R.pipe(R.filter(R.identity), R.flatten)([null, undefined, [], [1, 3], [4]]);
 ## Превью загружаемой картинки
 
 - See: [Showing thumbnails of user-selected images](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications#Example_Using_object_URLs_to_display_images)
+
+
+
+## Video `autoplay`
+
+- See: https://developers.google.com/web/updates/2017/09/autoplay-policy-changes
+- See: https://webkit.org/blog/7734/auto-play-policy-changes-for-macos/
+
+```js
+var promise = document.querySelector('video').play();
+
+if (promise !== undefined) {
+    promise.then(() => {
+        // Auto-play started
+    }).catch(error => {
+        // Auto-play was prevented
+        // Show a UI element to let the user manually start playback
+    });
+}
+```
+
+Fetch & Play
+
+- See: https://developers.google.com/web/updates/2017/06/play-request-was-interrupted
+
+```html
+<video id="video"></video>
+<button id="button"></button>
+
+<script>
+  button.addEventListener('click', onButtonClick);
+
+  function onButtonClick() {
+    // This will allow us to play video later...
+    video.load();
+    fetchVideoAndPlay();
+  }
+
+  function fetchVideoAndPlay() {
+    fetch('https://example.com/file.mp4')
+    .then(response => response.blob())
+    .then(blob => {
+      video.srcObject = blob;
+      return video.play();
+    })
+    .then(_ => {
+      // Video playback started ;)
+    })
+    .catch(e => {
+      // Video playback failed ;(
+    })
+  }
+</script>
+```
