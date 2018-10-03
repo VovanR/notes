@@ -5,6 +5,7 @@
 - See: http://www.typescriptlang.org/Tutorial
 - See: https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines
 - See: https://github.com/Microsoft/TypeScript/blob/master/src/compiler/core.ts
+- See: [TypeScript Deep Dive](https://basarat.gitbooks.io/typescript/)
 
 **TDD**
 - See: https://github.com/koroandr/decoupling_habr
