@@ -25,6 +25,9 @@
 ### Всплывающая подсказка (tooltip) и выпадающее меню (dropdown)
 - See: https://github.com/atomiks/tippy.js-react
 
+## Уведомления
+- See: https://github.com/fkhadra/react-toastify
+
 ### Формы
 - See: https://github.com/jaredpalmer/formik
 
