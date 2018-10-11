@@ -512,3 +512,13 @@ html {
     flex-shrink: 0;
 }
 ```
+
+
+
+## Фон SVG-картинка
+
+```css
+.foo {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 12'%3E%3Cpath d='m12 0l12 12h-24z' fill='%23f2f3f8'/%3E%3C/svg%3E");
+}
+```
