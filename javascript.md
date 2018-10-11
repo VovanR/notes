@@ -1183,3 +1183,11 @@ Fetch & Play
   }
 </script>
 ```
+
+
+
+## `document.activeElement`
+
+- See: https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/activeElement
+
+Ссылка на элемент в фокусе
