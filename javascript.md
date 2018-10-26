@@ -14,10 +14,25 @@
 - See: https://github.com/h5bp/Front-end-Developer-Interview-Questions
 - See: https://github.com/you-dont-need/You-Dont-Need-JavaScript
 - See: https://github.com/loiane/javascript-datastructures-algorithms
-- See: [Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
-- See: [Шаблоны проектирования в JavaScript](https://medium.com/@marina.kovalyova/java-script-design-patterns-569c627d25f9)
 - See: [Content Security Policies](https://frontendian.co/csp)
 - See: [CORS](https://frontendian.co/cors)
+
+
+
+## Design patterns
+
+- See: [Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
+- See: [Шаблоны проектирования в JavaScript](https://medium.com/@marina.kovalyova/java-script-design-patterns-569c627d25f9)
+- See: [Справочник «Паттерны проектирования»](http://design-pattern.ru/)
+- See: [Паттерны/шаблоны проектирования (енот)](https://refactoring.guru/ru/design-patterns)
+- See: [JavaScript Design Patterns](https://www.dofactory.com/javascript/design-patterns)
+
+
+## Описание API
+
+- See: [Переменные liquid](https://liquidhub.ru/collection/shpargalka-liquid)
+
+
 
 ## String
 
