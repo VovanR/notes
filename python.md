@@ -32,3 +32,13 @@ python ./server.py
 source env/bin/activate
 pip install -r requirements.txt --upgrade
 ```
+
+
+
+## Simple HTTP request handler
+
+- See: https://docs.python.org/2/library/simplehttpserver.html
+
+```shell
+python -m SimpleHTTPServer 8000
+```
