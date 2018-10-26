@@ -522,3 +522,20 @@ html {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 12'%3E%3Cpath d='m12 0l12 12h-24z' fill='%23f2f3f8'/%3E%3C/svg%3E");
 }
 ```
+
+
+
+## `object-fit`
+
+- See: https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit
+
+Чтобы картинка занимала всё пространство блока и сохраняла свои пропорции. 
+Аналогично работе `background-size: contain;`
+
+```css
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+```
