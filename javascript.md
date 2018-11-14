@@ -184,6 +184,102 @@ console.log(m); //=> [{id: 3}, {id: 2}, {id: 8}]
 
 
 
+## Object
+
+### Clone object
+
+- See: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Cloning_an_object
+
+```js
+var obj = { a: 1 };
+var copy = Object.assign({}, obj);
+console.log(copy); // { a: 1 }
+```
+
+
+
+### Deep Clone object
+
+```js
+const DATA = JSON.parse(JSON.stringify(window.DATA));
+```
+
+
+
+### Merge objects
+
+- See: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Merging_objects
+
+```js
+var o1 = { a: 1 };
+var o2 = { b: 2 };
+var o3 = { c: 3 };
+
+var obj = Object.assign(o1, o2, o3);
+console.log(obj); //=> { a: 1, b: 2, c: 3 }
+console.log(o1);  //=> { a: 1, b: 2, c: 3 }, target object itself is changed.
+```
+
+
+
+### Object `forEach`
+
+- See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+- See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+
+```js
+Object.keys(object).forEach(key => {
+    console.log(object[key]);
+});
+```
+
+```js
+Object.entries(object).forEach(([key, value]) => {
+    console.log(key, value);
+});
+```
+
+
+
+### Оператор `for in`
+
+- See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
+
+```javascript
+for (key in object) {
+    if (!Object.prototype.hasOwnProperty.call(object, key)) {
+        continue;
+    }
+
+    console.log(object[key]);
+}
+
+for (key in object) {
+    if (!Object.prototype.hasOwnProperty.call(object, key)) continue;
+
+    console.log(object[key]);
+}
+
+for (key in object) if (Object.prototype.hasOwnProperty.call(object, key)) {
+    console.log(object[key]);
+}
+```
+
+
+
+### Оператор `for of`
+
+- See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+
+```javascript
+const object = {a: 1, b: 2};
+for (const [key, value] of Object.entries(object)) {
+    console.log(key, value);
+}
+//=> "a", 1
+//=> "b", 2
+```
+
 
 
 ## Number
@@ -569,78 +665,6 @@ for (const [key, value] of searchParams) {
 new URLSearchParams('foo=1&bar=2')
 new URLSearchParams([['foo', 1], ['bar', 2]])
 new URLSearchParams({foo: 1, bar: 2})
-```
-
-
-
-## Clone object
-
-- See: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Cloning_an_object
-
-```js
-var obj = { a: 1 };
-var copy = Object.assign({}, obj);
-console.log(copy); // { a: 1 }
-```
-
-
-
-## Deep Clone object
-
-```js
-const DATA = JSON.parse(JSON.stringify(window.DATA));
-```
-
-
-
-## Merge objects
-
-- See: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Merging_objects
-
-```js
-var o1 = { a: 1 };
-var o2 = { b: 2 };
-var o3 = { c: 3 };
-
-var obj = Object.assign(o1, o2, o3);
-console.log(obj); //=> { a: 1, b: 2, c: 3 }
-console.log(o1);  //=> { a: 1, b: 2, c: 3 }, target object itself is changed.
-```
-
-
-
-## object `forEach`
-
-```js
-Object.keys(items).forEach(id => {
-    console.log(items[id]);
-});
-```
-
-
-
-## Оператор `for in`
-
-- See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
-
-```javascript
-for (key in object) {
-    if (!Object.prototype.hasOwnProperty.call(object, key)) {
-        continue;
-    }
-
-    console.log(object[key]);
-}
-
-for (key in object) {
-    if (!Object.prototype.hasOwnProperty.call(object, key)) continue;
-
-    console.log(object[key]);
-}
-
-for (key in object) if (Object.prototype.hasOwnProperty.call(object, key)) {
-    console.log(object[key]);
-}
 ```
 
 
