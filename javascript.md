@@ -148,6 +148,39 @@ console.log(m); //=> [{id: 3}, {id: 2}, {id: 8}]
 
 
 
+
+
+
+## Number
+
+### Округление числа
+
+```javascript
+/**
+ * Округление числа
+ *
+ * @param {Number} num Число с плавающей точкой
+ * @return {Number} Целое число
+ */
+var mathRound = function (num) {
+    return (0.5 + num) << 0;
+};
+```
+
+
+
+### Оставить целое
+
+```js
+Math.floor(100.999)
+//=> 100
+
+100.999 | 0
+//=> 100
+```
+
+
+
 ## Выделить текст инпута при фокусе
 
 ```html
@@ -213,22 +246,6 @@ someobject.foo = (dispatch, getState, ...rest) => {
   originalfoo.apply(someobject, [dispatch, getState, ...rest]);
   // Run stuff after, here.
 }
-```
-
-
-
-## Округление числа
-
-```javascript
-/**
- * Округление числа
- *
- * @param {Number} num Число с плавающей точкой
- * @return {Number} Целое число
- */
-var mathRound = function (num) {
-    return (0.5 + num) << 0;
-};
 ```
 
 
@@ -400,18 +417,6 @@ function getRandomGreeting() {
         case 3: return 'Hail';
     }
 }
-```
-
-
-
-## Оставить целое
-
-```js
-Math.floor(100.999)
-//=> 100
-
-100.999 | 0
-//=> 100
 ```
 
 
