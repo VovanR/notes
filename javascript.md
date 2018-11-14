@@ -558,11 +558,11 @@ searchParams.toString() //=> 'foo=99'
 ```js
 const searchParams = new URLSearchParams('foo=1&bar=2')
 
-for (let p of searchParams) {
-  console.log(p);
+for (const [key, value] of searchParams) {
+  console.log(key, value);
 }
-//=> ["foo", "99"]
-//=> ["bar", "2"]
+//=> "foo", "99"
+//=> "bar", "2"
 ```
 
 ```js
