@@ -1130,6 +1130,16 @@ R.pipe(R.filter(R.identity), R.flatten)([null, undefined, [], [1, 3], [4]]);
 //=> [1, 3, 4]
 ```
 
+### Omit undefined values in Object
+
+- See: [reject](https://ramdajs.com/docs/#reject)
+- See: [isNil](https://ramdajs.com/docs/#isNil)
+
+```js
+R.reject(R.isNil, {a: 1, b: undefined, c: 0, d: null})
+//=> {a: 1, c: 0}
+```
+
 
 
 ## RequireJS
