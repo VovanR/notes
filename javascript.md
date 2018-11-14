@@ -1221,3 +1221,27 @@ Fetch & Play
 - See: https://developer.mozilla.org/en-US/docs/Web/API/DocumentOrShadowRoot/activeElement
 
 Ссылка на элемент в фокусе
+
+
+
+## `Set`
+
+```js
+class Foo {
+    constructor() {
+        this._callbacks = new Set()
+    }
+
+    onChange(cb) {
+        this._callbacks.add(cb)
+    }
+
+    offChange(cb) {
+        this._callbacks.delete(cb)
+    }
+
+    _fireOnChange() {
+        this._callbacks.forEach(cb => cb())
+    }
+}
+```
