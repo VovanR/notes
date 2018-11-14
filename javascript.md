@@ -148,6 +148,41 @@ console.log(m); //=> [{id: 3}, {id: 2}, {id: 8}]
 
 
 
+### Reduce
+
+- See: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+
+
+- `callback`
+  - `accumulator`
+  - `currentValue`
+  - `currentIndex`
+  - `array`
+- `initialValue`
+
+```js
+[0, 1, 2, 3].reduce(function(sum, value) {
+  return sum + value
+}, 0)
+```
+
+```js
+[0, 1, 2, 3, 4].reduce(
+  (accumulator, currentValue, currentIndex, array) => {
+    return accumulator + currentValue
+  },
+  10
+)
+```
+
+```js
+[0, 1, 2, 3].reduce(
+  (acc, cur) => acc + cur,
+  0
+)
+```
+
+
 
 
 
@@ -696,42 +731,6 @@ function screenshot(index, isLast) {
 }
 
 screenshot(lastIndex, false);
-```
-
-
-
-## reduce
-
-- See: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
-
-
-- `callback`
-  - `accumulator`
-  - `currentValue`
-  - `currentIndex`
-  - `array`
-- `initialValue`
-
-```js
-[0, 1, 2, 3].reduce(function(sum, value) {
-  return sum + value
-}, 0)
-```
-
-```js
-[0, 1, 2, 3, 4].reduce(
-  (accumulator, currentValue, currentIndex, array) => {
-    return accumulator + currentValue
-  },
-  10
-)
-```
-
-```js
-[0, 1, 2, 3].reduce(
-  (acc, cur) => acc + cur,
-  0
-)
 ```
 
 
