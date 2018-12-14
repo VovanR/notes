@@ -348,3 +348,15 @@ After:
   </p>
 </footer>
 ```
+
+
+
+## Элементы, которые могут быть `focused`
+
+- See: https://www.w3.org/TR/html5/editing.html#can-be-focused
+
+
+
+## Элементы, которые могут быть `disabled`
+
+- See: https://www.w3.org/TR/html5/disabled-elements.html#disabled-elements
