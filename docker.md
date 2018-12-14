@@ -118,3 +118,9 @@ docker exec -it <container_name> sh
 ```shell
 perl --version
 ```
+
+
+
+## Просмотрщик слоёв
+
+- See: https://github.com/wagoodman/dive
