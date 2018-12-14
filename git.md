@@ -1040,3 +1040,11 @@ git push --force-with-lease
 git checkout -b new-release-branch
 git cherry-pick <commit-1> <commit-4> <commit-15>
 ```
+
+
+
+## Количество коммитов на разработчика
+
+```shell
+git shortlog -s -n -e
+```
