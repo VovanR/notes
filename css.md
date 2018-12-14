@@ -7,6 +7,29 @@
 - See: http://codeguide.co
 - See: https://atomiks.github.io/30-seconds-of-css
 
+
+## Вес селектора. Специфичность селектора
+
+- See: https://alistapart.com/article/braces-to-pixels
+
+`li.foo`
+
+| `!important` | Style attribute | ID | Class, pseudo-class, attribute | Elements |
+|--------------|-----------------|----|--------------------------------|----------|
+|        0     |       0         |  0 |             1                  |    1     |
+
+
+| Selector                  | Specificity Score |
+|---------------------------|-------------------|
+| `li`                      | 0 0 0 0 1         |
+| `li.foo`                  | 0 0 0 1 1         |
+| `#comment li.foo.bar`     | 0 0 1 2 1         |
+| `<li style="color: red">` | 0 1 0 0 0         |
+| `color: red !important`   | 1 0 0 0 0         |
+
+
+
+
 ## Import `@import`
 
 - See: https://developer.mozilla.org/en-US/docs/Web/CSS/@import
