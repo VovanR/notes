@@ -1270,6 +1270,40 @@ Fetch & Play
 ## `Set`
 
 ```js
+var a = {a:1}
+var b = {b:1}
+
+var testSet = new Set()
+
+testSet.add(a)
+//=> testSet
+testSet.add(b)
+//=> testSet
+testSet.size
+//=> 2
+testSet.add(a).add(b)
+testSet.size
+//=> 2
+testSet.has(b)
+//=> true
+testSet.delete(b)
+//=> true
+testSet.delete(b)
+//=> false
+testSet.has(b)
+//=> false
+testSet.size
+//=> 1
+testSet.clear()
+//=> undefined
+testSet.size
+//=> 0
+```
+
+
+### Class callbacks based on `Set`
+
+```js
 class Foo {
     constructor() {
         this._callbacks = new Set()
