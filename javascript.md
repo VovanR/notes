@@ -79,22 +79,31 @@ fetch('https://api.github.com/users/vovanr')
 ## Array
 
 ```javascript
-var foo = [1, 2, 3];
+var foo = ['a', 'b', 'c'];
 
-foo.shift(); //=> 1 (removed item)
-console.log(foo); //=> [2, 3]
+// Remove first item
+foo.shift(); //=> 'a' (removed item)
+console.log(foo); //=> ['b', 'c']
 
-foo.unshift(4); //=> 3 (new foo.length)
-console.log(foo); //=> [4, 2, 3]
+// Add first item
+foo.unshift('d'); //=> 3 (new foo length)
+console.log(foo); //=> ['d', 'b', 'c']
 
-foo.pop(); //=> 3 (removed item)
-console.log(foo); //=> [4, 2]
+// Remove last item
+foo.pop(); //=> 'c' (removed item)
+console.log(foo); //=> ['d', 'b']
 
-foo.push(5); //=> 4 (new foo.length)
-console.log(foo); //=> [4, 2, 5]
+// Add last item
+foo.push('e'); //=> 3 (new foo length)
+console.log(foo); //=> ['d', 'b', 'e']
 
-foo.splice(foo.indexOf(2), 1, 3); //=> [2] (replaced items)
-console.log(foo); //=> [4, 3, 5]
+// Replace item with another item
+foo.splice(foo.indexOf('b'), 1, 'f'); //=> ['b'] (replaced items)
+console.log(foo); //=> ['d', 'f', 'e']
+
+// Remove item from array
+foo.splice(foo.indexOf('f'), 1); //=> ['f'] (replaced items)
+console.log(foo); //=> ['d', 'e']
 ```
 
 
@@ -131,7 +140,7 @@ a[0] = 3;
 var arr = ['a', 'b', 'c'];
 var i = arr.length;
 while (i--) {
-	arr[i] //=> 'c', 'b', 'a'
+    arr[i] //=> 'c', 'b', 'a'
 }
 ```
 
