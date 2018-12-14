@@ -864,6 +864,17 @@ const item = getItemById(33, getState())
 - See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 - See: https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html https://habrahabr.ru/company/mailru/blog/269465/
 
+### `then` after `catch`
+
+```js
+Promise.reject('foo')
+  .then((resp) => {console.log('1 then', resp); return resp})
+  .catch((resp) => {console.log('1 catch', resp); return resp})
+  .then((resp) => {console.log('2 then', resp); return resp})
+//=> 1 catch foo
+//=> 2 then foo
+```
+
 
 
 ## Cookies
