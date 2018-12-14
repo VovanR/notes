@@ -360,3 +360,26 @@ After:
 ## Элементы, которые могут быть `disabled`
 
 - See: https://www.w3.org/TR/html5/disabled-elements.html#disabled-elements
+
+
+
+## `<fieldset disabled>` отключает дочерние элементы
+
+- See: https://www.w3.org/TR/html5/sec-forms.html#disabled-fieldset
+- See: https://codepen.io/VovanR/pen/VVoLjj
+
+```html
+<form action="">
+  <fieldset name="clubfields" disabled>
+    <legend>
+      <label>
+        <input type=checkbox name=club onchange="form.clubfields.disabled = !checked">
+        Use Club Card
+      </label>
+    </legend>
+    <p><label>Name on card: <input name=clubname required></label></p>
+    <p><label>Card number: <input name=clubnum required pattern="[-0-9]+"></label></p>
+    <p><label>Expiry date: <input name=clubexp type=month></label></p>
+  </fieldset>
+</form>
+```
