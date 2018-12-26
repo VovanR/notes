@@ -203,6 +203,24 @@ git reset --soft HEAD^
 
 
 
+## Узнать `commit message` отменённого коммита
+
+```shell
+git reflog
+```
+
+Находим нужный хэш, например
+```
+34215450 HEAD@{2}: commit: Fix `FormControl`
+```
+
+И смотрим
+```shell
+git show 34215450
+```
+
+
+
 ## Изменение предыдущего коммита
 
 ```shell
