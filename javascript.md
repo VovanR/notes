@@ -427,6 +427,79 @@ iframe.onload = function () {
 
 
 
+## Binary
+
+- See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
+
+Уменьшить до чётного, если нечётное. Побитовое `AND`
+```js
+100 & ~1 === 100;
+101 & ~1 === 100;
+const numberToEven = number => number & ~1;
+```
+
+```
+     0000 1010   // decimal 10
+AND  0000 0001   // decimal 1
+  =  0000 0000
+```
+
+```
+     0000 1011   // decimal 11
+AND  0000 0001   // decimal 1
+  =  0000 0001
+```
+
+
+Дробная часть. Модуль
+```js
+3.5 % 1 === 0.5;
+3 % 1 === 0; // Не имеет дробной части — целое число
+```
+
+Остаток от деления
+```js
+3 % 2 === 1;
+4 % 2 === 0;
+```
+
+
+### Чётное/Нечётное
+
+С помощью модуля
+```js
+const isOdd = number => Boolean(number % 2);
+const isEven = number => !isOdd(number);
+```
+
+Побитовое `AND` работает быстрее
+```js
+const isOdd = number => Boolean(number & 1);
+const isEven = number => !isOdd(number);
+```
+
+
+
+### Булево в число
+
+Используется в сортировке  
+Например элемент `'a'` надо собрать в начале списка, остальные останутся в том же порядке, что и были
+```js
+['d', 'b', 'c', 'a', 'a'].sort(i => -(Number(i === 'a')));
+//=> ['a', 'a', 'd', 'b', 'c']
+```
+
+```js
+const booleanToNumber = boolean => Number(boolean); // Конструктор
+const booleanToNumber = boolean => boolean ? 1 : 0; // Тернарный оператор
+const booleanToNumber = boolean => boolean | 0; // Бинарное `OR`
+const booleanToNumber = boolean => boolean & 1; // Бинарное `AND`
+const booleanToNumber = boolean => ~~boolean; // Двойное бинарное `NOT`
+const booleanToNumber = boolean => +boolean; // Приведение типов
+```
+
+
+
 ## Отключить увеличение страницы Ctrl + Mouse wheel
 
 - See: http://stackoverflow.com/a/29994607
