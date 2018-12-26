@@ -1322,3 +1322,13 @@ class Foo {
     }
 }
 ```
+
+
+
+## Trigger event
+
+```javascript
+formElement.addEventListener('change', onChange)
+
+formElement.dispatchEvent(new Event('change'))
+```
