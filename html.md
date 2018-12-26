@@ -7,6 +7,10 @@
 - See: [The A11Y Project](https://a11yproject.com/)
 - See: [Доступность интерфейсов. Лекция Яндекса](https://habr.com/company/yandex/blog/424879/)
 - See: [Книга "Form Design Patterns"](https://formdesignpatterns.com/)
+- See: [Математические формулы в SVG](https://github.com/mathjax/mathjax)
+- See: [Редактор математических формул](http://www.wiris.com/editor/demo/en/developers)
+- See: [The Open Graph protocol](http://ogp.me/)
+- See: [SRI Hash Generator (ingegrity)](https://www.srihash.org/)
 
 ## Polyfills
 - See: https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills
