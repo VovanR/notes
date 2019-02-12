@@ -15,6 +15,7 @@
 
 - See: [Material-UI](https://material-ui.com/)
 - See: [Ring UI](https://github.com/JetBrains/ring-ui)
+- See: [ANT DESIGN PRO](https://ant.design/)
 
 
 ## Libraries
@@ -36,6 +37,9 @@
 
 ### Управление фокусом
 - See: https://github.com/theKashey/react-focus-lock
+
+### Анимация
+- See: https://github.com/react-spring/react-spring
 
 
 
