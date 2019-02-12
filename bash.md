@@ -8,6 +8,20 @@
 
 
 
+## Как разделить длинную команду на несколько строк
+
+Добавляем обратный слэш `\` и переносим строку
+
+```shell
+docker run --rm -it -p 7272:7272 \
+  -v $(pwd)/nginx:/etc/nginx:ro \
+  -v $(pwd)/nginx/etc/ssl/certs:/etc/ssl/certs \
+  -v $(pwd)/nginx/etc/ssl/private:/etc/ssl/private \
+  --name my-project-nginx nginx
+```
+
+
+
 ## Создать копию файла с добавлением `.bak` в конце имени
 
 ```shell
