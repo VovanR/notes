@@ -1391,6 +1391,21 @@ testSet.size
 ```
 
 
+### `Set` to `Object`
+
+```js
+function setToObject(set) {
+    const obj = new Object(null)
+
+    for (const [key, value] of set) {
+        obj[key] = value
+    }
+
+    return obj
+}
+```
+
+
 ### Class callbacks based on `Set`
 
 ```js
