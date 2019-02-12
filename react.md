@@ -602,6 +602,13 @@ handleKeyDown = (e) => {
 
 
 
+## Portal
+
+- See: https://css-tricks.com/using-react-portals-to-render-children-outside-the-dom-hierarchy/
+- See: https://codepen.io/kinsomicrote/pen/JeLNqa?editors=0110
+
+
+
 ## `<textarea>`
 
 - See: https://reactjs.org/docs/forms.html
