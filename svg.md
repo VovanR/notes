@@ -14,6 +14,37 @@
 ```
 
 
+## Path
+
+- See: https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths
+- See: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule
+
+Квадрат:
+
+```svg
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <path
+    d="
+      M 0 0
+        L 0 0 32 0
+        L 32 0 32 32
+        L 32 32 0 32
+        L 0 32 0 0
+      M 2 2
+        L 2 2 30 2
+        L 30 2 30 30
+        L 30 30 2 30
+        L 2 30 2 2
+    "
+    stroke="none"
+    fill="inherit"
+    fill-rule="evenodd"
+  />
+</svg   >
+```
+
+
+
 ## Вращение относительно центра
 
 ```svg
