@@ -4,6 +4,7 @@
 
 - See: https://github.com/tutsplus/how-to-hand-code-svg https://webdesign.tutsplus.com/tutorials/how-to-hand-code-svg--cms-30368
 - See: [A guide to SVG `<use>` elements](http://taye.me/blog/svg/a-guide-to-svg-use-elements/)
+- See: [Convert stroke to path](https://elrumordelaluz.github.io/micro-outline-stroke/)
 
 ## Circle
 
