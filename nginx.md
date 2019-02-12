@@ -3,6 +3,7 @@
 ----
 
 - See: https://nginx.ru/
+- See: [NGiИX config generator](https://nginxconfig.io/) https://github.com/valentinxxx/nginxconfig.io
 
 ## Добавить сайт
 ```shell
