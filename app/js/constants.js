@@ -24,6 +24,7 @@ export const NOTES = [
 	'Python',
 	'React',
 	'RegExp',
+	'Svelte',
 	'SVG',
 	'Tmux',
 	'TypeScript',
