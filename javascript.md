@@ -1471,3 +1471,45 @@ let result = re.exec('2015-01-02');
 // result[2] === '01';
 // result[3] === '02';
 ```
+
+
+
+## Реализация библиотеки с поддержкой плагинов
+
+### Библиотека
+
+- See: https://github.com/simonepri/upash/blob/master/index.js
+
+```js
+module.exports = Object.freeze({
+  install,
+  uninstall,
+  list,
+  use,
+  which,
+
+  verify,
+  hash
+});
+```
+
+### Использование
+
+```js
+const upash = require('upash');
+
+// Install the algorithms of your choice.
+upash.install('pbkdf2', require('@phc/pbkdf2'));
+```
+
+### Плагин
+
+- See: https://github.com/simonepri/phc-pbkdf2/blob/master/index.js
+
+```js
+module.exports = {
+  hash,
+  verify,
+  identifiers
+};
+```
