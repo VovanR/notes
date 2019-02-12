@@ -1452,3 +1452,22 @@ try {
     console.groupEnd();
 }
 ```
+
+
+
+## RegExp Named Capture Groups
+
+- See: https://github.com/tc39/proposal-regexp-named-groups
+
+```js
+let re = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/u;
+let result = re.exec('2015-01-02');
+// result.groups.year === '2015';
+// result.groups.month === '01';
+// result.groups.day === '02';
+
+// result[0] === '2015-01-02';
+// result[1] === '2015';
+// result[2] === '01';
+// result[3] === '02';
+```
