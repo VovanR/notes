@@ -58,7 +58,7 @@ class App extends React.Component {
 
 			return {
 				id: note,
-				name: note,
+				name: note.replace('_', ' '),
 				sourceURL: new URL(filename, SITE_SOURCE_URL).href,
 				url: new URL(filename, location).href,
 				data: null,

@@ -6,7 +6,7 @@
 
 > My notes
 
-Demo: [vovanr.github.io/notes][demo]
+Demo: https://vovanr.github.io/notes
 
 ## Add new note
 1. add `foo.md`
@@ -33,8 +33,6 @@ npm install
 npm start
 ```
 Open [http://localhost:8080/](http://localhost:8080/)
-
-[demo]: https://vovanr.github.io/notes
 
 [travis-url]: https://travis-ci.org/VovanR/notes
 [travis-image]: https://img.shields.io/travis/VovanR/notes.svg?style=flat-square

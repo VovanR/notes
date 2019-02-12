@@ -2,23 +2,27 @@
 
 ----
 
-- See: https://github.com/loverajoel/jstips
-- See: https://github.com/oneuijs/You-Dont-Need-jQuery
-- See: https://github.com/HubSpot/youmightnotneedjquery
-- See: https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore
-- See: https://github.com/getify/You-Dont-Know-JS
-- See: http://codeguide.co
-- See: http://es6-features.org/
-- See: https://ponyfoo.com/articles/es6
+- See: [JS Tips](https://github.com/loverajoel/jstips)
+- See: [You Don't Need jQuery](https://github.com/oneuijs/You-Dont-Need-jQuery)
+- See: [You might not need jQuery](https://github.com/HubSpot/youmightnotneedjquery)
+- See: [You don't (may not) need Lodash/Underscore](https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore)
+- See: [You Don't Need JavaScript](https://github.com/you-dont-need/You-Dont-Need-JavaScript)
+- See: [You Don't Know JS (book series)](https://github.com/getify/You-Dont-Know-JS)
 - See: https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
-- See: https://github.com/h5bp/Front-end-Developer-Interview-Questions
-- See: https://github.com/you-dont-need/You-Dont-Need-JavaScript
-- See: https://github.com/loiane/javascript-datastructures-algorithms
+- See: [JavaScript Data Structures and Algorithms](https://github.com/loiane/javascript-datastructures-algorithms)
 - See: [Content Security Policies](https://frontendian.co/csp)
 - See: [CORS](https://frontendian.co/cors)
-- See: [`dat.GUI`](https://github.com/dataarts/dat.gui)
 - See: [Asynchronous iteration](http://exploringjs.com/es2018-es2019/ch_asynchronous-iteration.html)
-- See: [Вопросы кандидату на должность front-end разработчика](https://h5bp.org/Front-end-Developer-Interview-Questions/translations/russian/)
+- See: [Вопросы кандидату на должность front-end разработчика](https://h5bp.org/Front-end-Developer-Interview-Questions/translations/russian/) https://github.com/h5bp/Front-end-Developer-Interview-Questions
+- See: [`dat.GUI`](https://github.com/dataarts/dat.gui)
+- See: http://codeguide.co
+
+
+
+## ES2015 (ES6)
+
+- See: http://es6-features.org/
+- See: https://ponyfoo.com/articles/es6
 
 
 
@@ -26,15 +30,6 @@
 
 - See: [Dinero.js](https://github.com/sarahdayan/dinero.js)
 
-
-
-## Design patterns
-
-- See: [Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
-- See: [Шаблоны проектирования в JavaScript](https://medium.com/@marina.kovalyova/java-script-design-patterns-569c627d25f9)
-- See: [Справочник «Паттерны проектирования»](http://design-pattern.ru/)
-- See: [Паттерны/шаблоны проектирования (енот)](https://refactoring.guru/ru/design-patterns)
-- See: [JavaScript Design Patterns](https://www.dofactory.com/javascript/design-patterns)
 
 
 ## Описание API

@@ -6,6 +6,7 @@ export const NOTES = [
 	'CSS',
 	'CMD',
 	'CoffeeScript@1',
+	'Design_Patterns',
 	'Django',
 	'Docker',
 	'Git',
