@@ -39,6 +39,13 @@ __strong__
 [![image](/images/preview.png)](/images/image.png)
 ```
 
+
+```markdown
+![image](https://raw.githubusercontent.com/nodejs/Release/master/schedule.svg?sanitize=true)
+```
+
+
+
 ```markdown
 <acronym title="Internet Protocol">IP</acronym>
 ```
