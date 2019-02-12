@@ -1437,3 +1437,18 @@ formElement.addEventListener('change', onChange)
 
 formElement.dispatchEvent(new Event('change'))
 ```
+
+
+
+## Console Goup
+
+```javascript
+try {
+    foo();
+} catch (e) {
+    console.group('foo failing');
+    console.log(e);
+    console.trace();
+    console.groupEnd();
+}
+```
