@@ -5,6 +5,7 @@
 - See: https://learnxinyminutes.com/docs/ru-ru/bash-ru/
 - See: https://github.com/Idnan/bash-guide
 - See: https://devhints.io/bash
+- See: https://github.com/dominictarr/JSON.sh
 
 
 
