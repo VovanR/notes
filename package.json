@@ -1,18 +1,18 @@
 {
   "private": true,
   "scripts": {
-    "start": "hs .",
+    "start": "http-server .",
     "test": "npm run test:js && npm run test:css && npm run test:spellcheck",
     "test:spellcheck": "yaspeller --dictionary ./dictionary.json ./*.md",
     "test:js": "xo",
     "test:css": "stylelint app/css/*.css"
   },
-  "dependencies": {
+  "devDependencies": {
     "http-server": "^0.11.1",
-    "stylelint": "^9.5.0",
+    "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.2.0",
-    "xo": "^0.23.0",
-    "yaspeller": "^5.0.0"
+    "xo": "^0.24.0",
+    "yaspeller": "^5.0.1"
   },
   "xo": {
     "semicolon": false,

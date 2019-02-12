@@ -239,4 +239,4 @@ class App extends React.Component {
 	}
 }
 
-ReactDOM.render(e(App), document.getElementById('app'))
+ReactDOM.render(e(App), document.querySelector('#app'))
