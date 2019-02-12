@@ -10,7 +10,7 @@
 - See: [Математические формулы в SVG](https://github.com/mathjax/mathjax)
 - See: [Редактор математических формул](http://www.wiris.com/editor/demo/en/developers)
 - See: [The Open Graph protocol](http://ogp.me/)
-- See: [SRI Hash Generator (ingegrity)](https://www.srihash.org/)
+- See: [SRI Hash Generator (Integrity)](https://www.srihash.org/)
 
 ## Polyfills
 - See: https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills

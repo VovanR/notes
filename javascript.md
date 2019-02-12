@@ -16,7 +16,7 @@
 - See: https://github.com/loiane/javascript-datastructures-algorithms
 - See: [Content Security Policies](https://frontendian.co/csp)
 - See: [CORS](https://frontendian.co/cors)
-- See: [dat.GUI](https://github.com/dataarts/dat.gui)
+- See: [`dat.GUI`](https://github.com/dataarts/dat.gui)
 - See: [Asynchronous iteration](http://exploringjs.com/es2018-es2019/ch_asynchronous-iteration.html)
 - See: [Вопросы кандидату на должность front-end разработчика](https://h5bp.org/Front-end-Developer-Interview-Questions/translations/russian/)
 
@@ -730,7 +730,7 @@ localStorage.removeItem('username');
 - See: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
 - See: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/URLSearchParams
 - See: [Polyfill for the `URLSearchParams` API](https://github.com/WebReflection/url-search-params)
-- See: [A querystring parser with nesting support](https://github.com/ljharb/qs)
+- See: [A `querystring` parser with nesting support](https://github.com/ljharb/qs)
 
 Для работы с `search` параметрами
 
@@ -1440,7 +1440,7 @@ formElement.dispatchEvent(new Event('change'))
 
 
 
-## Console Goup
+## Console Group
 
 ```javascript
 try {

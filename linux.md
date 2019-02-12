@@ -433,7 +433,7 @@ rustup update stable
 
 ## Albert
 
-- See: https://software.opensuse.org/download.html?project=home:manuelschneid3r&package=albert
+- See: [Download](https://software.opensuse.org/download.html?project=home:manuelschneid3r&package=albert)
 
 Add key
 ```shell
