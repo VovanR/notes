@@ -16,6 +16,7 @@
 - See: [Вопросы кандидату на должность front-end разработчика](https://h5bp.org/Front-end-Developer-Interview-Questions/translations/russian/) https://github.com/h5bp/Front-end-Developer-Interview-Questions
 - See: [`dat.GUI`](https://github.com/dataarts/dat.gui)
 - See: http://codeguide.co
+- See: https://githubengineering.com/removing-jquery-from-github-frontend/
 
 
 
