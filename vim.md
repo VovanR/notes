@@ -6,6 +6,7 @@
 - See: [Official repository](https://github.com/vim/vim)
 - See: [Vim Cheat Sheet](https://vim.rtorr.com/)
 - See: [Vim documentation](http://vimdoc.sourceforge.net/htmldoc/)
+- See: [Vimways 2018](https://vimways.org/2018/)
 
 `V` — Выделение строки
 
