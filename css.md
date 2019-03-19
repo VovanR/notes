@@ -6,6 +6,7 @@
 - See: https://github.com/AllThingsSmitty/css-protips
 - See: http://codeguide.co
 - See: https://atomiks.github.io/30-seconds-of-css
+- See: [Automated responsive font sizes](https://github.com/twbs/rfs)
 
 
 ## Вес селектора. Специфичность селектора
