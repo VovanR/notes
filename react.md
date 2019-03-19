@@ -34,6 +34,7 @@
 
 ### Обработка клика вне компонента
 - See: https://github.com/Pomax/react-onclickoutside
+- See: https://github.com/nanot1m/react-foco
 
 ### Управление фокусом
 - See: https://github.com/theKashey/react-focus-lock
