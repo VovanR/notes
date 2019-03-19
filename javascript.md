@@ -17,6 +17,7 @@
 - See: [`dat.GUI`](https://github.com/dataarts/dat.gui)
 - See: http://codeguide.co
 - See: https://githubengineering.com/removing-jquery-from-github-frontend/
+- See: [Preload, prefetch and other `<link>` tags](https://3perf.com/blog/link-rels/)
 
 
 
