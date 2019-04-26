@@ -8,6 +8,20 @@
 - See: https://blog.docker.com/2015/04/tips-for-deploying-nginx-official-image-with-docker/
 - See: [Исчерпывающее руководство по написанию `Dockerfile` для веб-приложений на Node.js](https://medium.com/devschacht/praveen-durairaj-an-exhaustive-guide-to-writing-dockerfiles-for-node-js-web-apps-7b033bcc0b4f)
 
+
+
+## Изучаем Docker, Джефф Хейл в переводе на Хабре
+
+- See: https://mobile.twitter.com/webstandards_ru/status/1098568101535322112
+
+1. [Основы](habr.com/p/438796/)
+2. [Термины и концепции](habr.com/p/439978/)
+3. [Файлы Dockerfile](habr.com/p/439980/)
+4. [Оптимизация и ускорение](habr.com/p/440658/)
+5. [Команды](habr.com/p/440660/)
+
+
+
 ## Examples
 
 - See: https://github.com/rstacruz/cheatsheets/pull/583/files
