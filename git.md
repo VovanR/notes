@@ -811,6 +811,15 @@ git update-index --assume-unchanged ./index.js
 git update-index --no-assume-unchanged ./index.js
 ```
 
+Но лучше:
+
+- See: https://stackoverflow.com/a/43535767/1284255
+
+```shell
+git update-index --skip-worktree <file>
+git update-index --no-skip-worktree <file>
+```
+
 
 
 ## Переименовать ветку (изменить название ветки)
