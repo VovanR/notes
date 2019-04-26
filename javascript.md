@@ -530,6 +530,14 @@ const year = date.getFullYear();
 const formatedDate = `${day}.${month}.${year}`;
 ```
 
+## `.setHours`
+
+- See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setHours
+
+```js
+new Date().setHours(hours, minutes, seconds, milliseconds)
+```
+
 
 
 ## Ждём окончания загрузки страницы
