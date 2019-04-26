@@ -17,6 +17,20 @@
 - See: http://codeguide.co
 - See: https://githubengineering.com/removing-jquery-from-github-frontend/
 - See: [Preload, prefetch and other `<link>` tags](https://3perf.com/blog/link-rels/)
+- See: [Browser extension](https://24ways.org/2018/my-first-chrome-extension/)
+- See: http://blog.csssr.ru/2018/08/16/candidates-mistakes
+
+
+
+## Libs, Библиотеки
+
+### Работа с цветом
+
+- See: https://github.com/gka/chroma.js/
+
+### Календарь
+
+- See: https://fullcalendar.io/
 
 
 
