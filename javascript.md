@@ -11,13 +11,25 @@
 - See: https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
 - See: [JavaScript Data Structures and Algorithms](https://github.com/loiane/javascript-datastructures-algorithms)
 - See: [Content Security Policies](https://frontendian.co/csp)
-- See: [CORS](https://frontendian.co/cors)
 - See: [Asynchronous iteration](http://exploringjs.com/es2018-es2019/ch_asynchronous-iteration.html)
 - See: [Вопросы кандидату на должность front-end разработчика](https://h5bp.org/Front-end-Developer-Interview-Questions/translations/russian/) https://github.com/h5bp/Front-end-Developer-Interview-Questions
 - See: [`dat.GUI`](https://github.com/dataarts/dat.gui)
 - See: http://codeguide.co
 - See: https://githubengineering.com/removing-jquery-from-github-frontend/
 - See: [Preload, prefetch and other `<link>` tags](https://3perf.com/blog/link-rels/)
+
+
+
+## CORS
+
+- See: [CORS](https://frontendian.co/cors)
+
+Если надо локально потестить апишку, которая ругается, можно использовать прокси [cors-anywhere](https://github.com/Rob--W/cors-anywhere/)
+
+```diff
+-fetch(`https://api.weather.yandex.ru/v1/forecast`)
++fetch(`https://cors-anywhere.herokuapp.com/https://api.weather.yandex.ru/v1/forecast`)
+```
 
 
 
