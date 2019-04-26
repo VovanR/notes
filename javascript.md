@@ -1364,6 +1364,8 @@ Fetch & Play
 
 ## `Set`
 
+- See: [`Set()` as it should be.](https://github.com/terkelg/zet)
+
 ```js
 var a = {a:1}
 var b = {b:1}
