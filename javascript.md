@@ -38,7 +38,7 @@
 
 - See: [CORS](https://frontendian.co/cors)
 
-Если надо локально потестить апишку, которая ругается, можно использовать прокси [cors-anywhere](https://github.com/Rob--W/cors-anywhere/)
+Если надо локально протестировать АПИ, которая ругается, можно использовать прокси [`cors-anywhere`](https://github.com/Rob--W/cors-anywhere/)
 
 ```diff
 -fetch(`https://api.weather.yandex.ru/v1/forecast`)
@@ -91,7 +91,7 @@ const inRange = (value, min, max) => value >= min && value <= max
 
 ## Привести к лимиту
 
-- See: https://lodash.com/docs/#clamp
+- See: [clamp](https://lodash.com/docs/#clamp)
 
 ```js
 /**
