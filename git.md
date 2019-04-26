@@ -323,6 +323,14 @@ git merge origin/master
 
 
 
+## Показать лог ветки
+
+```shell
+git log master..<branch_name>
+```
+
+
+
 ## Генерация нового ключа
 
 - See: https://help.github.com/articles/error-permission-denied-publickey
