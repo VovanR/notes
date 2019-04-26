@@ -47,6 +47,72 @@
 
 
 
+## Tolerance, within
+
+```js
+/**
+ * @param {number} value1
+ * @param {number} value2
+ * @param {number} tolerance
+ * @returns {boolean}
+ *
+ * @example
+ * diffIsTolerance(10, 12, 3)
+ * //=> true
+ * diffIsTolerance(10, 15, 3)
+ * //=> false
+ */
+const diffIsTolerance = (value1, value2, tolerance) => Math.abs(value1 - value2) <= tolerance
+```
+
+
+
+## In Range
+
+- See: https://lodash.com/docs/#inRange
+
+```js
+/**
+ * @param {number} value
+ * @param {number} min
+ * @param {number} max
+ * @returns {boolean}
+ *
+ * @example
+ * inRange(4, 1, 5)
+ * //=> true
+ * inRange(6, 1, 5)
+ * //=> false
+ */
+const inRange = (value, min, max) => value >= min && value <= max
+```
+
+
+
+## Привести к лимиту
+
+- See: https://lodash.com/docs/#clamp
+
+```js
+/**
+ * @param {number} value
+ * @param {number} min
+ * @param {number} max
+ * @returns {number}
+ *
+ * @example
+ * limit(5, 10, 20)
+ * //=> 10
+ * limit(99, 5, 30)
+ * //=> 30
+ * limit(3, 1, 5)
+ * //=> 3
+ */
+const limit = (value, min, max) => Math.min(Math.max(value, min), max);
+```
+
+
+
 ## ES2015 (ES6)
 
 - See: http://es6-features.org/
@@ -1545,4 +1611,15 @@ module.exports = {
   verify,
   identifiers
 };
+```
+
+
+
+## Определить находится ли элемент в зоне видимости
+
+```js
+const $element = $(element)
+const overflowX = $element.outerWidth() + $element.offset().left > window.innerWidth
+const overflowY = $element.outerHeight() + $element.offset().top > window.innerHeight
+$element.addClass(`wrapper--${overflowY ? 'top' : 'bottom'}-${overflowX then 'left' else 'right'}`)
 ```
