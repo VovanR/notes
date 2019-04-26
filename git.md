@@ -2,6 +2,7 @@
 
 ----
 
+- See: [Think Like (a) Git](http://think-like-a-git.net/)
 - See: https://github.com/Imangazaliev/git-tips
 - See: https://githowto.com/ru/amending_commits
 - See: [Удачное ветвление git-flow](https://habr.com/post/106912/)
