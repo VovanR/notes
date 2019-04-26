@@ -41,6 +41,7 @@
 
 ### Анимация
 - See: https://github.com/react-spring/react-spring
+- See: https://github.com/reactjs/react-transition-group
 
 
 
@@ -631,3 +632,4 @@ handleKeyDown = (e) => {
 
 - See: [Flux Standard Action utilities for Redux](https://github.com/redux-utilities/redux-actions)
 - See: [Ducks: Redux Reducer Bundles](https://github.com/erikras/ducks-modular-redux)
+- See: [Redux in 1 min](https://poet.codes/e/KMXQEO2gquN)
