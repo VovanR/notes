@@ -243,6 +243,11 @@
 `gg` `[[` — Самая первая строка
 
 
+`gd` — will take you to the local declaration
+
+`gD` — will take you to the global declaration
+
+
 `zz` — Центрирование строки с курсором
 
 `zt` — Вверху
