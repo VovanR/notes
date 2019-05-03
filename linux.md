@@ -334,6 +334,7 @@ sudo update-alternatives --config editor
 rm -r build
 make clean
 make CMAKE_BUILD_TYPE=Release
+sudo make install
 ```
 
 ### Python client to Neovim
