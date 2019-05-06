@@ -160,7 +160,7 @@ sudo dpkg -i ~/Downloads/dropbox_2015.10.28_amd64.deb
 - See: https://github.com/nodesource/distributions#installation-instructions
 
 ```shell
-curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt-get install -y nodejs
 npm i -g bemstyla conventional-changelog npm vmd yo commitizen fixpack http-server mversion npm-upgrade create-react-app imagemin-cli
 ```
@@ -334,6 +334,7 @@ sudo update-alternatives --config editor
 rm -r build
 make clean
 make CMAKE_BUILD_TYPE=Release
+sudo make install
 ```
 
 ### Python client to Neovim
