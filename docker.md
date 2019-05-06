@@ -14,11 +14,11 @@
 
 - See: https://mobile.twitter.com/webstandards_ru/status/1098568101535322112
 
-1. [Основы](habr.com/p/438796/)
-2. [Термины и концепции](habr.com/p/439978/)
-3. [Файлы `Dockerfile`](habr.com/p/439980/)
-4. [Оптимизация и ускорение](habr.com/p/440658/)
-5. [Команды](habr.com/p/440660/)
+1. [Основы](https://habr.com/p/438796/)
+1. [Термины и концепции](https://habr.com/p/439978/)
+1. [Файлы `Dockerfile`](https://habr.com/p/439980/)
+1. [Оптимизация и ускорение](https://habr.com/p/440658/)
+1. [Команды](https://habr.com/p/440660/)
 
 
 
