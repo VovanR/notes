@@ -19,6 +19,7 @@
 - See: [Preload, prefetch and other `<link>` tags](https://3perf.com/blog/link-rels/)
 - See: [Browser extension](https://24ways.org/2018/my-first-chrome-extension/)
 - See: http://blog.csssr.ru/2018/08/16/candidates-mistakes
+- See: [Perfomance (KharkivCSS 20 апреля 2019 года Слайды)](https://silentimp.github.io/performance/)
 
 
 
@@ -1622,4 +1623,22 @@ const $element = $(element)
 const overflowX = $element.outerWidth() + $element.offset().left > window.innerWidth
 const overflowY = $element.outerHeight() + $element.offset().top > window.innerHeight
 $element.addClass(`wrapper--${overflowY ? 'top' : 'bottom'}-${overflowX then 'left' else 'right'}`)
+```
+
+
+
+## Простой клик
+
+- See: https://github.com/storeon/storeon/issues/33#issuecomment-487677408
+
+```js
+function isSimpleClick (e) {
+  return e.target.target !== '_blank' &&
+         e.button === 0 &&
+         e.which === 1 &&
+         !e.metaKey &&
+         !e.ctrlKey &&
+         !e.shiftKey &&
+         !e.altKey
+}
 ```
