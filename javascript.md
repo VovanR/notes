@@ -19,7 +19,9 @@
 - See: [Preload, prefetch and other `<link>` tags](https://3perf.com/blog/link-rels/)
 - See: [Browser extension](https://24ways.org/2018/my-first-chrome-extension/)
 - See: http://blog.csssr.ru/2018/08/16/candidates-mistakes
-- See: [Perfomance (KharkivCSS 20 апреля 2019 года Слайды)](https://silentimp.github.io/performance/)
+- See: [Performance (KharkivCSS 20 апреля 2019 года Слайды)](https://silentimp.github.io/performance/)
+- See: [What forces layout / reflow](https://gist.github.com/paulirish/5d52fb081b3570c81e3a)
+- See: https://30secondsofcode.org/
 
 
 
@@ -32,6 +34,11 @@
 ### Календарь
 
 - See: https://fullcalendar.io/
+
+### Validation Rules
+
+- See: https://www.npmjs.com/package/yup
+- See: http://livr-spec.org/
 
 
 
@@ -1642,3 +1649,32 @@ function isSimpleClick (e) {
          !e.altKey
 }
 ```
+
+
+
+## Превью загружаемого файла
+
+- See: https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL
+- See: https://twitter.com/andrey_sitnik/status/1128983108370554880
+
+Для превью в процессе загрузки лучше использовать `URL.createObjectURL(file)` вместо `FileReader#readAsDataUrl(file)`.
+Так браузер не будет перекидывать файл в память JS.
+
+Главное, не забыть потом вызвать `URL.revokeObjectURL()`.
+
+```diff
+function read(id, file) {
+-  return new Promise(resolve => {
+-    const reader = new FileReader()
+-    reader.onload = () => resolve([id, reader.result])
+-    reader.readAsDataURL(file)
+-  })
++  return [id, URL.createObjectURL(file)]
+}
+```
+
+
+
+## Telegram bot
+
+- See: https://glitch.com/~adventurous-damselfly
