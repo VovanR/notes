@@ -26,11 +26,14 @@
 ### Всплывающая подсказка (tooltip) и выпадающее меню (dropdown)
 - See: https://github.com/atomiks/tippy.js-react
 
-## Уведомления
+### Уведомления
 - See: https://github.com/fkhadra/react-toastify
 
 ### Формы
 - See: https://github.com/jaredpalmer/formik
+
+### Inputs
+- See: https://github.com/JedWatson/react-input-autosize
 
 ### Обработка клика вне компонента
 - See: https://github.com/Pomax/react-onclickoutside
@@ -42,6 +45,13 @@
 ### Анимация
 - See: https://github.com/react-spring/react-spring
 - See: https://github.com/reactjs/react-transition-group
+
+### Админка
+- See: https://marmelab.com/react-admin/Tutorial.html
+
+### Storybook
+- See: https://github.com/vrizo/uibook/
+- See: https://storybook.js.org/
 
 
 
