@@ -113,3 +113,28 @@ echo "Hello World!"
 
 pause
 ```
+
+
+
+## Скрипт создаёт ссылку на директорию
+
+```bat
+@echo off
+
+REM Run this script as administrator
+
+REM Change dir from system32 to script location
+@setlocal enableextensions
+@cd /d "%~dp0"
+
+set destpath=%cd%\node_modules\app
+set sourcepath=%cd%\src
+
+REM Remove old link
+if exist %destpath% rmdir %destpath% /q
+if exist %destpath% del %destpath%
+REM Add new link
+mklink /d %destpath% %sourcepath%
+
+pause
+```
