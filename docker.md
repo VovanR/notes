@@ -153,9 +153,9 @@ perl --version
 
 - See: https://docs.docker.com/engine/reference/builder/#workdir
 
-The WORKDIR instruction specifies a new default directory within the images file system.  
+The `WORKDIR` instruction specifies a new default directory within the images file system.  
 If the directory doesn't exist, it'll be created automatically.  
-Any RUN, COPY or ADD instructions that follow the WORKDIR instruction in
+Any RUN, COPY or ADD instructions that follow the `WORKDIR` instruction in
 the Docker file will be executed within the specified directory.
 
 Следующий `WORKDIR` относителен предыдущему
