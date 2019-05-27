@@ -15,6 +15,10 @@
 - See: [Ring UI](https://github.com/JetBrains/ring-ui)
 
 
+## Server
+- See: https://github.com/typicode/json-server
+
+
 
 ## Обновление глобальных пакетов
 
