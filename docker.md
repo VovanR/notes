@@ -7,6 +7,7 @@
 - See: [Docker and Node.js Best Practices](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
 - See: https://blog.docker.com/2015/04/tips-for-deploying-nginx-official-image-with-docker/
 - See: [Исчерпывающее руководство по написанию `Dockerfile` для веб-приложений на Node.js](https://medium.com/devschacht/praveen-durairaj-an-exhaustive-guide-to-writing-dockerfiles-for-node-js-web-apps-7b033bcc0b4f)
+- See: [Docker For Front-end Developers](https://dev.to/akanksha_9560/docker-for-frontend-developers-1dk5)
 
 
 
@@ -14,11 +15,12 @@
 
 - See: https://mobile.twitter.com/webstandards_ru/status/1098568101535322112
 
-1. [Основы](habr.com/p/438796/)
-2. [Термины и концепции](habr.com/p/439978/)
-3. [Файлы `Dockerfile`](habr.com/p/439980/)
-4. [Оптимизация и ускорение](habr.com/p/440658/)
-5. [Команды](habr.com/p/440660/)
+
+1. [Основы](https://habr.com/p/438796/)
+1. [Термины и концепции](https://habr.com/p/439978/)
+1. [Файлы `Dockerfile`](https://habr.com/p/439980/)
+1. [Оптимизация и ускорение](https://habr.com/p/440658/)
+1. [Команды](https://habr.com/p/440660/)
 
 
 
@@ -144,3 +146,72 @@ perl --version
 ## Traefik — The Cloud Native Edge Router
 
 - See: https://github.com/containous/traefik/
+
+
+
+## `WORKDIR`
+
+- See: https://docs.docker.com/engine/reference/builder/#workdir
+
+The `WORKDIR` instruction specifies a new default directory within the images file system.  
+If the directory doesn't exist, it'll be created automatically.  
+Any RUN, COPY or ADD instructions that follow the `WORKDIR` instruction in
+the Docker file will be executed within the specified directory.
+
+Следующий `WORKDIR` относителен предыдущему
+
+
+## Освободить место
+
+```shell
+docker system prune
+```
+
+Стереть все images
+
+```shell
+docker rmi $(docker images --format '{{.ID}}')
+```
+
+
+
+## Сборка
+
+```shell
+docker build -t <c_name> .
+```
+
+## Запуск
+
+```shell
+docker run -it --rm <c_name>
+```
+
+## Запустить слой
+
+```shell
+docker run -it --rm <layer_id> bash
+```
+
+Где `<layer_id>` — хеш из `Step 11/15` (который отображается при сборке)  
+или даже так
+
+```shell
+docker run -it --rm <layer_id> -- gulp -v
+```
+
+
+## Пересобрать
+
+```shell
+docker rmi <c_name>
+```
+```shell
+docker rmi 0c7915522eaa
+```
+```
+Error response from daemon: conflict: unable to delete 0c7915522eaa (must be forced) - image is being used by stopped container 8133eb3a00d0
+```
+```shell
+docker rm 8133eb3a00d0
+```

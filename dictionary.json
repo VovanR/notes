@@ -1,5 +1,6 @@
 [
     "2D",
+    "админка",
     "айпи",
     "апстрим",
     "баг(а)?",
@@ -98,6 +99,7 @@
     "JSX",
     "KB",
     "Kerberos",
+    "KharkivCSS",
     "Lodash",
     "LTS",
     "Markdown",
@@ -116,6 +118,7 @@
     "Ramda",
     "Redux",
     "refactoring(s)?",
+    "reflow",
     "RegExp",
     "repeatable",
     "RequireJS",
