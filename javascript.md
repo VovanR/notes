@@ -22,6 +22,7 @@
 - See: [Performance (KharkivCSS 20 апреля 2019 года Слайды)](https://silentimp.github.io/performance/)
 - See: [What forces layout / reflow](https://gist.github.com/paulirish/5d52fb081b3570c81e3a)
 - See: https://30secondsofcode.org/
+- See: [An introduction to JSDoc](http://2ality.com/2011/08/jsdoc-intro.html)
 
 
 
