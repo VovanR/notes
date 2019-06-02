@@ -104,8 +104,19 @@ sudo localedef -c -i ru_RU -f CP1251 ru_RU.CP1251
 
 ## Устанавливаем проги
 ```shell
-sudo apt-get install htop iftop iotop tasksel alien filezilla meld gparted smartmontools virtualbox chromium-browser git git-gui libreoffice wine deja-dup poedit whois tree unrar exuberant-ctags ack-grep tmux curl dos2unix cabextract xfce4-timer-plugin xfce4-sensors-plugin indicator-power ntp usb-creator-gtk ruby golang-go cmake xclip
+sudo apt-get install tasksel alien filezilla meld gparted smartmontools virtualbox chromium-browser git git-gui libreoffice wine deja-dup poedit whois tree unrar exuberant-ctags ack-grep tmux curl dos2unix cabextract ntp usb-creator-gtk ruby golang-go cmake xclip
 ```
+
+Top
+```shell
+sudo apt-get install htop iftop iotop
+```
+
+XFCE4 panel plugins
+```shell
+sudo apt-get install xfce4-timer-plugin xfce4-sensors-plugin indicator-power
+```
+
 
 ```shell
 sudo gem install tmuxinator
