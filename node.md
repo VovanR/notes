@@ -3,6 +3,7 @@
 ----
 
 - See: [Таблица поддержки ECMAScript версиями Node.js](http://node.green/)
+- See: [Node.js Everywhere with Environment Variables!](https://medium.com/the-node-js-collection/making-your-node-js-work-everywhere-with-environment-variables-2da8cdf6e786)
 
 ## Генераторы документации
 
@@ -16,7 +17,16 @@
 
 
 ## Server
+
 - See: https://github.com/typicode/json-server
+- See: https://github.com/lukeed/polka
+- See: https://github.com/lukeed/sirv
+
+
+
+## Environment
+
+- See: https://github.com/motdotla/dotenv
 
 
 
