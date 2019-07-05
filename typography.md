@@ -13,6 +13,7 @@
 - See: [Типографика Контура](https://guides.kontur.ru/principles/typography)
 - See: [Atlassian Typography](https://atlassian.design/guidelines/product/foundations/typography)
 - See: [Работа с числами в тексте](https://bureau.ru/soviet/selected/mark-kuzmin/rabota-s-chislami-v-tekste/)
+- See: [Полупробелы между разрядами](https://bureau.ru/bb/soviet/20121018/)
 
 
 
