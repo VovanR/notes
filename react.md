@@ -8,6 +8,7 @@
 - See: http://stackoverflow.com/questions/tagged/reactjs?sort=votes&pageSize=15
 - See: [Шаблоны проектирования в React](https://medium.freecodecamp.org/evolving-patterns-in-react-116140e5fe8f) [перевод](https://habrahabr.ru/company/ruvds/blog/349198/)
 - See: [React Patterns](https://reactpatterns.com/) [source](https://github.com/chantastic/reactpatterns.com)
+- See: [useHooks](https://usehooks.com/)
 
 
 
@@ -19,6 +20,8 @@
 
 
 ## Libraries
+
+- See: https://github.com/theKashey?tab=repositories
 
 ### Полоса прокрутки (scrollbar)
 - See: https://github.com/malte-wessel/react-custom-scrollbars
