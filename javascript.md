@@ -23,6 +23,10 @@
 - See: [What forces layout / reflow](https://gist.github.com/paulirish/5d52fb081b3570c81e3a)
 - See: https://30secondsofcode.org/
 - See: [An introduction to JSDoc](http://2ality.com/2011/08/jsdoc-intro.html)
+- See: https://habr.com/ru/company/mailru/blog/452906/
+- See: [Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)
+- See: [Callback Hell](http://callbackhell.com/)
+- See: [Web Performance 101](https://3perf.com/talks/web-perf-101/)
 
 
 
