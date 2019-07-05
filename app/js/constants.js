@@ -9,6 +9,7 @@ export const NOTES = [
 	'Design_Patterns',
 	'Django',
 	'Docker',
+	'FreeBSD',
 	'Git',
 	'GraphQL',
 	'HTML',
