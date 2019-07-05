@@ -2,22 +2,26 @@
 
 ----
 
-https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units
-HD Graphics 4600
-Core i7-4700HQ
-Haswell
-https://wiki.freebsd.org/Graphics/Intel-GPU-Matrix
-For haswell based systems, if the drm-kmod port does not work, it is suggested to install the drm-legacy-kmod.
+
+## My video
+
+- See: https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units
+
+Graphics: `HD Graphics 4600`
+Processor: `Core i7-4700HQ`
+Code name: `Haswell`
+
+- See: https://wiki.freebsd.org/Graphics/Intel-GPU-Matrix
+For Haswell based systems, if the `drm-kmod` port does not work, it is suggested to install the `drm-legacy-kmod`.
 
 
-TODO
-https://forums.gentoo.org/viewtopic-t-801993.html
-https://wiki.archlinux.org/index.php/Xorg
-https://wiki.archlinux.org/index.php/Intel_graphics#Installation
-https://wiki.archlinux.org/index.php/Intel_graphics#Xorg_configuration
-https://wiki.archlinux.org/index.php/Intel_graphics#SNA_issues
-https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/x-config.html
-https://www.tecmint.com/things-to-do-after-installing-freebsd/
+- See: https://forums.gentoo.org/viewtopic-t-801993.html
+- See: https://wiki.archlinux.org/index.php/Xorg
+- See: https://wiki.archlinux.org/index.php/Intel_graphics#Installation
+- See: https://wiki.archlinux.org/index.php/Intel_graphics#Xorg_configuration
+- See: https://wiki.archlinux.org/index.php/Intel_graphics#SNA_issues
+- See: https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/x-config.html
+- See: https://www.tecmint.com/things-to-do-after-installing-freebsd/
 
 
 
@@ -45,7 +49,7 @@ pkg update -f
 ```
 
 
-## Add Wi-Fi
+## Add WiFi
 
 ```shell
 vi /etc/wpa_supplicatn.conf
@@ -63,14 +67,14 @@ wpa_supplicant -c wpa-actinet.conf -i wlan0
 ```
 
 
-## PKG
+## `PKG`
 
 ```shell
 pkg install tmux git vim-console
 ```
 
 
-## Install SUDO
+## Install `SUDO`
 
 ```shell
 pkg install sudo
@@ -85,11 +89,11 @@ Add line:
 <user_name> ALL=(ALL) ALL
 ```
 
-Relogin or reboot
+Re-login or reboot
 
 
 
-## Install XFCE 4
+## Install Xfce 4
 
 - See: http://mediaunix.com/ustanovka-xfce-na-freebsd-bystryj-desktop/
 
@@ -99,7 +103,7 @@ sudo pkg install xorg xfce
 
 ### Video driver
 
-- See: https://wiki.freebsd.org/Graphics#Intel_Integrated_Graphics_.28aka_HD_Graphics.29
+- See: [Intel Integrated Graphics (aka HD Graphics)](https://wiki.freebsd.org/Graphics#Intel_Integrated_Graphics_.28aka_HD_Graphics.29)
 
 ```shell
 sudo pkg install drm-legacy-kmod xf86-video-intel
@@ -138,7 +142,7 @@ sudo dmesg | grep i915
 
 - See: https://wiki.archlinux.org/index.php/Intel_graphics#Xorg_configuration
 
-Dont add files like
+Don't add files like
 ```shell
 sudo vim /usr/local/etc/X11/xorg.conf.d/20-intel.conf
 ```
@@ -188,7 +192,7 @@ echo 'IP_вашего_ПК полное_имя_ПК_из_/etc/rc.conf' >> /etc/h
 без добавления ругалось:
 `Could not look up internet address for {hostname}.This will prevent Xfce from operating correctly. It may be possible to correct the problem by adding {hostname} to the file /etc/hosts on your system.`
 
-Корректируем `/etc/rc.conf` командами (`hald` и db`us нужны нам будут для нормального завершения работы ОС с кнопочек в графическом интерфейсе, а не через консоль от имени root’a):
+Корректируем `/etc/rc.conf` командами (`hald` и `dbus` нужны нам будут для нормального завершения работы ОС с кнопочек в графическом интерфейсе, а не через консоль от имени администратора):
 ```shell
 echo 'hald_enable="YES"' >> /etc/rc.conf
 echo 'dbus_enable="YES"' >> /etc/rc.conf

@@ -36,6 +36,7 @@
     "ООП",
     "ориджин",
     "отрезольвится",
+    "полупробелы",
     "превью",
     "просмотрщик",
     "пул",
@@ -88,6 +89,8 @@
     "ES6",
     "Excel",
     "GraphQL",
+    "Haswell",
+    "HD",
     "HTML5",
     "i18n",
     "ImageMagick",
@@ -103,6 +106,7 @@
     "Lodash",
     "LTS",
     "Markdown",
+    "microtasks",
     "Mithril",
     "mixin",
     "MongoDB",
@@ -140,6 +144,7 @@
     "VirtualBox",
     "vs",
     "webpack",
-    "XFCE",
+    "Xfce",
+    "Xorg",
     "Xubuntu"
 ]

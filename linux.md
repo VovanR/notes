@@ -11,7 +11,7 @@ xflock4		Super + l
 
 
 ## Window manager shortcuts
-### XFCE
+### Xfce
 `A` + `Tab` — for cycling and changing windows
 
 `Super` + `Tab` — for cycling windows for the same application
@@ -112,7 +112,7 @@ Top
 sudo apt-get install htop iftop iotop
 ```
 
-XFCE4 panel plugins
+Xfce panel plugins
 ```shell
 sudo apt-get install xfce4-timer-plugin xfce4-sensors-plugin indicator-power
 ```
