@@ -11,6 +11,8 @@
 - See: [Редактор математических формул](http://www.wiris.com/editor/demo/en/developers)
 - See: [The Open Graph protocol](http://ogp.me/)
 - See: [SRI Hash Generator (Integrity)](https://www.srihash.org/)
+- See: [How to Section Your HTML](https://css-tricks.com/how-to-section-your-html/)
+- See: [A short note on HTML5 `article`, `section` and `hgroup`](https://www.brucelawson.co.uk/2019/html5-article-section-hgroup/)
 
 ## Polyfills
 - See: https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills
