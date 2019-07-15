@@ -459,3 +459,13 @@ sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschn
 sudo apt-get update
 sudo apt-get install albert
 ```
+
+
+
+## Write image to usb with `dd`
+
+- See: https://askubuntu.com/questions/372607/how-to-create-a-bootable-ubuntu-usb-flash-drive-from-terminal
+
+```shell
+dd if=~/Downloads/xubuntu-19.04-desktop-amd64.iso of=/dev/sdb bs=1M && sync
+```
