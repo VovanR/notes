@@ -462,7 +462,7 @@ sudo apt-get install albert
 
 
 
-## Write image to usb with `dd`
+## Write image to USB with `dd`
 
 - See: https://askubuntu.com/questions/372607/how-to-create-a-bootable-ubuntu-usb-flash-drive-from-terminal
 
