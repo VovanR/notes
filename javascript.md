@@ -1077,6 +1077,29 @@ Promise.reject('foo')
 
 
 
+### `Promise.all`
+
+- See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
+
+```js
+Promise.all([Promise.resolve(1), Promise.resolve(2)])
+    .then((...res) => console.log('then', ...res))
+    .catch((...res) => console.log('catch', ...res))
+    .finally(() => console.log('finally'))
+//=> then [1, 2]
+//=> finally
+```
+
+```js
+Promise.all([Promise.resolve(1), Promise.reject(2), Promise.resolve(3)])
+    .then((...res) => console.log('then', ...res))
+    .catch((...res) => console.log('catch', ...res))
+    .finally(() => console.log('finally'))
+//=> catch 2
+//=> finally
+```
+
+
 ## Cookies
 
 - See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
