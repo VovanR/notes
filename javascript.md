@@ -1075,6 +1075,23 @@ Promise.reject('foo')
 //=> 2 then foo
 ```
 
+### Back to Basics: Running Promises in Serial with `Array.reduce()`
+
+- See: https://decembersoft.com/posts/promises-in-serial-with-array-reduce/
+
+```js
+const tasks = getTaskArray()
+
+return tasks.reduce((promiseChain, currentTask) => {
+    return promiseChain.then(chainResults =>
+        currentTask.then(currentResult =>
+            [ ...chainResults, currentResult ]
+        )
+    )
+}, Promise.resolve([])).then(arrayOfResults => {
+    // Do something with all results
+})
+```
 
 
 ### `Promise.all`
@@ -1098,6 +1115,7 @@ Promise.all([Promise.resolve(1), Promise.reject(2), Promise.resolve(3)])
 //=> catch 2
 //=> finally
 ```
+
 
 
 ## Cookies
