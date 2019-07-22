@@ -822,7 +822,7 @@ git update-index --no-skip-worktree <file>
 
 
 
-## Переименовать ветку (изменить название ветки)
+## Переименовать ветку (изменить название). Rename branch
 
 ```shell
 git branch -m old_branch new_branch
