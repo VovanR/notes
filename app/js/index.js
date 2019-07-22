@@ -72,7 +72,7 @@ class App extends React.Component {
 				data: null
 			},
 			activeNoteId: null,
-			isLoading: false,
+			loading: false,
 			loadingNoteId: null,
 			notesFilterValue: ''
 		}
@@ -85,7 +85,7 @@ class App extends React.Component {
 	componentWillMount() {
 		const {readme} = this.state
 
-		this.setState({isLoading: true})
+		this.setState({loading: true})
 
 		fetch(readme.url)
 			.then(response => response.text())
@@ -94,9 +94,9 @@ class App extends React.Component {
 				readme.data = data
 				readme.h2 = h2
 
-				this.setState({isLoading: false})
+				this.setState({loading: false})
 			})
-			.catch(() => this.setState({isLoading: false}))
+			.catch(() => this.setState({loading: false}))
 	}
 
 	getNoteById(id) {
@@ -116,7 +116,7 @@ class App extends React.Component {
 		}
 
 		this.setState({
-			isLoading: true,
+			loading: true,
 			loadingNoteId: loadingNote.id
 		})
 
@@ -129,13 +129,13 @@ class App extends React.Component {
 
 				this.setState({
 					activeNoteId: noteId,
-					isLoading: false,
+					loading: false,
 					loadingNoteId: null
 				})
 			})
 			.catch(() => {
 				this.setState({
-					isLoading: false,
+					loading: false,
 					loadingNoteId: null
 				})
 			})
@@ -197,7 +197,7 @@ class App extends React.Component {
 	render() {
 		const {
 			activeNoteId,
-			isLoading,
+			loading,
 			readme,
 			loadingNoteId
 		} = this.state
@@ -217,7 +217,7 @@ class App extends React.Component {
 							e(Menu, {
 								notes: filteredNotes,
 								activeNoteId,
-								isLoading,
+								loading,
 								loadingNoteId,
 								onSelect: this.handleSelect
 							})

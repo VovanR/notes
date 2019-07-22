@@ -19,7 +19,7 @@ class MenuItem extends React.Component {
 
 	componentWillReceiveProps(nextProps) {
 		if (
-			this.props.isActive !== nextProps.isActive &&
+			this.props.active !== nextProps.active &&
 			this.state.showSubmenu === false
 		) {
 			this.setState({showSubmenu: true})
@@ -30,17 +30,17 @@ class MenuItem extends React.Component {
 		e.preventDefault()
 
 		const {
-			isActive,
+			active,
 			note,
 			onSelect
 		} = this.props
 
-		if (!isActive) {
+		if (!active) {
 			onSelect(note.id)
 			return
 		}
 
-		if (isActive && note.h2) {
+		if (active && note.h2) {
 			this.setState(prevState => ({
 				showSubmenu: !prevState.showSubmenu
 			}))
@@ -49,8 +49,8 @@ class MenuItem extends React.Component {
 
 	render() {
 		const {
-			isLoading,
-			isActive,
+			loading,
+			active,
 			note
 		} = this.props
 
@@ -58,8 +58,8 @@ class MenuItem extends React.Component {
 			'li',
 			{
 				className: classNames({
-					active: isActive,
-					popular: note.popular
+					popular: note.popular,
+					active
 				})
 			},
 			e(
@@ -69,7 +69,7 @@ class MenuItem extends React.Component {
 					onClick: this.handleSelect
 				},
 				note.name,
-				isLoading && e(
+				loading && e(
 					'span',
 					{
 						className: 'nav-menu__spinner'

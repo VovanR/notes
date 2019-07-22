@@ -26,8 +26,8 @@ class Menu extends React.Component {
 		function renderMenuItem(note) {
 			return e(MenuItem, {
 				key: note.id,
-				isLoading: note.id === loadingNoteId,
-				isActive: note.id === activeNoteId,
+				loading: note.id === loadingNoteId,
+				active: note.id === activeNoteId,
 				note,
 				onSelect
 			})
