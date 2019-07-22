@@ -1724,3 +1724,25 @@ function read(id, file) {
 ## Telegram bot
 
 - See: https://glitch.com/~adventurous-damselfly
+
+
+
+## Download animation
+
+- See: https://github.com/mdn/dom-examples/blob/master/abort-api/index.html
+
+```js
+function runAnimation() {
+    let animCount = 0
+    const interval = setInterval(() => {
+        switch (animCount++ & 3) {
+            case 0: console.log('Download occuring; waiting for video player to be constructed'); break;
+            case 1: console.log('Download occuring; waiting for video player to be constructed.'); break;
+            case 2: console.log('Download occuring; waiting for video player to be constructed..'); break;
+            case 3: console.log('Download occuring; waiting for video player to be constructed...'); break;
+        }
+    }, 300);
+
+    return () => clearInterval(interval);
+}
+```
