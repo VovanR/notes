@@ -9,7 +9,7 @@
 Demo: https://vovanr.github.io/notes
 
 ## Add new note
-1. add `foo.md`
+1. add `notes/foo.md`
    <pre lang="md"><code>
    # Foo
   

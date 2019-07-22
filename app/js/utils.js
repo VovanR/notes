@@ -1,6 +1,9 @@
-/* global React */
+/* global React window */
 
-import {SITE_SOURCE_URL} from './constants.js'
+import {
+	SITE_SOURCE_URL,
+	NOTES_DIRECTORY
+} from './constants.js'
 
 const e = React.createElement
 
@@ -9,13 +12,13 @@ function processNote({
 	archive,
 	popular
 }) {
-	const filename = `${name.toLowerCase()}.md`
+	const filename = `${NOTES_DIRECTORY}/${name.toLowerCase()}.md`
 
 	return {
 		id: name,
 		name: name.replace('_', ' '),
 		sourceURL: new URL(filename, SITE_SOURCE_URL).href,
-		url: new URL(filename, location).href,
+		url: new URL(filename, window.location).href,
 		data: null,
 		subitems: null,
 		archive,

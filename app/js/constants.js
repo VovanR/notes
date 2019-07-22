@@ -164,3 +164,4 @@ export const NOTES = [
 
 export const REPOSITORY_URL = 'https://github.com/VovanR/notes'
 export const SITE_SOURCE_URL = `${REPOSITORY_URL}/blob/master/`
+export const NOTES_DIRECTORY = 'notes'

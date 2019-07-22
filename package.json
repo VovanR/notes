@@ -3,7 +3,7 @@
   "scripts": {
     "start": "http-server .",
     "test": "npm run test:js && npm run test:css && npm run test:spellcheck",
-    "test:spellcheck": "yaspeller --dictionary ./dictionary.json ./*.md",
+    "test:spellcheck": "yaspeller --dictionary ./dictionary.json ./notes/*.md",
     "test:js": "xo",
     "test:css": "stylelint app/css/*.css"
   },
