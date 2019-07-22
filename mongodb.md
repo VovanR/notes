@@ -3,6 +3,7 @@
 ----
 
 - See: https://docs.mongodb.com/manual/reference/program/mongo/
+- See: https://dev.to/thamaraiselvam/mean-stack-cheat-sheet-5a1n
 
 ## Install
 ```shell
