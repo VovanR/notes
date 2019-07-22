@@ -27,6 +27,13 @@
   display: block;
 }
 
+.nav-menu .popular > a::after {
+  font-weight: normal;
+  content: '★';
+  position: relative;
+  top: -6px;
+}
+
 /**
  * Spinner
  */
@@ -59,4 +66,12 @@
   to {
     transform: rotate(1turn);
   }
+}
+
+/**
+ * Archive
+ */
+
+.nav-menu__archive-title {
+  margin-top: 20px;
 }

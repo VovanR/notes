@@ -1,14 +1,25 @@
 /* global React, ReactDOM, ReactBootstrap, marked, hljs */
 
-import {NOTES, REPOSITORY_URL, SITE_SOURCE_URL} from './constants.js'
-import {e} from './utils.js'
+import {
+	NOTES,
+	REPOSITORY_URL
+} from './constants.js'
+import {
+	e,
+	processNote
+} from './utils.js'
 import CustomScrollbars from './custom-scrollbars.js'
 import NotesFilter from './notes-filter.js'
 import Menu from './menu.js'
 import Note from './note.js'
 import EmptyNote from './empty-note.js'
 
-const {Grid, Row, Col, Panel} = ReactBootstrap
+const {
+	Grid,
+	Row,
+	Col,
+	Panel
+} = ReactBootstrap
 const markedRenderer = new marked.Renderer()
 
 // Note `h2` headers collection
@@ -37,7 +48,6 @@ const processMDNote = text => {
 	const data = marked(
 		text,
 		{
-			sanitize: false,
 			gfm: true,
 			highlight: code => hljs.highlightAuto(code).value,
 			renderer: markedRenderer
@@ -53,18 +63,7 @@ class App extends React.Component {
 	constructor(props) {
 		super(props)
 
-		const collection = NOTES.map(note => {
-			const filename = `${note.toLowerCase()}.md`
-
-			return {
-				id: note,
-				name: note.replace('_', ' '),
-				sourceURL: new URL(filename, SITE_SOURCE_URL).href,
-				url: new URL(filename, location).href,
-				data: null,
-				subitems: null
-			}
-		})
+		const collection = NOTES.map(processNote)
 
 		this.state = {
 			notes: collection,
@@ -178,15 +177,21 @@ class App extends React.Component {
 			notesFilterValue
 		} = this.state
 
+		if (notesFilterValue === '') {
+			return notes
+		}
+
 		// From 'jspt' makes 'j.*s.*p.*t' to match 'JavaScript'
 		const pattern = notesFilterValue.split('').join('.*')
 		const regexp = new RegExp(pattern, 'i')
 
-		const filteredNotes = notes.filter(note => {
-			return regexp.test(note.name)
-		})
+		const filteredNotes = notes
+			.filter(note => regexp.test(note.name))
 
-		return filteredNotes
+		const sortedByPopularNotes = filteredNotes
+			.sort(note => -(Number(note.popular)))
+
+		return sortedByPopularNotes
 	}
 
 	render() {

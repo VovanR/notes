@@ -1,6 +1,9 @@
 /* global React */
 
-import {e} from './utils.js'
+import {
+	e,
+	classNames
+} from './utils.js'
 import SubMenu from './sub-menu.js'
 
 class MenuItem extends React.Component {
@@ -54,7 +57,10 @@ class MenuItem extends React.Component {
 		return e(
 			'li',
 			{
-				className: isActive ? 'active' : ''
+				className: classNames({
+					active: isActive,
+					popular: note.popular
+				})
 			},
 			e(
 				'a',
