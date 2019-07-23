@@ -49,8 +49,8 @@
 `C-b` + `~` — Показать список сообщений, которые тмукс писал в нижнем баре
 
 `C-b` + `m` || `Right Click` — Пометить панель:
-> `-m` and `-M` are used to set and clear the marked pane.
-  There is one marked pane at a time, setting a new marked pane clears the last.
+> `-m` and `-M` are used to set and clear the marked pane.  
+  There is one marked pane at a time, setting a new marked pane clears the last.  
   The marked pane is the default target for `-s` to `join-pane`, `swap-pane` and `swap-window`.
 
 

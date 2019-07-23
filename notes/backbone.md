@@ -6,6 +6,7 @@
 - See: https://github.com/jashkenas/backbone/wiki/Extensions,-Plugins,-Resources
 
 ## REST-сервер должен обеспечивать следующий интерфейс
+
 - See: page 118
 
 | url              | HTTP Method   | Operation                                                         |
@@ -26,6 +27,7 @@ app.Library = Backbone.Collection.extend({
 
 
 ## Model
+
 ```javascript
 // Только для чтения
 console.log(this.model.attributes);
@@ -80,6 +82,7 @@ Backbone.Model.extend({
 
 
 ## Collection
+
 Вернуть отфильтрованные значения
 ```javascript
 // Filter down the list of all todo items that are finished.
@@ -101,6 +104,7 @@ _.invoke(Todos.completed(), 'destroy');
 
 
 ## Доступ по ID
+
 Модели коллекции определить свойство ID
 ```javascript
 var FacilitiePrototypeModel = Backbone.Model.extend({
@@ -133,6 +137,7 @@ console.log(facilitiesPrototypesCollection.get('second'));
 
 
 ## Когда берем данные из инпута — обрезаем конечные пробелы
+
 ```javascript
 $('#new-todo').val().trim()
 ```
@@ -140,6 +145,7 @@ $('#new-todo').val().trim()
 
 
 ## Local Storage
+
 ```javascript
 backboneLocalstorage: '../bower_components/backbone.localStorage/backbone.localStorage',
 ```
@@ -173,6 +179,7 @@ define([
 
 
 ## View
+
 Как надо === Как не надо
 ```javascript
 this.$el === $(this.el);
@@ -185,6 +192,7 @@ this.$('.title') === this.$el.find('.title');
 
 
 ## Добавление блока вьюхи во вьюху
+
 ```javascript
 // Add a single todo item to the list by creating a view for it, and
 // appending its element to the `<ul>`.
@@ -200,7 +208,7 @@ initialize: function () {
 },
 ```
 
-See: http://jsfiddle.net/VovanR/w88a30r1/
+- See: http://jsfiddle.net/VovanR/w88a30r1/
 ```javascript
 destroy: function () {
     this.off();
@@ -284,7 +292,9 @@ this.addOne(item);
 
 
 ## Взаимодействие между вьюхами с помощью событий
-See: http://frontender.info/7-battle-tested-backbonejs-rules-for-amazing-web-apps/
+
+- See: http://frontender.info/7-battle-tested-backbonejs-rules-for-amazing-web-apps/
+
 ```javascript
 var BodyView = Backbone.View.extend({
     initialize: function () {
@@ -314,13 +324,15 @@ events: {
 
 
 ## События
-Для текущего вью в `events`
+
+Для текущего вью в `events`  
 Для подписчиков через `listenTo` в `initialize`
 
 
 
 ## Controller
-Такого нет, но можно создать объект для управления
+
+Такого нет, но можно создать объект для управления  
 Два представления:
 - Управляет коллекцией элементов
 - Работает с отдельными элементами
@@ -475,6 +487,7 @@ start();
 
 
 ### Добавляем события вьюшке после создания экземпляра
+
 ```javascript
 App.Views.Block = Backbone.View.extend({
 

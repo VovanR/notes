@@ -5,6 +5,7 @@
 - See: https://bespoyasov.ru/ttt-tdd
 
 ## Prevent default
+
 ```javascript
 it('should preventDefault', function () {
     var m = module();
@@ -18,6 +19,7 @@ it('should preventDefault', function () {
 
 
 ## Ajax
+
 ```javascript
 /* jscs: disable */
 var ajaxResponse = JSON.parse('[{"count": 0]');
@@ -60,6 +62,7 @@ describe('_sendRequest', function () {
 
 
 ## Is called
+
 ```javascript
 it('should fire `_bindScrollbar`', function () {
     var m = module();
@@ -71,4 +74,5 @@ it('should fire `_bindScrollbar`', function () {
 
 
 ## Event
-See: https://github.com/react-bootstrap/react-bootstrap/pull/1579/files
+
+- See: https://github.com/react-bootstrap/react-bootstrap/pull/1579/files

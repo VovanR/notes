@@ -114,3 +114,4 @@ svgo test.svg
 ## Редактор
 
 - See: https://inkscape.org/
+- See: https://figma.com

@@ -11,6 +11,7 @@
 - See: http://coffeescript.org/v1/#existential-operator
 
 ### `value?`
+
 ```coffeescript
 value = now if value?
 ```
@@ -107,7 +108,7 @@ date = friday ? sue : jill;
 - `unless` — as inverse of `if`
   ```coffeescript
   unless foo
-	console.log 'no foo'
+    console.log 'no foo'
   ```
   ```javascript
   if (!foo) {

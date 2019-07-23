@@ -3,6 +3,7 @@
 ----
 
 ## Articles
+
 - See: [Понимание областей видимости или Scope в AngularJS](http://habrahabr.ru/post/182670/)
 - See: [Шпаргалка по AngularJS](http://ts-soft.ru/blog/angular-cheatsheet)
 - See: [AngularJS and scope.$apply](http://jimhoskins.com/2012/12/17/angularjs-and-apply.html)
@@ -13,6 +14,7 @@
 
 
 ## Принципы
+
 - See: http://loftblog.ru/material/angularjs-podxod-angular/
 - See: http://www.fse.guru/angularjs-angular-way
 
@@ -46,7 +48,8 @@
 
 
 ## `$apply`
-без него сообщение не обновится
+
+без него сообщение не обновится  
 на самом деле в этом случае надо использовать `$timeout`
 ```html
 <div ng:app ng-controller="Ctrl">
@@ -69,6 +72,7 @@ function Ctrl($scope) {
 
 
 ## `$digest`
+
 Usually, you don't call `$digest()` directly in controllers or in directives.
 
 Instead, you should call `$apply()` (typically from within a directive), which will force a `$digest()`.
@@ -76,6 +80,7 @@ Instead, you should call `$apply()` (typically from within a directive), which w
 
 
 ## `$interpolateProvider`
+
 Для изменения шаблона включений в шаблоны. Например вместо `{{}}` используем `{()}`
 ```js
 angular.module('myApp', ['angularSoundManager'])
@@ -89,6 +94,7 @@ angular.module('myApp', ['angularSoundManager'])
 
 
 ## Рыбные данные в контроллере
+
 ```js
 angular.module('myApp', ['angularSoundManager'])
     .controller('MainCtrl', ['$scope', function ($scope) {
@@ -130,6 +136,7 @@ angular.module('myApp', ['angularSoundManager'])
 
 
 ## Class name
+
 ```html
 <div class="control-group" ng-class="{error: myForm.site.$invalid && !myForm.site.$pristine}">
 ```
@@ -137,6 +144,7 @@ angular.module('myApp', ['angularSoundManager'])
 
 
 ## Событие на кнопку
+
 ```html
 <button ng-click="editProject.save()" ng-disabled="myForm.$invalid" class="btn btn-primary">Save</button>
 ```
@@ -144,6 +152,7 @@ angular.module('myApp', ['angularSoundManager'])
 
 
 ## Фильтры
+
 ```html
 <tr ng-repeat="project in projectList.projects | filter:projectList.search | orderBy:'name'">
 ```

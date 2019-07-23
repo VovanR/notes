@@ -3,6 +3,7 @@
 ----
 
 ## Значение названия поля модели формы
+
 Например для лейблов
 ```django
 {{ foo|verbose_name:"link"|capfirst|escape }}
@@ -11,6 +12,7 @@
 
 
 ## Thumbnail
+
 ```python
 {% thumbnail form.image.value "150x100" crop="center" as im %}
     <a class="js-settings__thumb" href="{{ form.image.value.url }}">
@@ -24,6 +26,7 @@
 
 
 ## i18n
+
 ```django
 {% load i18n %}
 {% trans '' %}
@@ -40,6 +43,7 @@
 
 
 ## Include
+
 ```django
 {% include 'main/boxes.html' %}
 ```
@@ -47,6 +51,7 @@
 
 
 ## Blocks
+
 ```django
 {# begin content #}
 <div class="content">
@@ -57,6 +62,7 @@
 
 
 ## Сжатие HTML
+
 - See: https://docs.djangoproject.com/en/1.7/ref/templates/builtins/
 
 ```django
@@ -66,6 +72,7 @@
 
 
 ## jQuery Templating
+
 - See: http://tothinkornottothink.com/post/4282971041/using-jquery-templating-icanhaz-js-with-django
 
 ```django
@@ -82,6 +89,7 @@
 
 
 ## `PyJade`
+
 - See: https://github.com/syrusakbary/pyjade
 
 ```django
@@ -123,7 +131,9 @@ span.b-foo__favorite.js-foo__favorite.b-icon(
 
 
 ## 404 or 500
+
 ### Error pages on `devel` (404 and 505)
+
 Set `DEBUG` to `False` in `foo/settings/devel.py`
 
 ```shell
@@ -170,6 +180,7 @@ return self.render_to_response({'pk': bar.pk})
 
 
 ## Ручной сброс пароля
+
 ```
 (env)vovanr@vovanr
  > ./manage.py shell
@@ -199,6 +210,7 @@ urlpatterns = [
 
 
 ## Вывод строки по условию
+
 ```python
 {% if not limits.limit %} disabled{% endif%}
 ```
@@ -210,6 +222,7 @@ or
 
 
 ## Изменить страницу авторизации
+
 - See: https://docs.djangoproject.com/en/1.10/topics/auth/default/  
 
 `urls.py`:
@@ -252,6 +265,7 @@ COMPRESS_PRECOMPILERS = [
 
 
 ## Pluralize
+
 - See: https://github.com/j2a/pytils
 
 ```python
@@ -263,6 +277,7 @@ COMPRESS_PRECOMPILERS = [
 
 
 ## Вывести первые несколько элементов списка
+
 - See: https://docs.djangoproject.com/en/dev/ref/templates/builtins/#slice
 
 ```python
@@ -281,6 +296,7 @@ COMPRESS_PRECOMPILERS = [
 
 
 ## Copyrights
+
 ```python
 <div class="copyrights">
     ©&nbsp;2000&nbsp;—&nbsp;{% now "Y" %} «Рога&nbsp;и&nbsp;Копыта».
@@ -290,6 +306,7 @@ COMPRESS_PRECOMPILERS = [
 
 
 ## Carousel
+
 - See: https://docs.djangoproject.com/en/dev/ref/templates/builtins/#for
 
 ```python
@@ -336,6 +353,7 @@ COMPRESS_PRECOMPILERS = [
 
 
 ## Times
+
 ```python
 {% for i in '12345' %}
     <li class="list__item">
@@ -366,7 +384,9 @@ COMPRESS_PRECOMPILERS = [
 
 
 ## Development
+
 ### `ENV`
+
 ```shell
 virtualenv --python=python3.5 .env
 source .env/bin/activate
@@ -374,6 +394,7 @@ pip install -r requirements.txt --upgrade
 ```
 
 ### База данных
+
 ```shell
 sudo apt-get install postgresql-9.4
 sudo -u postgres psql
@@ -384,6 +405,7 @@ create database PROJECTNAME with owner PROJECTNAME;
 ```
 
 ### manage.py
+
 ```shell
 ./manage.py migrate
 ./manage.py createsuperuser

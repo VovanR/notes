@@ -5,6 +5,7 @@
 - See: https://www.postgresql.org/
 
 ## Install
+
 ```shell
 sudo apt-get install postgresql postgresql-contrib libpq5 libpq-dev pgadmin3
 ```
@@ -17,7 +18,9 @@ postgres -V
 
 
 ## Войти
-See: https://stackoverflow.com/questions/11919391/postgresql-error-fatal-role-username-does-not-exist
+
+- See: https://stackoverflow.com/questions/11919391/postgresql-error-fatal-role-username-does-not-exist
+
 ```shell
 sudo su - postgres
 psql postgres
@@ -31,6 +34,7 @@ psql postgres -U user_name
 
 
 ## User
+
 По умолчанию создан пользователь `postgres`
 ```shell
 psql postgres
@@ -47,6 +51,7 @@ postgres=# \password postgres
 ```
 
 ### Создать пользователя
+
 ```sql
 postgres=# CREATE ROLE user_name WITH LOGIN PASSWORD 'user_password';
 postgres=# \du
@@ -59,6 +64,7 @@ postgres=# ALTER ROLE user_name CREATEDB;
 
 
 ## Создать базу данных
+
 Создаём базу
 ```sql
 postgres=# create database "example-db";
@@ -102,18 +108,21 @@ postgres=# \dt
 
 
 ## Переименовать БД
+
 ```sql
 postgres=# ALTER DATABASE 'example-db' RENAME TO 'renamed-example-db';
 ```
 
 
 ## Удалить БД
+
 ```sql
 postgres=# DROP DATABASE 'example-db';
 ```
 
 
 ## Удалить пользователя
+
 ```sql
 postgres=# DROP USER user_name;
 ```

@@ -15,6 +15,7 @@ return self.render_to_response({'pk': user.pk})
 
 
 ## Развернуть проект
+
 ```shell
 virtualenv --python=python3 env
 source env/bin/activate

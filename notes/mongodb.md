@@ -39,13 +39,19 @@ mongo
 
 
 ## Схема базы
-See: https://github.com/variety/variety
+
+- See: https://github.com/variety/variety
 
 
 ## Dump
+
 - See: https://www.mongodb.com/blog/post/archiving-and-compression-in-mongodb-tools
+
+
 Создать дамп базы данных, но без коллекции пользователей
+
 - See: https://docs.mongodb.com/manual/reference/program/mongodump/
+
 ```shell
 mongodump --db=DB_NAME --excludeCollection=users --out=dump
 ```
@@ -66,7 +72,9 @@ ssh USER@HOST
 ```
 
 Импортировать дамп
+
 - See: https://docs.mongodb.com/manual/reference/program/mongorestore/
+
 ```shell
 mongorestore --db=DB_NAME dump/
 ```

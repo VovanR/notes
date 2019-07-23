@@ -55,7 +55,8 @@ __strong__
 ```
 
 ## Tables
-See: [Markdown Tables Generator](http://www.tablesgenerator.com/markdown_tables)
+
+- See: [Markdown Tables Generator](http://www.tablesgenerator.com/markdown_tables)
 
 ```markdown
 | url            | HTTP Method | Operation                                                      |
@@ -69,6 +70,7 @@ See: [Markdown Tables Generator](http://www.tablesgenerator.com/markdown_tables)
 
 
 ## Collapse collapsable spoiler
+
 - See: https://github.com/dear-github/dear-github/issues/166
 
 Single space before `<summary>` tag **is required!**  

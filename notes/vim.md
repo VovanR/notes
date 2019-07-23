@@ -163,13 +163,10 @@
 
 ## Типографика
 
-Список символов `:h digraph-table`
-
-Первый столбец — символ, который хотим получить
-
-Второй столбец ― вводится через `Ctrl + k`
-
-Четвертый столбец ― вводится через `Ctrl + v`
+Список символов `:h digraph-table`  
+Первый столбец — символ, который хотим получить  
+Второй столбец ― вводится через `Ctrl + k`  
+Четвертый столбец ― вводится через `Ctrl + v`  
 
 
 В режиме редактирования
@@ -195,6 +192,7 @@
 
 
 ## Калькулятор
+
 В режиме редактирования активируем калькулятор `Ctrl + r + =` вводим выражение, жмём `Enter`
 
 `Ctrl + r` `=128/2` `Enter` — Получим результат вычисления
@@ -267,7 +265,7 @@
 
 `b` `w` — Начало слова
 
-`e`	— Конец слова
+`e` — Конец слова
 
 `$` — Конец строки
 
@@ -360,13 +358,14 @@
 `:bd` — Unload buffer [N] (default: current buffer) and delete it from the buffer list. If the buffer was changed, this fails, unless when [!] is specified, in which case changes are lost. The file remains unaffected
 
 
-`set incsearch`
-`set smartcase`
+`set incsearch`  
+`set smartcase`  
 `/\<step\>` — поиск слова "step". Так отмечаются начало и конец слова
 
 
 
 ## Encoding
+
 `:e ++enc=cp1251` — Перечитать файл в кодировке `cp1251`
 
 
@@ -502,6 +501,7 @@
 
 
 ## Как узнать какой плагин тормозит вим
+
 - See: http://stackoverflow.com/a/12216578
 
 ```
@@ -515,6 +515,7 @@
 
 
 ## Debug log
+
 ```shell
 export NVIM_PYTHON_LOG_FILE=/tmp/log
 export NVIM_PYTHON_LOG_LEVEL=DEBUG
@@ -523,14 +524,16 @@ less /tmp/log_{PID}
 ```
 
 
-## Check Health
-Информация о состоянии вима
+## Check Health of Neovim
+
+Информация о состоянии
 ```
 :checkhealth
 ```
 
 
 ## `vimdiff`
+
 - See: http://vimdoc.sourceforge.net/htmldoc/diff.html
 
 ```shell
@@ -575,4 +578,13 @@ ssh -Y myserver
 Host myserver
     ForwardX11 yes
     ForwardX11Trusted yes
+```
+
+
+## Чтобы файл открывался с нужным синтаксисом
+
+Например файлы конфига без расширения.  
+В конец файла добавляют строку:
+```
+# vim: syntax=config
 ```

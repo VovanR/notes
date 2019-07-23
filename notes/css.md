@@ -264,6 +264,7 @@ pre {
 
 
 # Retina display media query
+
 - See: http://css-tricks.com/snippets/css/retina-display-media-query/
 
 ```css
@@ -368,6 +369,7 @@ ol li:nth-child(-n+14):nth-child(n+7) {
 
 
 ## Language
+
 - See: [`:lang()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:lang)
 
 ```styl
@@ -405,6 +407,7 @@ ol li:nth-child(-n+14):nth-child(n+7) {
 
 
 ## Штриховка
+
 ```css
 .striped {
     background-color: green;
@@ -423,6 +426,7 @@ ol li:nth-child(-n+14):nth-child(n+7) {
 
 
 ## Конический градиент
+
 ```css
 .gray {
   background-image: conic-gradient(#eee 0.1turn, #eee 326deg);
@@ -435,6 +439,7 @@ ol li:nth-child(-n+14):nth-child(n+7) {
 
 
 ## `calc` сделать значение переменной отрицательным. Negative variable
+
 ```css
 .a {
   --width: 1.25em;

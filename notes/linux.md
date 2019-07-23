@@ -3,7 +3,9 @@
 ----
 
 ## Блокировка экрана `Win + l` Xubuntu
+
 `Settings -> Keyboard -> application Shortcuts`
+
 ```nohighlight
 xflock4		Super + l
 ```
@@ -11,7 +13,9 @@ xflock4		Super + l
 
 
 ## Window manager shortcuts
+
 ### Xfce
+
 `A` + `Tab` — for cycling and changing windows
 
 `Super` + `Tab` — for cycling windows for the same application
@@ -27,6 +31,7 @@ xflock4		Super + l
 
 
 ## Узнать код клавиши
+
 ```shell
 showkey -a
 ```
@@ -34,6 +39,7 @@ showkey -a
 
 
 ## Поиск файлов
+
 ```shell
 locate -b foo
 ```
@@ -41,6 +47,7 @@ locate -b foo
 
 
 ## Установка `sudo`
+
 ```shell
 su
 apt-get install sudo
@@ -52,6 +59,7 @@ exit
 
 
 ## User Groups
+
 ```shell
 groups
 sudo gpasswd --add username group
@@ -103,6 +111,7 @@ sudo localedef -c -i ru_RU -f CP1251 ru_RU.CP1251
 
 
 ## Устанавливаем проги
+
 ```shell
 sudo apt-get install tasksel alien filezilla meld gparted smartmontools virtualbox chromium-browser git git-gui libreoffice wine deja-dup poedit whois tree unrar exuberant-ctags ack-grep tmux curl dos2unix cabextract ntp usb-creator-gtk ruby golang-go cmake xclip
 ```
@@ -149,6 +158,7 @@ sudo apt-get install xubuntu-restricted-extras
 
 
 ### Oracle JDK/JRE
+
 - See: http://www.webupd8.org/2012/01/install-oracle-java-jdk-7-in-ubuntu-via.html
 
 ```shell
@@ -159,6 +169,7 @@ sudo apt-get install oracle-java8-installer oracle-java8-set-default
 
 
 ### Dropbox
+
 - See: https://www.dropbox.com/install
 
 ```shell
@@ -168,6 +179,7 @@ sudo dpkg -i ~/Downloads/dropbox_2015.10.28_amd64.deb
 
 
 ### Node.js
+
 - See: https://github.com/nodesource/distributions#installation-instructions
 
 ```shell
@@ -179,6 +191,7 @@ npm i -g bemstyla conventional-changelog npm vmd yo commitizen fixpack http-serv
 
 
 ### Atom
+
 - See: https://atom.io/
 
 Download `.deb`
@@ -208,6 +221,7 @@ sudo vim /usr/share/applications/defaults.list
 
 
 ### LESS
+
 ```shell
 lessc styles.less styles.css
 ```
@@ -215,6 +229,7 @@ lessc styles.less styles.css
 
 
 ### Jade
+
 ```shell
 jade -P untitled.jade
 ```
@@ -222,6 +237,7 @@ jade -P untitled.jade
 
 
 ### JS Beautify
+
 ```shell
 jade untitled.jade; js-beautify --type "html" --config ./config.json -r untitled.html
 
@@ -246,11 +262,13 @@ alias jade2html="jade @1; js-beautify --type "html" --config ~/.config/dotfiles/
 
 
 ### IE
-[`modern.ie`](https://dev.windows.com/en-us/microsoft-edge/tools/vms/linux/)
+
+- See: [`modern.ie`](https://dev.windows.com/en-us/microsoft-edge/tools/vms/linux/)
 
 
 
 ## Чтобы nano перестал ругаться на недостаток прав
+
 ```shell
 sudo chown $USER:$USER ~/.nano_history
 ```
@@ -258,6 +276,7 @@ sudo chown $USER:$USER ~/.nano_history
 
 
 ## Gist token
+
 ```shell
 ~/.bashlocal
 export GIST_ACCESS_TOKEN=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -266,6 +285,7 @@ export GIST_ACCESS_TOKEN=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 
 ## Wine
+
 ```shell
 sudo apt-get install cabextract
 wget http://www.kegel.com/wine/winetricks && chmod +x winetricks && sudo mv winetricks /usr/local/bin/
@@ -288,6 +308,7 @@ cp ~/Downloads/*.dll ~/.mynewwine32prefix/drive_c/windows/system32/
 
 
 ## Chrome default
+
 ```shell
 sudo vim /usr/share/applications/defaults.list
 :%s/firefox/chromium-browser
@@ -297,6 +318,7 @@ sudo update-alternatives --config x-www-browser
 
 
 ## Fonts
+
 - See: http://sourcefoundry.org/hack/
 
 ```shell
@@ -321,6 +343,7 @@ mkdir -p ~/.fonts/truetype
 
 
 ## Neovim
+
 - See: https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu
 
 ```shell
@@ -339,6 +362,7 @@ sudo update-alternatives --config editor
 ```
 
 ### Build
+
 - See: https://github.com/neovim/neovim/wiki/Building-Neovim#optimized-builds
 
 ```shell
@@ -349,6 +373,7 @@ sudo make install
 ```
 
 ### Python client to Neovim
+
 - See: https://github.com/neovim/python-client
 - See: https://github.com/zchee/deoplete-jedi/wiki/Setting-up-Python-for-Neovim
 
@@ -370,6 +395,7 @@ sudo apt-get install python3-pip
 
 
 ## Записать демо терминала (записать гифку .gif)
+
 - See: https://github.com/marionebl/svg-term-cli
 
 ```shell
@@ -379,6 +405,7 @@ svg-term --cast=113643 --out examples/parrot.svg --window
 
 
 ## Screen
+
 - See: https://www.rackaid.com/blog/linux-screen-tutorial-and-how-to/
 
 `C-a` — Переход к режиму управления

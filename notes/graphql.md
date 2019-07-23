@@ -10,6 +10,7 @@
 - See: https://github.com/slothking-online/graphql-editor
 
 ## Install
+
 ```shell
 npm install graphql
 ```

@@ -6,6 +6,7 @@
 - See: [Nginx config generator](https://nginxconfig.io/) https://github.com/valentinxxx/nginxconfig.io
 
 ## Добавить сайт
+
 ```shell
 unlink /etc/nginx/sites-enabled/default
 cp /etc/nginx/sites-available/default /etc/nginx/sites-available/example-com
@@ -36,7 +37,9 @@ server {
 
 
 ## robots.txt
+
 - See: http://www.robotstxt.org/robotstxt.html
+
 Чтобы отключить индексирование сайта поисковиками, создадим файл `robots.txt`
 в корне директории сайта
 ```

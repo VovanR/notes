@@ -15,22 +15,26 @@
 - See: [A short note on HTML5 `article`, `section` and `hgroup`](https://www.brucelawson.co.uk/2019/html5-article-section-hgroup/)
 
 ## Polyfills
+
 - See: https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills
 
 
 
 ## HTML5 demos
+
 - See: https://github.com/remy/html5demos
 
 
 
 ## Accessibility
+
 - See: https://weblind.ru/
 - See: [Accessible Breadcrumb Navigation Pattern](https://scottaohara.github.io/a11y_breadcrumbs/)
 
 
 
 ## Ссылка на e-mail
+
 - See: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Email_links
 
 ```html
@@ -47,6 +51,7 @@ mailto:nowhere@mozilla.org?subject=Newsletter%20subscription%20request&body=Plea
 
 
 ## Скачать файл download
+
 ```html
 <a href="images/xxx.jpg" download>Скачать файл</a>
 ```
@@ -54,6 +59,7 @@ mailto:nowhere@mozilla.org?subject=Newsletter%20subscription%20request&body=Plea
 
 
 ## Form
+
 - See: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/My_first_HTML_form
 
 Атрибут `action` обязателен
@@ -107,6 +113,7 @@ mailto:nowhere@mozilla.org?subject=Newsletter%20subscription%20request&body=Plea
 
 
 ## Inputs
+
 - See: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/The_native_form_widgets
 
 
@@ -145,6 +152,7 @@ mailto:nowhere@mozilla.org?subject=Newsletter%20subscription%20request&body=Plea
 
 
 ## Picture
+
 - See: https://github.com/seokirill/posthtml-webp
 
 Before:
@@ -294,8 +302,8 @@ After:
 </nav>
 ```
 
-Документ может содержать несколько элементов `<nav>`.
-Например один для навигации по сайту, второй для навигации по странице.
+Документ может содержать несколько элементов `<nav>`.  
+Например один для навигации по сайту, второй для навигации по странице.  
 В этом случае надо добавить атрибут `aria-labeledby` или `aria-label` чтобы пометить навигацию для скринридеров
 
 - See: [Labeling section content](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#Labeling_section_content#Labeling_section_content)

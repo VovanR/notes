@@ -204,6 +204,7 @@ find ./ -type f -name "*.js" -exec perl -pi -e 's/^    \$\, _\, Backbone/    \$,
 
 
 ### cut
+
 Вывести нужные колонки
 ```shell
 cut -d ' ' -f3,5,8 ./foo.txt
@@ -212,12 +213,13 @@ cut -d ' ' -f3,5,8 ./foo.txt
 
 
 ### tree
+
 Выводит дерево каталога, исключая 2 папки
 ```shell
 tree -I 'node_modules|vendor'
 ```
 
-Показать структуру директории на 3 уровнями вглубь
+Показать структуру директории на 3 уровнями вглубь  
 С размерами файлов и включая скрытые директории
 ```shell
 tree -LhaC 3
@@ -225,6 +227,7 @@ tree -LhaC 3
 
 
 ### head
+
 Вывести первые 5 строк
 ```shell
 head -n5 <filename>
@@ -232,6 +235,7 @@ head -n5 <filename>
 
 
 ### tail
+
 Вывести последние 5 строк
 ```shell
 tail -n5 <filename>
@@ -239,6 +243,7 @@ tail -n5 <filename>
 
 
 ### column
+
 Отобразить разделенный запятыми файл в виде столбцов
 ```shell
 column -s, -t <delimited_file>
@@ -358,7 +363,7 @@ cat backup.tar.bz2.enc.* | openssl aes-256-cbc -d -kfile /path/to/enc.key | tar 
 
 ### Архивация
 
-See: http://www.thegeekstuff.com/2010/04/unix-tar-command-examples/
+- See: http://www.thegeekstuff.com/2010/04/unix-tar-command-examples/
 
 ```shell
 tar cvf archive_name.tar dirname/
@@ -498,12 +503,14 @@ montage -background transparent -tile x1 -geometry +0+0 attack-aniimation__straf
 
 
 ## Наложение водяного знака (watermark, вотермарк)
+
 ```shell
 composite -compose color-burn -gravity Center ./watermark.jpg ./photo.jpg ./result.jpg
 ```
 
 
 ## Ресайз картинки ImageMagick
+
 ```shell
 identify -format "%wx%h" $ARG
 cat enter.txt | xargs sh ~/.local/bin/cropp.sh
@@ -883,6 +890,7 @@ if [[ EXPR1 && EXPR1 || EXPR1 ]]; then
 
 
 #### Если переменная равна `'1'` и файл существует
+
 ```bash
 if [ $VAR == "1" ] && [ -a $FILE ]; then
     echo "if"
@@ -1369,6 +1377,7 @@ curl https://cloud.arrival.com/api/v1/user -H 'authorization: Bearer -JSDFHLKSDH
 ```
 
 ### Аргументы из файла
+
 ```shell
 curl -K config.txt 'https://example.com/'
 ```

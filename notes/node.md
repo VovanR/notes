@@ -45,6 +45,7 @@ npm update -g
 
 
 ## Записать в файл
+
 ```javascript
 var stream = fs.createWriteStream(filePath);
 stream.once('open', function (fd) {
@@ -55,12 +56,14 @@ stream.once('open', function (fd) {
 
 
 ## Прочитать файл
+
 ```js
 const schemaRaw = fs.readFileSync('./schema.graphql', 'utf-8')
 ```
 
 
 ## Преобразовать файл
+
 ```js
 const fs = require('fs');
 
@@ -100,6 +103,7 @@ npm i -g bemstyla
 
 
 ## Для тестирования локального пакета (вместо `link`)
+
 ```shell
 cd ~/work/bemstyla/
 npm i -g .
@@ -108,6 +112,7 @@ npm i -g .
 
 
 ## Новый тэг в гите
+
 ```shell
 git tag -a v1.1.0
     1.1.0
@@ -115,6 +120,7 @@ git tag -a v1.1.0
 
 
 ## Авторизоваться в `npm`
+
 ```shell
 npm adduser
     username
@@ -124,12 +130,15 @@ npm adduser
 
 
 ## Интерфейсы командной строки (CLI)
+
 - See: https://github.com/SBoudrias/Inquirer.js
 - See: https://github.com/sindresorhus/fkill-cli/blob/master/cli.js
 
 
 ## Travis CI
+
 - See: https://travis-ci.org/
+- See: [Node.js versions](https://docs.travis-ci.com/user/languages/javascript-with-nodejs/#Specifying-Node.js-versions)
 
 ```yaml
 language: node_js
@@ -139,7 +148,6 @@ node_js:
   - "8"
   - "6"
 ```
-Node.js versions: https://docs.travis-ci.com/user/languages/javascript-with-nodejs/#Specifying-Node.js-versions
 
 
 
