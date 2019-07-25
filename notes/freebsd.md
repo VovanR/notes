@@ -2,35 +2,53 @@
 
 ----
 
-
-## My video
-
-- See: https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units
-
-Graphics: `HD Graphics 4600`
-Processor: `Core i7-4700HQ`
-Code name: `Haswell`
-
-- See: https://wiki.freebsd.org/Graphics/Intel-GPU-Matrix
-For Haswell based systems, if the `drm-kmod` port does not work, it is suggested to install the `drm-legacy-kmod`.
-
-
-- See: https://forums.gentoo.org/viewtopic-t-801993.html
-- See: https://wiki.archlinux.org/index.php/Xorg
-- See: https://wiki.archlinux.org/index.php/Intel_graphics#Installation
-- See: https://wiki.archlinux.org/index.php/Intel_graphics#Xorg_configuration
-- See: https://wiki.archlinux.org/index.php/Intel_graphics#SNA_issues
-- See: https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/x-config.html
-- See: https://www.tecmint.com/things-to-do-after-installing-freebsd/
-
-
-
 ## Installation process
 
 Add new user to `wheel` group
 
 
-## After installation
+## Add WiFi
+
+```shell
+su
+```
+
+`/etc/rc.conf`
+```
+wlans_ath0="wlan0"
+ifconfig_wlan0="WPA SYNCDHCP"
+#ifconfig_wlan0_ipv6="inet6 accept_rtadv"
+create_args_wlan0="country RU"
+```
+
+`/etc/wpa_supplicant.conf`
+```
+network={
+    ssid="<wifi_name>"
+    psk="<wifi_password>"
+}
+```
+
+```shell
+wpa_supplicant -c /etc/wpa_supplicant.conf -i wlan0
+```
+
+
+### Checks if not works
+
+How to reboot ifconfig?
+```
+sudo ifconfig wlan0 down
+sudo ifconfig wlan0 up
+```
+
+`sudo dhclient wlan0`
+
+`sudo service netif restart`
+`sudo service routing restart`
+`netstat -rn`
+`cat /etc/resolv.conf`
+
 
 ## Change update repository to `latest`
 
@@ -46,31 +64,6 @@ Change `quarterly` with `latest`
 
 ```shell
 pkg update -f
-```
-
-
-## Add WiFi
-
-```shell
-vi /etc/wpa_supplicatn.conf
-```
-
-```
-network={
-    ssid="<wifi_name>"
-    psk="<wifi_password>"
-}
-```
-
-```shell
-wpa_supplicant -c wpa-actinet.conf -i wlan0
-```
-
-
-## `PKG`
-
-```shell
-pkg install tmux git vim-console
 ```
 
 
@@ -92,14 +85,106 @@ Add line:
 Re-login or reboot
 
 
+## Change default shell to Bash
+
+```shell
+sudo chsh -s /usr/local/bin/bash
+```
+
+
+## Install terminal and Tmux
+
+```shell
+sudo pkg install rxvt-unicode tmux
+```
+
 
 ## Install Xfce 4
 
 - See: http://mediaunix.com/ustanovka-xfce-na-freebsd-bystryj-desktop/
 
 ```shell
-sudo pkg install xorg xfce
+cat xfce_package_list.txt | xargs sudo pkg install
 ```
+
+`xfce_package_list.txt`:
+```
+xorg
+xfce
+xfce4-battery-plugin
+xfce4-cpugraph-plugin
+xfce4-netload-plugin
+xfce4-screenshooter-plugin
+xfce4-timer-plugin
+xfce4-whiskermenu-plugin
+xfce4-xkb-plugin
+
+numix-theme
+xfce-icons-elementary
+
+ubuntu-font
+
+freedesktop-sound-theme
+```
+
+`~/.xinitrc`
+```
+/usr/local/bin/startxfce4
+```
+
+`~/.xsession`
+```
+#!/bin/sh
+
+/usr/local/bin/startxfce4
+```
+
+```shell
+chmod +x ~/.xsession
+```
+
+
+## User env
+
+- See: https://github.com/VovanR/dotfiles#install
+
+```shell
+sudo pkg install git
+```
+
+```shell
+git clone https://github.com/VovanR/dotfiles.git ~/.config/dotfiles
+```
+
+
+## Install Neovim
+
+```shell
+sudo pkg install neovim gmake p5-ack py36-pip xclip
+```
+
+
+## My video card
+
+- See: https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units
+
+- Graphics: `HD Graphics 4600`
+- Processor: `Core i7-4700HQ`
+- Code name: `Haswell`
+
+
+- See: https://wiki.freebsd.org/Graphics/Intel-GPU-Matrix
+
+For Haswell based systems, if the `drm-kmod` port does not work, it is suggested to install the `drm-legacy-kmod`.
+
+
+- See: https://forums.gentoo.org/viewtopic-t-801993.html
+- See: https://wiki.archlinux.org/index.php/Xorg
+- See: https://wiki.archlinux.org/index.php/Intel_graphics#Installation
+- See: https://wiki.archlinux.org/index.php/Intel_graphics#Xorg_configuration
+- See: https://wiki.archlinux.org/index.php/Intel_graphics#SNA_issues
+- See: https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/x-config.html
+- See: https://www.tecmint.com/things-to-do-after-installing-freebsd/
 
 ### Video driver
 
@@ -137,6 +222,11 @@ Parse active modules
 sudo dmesg | grep i915
 ```
 
+Check
+```shell
+pciconf -lv
+```
+
 
 ## Configure Xorg
 
@@ -162,23 +252,6 @@ EndSection
 ```
 
 
-## Video
-
-```shell
-pciconf -lv
-```
-
-
-## Some
-
-```shell
-echo "/usr/local/bin/startxfce4" > ~/.xinitrc
-echo "#!/bin/sh" > ~/.xsession
-echo "/usr/local/bin/startxfce4" >> ~/.xsession
-chmod +x ~/.xsession
-```
-
-
 ### Добавляю данные о соответствии IP
 
 ```shell
@@ -196,6 +269,42 @@ echo 'IP_вашего_ПК полное_имя_ПК_из_/etc/rc.conf' >> /etc/h
 ```shell
 echo 'hald_enable="YES"' >> /etc/rc.conf
 echo 'dbus_enable="YES"' >> /etc/rc.conf
+```
+
+
+## Install packages
+
+```shell
+cat FBSD_package_list.txt | xargs sudo pkg install
+```
+
+`FBSD_package_list.txt`:
+```
+chromium
+firefox
+thunderbird
+filezilla
+
+unzip
+
+node
+npm
+
+feh
+gimp
+ImageMagick7
+inkscape
+
+mate-calc
+
+jetbrains-webstorm
+meld
+
+gnupg
+```
+
+```shell
+npm install --global diff-so-fancy
 ```
 
 
@@ -220,7 +329,7 @@ slim_enable="YES"
 ```shell
 sudo cp -r /usr/local/share/slim/default /usr/local/share/slim/custom
 sudo rm /usr/local/share/slim/custom/background.jpg
-sudo convert ~/Downloads/Noon_2520x1575.png /usr/local/share/slim/custom/background.jpg
+sudo cp ~/Downloads/Noon_2520x1575.png /usr/local/share/slim/custom/background.png
 ```
 
 
@@ -236,88 +345,7 @@ sysctl hw.acpi.battery
 
 
 
-## Change default shell
-
-```shell
-chsh -s /usr/local/bin/bash
-```
-
-
-
-## WiFi
-
-```shell
-wpa_supplicant
-sudo wpa_supplicant -c /etc/wpa_supplicant.conf -iwlan0
-sudo ps -ax |grep wpa
-sudo vim /etc/wpa_supplicant.conf
-```
-
-
-Reboot ifconfig
-```
-sudo ifconfig wlan0 down
-sudo ifconfig wlan0 up
-```
-
-?
-`sudo dhclient wlan0`
-
-`sudo service netif restart`
-`sudo service routing restart`
-`netstat -rn`
-`cat /etc/resolv.conf`
-
-
-`/etc/rc.conf`
-```
-wlans_ath0="wlan0"
-ifconfig_wlan0="WPA SYNCDHCP"
-#ifconfig_wlan0_ipv6="inet6 accept_rtadv"
-create_args_wlan0="country RU"
-```
-
-
-
-## Install programms
-
-sudo pkg install
-chromium
-firefox
-thunderbird
-filezilla
-gmake
-p5-ack
-neovim
-rxvt-unicode
-tmux
-meld
-xclip
-py36-pip
-unzip
-node
-npm
-xfce4-xkb-plugin
-xfce4-screenshooter-plugin
-xfce4-cpugraph-plugin
-xfce4-timer-plugin
-xfce4-whiskermenu-plugin
-numix-theme
-xfce-icons-elementary
-gimp
-inkscape
-feh
-mate-calc
-ubuntu-font
-freedesktop-sound-theme
-xfce4-battery-plugin
-xfce4-netload-plugin
-jetbrains-webstorm
-ImageMagick7
-gnupg
-
 ## Media player
-
 
 ### Parole
 
@@ -372,20 +400,26 @@ your system, you find some examples in
 
 ## Sound player
 
-sox
+```shell
+sudo pkg install sox
+```
 
 ## Document viewer
 
-atril
+```shell
+sudo pkg install atril
+```
 
 ## Archive manager
 
-thunar-archive-plugin
-engrampa
+```shell
+sudo pkg install thunar-archive-plugin engrampa
+```
 
 - See: https://github.com/manjaro/packages-community/blob/master/engrampa-thunar-plugin/engrampa.tap
 
-`/usr/local/libexec/thunar-archive-plugin`
+```shell
+cd /usr/local/libexec/thunar-archive-plugin
 sudo mv ~/Downloads/engrampa.tap ./
 sudo chown root:wheel engrampa.tap
 sudo chmod 444 engrampa.tap
@@ -394,6 +428,7 @@ sudo unlink gnome-file-roller.tap
 sudo unlink org.gnome.FileRoller.tap
 sudo ln -s engrampa.tap gnome-file-roller.tap
 sudo ln -s engrampa.tap org.gnome.FileRoller.tap
+```
 
 
 
@@ -401,14 +436,17 @@ sudo ln -s engrampa.tap org.gnome.FileRoller.tap
 
 - See: https://github.com/neovim/neovim/wiki/Installing-Neovim#freebsd
 
+```shell
 python3.6 -m pip install --user --upgrade pynvim
 pip install neovim
 sudo ln -s /usr/local/bin/nvim /usr/local/bin/vim
+```
 
+- See: https://neovim.io/doc/user/provider.html
 
-https://neovim.io/doc/user/provider.html
-in nvim
+```
 :checkhealth
+```
 
 
 # FreeBSD touchpad two finger scroll
@@ -486,18 +524,19 @@ snd_driver_load="YES"
 
 ## Arduino
 
-`sudo pkg install arduino18`
+```shell
+sudo pkg install arduino18
+sudo pw groupmod dialer -m <user_name>
+sudo pw groupmod operator -m <user_name>
+```
 
-`sudo pw groupmod dialer -m <user_name>`
-`sudo pw groupmod operator -m <user_name>`
-
-`sudo vim /etc/rc.conf`
+`/etc/rc.conf`
 ```
 # For Arduino
 devfs_system_ruleset="localrules"
 ```
 
-`sudo vim /etc/devfs.rules`
+`/etc/devfs.rules`
 ```
 [localrules=10]
         add path 'ugen*' mode 0660 group operator
@@ -552,13 +591,10 @@ FreeBSD USB NOTE:
 
 
 
-
-
 ## Hotkeys
 
 - `Super + t` - `exo-open --launch TerminalEmulator`
 - `Super + l` - `xflock4`
-
 
 
 
