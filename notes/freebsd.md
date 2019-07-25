@@ -36,7 +36,7 @@ wpa_supplicant -c /etc/wpa_supplicant.conf -i wlan0
 
 ### Checks if not works
 
-How to reboot ifconfig?
+How to reboot `ifconfig`?
 ```
 sudo ifconfig wlan0 down
 sudo ifconfig wlan0 up
@@ -144,7 +144,7 @@ chmod +x ~/.xsession
 ```
 
 
-## User env
+## User environment
 
 - See: https://github.com/VovanR/dotfiles#install
 
@@ -371,9 +371,11 @@ $ xfconf-query -c parole -p /video/videosink -r
 ```
 
 
-### Mplayer
+### MPlayer
 
-mplayer
+```shell
+sudo pkg install mplayer
+```
 
 ```
 Message from mplayer-1.4.0.20190706:
@@ -598,7 +600,7 @@ FreeBSD USB NOTE:
 
 
 
-## Webstorm
+## WebStorm
 
 `sudo pkg install jetbrains-webstorm`
 
@@ -697,7 +699,7 @@ server 3.europe.pool.ntp.org iburst
 `sudo service ntpd start`
 
 
-## Gpg key
+## GPG key
 `sudo pkg install gnupg`
 ```
 Message from gnupg-2.2.17:
