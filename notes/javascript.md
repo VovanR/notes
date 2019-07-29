@@ -45,6 +45,10 @@
 - See: https://www.npmjs.com/package/yup
 - See: http://livr-spec.org/
 
+### Подписка на изменения видимой области
+
+- See: https://github.com/robb0wen/tornis
+
 
 
 ## CORS
