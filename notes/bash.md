@@ -186,6 +186,7 @@ find ./ -iregex '.*\(mp3\|mp4\|exe\)'
 
 ```shell
 find ./ -type f -name "*.coffee" -not -path "*node_modules*" | wc -l
+find ./src -type f -name "*.js" -o -name "*.jsx" | wc -l
 ```
 
 
