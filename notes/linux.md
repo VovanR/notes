@@ -12,6 +12,14 @@ xflock4		Super + l
 
 
 
+## Install Fonts
+
+Create a folder `~/.fonts` and move all fonts to that directory. 
+I recommend you copy only the `*.ttf` files to `~/.fonts`, and run `fc-cache -fv`.
+
+
+
+
 ## Window manager shortcuts
 
 ### Xfce
