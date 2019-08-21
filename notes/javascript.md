@@ -1122,6 +1122,31 @@ Promise.all([Promise.resolve(1), Promise.reject(2), Promise.resolve(3)])
 
 
 
+### Promise catch after catch with same error
+
+```js
+Promise.reject('Failed')
+    .then(() => {
+        console.log(0)
+    })
+    .catch(err => {
+        console.log(1, err)
+        return Promise.reject(err)
+    })
+    .catch(err => {
+        console.log(2, err)
+        return 'Processed Fail'
+    })
+    .then(data => {
+        console.log(3, data)
+    })
+//=> 1 "Failed"
+//=> 2 "Failed"
+//=> 3 "Processed Fail"
+```
+
+
+
 ## Cookies
 
 - See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
