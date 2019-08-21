@@ -9,6 +9,7 @@
 - See: [Исчерпывающее руководство по написанию `Dockerfile` для веб-приложений на Node.js](https://medium.com/devschacht/praveen-durairaj-an-exhaustive-guide-to-writing-dockerfiles-for-node-js-web-apps-7b033bcc0b4f)
 - See: [Docker For Front-end Developers](https://dev.to/akanksha_9560/docker-for-frontend-developers-1dk5)
 - See: [`ENTRYPOINT` vs `CMD`: назад к основам](https://habr.com/ru/company/southbridge/blog/329138/)
+- See: [Как и для чего использовать Docker](https://guides.hexlet.io/docker/)
 
 
 
