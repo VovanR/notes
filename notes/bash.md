@@ -6,6 +6,7 @@
 - See: https://github.com/Idnan/bash-guide
 - See: https://devhints.io/bash
 - See: https://github.com/dominictarr/JSON.sh
+- See: [finds bugs in your shell scripts](https://www.shellcheck.net/)
 
 
 
