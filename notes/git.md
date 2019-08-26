@@ -1081,6 +1081,31 @@ git cherry-pick <commit-1> <commit-4> <commit-15>
 
 ## Количество коммитов на разработчика
 
+- See: https://git-scm.com/docs/git-shortlog
+
 ```shell
 git shortlog -s -n -e
+```
+
+Если один разработчик коммитил под разными эмейлами или разными именами:
+```
+10 Foo Bar <foo.bar@gmail.com>
+3 Foo Bar <foo.bar@ya.ru>
+4 Foo B. Bar <foo.bar@example.com>
+1 Foobar <foo.bar@baz.com>
+```
+
+Можно настроить маппинг.
+Для этого создаём файл `.mailmap`
+```
+Foo Bar <foo.bar@example.com>
+Foo Bar <foo.bar@baz.com>
+<foo.bar@gmail.com> <foo.bar@ya.ru>
+<foo.bar@gmail.com> <foo.bar@example.com>
+<foo.bar@gmail.com> <foo.bar@baz.com>
+```
+
+Теперь вывод команды будет правильным
+```
+18 Foo Bar <foo.bar@gmail.com>
 ```
