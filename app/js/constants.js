@@ -6,6 +6,11 @@ export const NOTES = [
 		popular: false
 	},
 	{
+		name: 'Arduino',
+		archive: false,
+		popular: false
+	},
+	{
 		name: 'Backbone',
 		archive: true,
 		popular: false
