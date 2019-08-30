@@ -1087,7 +1087,7 @@ git cherry-pick <commit-1> <commit-4> <commit-15>
 git shortlog -s -n -e
 ```
 
-Если один разработчик коммитил под разными эмейлами или разными именами:
+Если один разработчик коммитил под разными мейлами или разными именами:
 ```
 10 Foo Bar <foo.bar@gmail.com>
 3 Foo Bar <foo.bar@ya.ru>
