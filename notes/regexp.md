@@ -2,6 +2,8 @@
 
 ----
 
+- See: [Regular Expression Denial of Service (ReDoS) and Catastrophic Backtracking](https://snyk.io/blog/redos-and-catastrophic-backtracking/)
+
 ## Вперед смотрящий
 
 Выберет `foo`, после которого идет `bar`
