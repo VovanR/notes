@@ -24,3 +24,4 @@ void loop() {
 ## I2C bus devices port address scanner
 
 - See: https://playground.arduino.cc/Main/I2cScanner/
+- See: https://gist.github.com/VovanR/48163f521102ce3861223bf1f9987714
