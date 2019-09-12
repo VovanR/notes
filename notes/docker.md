@@ -183,6 +183,11 @@ docker rmi $(docker images --format '{{.ID}}')
 docker build -t <c_name> .
 ```
 
+Сборка с указанием докер-файла
+```shell
+docker build -f ./Dockerfile-test .
+```
+
 ## Запуск
 
 ```shell
