@@ -164,6 +164,11 @@ export const NOTES = [
 		name: 'Vim',
 		archive: false,
 		popular: false
+	},
+	{
+		name: 'webpack',
+		archive: false,
+		popular: false
 	}
 ]
 
