@@ -2,6 +2,14 @@
 
 ----
 
+## TO-DO
+
+- Not working SD card reader
+- Can't set first day of week
+- Not working fn-keys brightness and sound volume
+- Arduino board manager?
+
+
 ## Installation process
 
 Add new user to `wheel` group
@@ -95,13 +103,37 @@ sudo chsh -s /usr/local/bin/bash
 ## Install terminal and Tmux
 
 ```shell
-sudo pkg install rxvt-unicode tmux
+sudo pkg install rxvt-unicode alacritty tmux rubygem-tmuxinator
+```
+
+
+## UTF-8
+
+`/etc/login.conf`
+Add lines after `umask` in `default`
+```
+:umask=022:\
+:charset=UTF-8:\
+:lang=en_US.UTF-8:
+```
+
+Rebuild database:
+
+```shell
+sudo cap_mkdb /etc/login.conf
+```
+
+`sudo vim /etc/profile`
+```
+export LANG=en_US.UTF-8
+export CHARSET=UTF-8
 ```
 
 
 ## Install Xfce 4
 
 - See: http://mediaunix.com/ustanovka-xfce-na-freebsd-bystryj-desktop/
+- See: https://www.freshports.org/x11/xfce4-goodies
 
 ```shell
 cat xfce_package_list.txt | xargs sudo pkg install
@@ -111,9 +143,12 @@ cat xfce_package_list.txt | xargs sudo pkg install
 ```
 xorg
 xfce
-xfce4-battery-plugin
 xfce4-cpugraph-plugin
+xfce4-mount-plugin
 xfce4-netload-plugin
+xfce4-notes-plugin
+xfce4-power-manager
+xfce4-pulseaudio-plugin
 xfce4-screenshooter-plugin
 xfce4-timer-plugin
 xfce4-whiskermenu-plugin
@@ -285,6 +320,9 @@ firefox
 thunderbird
 filezilla
 
+plex-ttf
+hack-font
+
 unzip
 
 node
@@ -300,7 +338,11 @@ mate-calc
 jetbrains-webstorm
 meld
 
+grc
+
 gnupg
+
+xfburn
 ```
 
 ```shell
@@ -527,7 +569,7 @@ snd_driver_load="YES"
 ## Arduino
 
 ```shell
-sudo pkg install arduino18
+sudo pkg install arduino18 arduino-tools
 sudo pw groupmod dialer -m <user_name>
 sudo pw groupmod operator -m <user_name>
 ```
@@ -723,3 +765,560 @@ to
 `gpg --full-gen-key`
 `gpg --list-secret-keys --keyid-format LONG`
 `gpg --armor --export 3AA5C34371567BD2`
+
+
+
+## USB and SD card
+
+- See: https://www.freebsd.org/doc/handbook/usb-disks.html
+
+`/etc/auto_master`
+Uncomment line
+```
+/media		-media		-nosuid
+```
+
+`/etc/devd.conf`
+```
+notify 100 {
+	match "system" "GEOM";
+	match "subsystem" "DEV";
+	action "/usr/sbin/automount -c";
+};
+```
+
+`/etc/rc.conf`
+```
+autofs_enable="YES"
+devfs_system_ruleset="localrules"
+```
+
+```shell
+sudo service automount restart
+sudo service automountd restart
+sudo service autounmountd restart
+sudo service devd restart
+```
+
+`/etc/sysctl.conf`
+```
+# Mount SD Cards
+vfs.usermount=1
+```
+
+```shell
+sudo mkdir /mnt/<user_name>
+sudo chown <user_name>:<user_name> /mnt/<user_name>
+```
+
+`/etc/devfs.rules`
+```
+[localrules=10]
+add path 'da*s*' mode 0660 group operator
+```
+
+`/boot/loader.conf`
+```
+# Fuse
+fuse_load="YES"
+```
+
+
+### Check device insert
+
+```shell
+sudo tail -f /var/log/messages
+```
+
+```shell
+sudo camcontrol devlist
+sudo camcontrol rescan all
+sudo usbconfig
+```
+
+
+
+
+## don't hang the boot process while waiting on DHCP
+
+`/boot/loader.conf`
+```
+background_dhclient="YES"
+```
+
+
+
+## Backlight
+
+`/etc/rc.conf`
+```
+# enable LCD backlight control, ThinkPad buttons, etc
+acpi_asus_load="YES"
+```
+
+
+
+## Pulseaudio
+
+```shell
+xfce4-pulseaudio-plugin
+```
+
+```
+Message from pulseaudio-12.2_5:
+
+Pulseaudio tries to determine default values for FreeBSD OSS driver at first
+start, based on /dev/sndstat output. The hw.snd.default_unit sysctl may affect
+these values, but restart of the Pulseaudio might be needed to rescan it again,
+e.g. `pacmd exit`.
+
+Pulseaudio has separate input and output configure lines. You can change them
+with using following commands:
+
+To change the default sink (output):
+# pacmd set-default-sink 3
+To change the default source (input):
+# pacmd set-default-source 3
+
+This can also be set in /usr/local/etc/pulse/default.pa
+
+Replace the number '3' with the new default you want to set.
+
+The audio/freedesktop-sound-theme is needed if the default sound files
+are uncommented in the /usr/local/etc/pulse/default.pa file.
+Message from keybinder-gtk3-0.3.2:
+
+===>   NOTICE:
+
+The keybinder-gtk3 port currently does not have a maintainer. As a result, it is
+more likely to have unresolved issues, not be up-to-date, or even be removed in
+the future. To volunteer to maintain this port, please create an issue at:
+
+https://bugs.freebsd.org/bugzilla
+
+More information about port maintainership is available at:
+
+https://www.freebsd.org/doc/en/articles/contributing/ports-contributing.html#maintain-port
+```
+
+
+
+## Xfburn
+
+`/boot/loader.conf`
+
+```
+# Xfburn
+scbus_load="YES"
+cd_load="YES"
+pass_load="YES"
+atapicam_load="YES"
+```
+
+```
+Message from libburn-1.5.0:
+
+You will need to enable CAM support in the kernel.  Your kernel
+configuation should include:
+    for SCSI CD/DVD devices:
+        device scbus
+        device cd
+        device pass
+    for ATA CD/DVD devices you will need the above, plus:
+        device atapicam
+
+You will also want to make the CD devices world read- and writable.
+In /etc/devfs.rules, add the following:
+        [system=10]
+        add path 'acd*' mode 0666
+        add path 'cd*' mode 0666
+        add path 'pass*' mode 0666
+        add path 'xpt*' mode 0666
+```
+
+
+
+## Температура ядра
+
+- See: https://skeletor.org.ua/?p=579
+
+```shell
+sysctl -a | grep temperature
+```
+
+
+## Загрузка модуля
+
+Запустить сразу
+```shell
+sudo kldload coretemp.ko
+```
+
+Запускать при загрузке
+`/boot/loader.conf`
+```
+coretemp_load="YES"
+```
+
+
+## Tmuxinator
+
+```
+Message from ruby-2.5.5_2,1:
+
+====
+Some of the standard commands are provided as separate ports for ease
+of upgrading:
+
+    devel/ruby-gems:        gem - RubyGems package manager
+    devel/rubygem-rake:     rake - Ruby Make
+
+And some of the standard libraries are provided as separate ports
+since they require extra dependencies:
+
+    databases/rubygem-dbm:  DBM module
+    databases/rubygem-gdbm: GDBM module
+
+Install them as occasion demands.
+====
+```
+
+
+## Display
+
+`pciconf -lv | grep VGA`
+```
+vgapci0@pci0:0:2:0:     class=0x030000 card=0x122d1043 chip=0x04168086 rev=0x06 hdr=0x00
+    vendor     = 'Intel Corporation'
+    device     = '4th Gen Core Processor Integrated Graphics Controller'
+    class      = display
+    subclass   = VGA
+```
+
+List of displays
+`xrandr --listmonitors`
+```
+Monitors: 1
+ 0: +eDP1 1600/382x900/215+0+0  eDP1
+```
+
+Set brightness
+`xrandr --output eDP1 --brightness 1`
+
+```
+xdpyinfo | grep -B2 resolution
+screen #0:
+    dimensions:    1600x900 pixels (423x238 millimeters)
+    resolution:    96x96 dots per inch
+```
+
+
+
+## Webcam
+
+```
+sudo pkg install pwcview webcamd
+```
+
+```
+Message from webcamd-4.20.0.1_2:
+
+*********************************************************************
+1) webcamd requires the cuse4bsd(3) or cuse(3) kernel module, depending on
+how webcamd was compiled. Please load this dependency by doing:
+
+    # FreeBSD < 11.x, package from ports
+    # kldload cuse4bsd
+or
+    # FreeBSD >= 11.x, part of default kernel build
+    # kldload cuse
+
+or by adding
+
+    cuse4bsd_load="YES"
+or
+    cuse_load="YES"
+
+to your /boot/loader.conf.
+
+2) add webcamd_enable="YES"
+
+to your /etc/rc.conf
+
+3) Please restart devd to start webcamd
+
+    # service devd restart
+
+4) Optionally add a user to the "webcamd" group
+
+    # pw groupmod webcamd -m <username>
+
+5) If webcamd still did not start, consult the installed webcamd rc.d
+script for more help and instructions on how to start webcamd.
+*********************************************************************
+```
+
+
+
+## Upgrade FreeBSD
+
+- See: https://www.freebsd.org/doc/handbook/updating-upgrading-freebsdupdate.html
+
+### Packages upgrade
+```shell
+sudo pkg upgrade
+```
+
+### Security upgrades
+```shell
+sudo freebsd-update fetch
+sudo freebsd-update install
+```
+
+Reboot
+```shell
+sudo shutdown -r now
+```
+
+
+
+## Remove unused packages
+
+- See: https://www.freebsd.org/doc/handbook/pkgng-intro.html
+
+```shell
+sudo pkg autoremove
+```
+
+
+
+## Skype
+
+- See: https://daemon-notes.com/articles/desktop/skype
+
+
+## VirtualBox
+
+- See: https://daemon-notes.com/articles/other/virtualbox
+
+```shell
+sudo pkg install virtualbox-ose
+```
+
+```
+Message from qtchooser-66:
+
+qtchooser is a wrapper that allows selecting whether Qt4 or Qt5 binaries for
+qmake, moc and other tools will be run when invoking the binaries in $PATH.
+
+By default, the Qt5 versions are run. It is possible to change the behavior by
+setting the QT_SELECT environment variable to "qt4". See qtchooser(1) for more
+information.
+Message from virtualbox-ose-5.2.32_1:
+
+VirtualBox was installed.
+
+You need to load the vboxdrv kernel module via /boot/loader.conf:
+
+vboxdrv_load="YES"
+
+You also have to add all users to your vboxusers group in order to use vbox.
+
+% pw groupmod vboxusers -m jerry
+
+Reboot the machine to load the needed kernel modules.
+
+
+Bridging Support:
+=================
+
+For bridged networking please add the following line to your /etc/rc.conf:
+
+vboxnet_enable="YES"
+
+
+USB Support:
+============
+
+For USB support your user needs to be in the operator group and needs read
+and write permissions to the USB device.
+
+% pw groupmod operator -m jerry
+
+Add the following to /etc/devfs.rules (create if it doesn't exist):
+
+[system=10]
+add path 'usb/*' mode 0660 group operator
+
+To load these new rule add the following to /etc/rc.conf:
+
+devfs_system_ruleset="system"
+
+Then restart devfs to load the new rules:
+
+% /etc/rc.d/devfs restart
+
+
+Troubleshooting:
+================
+
+Running VirtualBox as non-root user may fail with a fatal error
+NS_ERROR_FACTORY_NOT_REGISTERED. In this case delete /tmp/.vbox-*-ipc file.
+
+If you experience "Network: write Failed: Cannot allocate memory" errors
+try to increase net.graph.maxdata in /boot/loader.conf
+
+If you are using AIO, then increase these limits (PR#168298):
+vfs.aio.max_buf_aio=8192
+vfs.aio.max_aio_queue_per_proc=65536
+vfs.aio.max_aio_per_proc=8192
+vfs.aio.max_aio_queue=65536
+To check if AIO is used use: kldstat -v | grep aio
+
+Check wiki page for known issues and troubleshooting:
+http://wiki.freebsd.org/VirtualBox
+
+Please report any problems to emulation@. Thanks!
+```
+
+```shell
+sudo kldload vboxdrv
+sudo pw groupmod vboxusers -m <user_name>
+```
+
+`sudo vim /etc/devfs.rules`
+```
+[system=10]
+	add path 'vboxnetctl' mode 0660 group vboxusers
+```
+
+```shell
+sudo service devfs restart
+sudo service vboxnet start
+```
+
+
+
+## Docker
+
+- See: https://wiki.freebsd.org/Docker
+
+```shell
+sudo pkg install docker docker-compose docker-machine
+```
+
+```shell
+docker-machine create --driver virtualbox --virtualbox-memory 2048 --virtualbox-cpu-count 2 --virtualbox-disk-size 102400 --virtualbox-hostonly-cidr "10.2.1.1/24" docker1
+```
+
+Check
+```shell
+docker-machine ls
+```
+
+
+```shell
+docker-machine stop docker1
+docker-machine start docker1
+docker-machine env docker1
+```
+
+```
+Error checking TLS connection: Error checking and/or regenerating the certs: There was an error validating certificates for host "10.2.1.100:2376": x509: certificate signed by unknown authority
+You can attempt to regenerate them using 'docker-machine regenerate-certs [name]'.
+Be advised that this will trigger a Docker daemon restart which might stop running containers.
+```
+
+```shell
+docker-machine regenerate-certs docker1
+```
+
+```shell
+eval `docker-machine env docker1`
+```
+
+
+
+## Linux mode
+
+- See: https://www.freebsd.org/doc/handbook/linuxemu-lbc-install.html
+- See: https://daemon-notes.com/articles/system/linux
+- See: https://www.freshports.org/emulators/linux_base-c7
+
+```shell
+sudo kldload linux
+sudo kldload linux64
+sudo pkg install linux_base-c7
+```
+
+`sudo vim sysctl.conf`
+```
+compat.linux.osrelease=4.18.0
+```
+
+`sudo vim /etc/fstab`
+```
+linprocfs   /compat/linux/proc  linprocfs       rw      0       0
+linsysfs    /compat/linux/sys   linsysfs        rw      0       0
+tmpfs    /compat/linux/dev/shm  tmpfs   rw,mode=1777    0       0
+```
+
+```shell
+sudo mount /compat/linux/proc
+sudo mount /compat/linux/sys
+sudo mount /compat/linux/dev/shm
+```
+
+
+## Ports
+
+- See: https://www.freebsd.org/doc/handbook/ports-using.html
+
+First run
+```shell
+sudo portsnap fetch extract
+```
+
+Update ports
+```shell
+sudo portsnap fetch update
+```
+
+
+
+## SD-Card reader. Not solved.
+
+```shell
+sudo pkg install pcsc-lite
+```
+
+```
+Message from pcsc-lite-1.8.24,2:
+
+PC/SC-Lite has been installed.
+
+You need to install a driver for your smartcard reader e.g.,
+- devel/libccid
+- security/ifd-slb_rf60
+
+For cardreaders connected to the serial port: After installing the driver,
+please update the pcscd configuration file:
+/usr/local/etc/reader.conf
+
+For USB cardreaders add the following lines to /etc/devd.conf to enable
+hotplugging:
+
+attach 100 {
+        device-name "ugen[0-9]+";
+        action "/usr/local/sbin/pcscd -H";
+};
+
+detach 100 {
+        device-name "ugen[0-9]+";
+        action "/usr/local/sbin/pcscd -H";
+};
+```
+
+```shell
+sudo pkg install ccid
+```
