@@ -92,8 +92,8 @@
 </head>
 <body>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.2.0/umd/react.production.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.9.0/umd/react.production.min.js" integrity="sha256-15e7WPERh0o2wO4LNQS156a0LZ6EpYHY9wzApyqie08=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.9.0/umd/react-dom.production.min.js" integrity="sha256-WQOxvuR1poOi0qwIafu9sWYJ4rje3oAn0v7idBItkAM=" crossorigin="anonymous"></script>
 <script>
 window.React || document.write('<script src="/static/js/react.min.js"><\/script>');
 window.ReactDOM || document.write('<script src="/static/js/react-dom.min.js"><\/script>');
@@ -110,18 +110,22 @@ window.ReactDOM || document.write('<script src="/static/js/react-dom.min.js"><\/
 
 ```js
 class Color extends PureComponent {
-	render() {
-		return (
-			<span style={{ backgroundColor: this.props.value }}>
-				{this.props.value}
-			</span>
-		);
-	}
+    render() {
+        const {
+            value,
+        } = this.props
+
+        return (
+            <span style={{backgroundColor: value}}>
+                {value}
+            </span>
+        );
+    }
 }
 
 ReactDOM.render(
-	<Color value="#ff0000" />,
-	document.getElementById('container')
+    <Color value="#ff0000"/>,
+    document.getElementById('container')
 );
 ```
 
@@ -132,18 +136,25 @@ ReactDOM.render(
 any nested elements as `this.props.children`
 ```js
 // tutorial4.js
-class Comment extends React.Component {
-	render() {
-		return (
-			<div className="comment">
-				<h2 className="commentAuthor">
-					{this.props.author}
-				</h2>
+import React, {Component} from 'react'
 
-				{this.props.children}
-			</div>
-		);
-	}
+class Comment extends Component {
+    render() {
+        const {
+            author,
+            children,
+        } = this.props
+
+        return (
+            <div className="comment">
+                <h2 className="commentAuthor">
+                    {author}
+                </h2>
+
+                {children}
+            </div>
+        );
+    }
 }
 ```
 
@@ -152,40 +163,50 @@ class Comment extends React.Component {
 
 ```js
 // tutorial6.js
-class Comment extends React.Component {
-	render() {
-		return (
-			<div className="comment">
-				<h2 className="commentAuthor">
-					{this.props.author}
-				</h2>
+import React, {Component} from 'react'
 
-				{marked(this.props.children.toString())}
-			</div>
-		);
-	}
+class Comment extends Component {
+    render() {
+        const {
+            author,
+            children,
+        } = this.props
+
+        return (
+            <div className="comment">
+                <h2 className="commentAuthor">
+                    {author}
+                </h2>
+
+                {marked(children.toString())}
+            </div>
+        );
+    }
 }
 ```
 
 ```js
 // tutorial7.js
-class Comment extends React.Component {
-	rawMarkup() {
-		var rawMarkup = marked(this.props.children.toString(), {sanitize: true});
-		return { __html: rawMarkup };
-	}
+import React, {Component} from 'react'
 
-	render() {
-		return (
-			<div className="comment">
-				<h2 className="commentAuthor">
-					{this.props.author}
-				</h2>
+class Comment extends Component {
+    rawMarkup() {
+        return {
+            __html: marked(this.props.children.toString(), {sanitize: true}),
+        };
+    }
 
-				<span dangerouslySetInnerHTML={this.rawMarkup()} />
-			</div>
-		);
-	}
+    render() {
+        return (
+            <div className="comment">
+                <h2 className="commentAuthor">
+                    {this.props.author}
+                </h2>
+
+                <span dangerouslySetInnerHTML={this.rawMarkup()}/>
+            </div>
+        );
+    }
 }
 ```
 
@@ -203,144 +224,183 @@ ReactDOM.render(
 Получать данные с сервера
 ```js
 // tutorial13.js
-class CommentBox extends React.Component {
-	constructor(props) {
-		super(props)
-		
-		this.state = {
-			data: []
-		};
-	}
+import React, {Component} from 'react'
 
-	componentDidMount() {
-		$.ajax({
-			url: this.props.url,
-			dataType: 'json',
-			cache: false,
-			success: function(data) {
-				this.setState({data: data});
-			}.bind(this),
-			error: function(xhr, status, err) {
-				console.error(this.props.url, status, err.toString());
-			}.bind(this)
-		});
-	}
+class CommentBox extends Component {
+    constructor(props) {
+        super(props)
+        
+        this.state = {
+            data: [],
+        };
+    }
 
-	render() {
-		return (
-			<div className="commentBox">
-				<h1>Comments</h1>
-				<CommentList data={this.state.data} />
-				<CommentForm />
-			</div>
-		);
-	}
+    componentDidMount() {
+        const {
+            url,
+        } = this.props
+
+        $.ajax({
+            url,
+            dataType: 'json',
+            cache: false,
+            success: data => {
+                this.setState({data});
+            },
+            error: (xhr, status, err) => {
+                console.error(url, status, err.toString());
+            },
+        });
+    }
+
+    render() {
+        return (
+            <div className="commentBox">
+                <h1>
+                    Comments
+                </h1>
+
+                <CommentList data={this.state.data}/>
+
+                <CommentForm/>
+            </div>
+        );
+    }
 }
 ```
 
 Периодически опрашивать сервер на наличие изменений
 ```js
 // tutorial14.js
-class CommentBox extends React.Component {
-	constructor(props) {
-		super(props)
-		
-		this.state = {
-			data: []
-		};
-	}
+import React, {Component} from 'react'
 
-	loadCommentsFromServer() {
-		$.ajax({
-			url: this.props.url,
-			dataType: 'json',
-			cache: false,
-			success: function(data) {
-				this.setState({data: data});
-			}.bind(this),
-			error: function(xhr, status, err) {
-				console.error(this.props.url, status, err.toString());
-			}.bind(this)
-		});
-	}
+class CommentBox extends Component {
+    constructor(props) {
+        super(props)
+        
+        this.state = {
+            data: [],
+        };
+    }
 
-	componentDidMount() {
-		this.loadCommentsFromServer();
-		setInterval(this.loadCommentsFromServer, this.props.pollInterval);
-	}
+    loadCommentsFromServer() {
+        const {
+            url,
+        } = this.props
 
-	render() {
-		return (
-			<div className="commentBox">
-				<h1>Comments</h1>
-				<CommentList data={this.state.data} />
-				<CommentForm />
-			</div>
-		);
-	}
+        $.ajax({
+            url,
+            dataType: 'json',
+            cache: false,
+            success: data => {
+                this.setState({data});
+            },
+            error: (xhr, status, err) => {
+                console.error(url, status, err.toString());
+            },
+        });
+    }
+
+    componentDidMount() {
+        this.loadCommentsFromServer();
+
+        setInterval(() => this.loadCommentsFromServer, this.props.pollInterval);
+    }
+
+    render() {
+        return (
+            <div className="commentBox">
+                <h1>
+                    Comments
+                </h1>
+
+                <CommentList data={this.state.data}/>
+
+                <CommentForm/>
+            </div>
+        );
+    }
 }
 
 ReactDOM.render(
-	<CommentBox url="/api/comments" pollInterval={2000} />,
-	document.getElementById('content')
+    <CommentBox
+      url="/api/comments"
+      pollInterval={2000}
+    />,
+    document.getElementById('content')
 );
 ```
 
 Отправлять форму на сервер
 ```js
 // tutorial19.js
-class CommentBox extends React.Component {
-	constructor(props) {
-		super(props)
-		
-		this.state = {
-			data: []
-		};
-	}
+import React, {Component} from 'react'
 
-	loadCommentsFromServer() {
-		$.ajax({
-			url: this.props.url,
-			dataType: 'json',
-			cache: false,
-			success: function(data) {
-				this.setState({data: data});
-			}.bind(this),
-			error: function(xhr, status, err) {
-				console.error(this.props.url, status, err.toString());
-			}.bind(this)
-		});
-	}
+class CommentBox extends Component {
+    constructor(props) {
+        super(props)
+        
+        this.state = {
+            data: [],
+        };
+    }
 
-	handleCommentSubmit(comment) {
-		$.ajax({
-			url: this.props.url,
-			dataType: 'json',
-			type: 'POST',
-			data: comment,
-			success: function(data) {
-				this.setState({data: data});
-			}.bind(this),
-			error: function(xhr, status, err) {
-				console.error(this.props.url, status, err.toString());
-			}.bind(this)
-		});
-	}
+    loadCommentsFromServer() {
+        const {
+            url,
+        } = this.props
 
-	componentDidMount() {
-		this.loadCommentsFromServer();
-		setInterval(this.loadCommentsFromServer, this.props.pollInterval);
-	}
+        $.ajax({
+            url,
+            dataType: 'json',
+            cache: false,
+            success: data => {
+                this.setState({data});
+            },
+            error: (xhr, status, err) => {
+                console.error(url, status, err.toString());
+            },
+        });
+    }
 
-	render() {
-		return (
-			<div className="commentBox">
-				<h1>Comments</h1>
-				<CommentList data={this.state.data} />
-				<CommentForm onCommentSubmit={this.handleCommentSubmit} />
-			</div>
-		);
-	}
+    handleCommentSubmit(comment) {
+        const {
+            url,
+        } = this.props
+
+        $.ajax({
+            url,
+            dataType: 'json',
+            type: 'POST',
+            data: comment,
+            success: data => {
+                this.setState({data});
+            },
+            error: (xhr, status, err) => {
+                console.error(url, status, err.toString());
+            },
+        });
+    }
+
+    componentDidMount() {
+        this.loadCommentsFromServer();
+
+        setInterval(this.loadCommentsFromServer, this.props.pollInterval);
+    }
+
+    render() {
+        return (
+            <div className="commentBox">
+                <h1>
+                    Comments
+                </h1>
+
+                <CommentList data={this.state.data}/>
+
+                <CommentForm onCommentSubmit={this.handleCommentSubmit}/>
+            </div>
+        );
+    }
 }
 ```
 
