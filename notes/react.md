@@ -38,6 +38,9 @@
 ### Inputs
 - See: https://github.com/JedWatson/react-input-autosize
 
+### Input format and mask
+-See: https://github.com/istarkov/rifm
+
 ### Обработка клика вне компонента
 - See: https://github.com/Pomax/react-onclickoutside
 - See: https://github.com/nanot1m/react-foco
@@ -76,7 +79,8 @@
 
 ## Использование CDN
 
-- See: https://cdnjs.com/libraries/react/
+- See: https://cdnjs.com/libraries/react
+- See: https://cdnjs.com/libraries/react-dom
 - See: https://facebook.github.io/react/downloads.html
 
 ```html
@@ -400,6 +404,7 @@ handleKeyDown(event: React.KeyboardEvent) {
 ```
 
 
+- See: [`isMounted` is an anti-pattern](https://reactjs.org/blog/2015/12/16/ismounted-antipattern.html)
 
 ```js
 class UserGist extends React.Component {
