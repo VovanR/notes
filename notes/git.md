@@ -766,11 +766,13 @@ git reflog -p
 
 
 
-## Изменить сообщение коммита
+## Изменить сообщение коммита. Rename commit. Change commit message
 
 ```shell
-git rebase -i <hash>
+git rebase -i <hash>~1
 ```
+
+Change `pick` to `reword`. Save and close editor. Will be opened new editor with commit message. Change it and save.
 
 
 
