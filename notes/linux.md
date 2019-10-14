@@ -14,8 +14,37 @@ xflock4		Super + l
 
 ## Install Fonts
 
-Create a folder `~/.fonts` and move all fonts to that directory. 
+Create a folder `~/.fonts` and move all fonts to that directory.   
 I recommend you copy only the `*.ttf` files to `~/.fonts`, and run `fc-cache -fv`.
+
+```shell
+mkdir -p ~/.fonts/truetype
+```
+
+Download any TrueType font
+- [Hack](https://github.com/chrissimpkins/Hack)
+- [Input](http://input.fontbureau.com/)
+- [IBM Plex Mono](https://github.com/IBM/plex/releases)
+
+
+```nohighlight
+~/.fonts/
+└── truetype
+    ├── Hack
+    │   ├── Hack-BoldItalic.ttf
+    │   ├── Hack-Bold.ttf
+    │   ├── Hack-Italic.ttf
+    │   └── Hack-Regular.ttf
+    └── InputMono
+        ├── InputMono-BoldItalic.ttf
+        ├── InputMono-Bold.ttf
+        ├── InputMono-Italic.ttf
+        └── InputMono-Regular.ttf
+```
+
+```shell
+sudo apt install fonts-ibm-plex fonts-hack
+```
 
 
 
@@ -121,7 +150,32 @@ sudo localedef -c -i ru_RU -f CP1251 ru_RU.CP1251
 ## Устанавливаем проги
 
 ```shell
-sudo apt-get install tasksel alien filezilla meld gparted smartmontools virtualbox chromium-browser git git-gui libreoffice wine deja-dup poedit whois tree unrar exuberant-ctags ack-grep tmux curl dos2unix cabextract ntp usb-creator-gtk ruby golang-go cmake xclip
+sudo apt-get install \
+    ack \
+    alien \
+    cabextract \
+    chromium-browser \
+    cmake \
+    curl \
+    deja-dup \
+    dos2unix \
+    exuberant-ctags \
+    filezilla \
+    git \
+    git-gui \
+    gparted \
+    meld \
+    ntp \
+    poedit \
+    smartmontools \
+    tasksel \
+    tmux \
+    tree \
+    unrar \
+    usb-creator-gtk \
+    virtualbox \
+    whois \
+    xclip
 ```
 
 Top
@@ -131,9 +185,12 @@ sudo apt-get install htop iftop iotop
 
 Xfce panel plugins
 ```shell
-sudo apt-get install xfce4-timer-plugin xfce4-sensors-plugin indicator-power
+sudo apt install \
+    indicator-power \
+    xfce4-mount-plugin \
+    xfce4-sensors-plugin \
+    xfce4-timer-plugin
 ```
-
 
 ```shell
 sudo gem install tmuxinator
@@ -141,17 +198,46 @@ sudo gem install tmuxinator
 
 Фото, видео
 ```shell
-sudo apt-get install gimp pinta imagemagick optipng vlc inkscape hugin rawtherapee gcolor2
+sudo apt install \
+    gcolor2 \
+    gimp \
+    hugin \
+    imagemagick \
+    inkscape \
+    optipng \
+    pinta \
+    rawtherapee \
+    vlc
 ```
 
 Для гитары
 ```shell
-sudo apt-get install tuxguitar tuxguitar-alsa tuxguitar-oss tuxguitar-jsa
+sudo apt install \
+    tuxguitar \
+    tuxguitar-alsa \
+    tuxguitar-oss \
+    tuxguitar-jsa
 ```
 
 Работа
 ```shell
-sudo apt-get install python python3 python-dev python3-dev postgresql postgresql-contrib libpq5 redis-server python-virtualenv rabbitmq-server libpq-dev pgadmin3 python3-pip libxml2-dev libxslt1-dev libmemcached-dev
+sudo apt install \
+    python \
+    python3 \
+    python-dev \
+    python3-dev \
+    postgresql \
+    postgresql-contrib \
+    libpq5 \
+    redis-server \
+    python-virtualenv \
+    rabbitmq-server \
+    libpq-dev \
+    pgadmin3 \
+    python3-pip \
+    libxml2-dev \
+    libxslt1-dev \
+    libmemcached-dev
 ```
 
 ```shell
@@ -160,7 +246,7 @@ sudo update-alternatives --install /usr/bin/exctags exctags /usr/bin/ctags-exube
 
 Если не устанавливали проприетарные дополнения. Например для проигрывания `.mp3`
 ```shell
-sudo apt-get install xubuntu-restricted-extras
+sudo apt install xubuntu-restricted-extras
 ```
 
 
@@ -170,7 +256,8 @@ sudo apt-get install xubuntu-restricted-extras
 - See: http://www.webupd8.org/2012/01/install-oracle-java-jdk-7-in-ubuntu-via.html
 
 ```shell
-sudo add-apt-repository ppa:webupd8team/java && sudo apt-get update
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
 sudo apt-get install oracle-java8-installer oracle-java8-set-default
 ```
 
@@ -182,18 +269,6 @@ sudo apt-get install oracle-java8-installer oracle-java8-set-default
 
 ```shell
 sudo dpkg -i ~/Downloads/dropbox_2015.10.28_amd64.deb
-```
-
-
-
-### Node.js
-
-- See: https://github.com/nodesource/distributions#installation-instructions
-
-```shell
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-sudo apt-get install -y nodejs
-npm i -g bemstyla conventional-changelog npm vmd yo commitizen fixpack http-server mversion npm-upgrade create-react-app imagemin-cli
 ```
 
 
@@ -226,20 +301,8 @@ sudo vim /usr/share/applications/defaults.list
 
 - See: https://code.visualstudio.com/docs/setup/linux
 
-
-
-### LESS
-
 ```shell
-lessc styles.less styles.css
-```
-
-
-
-### Jade
-
-```shell
-jade -P untitled.jade
+sudo snap install --classic code
 ```
 
 
@@ -275,7 +338,7 @@ alias jade2html="jade @1; js-beautify --type "html" --config ~/.config/dotfiles/
 
 
 
-## Чтобы nano перестал ругаться на недостаток прав
+## Чтобы `nano` перестал ругаться на недостаток прав
 
 ```shell
 sudo chown $USER:$USER ~/.nano_history
@@ -295,7 +358,7 @@ export GIST_ACCESS_TOKEN=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 ## Wine
 
 ```shell
-sudo apt-get install cabextract
+sudo apt install wine cabextract
 wget http://www.kegel.com/wine/winetricks && chmod +x winetricks && sudo mv winetricks /usr/local/bin/
 ```
 
@@ -325,39 +388,12 @@ sudo update-alternatives --config x-www-browser
 
 
 
-## Fonts
-
-- See: http://sourcefoundry.org/hack/
-
-```shell
-mkdir -p ~/.fonts/truetype
-```
-
-```nohighlight
-~/.fonts/
-└── truetype
-    ├── Hack
-    │   ├── Hack-BoldItalic.ttf
-    │   ├── Hack-Bold.ttf
-    │   ├── Hack-Italic.ttf
-    │   └── Hack-Regular.ttf
-    └── InputMono
-        ├── InputMono-BoldItalic.ttf
-        ├── InputMono-Bold.ttf
-        ├── InputMono-Italic.ttf
-        └── InputMono-Regular.ttf
-```
-
-
-
 ## Neovim
 
 - See: https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu
 
 ```shell
-sudo add-apt-repository ppa:neovim-ppa/unstable
-sudo apt-get update
-sudo apt-get install neovim python-dev python-pip python3-dev python3-pip
+sudo apt install neovim python-dev python-pip python3-dev python3-pip
 ```
 
 ```shell
@@ -402,7 +438,7 @@ sudo apt-get install python3-pip
 ```
 
 
-## Записать демо терминала (записать гифку .gif)
+## Записать демо терминала (записать гифку `.gif`)
 
 - See: https://github.com/marionebl/svg-term-cli
 
@@ -450,31 +486,68 @@ sudo apt-get install network-manager-openvpn network-manager-openvpn-gnome
 
 
 
-## Rust
+## Langs
+
+### Ruby
+```shell
+sudo apt install ruby
+```
+
+
+### GO
+```shell
+sudo apt install golang-go
+```
+
+
+### Rust
 
 - See: https://www.rust-lang.org/en-US/install.html
 
-### Install
+#### Install
 
 ```shell
 curl https://sh.rustup.rs -sSf | sh
 ```
 
-### Version
+#### Version
 
 ```shell
 rustc --version
 ```
 
-### Upgrade
+#### Upgrade
 
 ```shell
 rustup update stable
 ```
 
-### Cargo
+#### Cargo
 
 - See: https://github.com/rust-lang/cargo
+
+
+### Node.js
+
+- See: https://github.com/nodesource/distributions#installation-instructions
+
+```shell
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt install -y nodejs
+npm i -g \
+    bemstyla \
+    commitizen \
+    conventional-changelog \
+    create-react-app \
+    fixpack \
+    http-server \
+    imagemin-cli \
+    mversion \
+    npm \
+    npm-upgrade \
+    vmd \
+    yo
+```
 
 
 
@@ -496,6 +569,20 @@ sudo apt-get install albert
 ```
 
 
+## Skype
+
+- See: https://snapcraft.io/skype
+
+```shell
+sudo snap install --classic skype
+```
+
+
+## JetBrains
+
+- See: https://www.jetbrains.com/toolbox-app/
+
+
 
 ## Write image to USB with `dd`
 
@@ -503,4 +590,14 @@ sudo apt-get install albert
 
 ```shell
 dd if=~/Downloads/xubuntu-19.04-desktop-amd64.iso of=/dev/sdb bs=1M && sync
+```
+
+
+## Thunar png thumbnails
+
+```shell
+sudo apt install tumbler tumbler-plugins-extra
+thunar -q
+mv ~/.config/Thunar ~/.config/Thunar.bak
+reboot
 ```
