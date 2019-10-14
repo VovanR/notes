@@ -578,6 +578,15 @@ sudo snap install --classic skype
 ```
 
 
+## Slack
+
+- See: https://snapcraft.io/slack
+
+```shell
+sudo snap install --classic slack
+```
+
+
 ## JetBrains
 
 - See: https://www.jetbrains.com/toolbox-app/
