@@ -372,7 +372,15 @@ export WINEPREFIX=$HOME/.mynewwine32prefix/
 
 Разархивировать `~/Downloads/winetricks.tar.gz` в `~/.cache/winetricks`
 ```shell
-winetricks gdiplus ie6 msxml3 vcrun2005sp1 vcrun2008 fontsmooth-rgb msxml6 vcrun2010 atmlib
+winetricks gdiplus
+winetricks ie6
+winetricks msxml3
+winetricks vcrun2005sp1
+winetricks vcrun2008
+winetricks fontsmooth-rgb
+winetricks msxml6
+winetricks vcrun2010
+winetricks atmlib
 cp ~/Downloads/*.dll ~/.mynewwine32prefix/drive_c/windows/system32/
 ```
 
