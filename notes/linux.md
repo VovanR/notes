@@ -283,10 +283,11 @@ sudo dpkg -i ~/Downloads/atom-amd64.deb
 ```
 
 - See: https://github.com/atom/atom/blob/master/docs/build-instructions/linux.md#typeerror-unable-to-watch-path
+- See: https://confluence.jetbrains.com/display/IDEADEV/Inotify+Watches+Limit
 
 ```shell
-sudo sysctl fs.inotify.max_user_watches=32768
-echo 32768 | sudo tee -a /proc/sys/fs/inotify/max_user_watches
+sudo sysctl fs.inotify.max_user_watches=524288
+echo 524288 | sudo tee -a /proc/sys/fs/inotify/max_user_watches
 ```
 
 Замена редактора по умолчанию
