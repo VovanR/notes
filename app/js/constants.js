@@ -52,7 +52,7 @@ export const NOTES = [
 	},
 	{
 		name: 'FreeBSD',
-		archive: false,
+		archive: true,
 		popular: false
 	},
 	{
