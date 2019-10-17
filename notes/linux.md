@@ -618,3 +618,32 @@ thunar -q
 mv ~/.config/Thunar ~/.config/Thunar.bak
 reboot
 ```
+
+
+
+## Crontab
+
+- See: https://crontab.guru/
+- See: https://unix.stackexchange.com/a/111189/16993
+- See: https://bbs.archlinux.org/viewtopic.php?id=223050
+
+```shell
+crontab -e
+```
+
+```cron
+# m h  dom mon dow   command
+DISPLAY=:0.0
+XAUTHORITY=/home/vovanr/.Xauthority
+
+0 13   *   *   *    /home/vovanr/.local/bin/pomodoro-alert.sh "Обед!"
+```
+
+```cron
+MAILTO="mail@gmail.com"
+PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
+
+22 2      *       *       *      /usr/bin/php ~/www/example.com/req/cron/parce_1c.php
+@daily ~/www/example.com/req/log/packlog ~/www/example.com/req/log/full.log archive/
+@reboot sudo /usr/bin/node /home/pi/Raspberry-Pi-Simple-Web-GPIO-GUI/app.js &
+```

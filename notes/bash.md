@@ -680,30 +680,6 @@ mysql -f -h DBSRV -u USERNAME --default-character-set=utf8 DBNAME < dump.sql
 
 
 
-## `cron`
-
-```shell
-crontab -e
-```
-
-```cron
-MAILTO="mail@gmail.com"
-PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
-22 2      *       *       *      /usr/bin/php ~/www/example.com/req/cron/parce_1c.php
-@daily ~/www/example.com/req/log/packlog ~/www/example.com/req/log/full.log archive/
-@reboot sudo /usr/bin/node /home/pi/Raspberry-Pi-Simple-Web-GPIO-GUI/app.js &
-```
-
-
-
-## Список установленных пакетов
-
-```shell
-dpkg --get-selections | grep -v deinstall
-```
-
-
-
 ## Свернуть программу в консоли
 
 `Ctrl + z`
