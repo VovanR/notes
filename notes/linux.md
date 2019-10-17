@@ -500,7 +500,7 @@ sudo apt-get install network-manager-openvpn network-manager-openvpn-gnome
 
 
 
-## Langs
+## Languages
 
 ### Ruby
 ```shell
@@ -664,12 +664,12 @@ sudo vim /etc/samba/smb.conf
    client max protocol = SMB3
 ```
 
-Thunar [работает с Samba](https://docs.xfce.org/xfce/thunar/unix-filesystem#remote_file_systems) через [gvfs](https://wiki.gnome.org/Projects/gvfs).  
-За [протокол smb](https://wiki.gnome.org/Projects/gvfs/backends) отвечает библиотека libsmbclient, [здесь](https://www.samba.org/samba/docs/current/man-html/libsmbclient.7.html), откуда она читает конфиг.
+Thunar [работает с Samba](https://docs.xfce.org/xfce/thunar/unix-filesystem#remote_file_systems) через [`gvfs`](https://wiki.gnome.org/Projects/gvfs).  
+За [протокол `smb`](https://wiki.gnome.org/Projects/gvfs/backends) отвечает библиотека `libsmbclient`, [здесь](https://www.samba.org/samba/docs/current/man-html/libsmbclient.7.html), откуда она читает конфиг.
 
 
 
-## Crontab
+## Cron
 
 - See: https://crontab.guru/
 - See: https://unix.stackexchange.com/a/111189/16993
