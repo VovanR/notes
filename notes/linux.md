@@ -2,6 +2,10 @@
 
 ----
 
+- See: [Альтернативы программ](https://alternativeto.net/software/alfred/?platform=linux)
+
+
+
 ## Блокировка экрана `Win + l` Xubuntu
 
 `Settings -> Keyboard -> application Shortcuts`
@@ -191,6 +195,7 @@ sudo apt install \
     xfce4-sensors-plugin \
     xfce4-timer-plugin
 ```
+
 
 ```shell
 sudo gem install tmuxinator
@@ -562,6 +567,7 @@ npm i -g \
 
 ## Albert
 
+- See: https://github.com/albertlauncher/albert
 - See: [Download](https://software.opensuse.org/download.html?project=home:manuelschneid3r&package=albert)
 
 Add key
