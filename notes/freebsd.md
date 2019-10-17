@@ -202,13 +202,13 @@ sudo pkg install neovim gmake p5-ack py36-pip xclip
 ## My video card
 
 - See: https://en.wikipedia.org/wiki/List_of_Intel_graphics_processing_units
+- See: https://wiki.freebsd.org/Graphics/Intel-GPU-Matrix
+
 
 - Graphics: `HD Graphics 4600`
 - Processor: `Core i7-4700HQ`
 - Code name: `Haswell`
 
-
-- See: https://wiki.freebsd.org/Graphics/Intel-GPU-Matrix
 
 For Haswell based systems, if the `drm-kmod` port does not work, it is suggested to install the `drm-legacy-kmod`.
 
