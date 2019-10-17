@@ -14,6 +14,12 @@
 
 
 
+## Install on Ubuntu
+
+- See: https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository
+
+
+
 ## Изучаем Docker, Джефф Хейл в переводе на Хабре
 
 - See: https://mobile.twitter.com/webstandards_ru/status/1098568101535322112
