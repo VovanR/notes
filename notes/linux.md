@@ -632,6 +632,14 @@ sudo dd if=/dev/zero of=/dev/sdb bs=1M
 
 
 
+## Список установленных пакетов. List of installed applications.
+
+```shell
+dpkg --get-selections | grep -v deinstall
+```
+
+
+
 ## Xubuntu Thunar Samba client protocol version
 
 - See: [How to configure Samba to use SMBv2 and disable SMBv1 on Linux or Unix](https://www.cyberciti.biz/faq/how-to-configure-samba-to-use-smbv2-and-disable-smbv1-on-linux-or-unix/)
