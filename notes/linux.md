@@ -564,23 +564,14 @@ npm i -g \
 ```
 
 
+## Ulauncher
 
-## Albert
-
-- See: https://github.com/albertlauncher/albert
-- See: [Download](https://software.opensuse.org/download.html?project=home:manuelschneid3r&package=albert)
-
-Add key
-```shell
-wget -nv https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_18.10/Release.key -O Release.key
-sudo apt-key add - < Release.key
-sudo apt-get update
-```
+- See: https://github.com/Ulauncher/Ulauncher/
 
 ```shell
-sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.10/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list"
-sudo apt-get update
-sudo apt-get install albert
+sudo add-apt-repository ppa:agornostal/ulauncher
+sudo apt update
+sudo apt install ulauncher units
 ```
 
 
