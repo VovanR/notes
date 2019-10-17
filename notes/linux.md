@@ -621,6 +621,38 @@ reboot
 
 
 
+## Xubuntu Thunar Samba client protocol version
+
+- See: [How to configure Samba to use SMBv2 and disable SMBv1 on Linux or Unix](https://www.cyberciti.biz/faq/how-to-configure-samba-to-use-smbv2-and-disable-smbv1-on-linux-or-unix/)
+- See: https://tutorials.ubuntu.com/tutorial/install-and-configure-samba#2
+- See: https://askubuntu.com/a/1053976/51899
+
+Генерируем конфиг
+```shell
+sudo apt install smbclient
+```
+
+Редактируем
+```shell
+sudo vim /etc/samba/smb.conf
+```
+
+```
+[global]
+
+## Browsing/Identification ###
+
+# Change this to the workgroup/NT-domain name your Samba server will part of
+   workgroup = WORKGROUP
+   client min protocol = SMB2
+   client max protocol = SMB3
+```
+
+Thunar [работает с Samba](https://docs.xfce.org/xfce/thunar/unix-filesystem#remote_file_systems) через [gvfs](https://wiki.gnome.org/Projects/gvfs).  
+За [протокол smb](https://wiki.gnome.org/Projects/gvfs/backends) отвечает библиотека libsmbclient, [здесь](https://www.samba.org/samba/docs/current/man-html/libsmbclient.7.html), откуда она читает конфиг.
+
+
+
 ## Crontab
 
 - See: https://crontab.guru/
