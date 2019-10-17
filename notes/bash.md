@@ -614,6 +614,14 @@ scp -r USER@HOST:~/www/data ./
 
 
 
+## Copy to clipboard
+
+```bash
+cat ~/.ssh/id_rsa.pub | xclip -sel clip
+```
+
+
+
 ## `wget`
 
 ### Скачать список файлов
