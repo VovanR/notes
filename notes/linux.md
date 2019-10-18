@@ -291,9 +291,15 @@ sudo dpkg -i ~/Downloads/atom-amd64.deb
 - See: https://confluence.jetbrains.com/display/IDEADEV/Inotify+Watches+Limit
 
 ```shell
-sudo sysctl fs.inotify.max_user_watches=524288
-echo 524288 | sudo tee -a /proc/sys/fs/inotify/max_user_watches
+sudo vim /etc/sysctl.conf
 ```
+```
+fs.inotify.max_user_watches = 524288
+```
+```shell
+sudo sysctl -p --system
+```
+
 
 Замена редактора по умолчанию
 ```shell
