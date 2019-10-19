@@ -195,6 +195,9 @@ sudo apt install \
     xfce4-sensors-plugin \
     xfce4-timer-plugin
 ```
+```shell
+sudo chmod u+s /usr/sbin/hddtemp
+```
 
 
 ```shell
