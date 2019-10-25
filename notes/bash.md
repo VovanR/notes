@@ -204,6 +204,13 @@ find ./ -type f -name "*.js" -exec perl -pi -e "s/ {4,4}'AjaxLinks',?\n//g" '{}'
 find ./ -type f -name "*.js" -exec perl -pi -e 's/^    \$\, _\, Backbone/    \$,\n    _,\n    Backbone/g' '{}' \;
 ```
 
+### Исправить права файлов и директорий
+
+```shell
+find . -type f -not -path "*node_modules*" -exec chmod 664 {} \;
+find . -type d -not -path "*node_modules*" -exec chmod 775 {} \;
+```
+
 
 ### cut
 
