@@ -63,3 +63,17 @@ server {
     }
 }
 ```
+
+
+
+## Location regular expression
+
+```nginx
+http {
+  server {
+    location ~ (.*hot-update.js)$ {
+      proxy_pass http://172.17.0.1:3000/$1;
+    }
+  }
+}
+```
