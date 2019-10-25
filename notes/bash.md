@@ -1381,3 +1381,44 @@ curl -K config.txt 'https://example.com/'
 -H "authorization: Bearer -JSDFHLKSDHF"
 --compressed
 ```
+
+
+
+## Аргументы
+
+- See: [Positional Parameters](http://linuxcommand.org/lc3_wss0120.php)
+
+```bash
+#!/usr/bin/env bash
+
+usage() {
+    echo "Usage: $0 from <string> to <string>" 1>&2;
+    exit 1;
+}
+
+from="now"
+to="now"
+
+echo $@
+while [ "$1" != "" ]; do
+    echo $1
+    case $1 in
+        -f | --from | from )
+            shift
+            from=$1
+            ;;
+        -t | --to | to )
+            shift
+            to=$1
+            ;;
+        * )
+            usage
+            ;;
+    esac
+    shift
+done
+
+xdg-open "https://vovanr.com/from-date-to-date/?from=${from}&to=${to}"
+
+exit 0
+```
