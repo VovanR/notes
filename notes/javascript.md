@@ -1775,3 +1775,44 @@ function runAnimation() {
     return () => clearInterval(interval);
 }
 ```
+
+
+
+## `.valueOf`, `.toString`
+
+- See: [Object.prototype.valueOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf)
+- See: [Преобразование типов в JavaScript](https://medium.com/@sergeybulavyk/%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%82%D0%B8%D0%BF%D0%BE%D0%B2-%D0%B2-javascript-35a15ddfc333)
+
+```js
+class Minutes {
+    constructor(value) {
+        this._value = value * 60 * 1000
+    }
+
+    valueOf() {
+        return this._value
+    }
+
+    toString() {
+        return String(this._value)
+    }
+}
+```
+
+```js
+class Seconds {
+    constructor(value) {
+        this._value = value
+    }
+
+    [Symbol.Primitive](hint) {
+        switch (hint) {
+            case 'string':
+                return `${this._value} sec`
+            case 'number':
+            default:
+                return this._value * 1000
+        }
+    }
+}
+```
