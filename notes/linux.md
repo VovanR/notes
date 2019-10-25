@@ -607,6 +607,29 @@ sudo snap install --classic slack
 - See: https://www.jetbrains.com/toolbox-app/
 
 
+## Peek
+
+```shell
+sudo add-apt-repository ppa:peek-developers/stable
+sudo apt install peek
+```
+
+
+## Alacritty
+
+```shell
+sudo add-apt-repository ppa:mmstick76/alacritty
+sudo apt install alacritty
+```
+
+
+## Docker
+
+```shell
+sudo apt install docker-ce docker-ce-cli containerd.io
+```
+
+
 
 ## Write image to USB with `dd`
 
