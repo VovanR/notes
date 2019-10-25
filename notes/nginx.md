@@ -77,3 +77,26 @@ http {
   }
 }
 ```
+
+
+## Proxy `ws:` Web Socket
+
+- See: http://nginx.org/en/docs/http/websocket.html
+
+```nginx
+http {
+  map $http_upgrade $connection_upgrade {
+    default upgrade;
+    ''      close;
+  }
+
+  server {
+    location /sockjs-node/ {
+      proxy_pass http://172.17.0.1:3000/sockjs-node/;
+      proxy_http_version 1.1;
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection $connection_upgrade;
+    }
+  }
+}
+```
