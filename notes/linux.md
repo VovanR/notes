@@ -639,6 +639,11 @@ sudo apt install docker-ce docker-ce-cli containerd.io
 dd if=~/Downloads/xubuntu-19.04-desktop-amd64.iso of=/dev/sdb bs=1M && sync
 ```
 
+To see where is USB stick
+```shell
+lsblk
+```
+
 
 ## Thunar png thumbnails
 
