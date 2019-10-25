@@ -774,6 +774,11 @@ git rebase -i <hash>~1
 
 Change `pick` to `reword`. Save and close editor. Will be opened new editor with commit message. Change it and save.
 
+Git rebase first commit
+```shell
+git rebase -i --root
+```
+
 
 
 ## Удалить коммит через интерактивный ребейз
