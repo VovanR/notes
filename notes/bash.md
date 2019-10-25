@@ -1159,11 +1159,11 @@ set -o emacs
 - Don't parse the output of `ls`. See [here](http://mywiki.wooledge.org/ParsingLs) for details and alternatives
 - Don't use `cat` to provide a file on `stdin` to a process that accepts file arguments itself
 - Don't use `echo` with options, escapes, or variables (use `printf` for those cases)
-- Don't use a `/bin/sh` [shebang]http://en.wikipedia.org/wiki/Shebang_(Unix) unless you plan to test and run your
+- Don't use a `/bin/sh` [shebang](http://en.wikipedia.org/wiki/Shebang_(Unix)) unless you plan to test and run your
   script on at least: Actual `SH`, Dash in POSIX-compatible mode (as it
   will be run on Debian), and Bash in POSIX-compatible mode (as it will be run on OS X)
 - Don't use any non-POSIX [features](http://mywiki.wooledge.org/Bashism) when using a `/bin/sh`
-  [shebang]http://en.wikipedia.org/wiki/Shebang_(Unix)
+  [shebang](http://en.wikipedia.org/wiki/Shebang_(Unix))
 - If calling `cd`, have code to handle a failure to change directories
 - If calling `rm` with a variable, ensure the variable is not empty
 - Prefer `"$@"` over `"$\*"` unless you know exactly what you're doing
