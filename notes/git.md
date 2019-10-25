@@ -235,6 +235,14 @@ git commit --amend --no-edit
 
 
 
+## Изменить данные автора коммита. git edit commit author email
+
+```shell
+git commit --amend --author="Foo Bar <mail@example.com>"
+```
+
+
+
 ## Перемещение файлов
 
 ```shell
