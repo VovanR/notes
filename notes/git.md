@@ -599,6 +599,18 @@ git diff --cached <file_path>
 
 
 
+## Показать изменения файлов, игнорируя конец строки
+
+- See: https://stackoverflow.com/questions/1889559/git-diff-to-ignore-m<Paste>
+
+```shell
+git diff --ignore-space-at-eol
+git diff --ignore-space-change
+git diff --ignore-all-space
+```
+
+
+
 ## Восстановить файл, удаленный в каком-то коммите. Откатить изменения файла, сделанные в каком-то коммите
 
 ```shell
