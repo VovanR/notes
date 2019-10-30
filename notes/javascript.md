@@ -410,9 +410,11 @@ for (const [key, value] of Object.entries(object)) {
 
 ### Округление числа
 
+- See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round
+
 ```javascript
 /**
- * Округление числа
+ * Equals `Math.round();`
  *
  * @param {Number} num Число с плавающей точкой
  * @return {Number} Целое число
@@ -425,6 +427,8 @@ var mathRound = function (num) {
 
 
 ### Оставить целое
+
+- See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor
 
 ```js
 Math.floor(100.999)
