@@ -1136,3 +1136,23 @@ Foo Bar <foo.bar@baz.com>
 ```
 18 Foo Bar <foo.bar@gmail.com>
 ```
+
+
+
+## `mgitstatus`
+
+- See: https://github.com/fboender/multi-git-status
+
+Показать состояние всех репозиториев в директории
+
+
+
+## `git standup`
+
+- See: https://github.com/kamranahmedse/git-standup
+
+Показать список коммитов за последние несколько дней
+
+```shell
+git standup -d 5
+```
