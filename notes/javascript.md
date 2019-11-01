@@ -223,6 +223,28 @@ console.log(foo); //=> ['d', 'e']
 
 
 
+### First N items
+
+```js
+var foo = [1, 2, 3, 4, 5];
+
+// First 3 items
+foo.slice(0, 3); //=> [1, 2, 3]
+foo //=> [1, 2, 3, 4, 5]
+```
+
+### Last N items
+
+```js
+var foo = [1, 2, 3, 4, 5];
+
+// Last 3 items
+foo.slice(-3); //=> [3, 4, 5]
+foo //=> [1, 2, 3, 4, 5]
+```
+
+
+
 ### `concat`
 
 ```javascript
