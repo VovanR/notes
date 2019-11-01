@@ -562,12 +562,14 @@ npm i -g \
     commitizen \
     conventional-changelog \
     create-react-app \
+    diff-so-fancy \
     fixpack \
     http-server \
     imagemin-cli \
     mversion \
     npm \
     npm-upgrade \
+    svgo \
     vmd \
     yo
 ```
