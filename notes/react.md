@@ -714,3 +714,77 @@ handleKeyDown = (e) => {
 - See: [Flux Standard Action utilities for Redux](https://github.com/redux-utilities/redux-actions)
 - See: [Ducks: Redux Reducer Bundles](https://github.com/erikras/ducks-modular-redux)
 - See: [Redux in 1 min](https://poet.codes/e/KMXQEO2gquN)
+
+
+
+## CSS custom properties
+
+- See: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+
+```jsx
+import React, {Component, createRef} from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
+
+const DEFAULT_TEXT_SIZE = 1
+
+export class TextContainer extends Component {
+  constructor(props, context) {
+    super(props, context)
+
+    this.containerRef = createRef()
+  }
+
+  componentDidMount() {
+    this.updateTextSize()
+  }
+
+  componentDidUpdate(prevProps, prevState, prevContext) {
+    const {
+      textSize,
+    } = this.props
+
+    if (textSize !== prevProps.textSize) {
+      this.updateTextSize()
+    }
+  }
+
+  updateTextSize() {
+    this.containerRef.current.style.setProperty('--text-size', this.props.textSize)
+  }
+
+  render() {
+    const {
+      className,
+    } = this.props
+
+    return (
+      <div
+        ref={this.containerRef}
+        className={classNames('text-container', className)}
+      >
+        Foo bar baz
+      </div>
+    )
+  }
+}
+
+TextContainer.propTypes = {
+  className: PropTypes.string,
+  textSize: PropTypes.number,
+}
+
+TextContainer.defaultProps = {
+  textSize: DEFAULT_TEXT_SIZE,
+}
+
+export default TextContainer
+```
+
+```css
+.text-container {
+  --text-size: 1;
+
+  font-size: calc(1em * var(--text-size));
+}
+```
