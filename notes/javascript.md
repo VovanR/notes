@@ -1842,3 +1842,20 @@ class Seconds {
     }
 }
 ```
+
+
+
+## CSS custom properties
+
+- See: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+
+```js
+// get variable from inline style
+element.style.getPropertyValue("--my-var");
+
+// get variable from wherever
+getComputedStyle(element).getPropertyValue("--my-var");
+
+// set variable on inline style
+element.style.setProperty("--my-var", jsVar + 4);
+```
