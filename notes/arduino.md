@@ -7,6 +7,12 @@
 - See: [Уроки Arduino #6 - отработка нажатия кнопки при помощи флажков](https://www.youtube.com/watch?v=sLRjMJv1SSs)
 
 
+## Install on Ubuntu
+
+- See: https://www.arduino.cc/en/Main/Software
+- See: https://www.arduino.cc/en/guide/linux
+
+
 ## `Serial.println()`
 
 - See: https://www.arduino.cc/reference/en/language/functions/communication/serial/println/
