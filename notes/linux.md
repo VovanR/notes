@@ -101,9 +101,19 @@ exit
 
 ## User Groups
 
+List of groups user
 ```shell
 groups
-sudo gpasswd --add username group
+```
+
+Add user to group
+```shell
+sudo gpasswd --add <username> <group_name>
+```
+
+or
+```shell
+sudo usermod -a -G <group_name> <username>
 ```
 
 
