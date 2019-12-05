@@ -205,6 +205,22 @@ class App extends React.Component {
 
 		const filteredNotes = this.getFilteredNotes()
 
+		let note
+		if (active.data) {
+			note = e(Note, {
+				htmlData: active.data,
+				url: active.sourceURL
+			})
+		} else if (readme.data) {
+			note = e(Note, {
+				htmlData: readme.data,
+				url: REPOSITORY_URL,
+				urlName: 'See on GitHub'
+			})
+		} else {
+			note = e(EmptyNote)
+		}
+
 		return e(Grid, {},
 			e(Row, {},
 				e(Col, {md: 3},
@@ -226,18 +242,7 @@ class App extends React.Component {
 				),
 
 				e(Col, {md: 9},
-					e(Panel, {},
-						active.data ?
-							e(Note, {
-								htmlData: active.data,
-								url: active.sourceURL
-							}) : readme.data ?
-								e(Note, {
-									htmlData: readme.data,
-									url: REPOSITORY_URL,
-									urlName: 'See on GitHub'
-								}) : e(EmptyNote)
-					)
+					e(Panel, {}, note)
 				)
 			)
 		)

@@ -1,4 +1,4 @@
-/* global React window */
+/* global React */
 
 import {
 	SITE_SOURCE_URL,
