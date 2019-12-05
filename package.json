@@ -8,11 +8,11 @@
     "test:css": "stylelint app/css/*.css"
   },
   "devDependencies": {
-    "http-server": "^0.11.1",
-    "stylelint": "^10.1.0",
-    "stylelint-config-standard": "^18.3.0",
-    "xo": "^0.24.0",
-    "yaspeller": "^6.0.0"
+    "http-server": "^0.12.0",
+    "stylelint": "^12.0.0",
+    "stylelint-config-standard": "^19.0.0",
+    "xo": "^0.25.3",
+    "yaspeller": "^6.0.2"
   },
   "xo": {
     "semicolon": false,
