@@ -143,22 +143,6 @@ sudo rmmod foo
 
 
 
-## Переслать файл по сетке
-
-Отправитель
-
-```shell
-nc vovanr.local 2214 | tar xz
-```
-
-Получатель
-
-```shell
-tar cz README.md | nc -l -p 2214
-```
-
-
-
 ## Обращение к компьютеру по сети
 
 ```shell

@@ -744,3 +744,19 @@ PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
 @daily ~/www/example.com/req/log/packlog ~/www/example.com/req/log/full.log archive/
 @reboot sudo /usr/bin/node /home/pi/Raspberry-Pi-Simple-Web-GPIO-GUI/app.js &
 ```
+
+
+
+## Переслать файл по сетке
+
+- See: https://tutorials.technology/tutorials/How-to-transfer-files-over-the-network-using-Netcat.html
+
+Отправитель
+```shell
+nc 192.168.10.111 9999 < Demo.mp4
+```
+
+Получатель
+```shell
+nc -l -p 9999 > File.mp4
+```
