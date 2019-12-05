@@ -791,6 +791,38 @@ PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
 
 
 
+## WiFi
+
+- See: https://docs.ubuntu.com/core/en/stacks/network/network-manager/docs/configure-wifi-connections
+
+```shell
+nmcli device
+```
+
+Outputs
+```
+DEVICE       TYPE      STATE         CONNECTION
+wlan0        wifi      disconnected  --
+lo           loopback  unmanaged     --
+```
+
+Enable
+```shell
+nmcli radio wifi on
+```
+
+Show available networks
+```shell
+nmcli device wifi list
+```
+
+Connect
+```shell
+nmcli d wifi connect <wifi_ssid> password <password>
+```
+
+
+
 ## Переслать файл по сетке
 
 - See: https://tutorials.technology/tutorials/How-to-transfer-files-over-the-network-using-Netcat.html
