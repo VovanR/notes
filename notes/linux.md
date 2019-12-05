@@ -539,6 +539,30 @@ ssh -t user@host "top"
 
 
 
+## Подключение по SSH без ввода пароля. SSH login without password
+
+- See: http://www.linuxproblem.org/art_9.html
+
+Задача: Подключаться по SSH с хоста _A_, пользователя _a_ к хосту _B_ с пользователем _b_.  
+Решение: Добавить публичный ключ пользователя _a_ в список авторизованных ключей пользователя _b_.
+
+Генерируем ключ пользователя _a_, если его ещё нет
+```shell
+a@A~$ ssh-keygen -t rsa
+```
+
+Создаем у пользователя _b_ директорию `~/.ssh`, если её ещё нет
+```shell
+a@A~$ ssh b@B mkdir .ssh
+```
+
+Добавляем публичный ключ в список авторизованных
+```shell
+a@A:~$ cat ~/.ssh/id_rsa.pub | ssh b@B "cat >> .ssh/authorized_keys"
+```
+
+
+
 ## Languages
 
 ### Ruby
