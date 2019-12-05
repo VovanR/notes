@@ -519,6 +519,26 @@ sudo apt-get install network-manager-openvpn network-manager-openvpn-gnome
 
 
 
+## Выполнение комманд по SSH
+
+-See: https://malcontentcomics.com/systemsboy/2006/07/send-remote-commands-via-ssh.html
+
+```shell
+ssh user@host "ls -al"
+```
+
+```shell
+ssh user@orangepilite "sleep 1 && cat /sys/class/thermal/thermal_zone0/temp | sed 's/...$/ °C/'"
+//=> 67 °C
+```
+
+Для интерактивных команд
+```shell
+ssh -t user@host "top"
+```
+
+
+
 ## Languages
 
 ### Ruby
