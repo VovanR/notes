@@ -842,6 +842,17 @@ done
 ```
 
 
+```bash
+if [  ]; then
+  echo "if"
+elif [  ]; then
+  echo "elif"
+else
+  echo "else"
+fi
+```
+
+
 #### Регистронезависимое сравнение (Case insensitive comparison)
 
 - `${var,,}` — Приводит строку в нижний регистр
@@ -956,6 +967,7 @@ exit 0
 - See: https://stackoverflow.com/questions/2990414/echo-that-outputs-to-stderr
 - See: https://www.tldp.org/LDP/abs/html/io-redirection.html
 - See: [`STDOUT` vs `STDERR`](https://google.github.io/styleguide/shell.xml?showone=STDOUT_vs_STDERR#STDOUT_vs_STDERR)
+
 
 - `0` — `stdin`
 - `1` — `stdout`
