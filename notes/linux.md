@@ -521,7 +521,7 @@ sudo apt-get install network-manager-openvpn network-manager-openvpn-gnome
 
 
 
-## Выполнение комманд по SSH
+## Выполнение команд по SSH
 
 -See: https://malcontentcomics.com/systemsboy/2006/07/send-remote-commands-via-ssh.html
 
