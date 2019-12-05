@@ -1859,3 +1859,10 @@ getComputedStyle(element).getPropertyValue("--my-var");
 // set variable on inline style
 element.style.setProperty("--my-var", jsVar + 4);
 ```
+
+
+
+### Canvas pixel ratio
+
+- See: https://github.com/jondavidjohn/hidpi-canvas-polyfill/blob/master/src/CanvasRenderingContext2D.js
+- See: https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio
