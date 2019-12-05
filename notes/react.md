@@ -788,3 +788,70 @@ export default TextContainer
   font-size: calc(1em * var(--text-size));
 }
 ```
+
+
+
+## Use forwarded ref
+
+```jsx
+import React, {forwardRef, useEffect, useRef, useLayoutEffect} from 'react'
+
+function getPixelRatio() {
+  return window.devicePixelRatio || 1
+}
+
+const Canvas = forwardRef((props, ref) => {
+  const canvasElement = useRef(null)
+
+  useLayoutEffect(() => {
+    ref.current = canvasElement.current
+  }, [canvasElement])
+
+  useEffect(() => {
+    const pixelRatio = getPixelRatio()
+
+    if (pixelRatio !== 1) {
+      const canvas = canvasElement.current
+      const ctx = canvas.getContext('2d')
+      ctx.scale(pixelRatio, pixelRatio)
+    }
+  }, [])
+
+  const {
+    width,
+    height,
+  } = props
+
+  return (
+    <canvas
+      ref={canvasElement}
+      width={width}
+      height={height}
+    />
+  )
+})
+```
+
+
+- See: https://itnext.io/reusing-the-ref-from-forwardref-with-react-hooks-4ce9df693dd
+- See: https://gist.github.com/nikolay-borzov/8d352ce5468548a211e6c7f731b64751
+
+```js
+import {useEffect, useRef} from 'react'
+
+function useCombinedRefs(...refs) {
+  const targetRef = useRef()
+
+  useEffect(() => {
+    refs.forEach(ref => {
+      if (typeof ref === 'function') {
+        ref(targetRef.current)
+      } else {
+        ref.current = targetRef.current
+      }
+    })
+  }, [refs])
+
+  return targetRef
+}
+```
