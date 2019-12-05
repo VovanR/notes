@@ -201,6 +201,8 @@ Xfce panel plugins
 ```shell
 sudo apt install \
     indicator-power \
+    xfce4-fsguard-plugin \
+    xfce4-genmon-plugin \
     xfce4-mount-plugin \
     xfce4-sensors-plugin \
     xfce4-timer-plugin
