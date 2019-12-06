@@ -171,3 +171,13 @@ node_js:
 ```shell
 npm install bootstrap@3
 ```
+
+
+
+## Что делать, если имя пакета уже занято?
+
+- See: https://docs.npmjs.com/misc/scope
+
+Для этого используют пространства имён [npm-scope](https://docs.npmjs.com/misc/scope).  
+Например у тебя есть пакет "utils", но это имя уже занято.
+Принято добавить пространство имени организации или пользователя, например "@vovanr/utils".
