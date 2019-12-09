@@ -992,6 +992,15 @@ exit 0
 
 
 
+### Hide script error message
+
+Redirect `stderr` to `/dev/null`
+```shell
+ssh user@host -q -p test 2> /dev/null
+```
+
+
+
 ### Для отладки
 
 ```bash
