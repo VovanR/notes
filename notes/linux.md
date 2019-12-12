@@ -160,6 +160,14 @@ sudo localedef -c -i ru_RU -f CP1251 ru_RU.CP1251
 ```
 
 
+## Настройка часового пояса. Time zone
+
+```shell
+sudo dpkg-reconfigure tzdata
+```
+"Europe" → "Moscow"
+
+
 
 ## Устанавливаем проги
 
