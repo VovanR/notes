@@ -461,6 +461,21 @@ Math.floor(100.999)
 ```
 
 
+## Список методов экземпляра класса. Get class instance methods
+
+```js
+class A {
+  a() {}
+  b() {}
+}
+
+const a = new A()
+
+Object.getOwnPropertyNames(a.constructor.prototype).filter(i => i !== 'constructor')
+//=> ["a", "b"]
+```
+
+
 
 ## Выделить текст инпута при фокусе
 
