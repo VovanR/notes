@@ -229,6 +229,7 @@ sudo gem install tmuxinator
 sudo apt install \
     gcolor2 \
     gimp \
+    gpick \
     hugin \
     imagemagick \
     inkscape \
