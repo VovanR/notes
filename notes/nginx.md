@@ -100,3 +100,34 @@ http {
   }
 }
 ```
+
+
+
+## Upstream name alias
+
+```nginx
+http {
+  upstream device {
+    # Admin's device
+    server 172.17.0.1:8888;
+    # My device
+    # server 192.168.10.5;
+  }
+
+  server {
+    listen 7272;
+    client_max_body_size 60M;
+
+    gzip on;
+    gzip_types text/plain application/xml;
+    gzip_proxied any;
+
+    location /admin/ {
+      proxy_pass http://device/admin/;
+    }
+    location /api/ {
+      proxy_pass http://device/api/;
+    }
+  }
+}
+```
