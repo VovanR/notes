@@ -229,3 +229,33 @@ Error response from daemon: conflict: unable to delete 0c7915522eaa (must be for
 ```shell
 docker rm 8133eb3a00d0
 ```
+
+
+
+## IP
+
+- See: https://docs.docker.com/network/network-tutorial-standalone/
+
+```shell
+docker network inspect bridge
+```
+
+```
+[
+    {
+        "Name": "bridge",
+        "Id": "17e324f459648a9baaea32b248d3884da102dde19396c25b30ec800068ce6b10",
+        "Created": "2017-06-22T20:27:43.826654485Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "172.17.0.0/16",
+                    "Gateway": "172.17.0.1"
+                }
+            ]
+```
