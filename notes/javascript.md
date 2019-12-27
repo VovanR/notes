@@ -1446,6 +1446,15 @@ for (let i = 0; i < nodes.length; i += 1) {
 
 
 
+## Selector
+
+```js
+const $ = (s, o = document) => o.querySelector(s);
+const $$ = (s, o = document) => o.querySelectorAll(s);
+```
+
+
+
 ## Синтезатор речи
 
 - See: https://codepen.io/nalgeon/pen/LBJNXG
