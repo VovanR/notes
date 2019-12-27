@@ -574,6 +574,28 @@ a@A:~$ cat ~/.ssh/id_rsa.pub | ssh b@B "cat >> .ssh/authorized_keys"
 
 
 
+## SSH туннелирование
+
+- See: [SSH туннелирование](https://ru.wikibooks.org/wiki/SSH_%D1%82%D1%83%D0%BD%D0%BD%D0%B5%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)
+- See: https://unix.stackexchange.com/questions/46235/how-does-reverse-ssh-tunneling-work
+
+### SOCKS проксирование
+```shell
+ssh -D localhost:12345 ваше_имя@адрес_удаленного_компьютера
+```
+
+### Переброс локального порта на удаленную машину
+```shell
+ssh -L [локальный_адрес:]локальный_порт:удаленный_адрес:удаленный_порт [пользователь@]сервер
+```
+
+### Переброс удаленного порта на локальную машину
+```shell
+ssh -R [удаленный_адрес:]удаленный_порт:локальный_адрес:локальный_порт [пользователь@]сервер
+```
+
+
+
 ## Languages
 
 ### Ruby
