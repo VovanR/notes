@@ -51,6 +51,13 @@
 
 
 
+## Test libs
+
+- See: https://github.com/thoov/mock-socket
+- See: https://github.com/wheresrhys/fetch-mock
+
+
+
 ## CORS
 
 - See: [CORS](https://frontendian.co/cors)
