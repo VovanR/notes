@@ -3,6 +3,10 @@
 ----
 
 - See: https://bespoyasov.ru/ttt-tdd
+- See: [Пирамида тестов](https://bureau.ru/soviet/20191024/)
+- See: [Что и как тестировать у модуля](https://bureau.ru/soviet/20191114/)
+- See: [Как тестировать модуль, использующий другой модуль](https://bureau.ru/soviet/20200123/)
+- See: [Гигиена](https://bureau.ru/soviet/20200213/)
 
 ## Prevent default
 
