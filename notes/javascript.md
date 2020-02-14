@@ -1835,6 +1835,13 @@ function runAnimation() {
 
 
 
+### WebSocket
+
+- See: http://websocket.org/echo.html
+- See: https://socket.io/demos/chat/
+
+
+
 ## `.valueOf`, `.toString`
 
 - See: [Object.prototype.valueOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf)
