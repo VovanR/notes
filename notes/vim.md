@@ -241,9 +241,9 @@
 `gg` `[[` — Самая первая строка
 
 
-`gd` — will take you to the local declaration
+`gd` — will take you to the local declaration (definition)
 
-`gD` — will take you to the global declaration
+`gD` — will take you to the global declaration (definition)
 
 
 `zz` — Центрирование строки с курсором
