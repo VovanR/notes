@@ -11,6 +11,14 @@
 
 
 
+## CMS
+
+- See: https://twitter.com/fliptheweb/status/1230401645269389317
+- See: [Strapi](https://github.com/strapi/strapi)
+- See: [KeystoneJS](https://www.keystonejs.com/)
+- See: [TypeORM](https://github.com/typeorm/typeorm)
+
+
 ## UI
 
 - See: [Ring UI](https://github.com/JetBrains/ring-ui)
