@@ -637,6 +637,16 @@ git log -L 1,1:<file_path>
 
 
 
+# Show me diffs all commits that changed a code fragment
+
+- See: https://twitter.com/listochkin/status/1255049626174001152
+
+```shell
+git log -U0 -S “my code fragment" path/to/file
+```
+
+
+
 ## Посмотреть файл из другой ветки
 
 ```shell
