@@ -1,4 +1,4 @@
-/* global React, ReactDOM, ReactBootstrap, marked, hljs */
+/* global React, ReactDOM, marked, hljs */
 
 import {
 	NOTES,
@@ -14,12 +14,6 @@ import Menu from './menu.js'
 import Note from './note.js'
 import EmptyNote from './empty-note.js'
 
-const {
-	Grid,
-	Row,
-	Col,
-	Panel
-} = ReactBootstrap
 const markedRenderer = new marked.Renderer()
 
 // Note `h2` headers collection
@@ -221,10 +215,10 @@ class App extends React.Component {
 			note = e(EmptyNote)
 		}
 
-		return e(Grid, {},
-			e(Row, {},
-				e(Col, {md: 3},
-					e(Panel, {className: 'nav-menu-panel'},
+		return e('div', {className: 'container'},
+			e('div', {className: 'row'},
+				e('div', {className: 'col-md-3'},
+					e('div', {className: 'nav-menu-panel'},
 						e(NotesFilter, {
 							onSubmit: this.handleFilterSubmit,
 							onChange: this.handleFilterNotes
@@ -241,8 +235,8 @@ class App extends React.Component {
 					)
 				),
 
-				e(Col, {md: 9},
-					e(Panel, {}, note)
+				e('div', {className: 'col-md-9'},
+					e('div', {}, note)
 				)
 			)
 		)
