@@ -2,6 +2,10 @@
 
 ----
 
+- See: [Как сделать классный Python-пакет](https://antonz.ru/packaging/)
+
+
+
 ## Как узнать что возвращает ajax-запрос
 
 `mysite/apps/user/views.py`
