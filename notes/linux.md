@@ -873,3 +873,11 @@ nc 192.168.10.111 9999 < Demo.mp4
 ```shell
 nc -l -p 9999 > File.mp4
 ```
+
+
+
+## VPN
+
+```shell
+sudo apt install openvpn network-manager-openvpn network-manager-openvpn-gnome
+```
