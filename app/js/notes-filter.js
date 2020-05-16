@@ -1,6 +1,6 @@
 /* global React */
 
-import {e} from './utils.js'
+import {createElement} from './utils.js'
 
 class NotesFilter extends React.Component {
 	constructor(props) {
@@ -20,11 +20,11 @@ class NotesFilter extends React.Component {
 	}
 
 	componentDidMount() {
-		document.addEventListener('keydown', e => {
-			if (e.target !== this.inputRef && e.code === 'Slash') {
+		document.addEventListener('keydown', event => {
+			if (event.target !== this.inputRef && event.code === 'Slash') {
 				this.resetValue()
 				this.focusInput()
-				e.preventDefault()
+				event.preventDefault()
 			}
 		})
 	}
@@ -37,12 +37,12 @@ class NotesFilter extends React.Component {
 		this.inputRef.focus()
 	}
 
-	handleChange(e) {
-		this.setValue(e.target.value)
+	handleChange(event) {
+		this.setValue(event.target.value)
 	}
 
-	handleKeyDown(e) {
-		switch (e.key) {
+	handleKeyDown(event) {
+		switch (event.key) {
 			case 'Enter':
 				this.props.onSubmit()
 				break
@@ -77,9 +77,9 @@ class NotesFilter extends React.Component {
 			value
 		} = this.state
 
-		return e('div', {className: 'notes-filter'},
-			e('div', {className: 'notes-filter__container'},
-				e('input', {
+		return createElement('div', {className: 'notes-filter'},
+			createElement('div', {className: 'notes-filter__container'},
+				createElement('input', {
 					ref: this.setInputRef,
 					type: 'text',
 					className: 'form-control notes-filter__input',
@@ -92,14 +92,14 @@ class NotesFilter extends React.Component {
 					cpellcheck: 'false',
 					autoFocus: true
 				}),
-				e('button', {
+				createElement('button', {
 					className: 'btn notes-filter__clear',
 					type: 'button',
 					title: 'Clear filter',
 					tabIndex: -1,
 					onClick: this.handleClickClear
 				}, '×'),
-				e('span', {
+				createElement('span', {
 					className: 'notes-filter__focus-help',
 					title: 'Press `/` key to focus on filter',
 					onClick: this.handleClickHelp

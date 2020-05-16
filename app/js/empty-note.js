@@ -1,15 +1,15 @@
 /* global React */
 
-import {e} from './utils.js'
+import {createElement} from './utils.js'
 import Note from './note.js'
 import {REPOSITORY_URL} from './constants.js'
 import Progress from './progress.js'
 
-const EmptyNote = () => e(Note, {
-	data: e(React.Fragment, {},
-		e('h1', {}, 'Notes'),
-		e('hr'),
-		e(Progress)
+const EmptyNote = () => createElement(Note, {
+	data: createElement(React.Fragment, {},
+		createElement('h1', {}, 'Notes'),
+		createElement('hr'),
+		createElement(Progress)
 	),
 	url: REPOSITORY_URL,
 	urlName: 'See on GitHub'

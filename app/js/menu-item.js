@@ -1,7 +1,7 @@
 /* global React */
 
 import {
-	e,
+	createElement,
 	classNames
 } from './utils.js'
 import SubMenu from './sub-menu.js'
@@ -26,8 +26,8 @@ class MenuItem extends React.Component {
 		}
 	}
 
-	handleSelect(e) {
-		e.preventDefault()
+	handleSelect(event) {
+		event.preventDefault()
 
 		const {
 			active,
@@ -41,8 +41,8 @@ class MenuItem extends React.Component {
 		}
 
 		if (active && note.h2) {
-			this.setState(prevState => ({
-				showSubmenu: !prevState.showSubmenu
+			this.setState(previousState => ({
+				showSubmenu: !previousState.showSubmenu
 			}))
 		}
 	}
@@ -54,7 +54,7 @@ class MenuItem extends React.Component {
 			note
 		} = this.props
 
-		return e(
+		return createElement(
 			'li',
 			{
 				className: classNames({
@@ -62,21 +62,21 @@ class MenuItem extends React.Component {
 					active
 				})
 			},
-			e(
+			createElement(
 				'a',
 				{
 					href: note.url,
 					onClick: this.handleSelect
 				},
 				note.name,
-				loading && e(
+				loading && createElement(
 					'span',
 					{
 						className: 'nav-menu__spinner'
 					}
 				)
 			),
-			this.state.showSubmenu && note.h2 && e(SubMenu, {items: note.h2})
+			this.state.showSubmenu && note.h2 && createElement(SubMenu, {items: note.h2})
 		)
 	}
 }

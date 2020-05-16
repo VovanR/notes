@@ -1,6 +1,6 @@
 /* global React */
 
-import {e} from './utils.js'
+import {createElement} from './utils.js'
 import MenuItem from './menu-item.js'
 
 class Menu extends React.Component {
@@ -24,7 +24,7 @@ class Menu extends React.Component {
 		})
 
 		function renderMenuItem(note) {
-			return e(MenuItem, {
+			return createElement(MenuItem, {
 				key: note.id,
 				loading: note.id === loadingNoteId,
 				active: note.id === activeNoteId,
@@ -35,17 +35,17 @@ class Menu extends React.Component {
 
 		const showArchive = archive.length > 0
 
-		return e('nav', {className: 'nav-menu'},
-			e('ul', {},
-				actual.map(renderMenuItem)
+		return createElement('nav', {className: 'nav-menu'},
+			createElement('ul', {},
+				actual.map(note => renderMenuItem(note))
 			),
 
-			showArchive && e('div', {
+			showArchive && createElement('div', {
 				className: 'nav-menu__archive-title'
 			}, 'Archive'),
 
-			showArchive && e('ul', {},
-				archive.map(renderMenuItem)
+			showArchive && createElement('ul', {},
+				archive.map(note => renderMenuItem(note))
 			)
 		)
 	}

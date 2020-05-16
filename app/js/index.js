@@ -5,7 +5,7 @@ import {
 	REPOSITORY_URL
 } from './constants.js'
 import {
-	e,
+	createElement,
 	processNote
 } from './utils.js'
 import CustomScrollbars from './custom-scrollbars.js'
@@ -57,7 +57,7 @@ class App extends React.Component {
 	constructor(props) {
 		super(props)
 
-		const collection = NOTES.map(processNote)
+		const collection = NOTES.map(note => processNote(note))
 
 		this.state = {
 			notes: collection,
@@ -201,30 +201,30 @@ class App extends React.Component {
 
 		let note
 		if (active.data) {
-			note = e(Note, {
+			note = createElement(Note, {
 				htmlData: active.data,
 				url: active.sourceURL
 			})
 		} else if (readme.data) {
-			note = e(Note, {
+			note = createElement(Note, {
 				htmlData: readme.data,
 				url: REPOSITORY_URL,
 				urlName: 'See on GitHub'
 			})
 		} else {
-			note = e(EmptyNote)
+			note = createElement(EmptyNote)
 		}
 
-		return e('div', {className: 'container'},
-			e('div', {className: 'row'},
-				e('div', {className: 'col-md-3'},
-					e('div', {className: 'nav-menu-panel'},
-						e(NotesFilter, {
+		return createElement('div', {className: 'container'},
+			createElement('div', {className: 'row'},
+				createElement('div', {className: 'col-md-3'},
+					createElement('div', {className: 'nav-menu-panel'},
+						createElement(NotesFilter, {
 							onSubmit: this.handleFilterSubmit,
 							onChange: this.handleFilterNotes
 						}),
-						e(CustomScrollbars, {className: 'nav-menu-panel__scrollbars'},
-							e(Menu, {
+						createElement(CustomScrollbars, {className: 'nav-menu-panel__scrollbars'},
+							createElement(Menu, {
 								notes: filteredNotes,
 								activeNoteId,
 								loading,
@@ -235,12 +235,12 @@ class App extends React.Component {
 					)
 				),
 
-				e('div', {className: 'col-md-9'},
-					e('div', {}, note)
+				createElement('div', {className: 'col-md-9'},
+					createElement('div', {}, note)
 				)
 			)
 		)
 	}
 }
 
-ReactDOM.render(e(App), document.querySelector('#app'))
+ReactDOM.render(createElement(App), document.querySelector('#app'))

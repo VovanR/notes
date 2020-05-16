@@ -1,7 +1,7 @@
-import {e} from './utils.js'
+import {createElement} from './utils.js'
 
-const Progress = () => e('div', {className: 'progress'},
-	e('div', {
+const Progress = () => createElement('div', {className: 'progress'},
+	createElement('div', {
 		className: 'progress-bar progress-bar-striped progress-bar-animated',
 		role: 'progressbar',
 		style: {width: '100%'},

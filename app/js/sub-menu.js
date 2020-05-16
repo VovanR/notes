@@ -1,8 +1,8 @@
-import {e} from './utils.js'
+import {createElement} from './utils.js'
 
-const SubMenu = props => e('ul', {className: 'nav-submenu'},
-	props.items.map((item, index) => e('li', {key: index},
-		e('a', {
+const SubMenu = props => createElement('ul', {className: 'nav-submenu'},
+	props.items.map((item, index) => createElement('li', {key: index},
+		createElement('a', {
 			href: item.url,
 			dangerouslySetInnerHTML: {__html: item.name}
 		})

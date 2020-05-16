@@ -5,7 +5,7 @@ import {
 	NOTES_DIRECTORY
 } from './constants.js'
 
-const e = React.createElement
+const createElement = React.createElement
 
 function processNote({
 	name,
@@ -26,20 +26,20 @@ function processNote({
 	}
 }
 
-function classNames(obj) {
-	const classNameArr = []
+function classNames(object) {
+	const classNames = []
 
-	for (const [className, active] of Object.entries(obj)) {
+	for (const [className, active] of Object.entries(object)) {
 		if (active) {
-			classNameArr.push(className)
+			classNames.push(className)
 		}
 	}
 
-	return classNameArr.join(' ')
+	return classNames.join(' ')
 }
 
 export {
-	e,
+	createElement,
 	processNote,
 	classNames
 }

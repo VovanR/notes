@@ -1,10 +1,10 @@
 /* global React, ReactCustomScrollbars */
 
-import {e} from './utils.js'
+import {createElement} from './utils.js'
 
 const {Scrollbars} = ReactCustomScrollbars
 
-const renderDiv = (props, className) => e('div', {...props, className})
+const renderDiv = (props, className) => createElement('div', {...props, className})
 
 class CustomScrollbars extends React.Component {
 	renderTrackVertical(props) {
@@ -20,7 +20,7 @@ class CustomScrollbars extends React.Component {
 	}
 
 	render() {
-		return e(Scrollbars, {
+		return createElement(Scrollbars, {
 			renderTrackVertical: this.renderTrackVertical,
 			renderThumbVertical: this.renderThumbVertical,
 			renderView: this.renderView,

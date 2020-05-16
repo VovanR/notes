@@ -1,7 +1,7 @@
-import {e} from './utils.js'
+import {createElement} from './utils.js'
 
 const RenderedNote = ({data, htmlData}) => {
-	return e('div', {
+	return createElement('div', {
 		className: 'rendered-note',
 		dangerouslySetInnerHTML: htmlData && {__html: htmlData}
 	}, data)

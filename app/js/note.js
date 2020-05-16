@@ -1,6 +1,6 @@
 /* global React */
 
-import {e} from './utils.js'
+import {createElement} from './utils.js'
 import NoteSource from './note-source.js'
 import RenderedNote from './rendered-note.js'
 
@@ -13,12 +13,12 @@ class Notes extends React.Component {
 			urlName
 		} = this.props
 
-		return e(React.Fragment, {},
-			e(NoteSource, {
+		return createElement(React.Fragment, {},
+			createElement(NoteSource, {
 				url,
 				name: urlName
 			}),
-			e(RenderedNote, {
+			createElement(RenderedNote, {
 				data,
 				htmlData
 			})
