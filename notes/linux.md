@@ -698,6 +698,10 @@ sudo snap install --classic slack
 
 ## Peek
 
+- See: https://github.com/phw/peek
+
+Record gif screen
+
 ```shell
 sudo add-apt-repository ppa:peek-developers/stable
 sudo apt install peek
