@@ -2,111 +2,100 @@
 
 import {createElement} from './utils.js'
 
-class NotesFilter extends React.Component {
-	constructor(props) {
-		super(props)
+const {
+	useCallback,
+	useEffect,
+	useRef,
+	useState
+} = React
 
-		this.state = {
-			value: ''
-		}
+function NotesFilter({
+	onChange,
+	onSubmit
+}) {
+	const [value, setValue] = useState('')
+	const inputRef = useRef()
 
-		this.inputRef = null
-
-		this.handleChange = this.handleChange.bind(this)
-		this.handleKeyDown = this.handleKeyDown.bind(this)
-		this.handleClickClear = this.handleClickClear.bind(this)
-		this.handleClickHelp = this.handleClickHelp.bind(this)
-		this.setInputRef = this.setInputRef.bind(this)
-	}
-
-	componentDidMount() {
+	useEffect(() => {
 		document.addEventListener('keydown', event => {
-			if (event.target !== this.inputRef && event.code === 'Slash') {
-				this.resetValue()
-				this.focusInput()
+			if (
+				event.target !== inputRef.current &&
+				event.code === 'Slash'
+			) {
+				resetValue()
+				focusInput()
 				event.preventDefault()
 			}
 		})
+	}, [])
+
+	function focusInput() {
+		inputRef.current.focus()
 	}
 
-	setInputRef(ref) {
-		this.inputRef = ref
-	}
+	const handleChange = useCallback(event => {
+		saveValue(event.target.value)
+	})
 
-	focusInput() {
-		this.inputRef.focus()
-	}
-
-	handleChange(event) {
-		this.setValue(event.target.value)
-	}
-
-	handleKeyDown(event) {
+	const handleKeyDown = useCallback(event => {
 		switch (event.key) {
 			case 'Enter':
-				this.props.onSubmit()
+				onSubmit()
 				break
 			case 'Escape':
-				this.resetValue()
+				resetValue()
 				break
 			default:
 				break
 		}
+	})
+
+	const handleClickClear = useCallback(() => {
+		resetValue()
+	})
+
+	const handleClickHelp = useCallback(() => {
+		focusInput()
+	})
+
+	function resetValue() {
+		saveValue('')
 	}
 
-	handleClickClear() {
-		this.resetValue()
+	function saveValue(value) {
+		setValue(value)
+		onChange(value)
 	}
 
-	handleClickHelp() {
-		this.focusInput()
-	}
-
-	resetValue() {
-		this.setValue('')
-	}
-
-	setValue(value) {
-		this.setState({value}, () => {
-			this.props.onChange(value)
-		})
-	}
-
-	render() {
-		const {
-			value
-		} = this.state
-
-		return createElement('div', {className: 'notes-filter'},
-			createElement('div', {className: 'notes-filter__container'},
-				createElement('input', {
-					ref: this.setInputRef,
-					type: 'text',
-					className: 'form-control notes-filter__input',
-					value,
-					onChange: this.handleChange,
-					onKeyDown: this.handleKeyDown,
-					autoComplete: 'off',
-					autoCorrect: 'off',
-					autoCapitalize: 'off',
-					cpellcheck: 'false',
-					autoFocus: true
-				}),
-				createElement('button', {
-					className: 'btn notes-filter__clear',
-					type: 'button',
-					title: 'Clear filter',
-					tabIndex: -1,
-					onClick: this.handleClickClear
-				}, '×'),
-				createElement('span', {
-					className: 'notes-filter__focus-help',
-					title: 'Press `/` key to focus on filter',
-					onClick: this.handleClickHelp
-				}, '/')
-			)
+	return createElement('div', {className: 'notes-filter'},
+		createElement('div', {className: 'notes-filter__container'},
+			createElement('input', {
+				ref: inputRef,
+				type: 'text',
+				className: 'form-control notes-filter__input',
+				value,
+				onChange: handleChange,
+				onKeyDown: handleKeyDown,
+				autoComplete: 'off',
+				autoCorrect: 'off',
+				autoCapitalize: 'off',
+				cpellcheck: 'false',
+				autoFocus: true
+			}),
+			createElement('button', {
+				className: 'btn notes-filter__clear',
+				type: 'button',
+				title: 'Clear filter',
+				tabIndex: -1,
+				onClick: handleClickClear
+			}, '×'),
+			createElement('span', {
+				className: 'notes-filter__focus-help',
+				title: 'Press `/` key to focus on filter',
+				onClick: handleClickHelp
+			}, '/')
 		)
-	}
+	)
 }
 
 export default NotesFilter

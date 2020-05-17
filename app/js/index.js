@@ -15,124 +15,109 @@ import Note from './note.js'
 import EmptyNote from './empty-note.js'
 import {processMDNote} from './process-md-note.js'
 
-class App extends React.Component {
-	constructor(props) {
-		super(props)
+const {
+	useCallback,
+	useEffect,
+	useState
+} = React
 
-		const collection = NOTES.map(note => processNote(note))
+const collection = NOTES.map(note => processNote(note))
+function App() {
+	const [loading, setLoading] = useState(false)
+	const [loadingNoteId, setLoadingNoteId] = useState(null)
+	const [activeNoteId, setActiveNoteId] = useState(null)
+	const [notesFilterValue, setNotesFilterValue] = useState('')
+	const [notes, setNotes] = useState(collection)
+	const [readme, setReadme] = useState({
+		url: new URL('README.md', location).href,
+		data: null,
+		h2: null
+	})
 
-		this.state = {
-			notes: collection,
-			readme: {
-				url: new URL('README.md', location).href,
-				data: null
-			},
-			activeNoteId: null,
-			loading: false,
-			loadingNoteId: null,
-			notesFilterValue: ''
-		}
-
-		this.handleSelect = this.handleSelect.bind(this)
-		this.handleFilterNotes = this.handleFilterNotes.bind(this)
-		this.handleFilterSubmit = this.handleFilterSubmit.bind(this)
-	}
-
-	componentWillMount() {
-		const {readme} = this.state
-
-		this.setState({loading: true})
+	useEffect(() => {
+		setLoading(true)
 
 		fetch(readme.url)
 			.then(response => response.text())
 			.then(text => {
 				const {data, h2} = processMDNote(text)
-				readme.data = data
-				readme.h2 = h2
 
-				this.setState({loading: false})
+				setReadme({
+					...readme,
+					data,
+					h2
+				})
+				setLoading(false)
 			})
-			.catch(() => this.setState({loading: false}))
+			.catch(() => setLoading(false))
+	}, [])
+
+	function getNoteById(id) {
+		return notes.find(note => note.id === id)
 	}
 
-	getNoteById(id) {
-		return this.state.notes.find(note => note.id === id)
+	function getActiveNote() {
+		return getNoteById(activeNoteId)
 	}
 
-	getActiveNote() {
-		return this.getNoteById(this.state.activeNoteId)
-	}
-
-	fetchCurrentNote(noteId) {
-		const loadingNote = this.getNoteById(noteId)
+	function fetchCurrentNote(noteId) {
+		const loadingNote = getNoteById(noteId)
 
 		if (loadingNote.data) {
-			this.setState({activeNoteId: noteId})
+			setActiveNoteId(noteId)
 			return
 		}
 
-		this.setState({
-			loading: true,
-			loadingNoteId: loadingNote.id
-		})
+		setLoading(true)
+		setLoadingNoteId(loadingNote.id)
 
 		fetch(loadingNote.url)
 			.then(response => response.text())
 			.then(text => {
 				const {data, h2} = processMDNote(text)
+				// TODO: ?
 				loadingNote.data = data
 				loadingNote.h2 = h2
 
-				this.setState({
-					activeNoteId: noteId,
-					loading: false,
-					loadingNoteId: null
-				})
+				setLoading(false)
+				setLoadingNoteId(null)
+				setActiveNoteId(noteId)
 			})
 			.catch(() => {
-				this.setState({
-					loading: false,
-					loadingNoteId: null
-				})
+				setLoading(false)
+				setLoadingNoteId(null)
 			})
 	}
 
-	setCurrentNote(noteId) {
-		this.fetchCurrentNote(noteId)
+	function setCurrentNote(noteId) {
+		fetchCurrentNote(noteId)
 	}
 
-	handleSelect(noteId) {
-		this.setCurrentNote(noteId)
-	}
+	const handleSelect = useCallback(noteId => {
+		setCurrentNote(noteId)
+	})
 
-	handleFilterNotes(value) {
+	const handleFilterNotes = useCallback(value => {
 		if (value === '') {
-			this.setState({
-				notesFilterValue: value,
-				activeNoteId: null
-			})
+			setActiveNoteId(null)
+			setNotesFilterValue(value)
 		} else {
-			this.setState({notesFilterValue: value})
+			setNotesFilterValue(value)
 		}
-	}
+	})
 
-	handleFilterSubmit() {
-		this.setFirstFilteredNoteAsCurrent()
-	}
+	const handleFilterSubmit = useCallback(() => {
+		setFirstFilteredNoteAsCurrent()
+	})
 
-	setFirstFilteredNoteAsCurrent() {
-		const filteredNotes = this.getFilteredNotes()
+	function setFirstFilteredNoteAsCurrent() {
+		const filteredNotes = getFilteredNotes()
 		if (filteredNotes.length > 0) {
-			this.setCurrentNote(this.getFilteredNotes()[0].id)
+			setCurrentNote(getFilteredNotes()[0].id)
 		}
 	}
 
-	getFilteredNotes() {
-		const {
-			notes,
-			notesFilterValue
-		} = this.state
-
+	function getFilteredNotes() {
 		if (notesFilterValue === '') {
 			return notes
 		}
@@ -150,59 +135,51 @@ class App extends React.Component {
 		return sortedByPopularNotes
 	}
 
-	render() {
-		const {
-			activeNoteId,
-			loading,
-			readme,
-			loadingNoteId
-		} = this.state
-		const active = activeNoteId === null ? {} : this.getActiveNote()
+	const active = activeNoteId === null ? {} : getActiveNote()
 
-		const filteredNotes = this.getFilteredNotes()
+	const filteredNotes = getFilteredNotes()
 
-		let note
-		if (active.data) {
-			note = createElement(Note, {
-				htmlData: active.data,
-				url: active.sourceURL
-			})
-		} else if (readme.data) {
-			note = createElement(Note, {
-				htmlData: readme.data,
-				url: REPOSITORY_URL,
-				urlName: 'See on GitHub'
-			})
-		} else {
-			note = createElement(EmptyNote)
-		}
+	let note
+	if (active.data) {
+		note = createElement(Note, {
+			htmlData: active.data,
+			url: active.sourceURL
+		})
+	} else if (readme.data) {
+		note = createElement(Note, {
+			htmlData: readme.data,
+			url: REPOSITORY_URL,
+			urlName: 'See on GitHub'
+		})
+	} else {
+		note = createElement(EmptyNote)
+	}
 
-		return createElement('div', {className: 'container'},
-			createElement('div', {className: 'row'},
-				createElement('div', {className: 'col-md-3'},
-					createElement('div', {className: 'nav-menu-panel'},
-						createElement(NotesFilter, {
-							onSubmit: this.handleFilterSubmit,
-							onChange: this.handleFilterNotes
-						}),
-						createElement(CustomScrollbars, {className: 'nav-menu-panel__scrollbars'},
-							createElement(Menu, {
-								notes: filteredNotes,
-								activeNoteId,
-								loading,
-								loadingNoteId,
-								onSelect: this.handleSelect
-							})
-						)
+	return createElement('div', {className: 'container'},
+		createElement('div', {className: 'row'},
+			createElement('div', {className: 'col-md-3'},
+				createElement('div', {className: 'nav-menu-panel'},
+					createElement(NotesFilter, {
+						onSubmit: handleFilterSubmit,
+						onChange: handleFilterNotes
+					}),
+					createElement(CustomScrollbars, {className: 'nav-menu-panel__scrollbars'},
+						createElement(Menu, {
+							notes: filteredNotes,
+							activeNoteId,
+							loading,
+							loadingNoteId,
+							onSelect: handleSelect
+						})
 					)
-				),
-
-				createElement('div', {className: 'col-md-9'},
-					createElement('div', {}, note)
 				)
+			),
+
+			createElement('div', {className: 'col-md-9'},
+				createElement('div', {}, note)
 			)
 		)
-	}
+	)
 }
 
 ReactDOM.render(createElement(App), document.querySelector('#app'))

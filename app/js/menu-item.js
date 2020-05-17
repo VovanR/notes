@@ -6,34 +6,28 @@ import {
 } from './utils.js'
 import SubMenu from './sub-menu.js'
 
-class MenuItem extends React.Component {
-	constructor(props) {
-		super(props)
+const {
+	useCallback,
+	useEffect,
+	useState
+} = React
 
-		this.state = {
-			showSubmenu: true
+function MenuItem({
+	note,
+	active,
+	loading,
+	onSelect
+}) {
+	const [showSubmenu, setShowSubmenu] = useState(true)
+
+	useEffect(() => {
+		if (showSubmenu === false) {
+			setShowSubmenu(true)
 		}
+	}, [active])
 
-		this.handleSelect = this.handleSelect.bind(this)
-	}
-
-	componentWillReceiveProps(nextProps) {
-		if (
-			this.props.active !== nextProps.active &&
-			this.state.showSubmenu === false
-		) {
-			this.setState({showSubmenu: true})
-		}
-	}
-
-	handleSelect(event) {
+	const handleSelect = useCallback(event => {
 		event.preventDefault()
-
-		const {
-			active,
-			note,
-			onSelect
-		} = this.props
 
 		if (!active) {
 			onSelect(note.id)
@@ -41,44 +35,34 @@ class MenuItem extends React.Component {
 		}
 
 		if (active && note.h2) {
-			this.setState(previousState => ({
-				showSubmenu: !previousState.showSubmenu
-			}))
+			setShowSubmenu(!showSubmenu)
 		}
-	}
+	})
 
-	render() {
-		const {
-			loading,
-			active,
-			note
-		} = this.props
-
-		return createElement(
-			'li',
+	return createElement(
+		'li',
+		{
+			className: classNames({
+				popular: note.popular,
+				active
+			})
+		},
+		createElement(
+			'a',
 			{
-				className: classNames({
-					popular: note.popular,
-					active
-				})
+				href: note.url,
+				onClick: handleSelect
 			},
-			createElement(
-				'a',
+			note.name,
+			loading && createElement(
+				'span',
 				{
-					href: note.url,
-					onClick: this.handleSelect
-				},
-				note.name,
-				loading && createElement(
-					'span',
-					{
-						className: 'nav-menu__spinner'
-					}
-				)
-			),
-			this.state.showSubmenu && note.h2 && createElement(SubMenu, {items: note.h2})
-		)
-	}
+					className: 'nav-menu__spinner'
+				}
+			)
+		),
+		showSubmenu && note.h2 && createElement(SubMenu, {items: note.h2})
+	)
 }
 
 export default MenuItem
