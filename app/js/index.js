@@ -4,16 +4,14 @@ import {
 	NOTES,
 	REPOSITORY_URL
 } from './constants.js'
-import {
-	createElement,
-	processNote
-} from './utils.js'
+import createElement from './utils/create-element.js'
+import processNote from './utils/process-note.js'
+import processMDNote from './utils/process-md-note.js'
 import CustomScrollbars from './custom-scrollbars.js'
 import NotesFilter from './notes-filter.js'
 import Menu from './menu.js'
 import Note from './note.js'
 import EmptyNote from './empty-note.js'
-import {processMDNote} from './process-md-note.js'
 
 const {
 	useCallback,

@@ -1,4 +1,4 @@
-import {createElement} from './utils.js'
+import createElement from './utils/create-element.js'
 
 function SubMenu({items}) {
 	return createElement('ul', {className: 'nav-submenu'},

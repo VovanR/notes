@@ -39,6 +39,4 @@ const processMDNote = text => {
 	return {data, h2}
 }
 
-export {
-	processMDNote
-}
+export default processMDNote

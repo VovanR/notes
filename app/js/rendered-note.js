@@ -1,4 +1,4 @@
-import {createElement} from './utils.js'
+import createElement from './utils/create-element.js'
 
 function RenderedNote({data, htmlData}) {
 	return createElement('div', {

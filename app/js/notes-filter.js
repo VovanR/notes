@@ -1,7 +1,7 @@
 /* global React */
 
-import {createElement} from './utils.js'
-import {convertCharLayout} from './convert-layout.js'
+import createElement from './utils/create-element.js'
+import convertCharLayout from './utils/convert-layout.js'
 
 const {
 	useCallback,

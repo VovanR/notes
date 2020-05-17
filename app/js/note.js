@@ -1,6 +1,6 @@
 /* global React */
 
-import {createElement} from './utils.js'
+import createElement from './utils/create-element.js'
 import NoteSource from './note-source.js'
 import RenderedNote from './rendered-note.js'
 

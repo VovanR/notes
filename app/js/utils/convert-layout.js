@@ -37,6 +37,4 @@ function convertCharLayout(char) {
 	return char
 }
 
-export {
-	convertCharLayout
-}
+export default convertCharLayout

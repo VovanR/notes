@@ -1,4 +1,4 @@
-import {createElement} from './utils.js'
+import createElement from './utils/create-element.js'
 
 function Progress() {
 	return createElement('div', {className: 'progress'},

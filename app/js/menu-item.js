@@ -1,9 +1,7 @@
 /* global React */
 
-import {
-	createElement,
-	classNames
-} from './utils.js'
+import createElement from './utils/create-element.js'
+import classNames from './utils/class-names.js'
 import SubMenu from './sub-menu.js'
 
 const {

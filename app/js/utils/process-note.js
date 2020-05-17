@@ -1,11 +1,7 @@
-/* global React */
-
 import {
 	SITE_SOURCE_URL,
 	NOTES_DIRECTORY
-} from './constants.js'
-
-const createElement = React.createElement
+} from '../constants.js'
 
 function processNote({
 	name,
@@ -26,20 +22,4 @@ function processNote({
 	}
 }
 
-function classNames(object) {
-	const classNames = []
-
-	for (const [className, active] of Object.entries(object)) {
-		if (active) {
-			classNames.push(className)
-		}
-	}
-
-	return classNames.join(' ')
-}
-
-export {
-	createElement,
-	processNote,
-	classNames
-}
+export default processNote

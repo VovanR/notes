@@ -1,6 +1,6 @@
 /* global React */
 
-import {createElement} from './utils.js'
+import createElement from './utils/create-element.js'
 import Note from './note.js'
 import {REPOSITORY_URL} from './constants.js'
 import Progress from './progress.js'
