@@ -1,6 +1,7 @@
 /* global React */
 
 import {createElement} from './utils.js'
+import {convertCharLayout} from './convert-layout.js'
 
 const {
 	useCallback,
@@ -34,7 +35,13 @@ function NotesFilter({
 	}
 
 	const handleChange = useCallback(event => {
-		saveValue(event.target.value)
+		const value = event.target.value
+		const processedValue = value
+			.split('')
+			.map(char => convertCharLayout(char))
+			.join('')
+
+		saveValue(processedValue)
 	})
 
 	const handleKeyDown = useCallback(event => {
