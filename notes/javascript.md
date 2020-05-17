@@ -233,7 +233,7 @@ console.log(foo); //=> ['d', 'e']
 
 ### First N items
 
-```js
+```javascript
 var foo = [1, 2, 3, 4, 5];
 
 // First 3 items
@@ -243,7 +243,7 @@ foo //=> [1, 2, 3, 4, 5]
 
 ### Last N items
 
-```js
+```javascript
 var foo = [1, 2, 3, 4, 5];
 
 // Last 3 items
@@ -293,7 +293,7 @@ while (i--) {
 
 ### Сортировка массива объектов по массиву ID
 
-```js
+```javascript
 var m = [{id: 8}, {id: 2}, {id: 3}];
 var s = [3, 2, 8];
 m.sort((a, b) => s.indexOf(a.id) - s.indexOf(b.id));
@@ -362,7 +362,7 @@ const DATA = JSON.parse(JSON.stringify(window.DATA));
 
 ### Merge objects
 
-- See: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Merging_objects
+- See: [Merging objects](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Merging_objects)
 
 ```js
 var o1 = { a: 1 };
@@ -1153,18 +1153,18 @@ return tasks.reduce((promiseChain, currentTask) => {
 
 ```js
 Promise.all([Promise.resolve(1), Promise.resolve(2)])
-    .then((...res) => console.log('then', ...res))
-    .catch((...res) => console.log('catch', ...res))
-    .finally(() => console.log('finally'))
+  .then((...res) => console.log('then', ...res))
+  .catch((...res) => console.log('catch', ...res))
+  .finally(() => console.log('finally'))
 //=> then [1, 2]
 //=> finally
 ```
 
 ```js
 Promise.all([Promise.resolve(1), Promise.reject(2), Promise.resolve(3)])
-    .then((...res) => console.log('then', ...res))
-    .catch((...res) => console.log('catch', ...res))
-    .finally(() => console.log('finally'))
+  .then((...res) => console.log('then', ...res))
+  .catch((...res) => console.log('catch', ...res))
+  .finally(() => console.log('finally'))
 //=> catch 2
 //=> finally
 ```
@@ -1299,7 +1299,7 @@ exports.noop = function() {};
 
 ## Кортежи
 
-- See: https://medium.com/@frontman/%D0%BA%D0%BE%D1%80%D1%82%D0%B5%D0%B6%D0%B8-%D0%B2-javascript-%D0%B8-typescript-74950fac15c3
+- See: [Кортежи в JavaScript и TypeScript](https://medium.com/@frontman/%D0%BA%D0%BE%D1%80%D1%82%D0%B5%D0%B6%D0%B8-%D0%B2-javascript-%D0%B8-typescript-74950fac15c3)
 
 ```js
 const tuple = (...args) => Object.freeze(args);
@@ -1484,9 +1484,9 @@ function speak(text) {
 
 ```js
 function createIcon(svg, className, onClick) {
-    return m('div', {'class': className, onclick: onClick},
-        m.trust(`<svg class='svg-icon__cnt'><use xlink:href='${svg.id}'></use></svg>`)
-    )
+  return m('div', {'class': className, onclick: onClick},
+    m.trust(`<svg class='svg-icon__cnt'><use xlink:href='${svg.id}'></use></svg>`)
+  )
 }
 ```
 
@@ -1506,7 +1506,7 @@ R.pipe(R.filter(R.identity), R.flatten)([null, undefined, [], [1, 3], [4]]);
 - See: [`reject`](https://ramdajs.com/docs/#reject)
 - See: [`isNil`](https://ramdajs.com/docs/#isNil)
 
-```js
+```javascript
 R.reject(R.isNil, {a: 1, b: undefined, c: 0, d: null})
 //=> {a: 1, c: 0}
 ```
@@ -1771,15 +1771,15 @@ $element.addClass(`wrapper--${overflowY ? 'top' : 'bottom'}-${overflowX then 'le
 
 - See: https://github.com/storeon/storeon/issues/33#issuecomment-487677408
 
-```js
-function isSimpleClick (e) {
-  return e.target.target !== '_blank' &&
-         e.button === 0 &&
-         e.which === 1 &&
-         !e.metaKey &&
-         !e.ctrlKey &&
-         !e.shiftKey &&
-         !e.altKey
+```javascript
+function isSimpleClick(event) {
+  return event.target.target !== '_blank' &&
+         event.button === 0 &&
+         event.which === 1 &&
+         !event.metaKey &&
+         !event.ctrlKey &&
+         !event.shiftKey &&
+         !event.altKey
 }
 ```
 
