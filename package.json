@@ -4,15 +4,22 @@
     "start": "http-server .",
     "test": "npm run test:js && npm run test:css && npm run test:spellcheck",
     "test:spellcheck": "yaspeller --dictionary ./dictionary.json ./notes/*.md",
-    "test:js": "xo",
+    "test:js": "xo && ava",
     "test:css": "stylelint app/css/*.css"
   },
   "devDependencies": {
+    "ava": "^3.8.2",
+    "esm": "^3.2.25",
     "http-server": "^0.12.3",
     "stylelint": "^13.3.3",
     "stylelint-config-standard": "^20.0.0",
     "xo": "^0.30.0",
     "yaspeller": "^7.0.0"
+  },
+  "ava": {
+    "require": [
+      "esm"
+    ]
   },
   "xo": {
     "semicolon": false,
