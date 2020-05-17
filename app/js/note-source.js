@@ -1,6 +1,6 @@
 import {createElement} from './utils.js'
 
-const NoteSource = ({url, name = 'Edit on GitHub'}) => {
+function NoteSource({url, name = 'Edit on GitHub'}) {
 	if (!url) {
 		return null
 	}
