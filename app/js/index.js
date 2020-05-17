@@ -22,12 +22,13 @@ const {
 } = React
 
 const collection = NOTES.map(note => processNote(note))
+
 function App() {
-	const [loading, setLoading] = useState(false)
+	const [loading, setLoading] = useState(true)
 	const [loadingNoteId, setLoadingNoteId] = useState(null)
 	const [activeNoteId, setActiveNoteId] = useState(null)
 	const [notesFilterValue, setNotesFilterValue] = useState('')
-	const [notes, setNotes] = useState(collection)
+	const [notes] = useState(collection)
 	const [readme, setReadme] = useState({
 		url: new URL('README.md', location).href,
 		data: null,
@@ -35,8 +36,6 @@ function App() {
 	})
 
 	useEffect(() => {
-		setLoading(true)
-
 		fetch(readme.url)
 			.then(response => response.text())
 			.then(text => {
@@ -75,7 +74,7 @@ function App() {
 			.then(response => response.text())
 			.then(text => {
 				const {data, h2} = processMDNote(text)
-				// TODO: ?
+
 				loadingNote.data = data
 				loadingNote.h2 = h2
 
