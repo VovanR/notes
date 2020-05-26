@@ -218,6 +218,11 @@ tree -I 'node_modules|vendor'
 tree -LhaC 3
 ```
 
+Сколько осталось файлов и где они расположены
+```shell
+tree -I node_modules -P *.coffee
+```
+
 
 ### head
 
