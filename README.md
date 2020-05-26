@@ -1,5 +1,8 @@
 # Notes
 
+<img align="right" width="120" height="120"
+     src="./logo.svg" alt="Notes logo">
+
 [![Build Status][travis-image]][travis-url]
 [![Dependency Status][depstat-image]][depstat-url]
 [![DevDependency Status][depstat-dev-image]][depstat-dev-url]
