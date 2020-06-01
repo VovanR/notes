@@ -276,6 +276,11 @@ rm -rf !(foo)
 find ./ -type f -exec rename "s/\.JPG$/.jpg/" *.jpg {} \;
 ```
 
+Рекурсивно переименовать все `*.stories.js` в `*.stories.jsx`
+```shell
+find ./src/ -iname "*.stories.js" -exec rename.ul stories.js stories.jsx '{}' \;
+```
+
 
 ### Заменить пробелы на подчеркивания
 
