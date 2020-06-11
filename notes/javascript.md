@@ -1906,3 +1906,54 @@ element.style.setProperty("--my-var", jsVar + 4);
 
 - See: https://github.com/jondavidjohn/hidpi-canvas-polyfill/blob/master/src/CanvasRenderingContext2D.js
 - See: https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio
+
+
+
+## Function
+
+- See: [5 Differences Between Arrow and Regular Functions](https://dmitripavlutin.com/differences-between-arrow-and-regular-functions/)
+
+### Function declaration
+
+```javascript
+function greet(who) {
+  return `Hello, ${who}!`;
+}
+```
+
+```javascript
+function myFunction() {
+  console.log(this);
+}
+
+const myContext = {user: 'Foo Bar'};
+
+myFunction.call(myContext); //=> {user: 'Foo Bar'}
+myFunction.apply(myContext); //=> {user: 'Foo Bar'}
+```
+
+### Function expression
+
+```javascript
+const greet = function(who) {
+  return `Hello, ${who}`;
+};
+```
+
+### Arrow function
+
+```javascript
+const greet = (who) => {
+  return `Hello, ${who}!`;
+};
+```
+
+```javascript
+const greet = who => {
+  return `Hello, ${who}!`;
+};
+```
+
+```javascript
+const greet = (who) => `Hello, ${who}!`;
+```
