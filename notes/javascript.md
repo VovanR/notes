@@ -27,6 +27,7 @@
 - See: [Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)
 - See: [Callback Hell](http://callbackhell.com/)
 - See: [Web Performance 101](https://3perf.com/talks/web-perf-101/)
+- See: [`String.prototype.normalize()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize)
 
 
 
