@@ -9,6 +9,7 @@
 - See: [Шаблоны проектирования в React](https://medium.freecodecamp.org/evolving-patterns-in-react-116140e5fe8f) [перевод](https://habrahabr.ru/company/ruvds/blog/349198/)
 - See: [React Patterns](https://reactpatterns.com/) [source](https://github.com/chantastic/reactpatterns.com)
 - See: [`useHooks`](https://usehooks.com/)
+- See: [Margin considered harmful](https://mxstbr.com/thoughts/margin)
 
 
 
@@ -17,11 +18,13 @@
 - See: [Material-UI](https://material-ui.com/)
 - See: [Ring UI](https://github.com/JetBrains/ring-ui)
 - See: [ANT DESIGN PRO](https://ant.design/)
+- See: [Braid Design System](https://seek-oss.github.io/braid-design-system/foundations/layout/#Columns)
 
 
 ## Libraries
 
 - See: https://github.com/theKashey?tab=repositories
+- See: https://github.com/grrowl/react-keyed-flatten-children
 
 ### Полоса прокрутки (scrollbar)
 - See: https://github.com/malte-wessel/react-custom-scrollbars
