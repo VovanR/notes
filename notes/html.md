@@ -217,6 +217,7 @@ After:
 
 - See: [Create Amazing Password Forms](https://www.chromium.org/developers/design-documents/create-amazing-password-forms)
 - See: [Autofill](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill)
+- See: [Password Form Styles that Chromium Understands](https://www.chromium.org/developers/design-documents/form-styles-that-chromium-understands)
 
 ```html
 <fieldset>
