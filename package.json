@@ -8,7 +8,7 @@
     "test:css": "stylelint app/css/*.css"
   },
   "devDependencies": {
-    "ava": "^3.8.2",
+    "ava": "^3.9.0",
     "esm": "^3.2.25",
     "http-server": "^0.12.3",
     "stylelint": "^13.6.0",
