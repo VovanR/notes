@@ -13,6 +13,8 @@
 - See: [SRI Hash Generator (Integrity)](https://www.srihash.org/)
 - See: [How to Section Your HTML](https://css-tricks.com/how-to-section-your-html/)
 - See: [A short note on HTML5 `article`, `section` and `hgroup`](https://www.brucelawson.co.uk/2019/html5-article-section-hgroup/)
+- See: [Пять правил использования ARIA](https://www.w3.org/TR/using-aria/)
+- See: [What Is ARIA?](https://blog.benmyers.dev/aria/)
 
 ## Polyfills
 
