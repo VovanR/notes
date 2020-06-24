@@ -642,7 +642,7 @@ rustup update stable
 - See: https://github.com/nodesource/distributions#installation-instructions
 
 ```shell
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt install -y nodejs
 npm i -g \
     bemstyla \
