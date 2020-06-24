@@ -28,6 +28,7 @@
 - See: [Callback Hell](http://callbackhell.com/)
 - See: [Web Performance 101](https://3perf.com/talks/web-perf-101/)
 - See: [`String.prototype.normalize()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize)
+- See: [Remainder operator vs. modulo operator (with JavaScript code)](https://2ality.com/2019/08/remainder-vs-modulo.html)
 
 
 
@@ -622,7 +623,17 @@ AND  0000 0001   // decimal 1
 3 % 1 === 0; // Не имеет дробной части — целое число
 ```
 
-Остаток от деления
+- See: https://exploringjs.com/impatient-js/ch_numbers.html#javascript-only-has-floating-point-numbers
+
+`%` is a remainder operator, not a modulo operator. Its result has the sign of the first operand:
+```
+> 5 % 3
+2
+> -5 % 3
+-2
+```
+
+Остаток от деления (Remainder)
 ```js
 3 % 2 === 1;
 4 % 2 === 0;
