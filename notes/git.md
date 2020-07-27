@@ -1124,7 +1124,7 @@ git cherry-pick <commit-1> <commit-4> <commit-15>
 git shortlog -s -n -e
 ```
 
-Если один разработчик коммитил под разными мейлами или разными именами:
+Если один разработчик коммитил под разными мейлами или именами, то вывод будет таким:
 ```
 10 Foo Bar <foo.bar@gmail.com>
 3 Foo Bar <foo.bar@ya.ru>
@@ -1132,8 +1132,15 @@ git shortlog -s -n -e
 1 Foobar <foo.bar@baz.com>
 ```
 
-Можно настроить маппинг.
-Для этого создаём файл `.mailmap`
+Можно объединить такие записи.  
+Для этого создаём файл `.mailmap` и описываем маппинги.
+Например мы хотим объединить разработчика из вывода выше в такой вид: `Foo Bar <foo.bar@gmail.com>`.
+
+Для этого надо:
+1. Обновить имя для мейлов `<foo.bar@example.com>` и `<foo.bar@baz.com>` на `Foo Bar`.
+2. Объединить мейлы `<foo.bar@ya.ru>`, `<foo.bar@example.com>` и `<foo.bar@baz.com>` на `<foo.bar@gmail.com>`.
+
+Файл `.mailmap` будет выглядеть так:
 ```
 Foo Bar <foo.bar@example.com>
 Foo Bar <foo.bar@baz.com>
@@ -1145,6 +1152,20 @@ Foo Bar <foo.bar@baz.com>
 Теперь вывод команды будет правильным
 ```
 18 Foo Bar <foo.bar@gmail.com>
+```
+
+В файле можно оставлять комментарии, может быть полезно, если пользователей много:
+```
+# See: https://git-scm.com/docs/git-shortlog#_mapping_authors
+# git shortlog -s -n -e
+
+# Foo Bar
+Foo Bar <foo.bar@example.com>
+
+# Baz Qux
+Baz Qux <baz.qux@example.com>
+<baz.qux@example.com> <baz@example.com>
+<baz.qux@example.com> <baz.q@example.com>
 ```
 
 
