@@ -2026,3 +2026,13 @@ getNewId.next()
 getNewId.next()
 //=> { value: 2, done: false }
 ```
+
+
+
+## Tasks and Microtasks
+
+- See: [Using microtasks in JavaScript with `queueMicrotask()`](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide)
+
+
+- Tasks: `setTimeout`, `setInterval`, `setImmediate`
+- Microtasks: `process.nextTick`, `Promise callback`, `queueMicrotask`
