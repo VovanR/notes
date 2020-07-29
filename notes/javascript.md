@@ -401,7 +401,7 @@ Object.entries(object).forEach(([key, value]) => {
 
 
 
-### Оператор `for in`
+### Оператор `for in` (`forin`, `for..in`)
 
 - See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
 
@@ -427,7 +427,7 @@ for (key in object) if (Object.prototype.hasOwnProperty.call(object, key)) {
 
 
 
-### Оператор `for of`
+### Оператор `for of` (`forof`, `for..of`)
 
 - See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
 
