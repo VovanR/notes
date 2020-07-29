@@ -1972,3 +1972,57 @@ const greet = who => {
 ```javascript
 const greet = (who) => `Hello, ${who}!`;
 ```
+
+
+
+## Generator
+
+```javascript
+const values = [2, 3];
+
+function* genFunc() {
+  yield 1;
+  yield* values;
+  yield 4;
+}
+
+var g = gen();
+g.next();
+//=> { value: 1, done: false }
+
+g.next();
+//=> { value: 2, done: false }
+
+g.next();
+//=> { value: 3, done: false }
+
+g.next();
+//=> { value: 4, done: false }
+
+g.next();
+//=> { value: undefined, done: true }
+
+var g = gen();
+[...g];
+//=> [ 1, 2, 3, 4 ]
+```
+
+```javascript
+function* createId() {
+  let id = 0
+
+  while (true) {
+    yield id
+
+    id += 1
+  }
+}
+
+const getNewId = createId()
+getNewId.next()
+//=> { value: 0, done: false }
+getNewId.next()
+//=> { value: 1, done: false }
+getNewId.next()
+//=> { value: 2, done: false }
+```
