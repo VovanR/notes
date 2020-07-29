@@ -156,6 +156,11 @@ export const NOTES = [
 		popular: false
 	},
 	{
+		name: 'Translate Tools',
+		archive: false,
+		popular: false
+	},
+	{
 		name: 'TypeScript',
 		archive: false,
 		popular: false
