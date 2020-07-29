@@ -61,6 +61,11 @@ export const NOTES = [
 		popular: true
 	},
 	{
+		name: 'Go',
+		archive: false,
+		popular: false,
+	},
+	{
 		name: 'GraphQL',
 		archive: false,
 		popular: false
