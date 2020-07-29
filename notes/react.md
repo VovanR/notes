@@ -25,9 +25,13 @@
 
 - See: https://github.com/theKashey?tab=repositories
 - See: https://github.com/grrowl/react-keyed-flatten-children
+- See: https://github.com/welldone-software/why-did-you-render
 
 ### Полоса прокрутки (scrollbar)
 - See: https://github.com/malte-wessel/react-custom-scrollbars
+
+### Drug and Drop
+- See: https://github.com/atlassian/react-beautiful-dnd
 
 ### Всплывающая подсказка (tooltip) и выпадающее меню (dropdown)
 - See: https://github.com/atomiks/tippy.js-react
