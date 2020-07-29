@@ -51,6 +51,10 @@
 
 - See: https://github.com/robb0wen/tornis
 
+### Блокировка прокрутки страницы
+
+- See: https://github.com/willmcpo/body-scroll-lock
+
 
 
 ## Test libs
