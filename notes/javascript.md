@@ -55,6 +55,10 @@
 
 - See: https://github.com/willmcpo/body-scroll-lock
 
+### Базы данных
+
+- See: https://github.com/typicode/lowdb
+
 
 
 ## Test libs
