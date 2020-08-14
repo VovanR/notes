@@ -881,3 +881,72 @@ nc -l -p 9999 > File.mp4
 ```shell
 sudo apt install openvpn network-manager-openvpn network-manager-openvpn-gnome
 ```
+
+
+
+## Изменение приоритета выполнения
+
+- See: http://rus-linux.net/MyLDP/consol/nice.html
+
+```shell
+$ nice yes > /dev/null &
+[1] 286505
+
+$ ps -l
+F S   UID     PID    PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+0 S  1000  202824   11788  0  80   0 -  2973 do_wai pts/12   00:00:00 bash
+0 R  1000  286505  202824 66  90  10 -  2022 -      pts/12   00:00:01 yes
+4 R  1000  286532  202824  0  80   0 -  2852 -      pts/12   00:00:00 ps
+```
+- `F`, _FLAG_ - процесс запущен без привилегий суперпользователя;
+- `S`, _STATE_ - процесс в настоящее время работает;
+- `UID` - _ID_ пользователя, инициализировавшего процесс;
+- `PID` - _ID_ процесса нашей команды `yes` `286505`;
+- `PPID`, _Parent Process ID_ - _ID_ родительского для нашей команды `yes` процесса. В нашем случае это `bash` с _PID_ `202824`;
+- `C` - загрузка процессора, целое число, выражается в %;
+- `PRI` - Приоритет процесса. Большее значение означает меньший приоритет;
+- `NI` - Значение Nice, которое находится в диапазоне от -20 до 19. Большее значение означает меньший приоритет.
+
+```shell
+$ kill 286505
+[1]+  Terminated              nice yes > /dev/null
+```
+
+Запуск с изменённым значением `nice` (если не указывать значение, то по-умолчанию будет 10):
+```shell
+$ nice -n 10 yes > /dev/null &
+[1] 286589
+
+$ ps -l
+F S   UID     PID    PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+0 S  1000  202824   11788  0  80   0 -  2973 do_wai pts/12   00:00:00 bash
+0 R  1000  286589  202824 87  90  10 -  2022 -      pts/12   00:00:02 yes
+4 R  1000  286616  202824  0  80   0 -  2852 -      pts/12   00:00:00 ps
+```
+
+Изменение значения `nice`:
+```shell
+$ renice -n 15 -p 286589
+286589 (process ID) old priority 10, new priority 15
+
+$ ps -l
+F S   UID     PID    PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+0 S  1000  202824   11788  0  80   0 -  2973 do_wai pts/12   00:00:00 bash
+0 R  1000  286589  202824 99  95  15 -  2022 -      pts/12   00:00:20 yes
+4 R  1000  286678  202824  0  80   0 -  2852 -      pts/12   00:00:00 ps
+```
+
+В обратную сторону нужны привилегии:
+```shell
+$ renice -n 10 -p 286589
+renice: failed to set priority for 286589 (process ID): Permission denied
+
+$ sudo renice -n 10 -p 286589
+286589 (process ID) old priority 15, new priority 10
+
+$ ps -l
+F S   UID     PID    PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+0 S  1000  202824   11788  0  80   0 -  2973 do_wai pts/12   00:00:00 bash
+0 R  1000  286589  202824 98  90  10 -  2022 -      pts/12   00:00:42 yes
+4 R  1000  286774  202824  0  80   0 -  2852 -      pts/12   00:00:00 ps
+```
