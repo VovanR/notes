@@ -3,6 +3,7 @@
 ----
 
 - See: [Альтернативы программ](https://alternativeto.net/software/alfred/?platform=linux)
+- See: [command-line JSON processor](https://stedolan.github.io/jq/)
 
 
 
