@@ -950,3 +950,22 @@ F S   UID     PID    PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
 0 R  1000  286589  202824 98  90  10 -  2022 -      pts/12   00:00:42 yes
 4 R  1000  286774  202824  0  80   0 -  2852 -      pts/12   00:00:00 ps
 ```
+
+
+
+## Read RTSP-stream
+
+Когда начнётся сессия, откроется окно плеера с потоком:
+```shell
+ffplay -autoexit -rtsp_flags listen rtsp://0.0.0.0:5554/stream_from_me
+```
+
+Без открывания плеера:
+```shell
+ffmpeg -rtsp_flags listen -i rtsp://0.0.0.0:5554/stream_from_me -f flv /dev/null -y
+```
+
+Чтобы поднимать заново после окончания сессии, можно обернуть в бесконечный цикл:
+```shell
+while true; do ffmpeg -rtsp_flags listen -i rtsp://0.0.0.0:5554/stream_from_me -f flv /dev/null -y; sleep 2; done
+```
