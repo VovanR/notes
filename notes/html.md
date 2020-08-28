@@ -266,6 +266,20 @@ After:
 ```
 
 
+### One-time code field
+
+- See: https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-autocomplete-one-time-code
+- See: https://web.dev/web-otp/
+- See: https://twitter.com/shinework/status/1298916867730558976
+
+Для полей ввода кода подтверждения, которое приходит в СМС или Пуш-уведомлении.  
+Мобильные операционки умеют заполнять такие поля автоматически.
+
+```html
+<input autocomplete="one-time-code"/>
+```
+
+
 
 ## OAuth 2 окно окончания авторизации — search-параметры URL передаются в родительский колбэк
 
