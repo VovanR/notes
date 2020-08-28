@@ -2040,3 +2040,30 @@ getNewId.next()
 
 - Tasks: `setTimeout`, `setInterval`, `setImmediate`
 - Microtasks: `process.nextTick`, `Promise callback`, `queueMicrotask`
+
+
+
+## Evaluate JavaScript code
+
+- See: https://twitter.com/aemkei/status/1298022980321185794
+
+```js
+const CODE = 'alert(1)';
+
+eval(CODE);
+Function(CODE)()();
+setTimeout(CODE);
+document.write(`<script>${CODE}</script>`);
+window.location = 'javascript:' + CODE;
+import('data:text/javascript,' + CODE);
+```
+
+```js
+div = document.createElement('div');
+div.setAttribute('onclick', CODE);
+div.click();
+```
+
+```html
+<img src="404" onerror="CODE">
+```
