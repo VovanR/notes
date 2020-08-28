@@ -7,6 +7,22 @@
 
 
 
+## Copy/Paste
+
+- See: https://ostechnix.com/how-to-use-pbcopy-and-pbpaste-commands-on-linux/
+
+Format JSON
+```shell
+pbpaste | jq | pbcopy
+```
+
+Copy file content
+```shell
+pbcopy < file.txt
+```
+
+
+
 ## Блокировка экрана `Win + l` Xubuntu
 
 `Settings -> Keyboard -> application Shortcuts`
