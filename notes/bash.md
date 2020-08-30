@@ -323,6 +323,12 @@ find ./ -type d -exec totranslit.sh {} \;
 sed -i "s/{find}/{replace}/g" <filename>
 ```
 
+Обновить MAC-адреса
+```shell
+cd /etc/NetworkManager/system-connections
+sed -i -e 's/<old_mac>/<new_mac>/ *
+```
+
 Заменить в файле и создать оригинальную копию с расширением `.bak`
 ```shell
 sed -i.bak "s/{find}/{replace}/g" <filename>
