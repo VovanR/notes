@@ -1187,3 +1187,13 @@ Baz Qux <baz.qux@example.com>
 ```shell
 git standup -d 5
 ```
+
+
+
+## Pull Git-repositories recursive
+
+- See: https://stackoverflow.com/questions/3497123/run-git-pull-over-all-subdirectories
+
+```shell
+ls | xargs -I{} git -C {} pull
+```
