@@ -21,6 +21,7 @@
 - See: [Ring UI](https://github.com/JetBrains/ring-ui)
 - See: [ANT DESIGN PRO](https://ant.design/)
 - See: [Braid Design System](https://seek-oss.github.io/braid-design-system/foundations/layout/#Columns)
+- See: [Carbot (by IBM)](https://www.carbondesignsystem.com/components/overview/)
 
 
 ## Libraries
