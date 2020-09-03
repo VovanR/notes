@@ -2,6 +2,7 @@
 
 ----
 
+- See: [Nu Html Checker](https://validator.w3.org/nu/)
 - See: [Design Patterns and Widgets](https://www.w3.org/TR/wai-aria-practices/#aria_ex)
 - See: [Nutrition Cards for Accessible Components](https://davatron5000.github.io/a11y-nutrition-cards/)
 - See: [The A11Y Project](https://a11yproject.com/)
@@ -15,6 +16,7 @@
 - See: [A short note on HTML5 `article`, `section` and `hgroup`](https://www.brucelawson.co.uk/2019/html5-article-section-hgroup/)
 - See: [Пять правил использования ARIA](https://www.w3.org/TR/using-aria/)
 - See: [What Is ARIA?](https://blog.benmyers.dev/aria/)
+- See: [Недоступность в картинках](http://css.yoksel.ru/inaccessibility/)
 
 ## Polyfills
 
