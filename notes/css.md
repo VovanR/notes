@@ -586,3 +586,24 @@ img {
 ## CSS custom properties
 
 - See: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+
+
+
+## Visually Hidden
+
+- See: http://css.yoksel.ru/inaccessibility/
+- See: https://allyjs.io/tutorials/hiding-elements.html#how-to-hide-elements-visually
+
+```css
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+```
