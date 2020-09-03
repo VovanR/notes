@@ -2,7 +2,7 @@
 
 ----
 
-- See: [Nu Html Checker](https://validator.w3.org/nu/)
+- See: [Html validator](https://validator.w3.org/nu/)
 - See: [Design Patterns and Widgets](https://www.w3.org/TR/wai-aria-practices/#aria_ex)
 - See: [Nutrition Cards for Accessible Components](https://davatron5000.github.io/a11y-nutrition-cards/)
 - See: [The A11Y Project](https://a11yproject.com/)
@@ -275,7 +275,7 @@ After:
 - See: https://twitter.com/shinework/status/1298916867730558976
 
 Для полей ввода кода подтверждения, которое приходит в СМС или Пуш-уведомлении.  
-Мобильные операционки умеют заполнять такие поля автоматически.
+iOS умеет заполнять такие поля автоматически.
 
 ```html
 <input autocomplete="one-time-code"/>
