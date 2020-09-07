@@ -1197,3 +1197,14 @@ git standup -d 5
 ```shell
 ls | xargs -I{} git -C {} pull
 ```
+
+
+
+## git-describe
+
+- See: https://git-scm.com/docs/git-describe
+
+Show current last tag
+```shell
+git describe --tags
+```
