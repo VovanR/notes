@@ -74,6 +74,14 @@
 
 
 
+## Effector.js
+
+- See: https://effector.now.sh/
+- See: [Лайвкодинг: реальное использование Effector.js](https://www.youtube.com/watch?v=fbtElWjOXV0)
+- See: [Проблемы стейт-менеджмента и их решение с Effector.js](https://youtu.be/48XSmEIqbkI)
+
+
+
 ## Атрибуты
 
 - See: https://reactjs.org/docs/dom-elements.html#differences-in-attributes
