@@ -986,3 +986,19 @@ ffmpeg -rtsp_flags listen -i rtsp://0.0.0.0:5554/stream_from_me -f flv /dev/null
 ```shell
 while true; do ffmpeg -rtsp_flags listen -i rtsp://0.0.0.0:5554/stream_from_me -f flv /dev/null -y; sleep 2; done
 ```
+
+
+
+## Как долго выполнялась команда
+
+Add `time` command before your command
+```shell
+time curl google.com -o /dev/null
+```
+
+Outputs
+```
+real    0m1,635s
+user    0m0,021s
+sys     0m0,007s
+```
