@@ -79,6 +79,7 @@
 - See: https://effector.now.sh/
 - See: [Лайвкодинг: реальное использование Effector.js](https://www.youtube.com/watch?v=fbtElWjOXV0)
 - See: [Проблемы стейт-менеджмента и их решение с Effector.js](https://youtu.be/48XSmEIqbkI)
+- See: https://github.com/aanation/effector-forms
 
 
 
