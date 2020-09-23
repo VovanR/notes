@@ -301,6 +301,14 @@ git remote prune origin --dry-run
 
 
 
+## Обновить список всех веток
+
+```shell
+git remote update origin --prune
+```
+
+
+
 ## Извлечение изменений из удаленной репы
 
 ```shell
