@@ -8,6 +8,7 @@
 - See: [Паттерны/шаблоны проектирования (енот)](https://refactoring.guru/ru/design-patterns)
 - See: [JavaScript Design Patterns](https://www.dofactory.com/javascript/design-patterns)
 - See: [JavaScript Patterns Collection](http://shichuan.github.io/javascript-patterns/)
+- See: [Date and time terms](https://docs.microsoft.com/en-us/style-guide/a-z-word-list-term-collections/term-collections/date-time-terms)
 
 
 
