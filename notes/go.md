@@ -52,3 +52,17 @@ hello
 ## Test
 
 - See: https://github.com/matryer/moq
+
+
+
+## Install package
+
+```shell
+go get github.com/boyter/lc
+```
+
+## Remove/Uninstall package
+
+```shell
+go clean -i github.com/boyter/lc
+```
