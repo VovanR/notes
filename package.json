@@ -1,5 +1,10 @@
 {
+  "name": "notes",
+  "version": "0.0.1",
+  "description": "My notes",
   "private": true,
+  "repository": "VovanR/notes",
+  "author": "Vladimir Rodkin <mail@vovanr.com> (https://github.com/VovanR)",
   "scripts": {
     "start": "http-server .",
     "test": "npm run test:js && npm run test:css && npm run test:spellcheck",
@@ -21,6 +26,10 @@
       "esm"
     ]
   },
+  "bugs": {
+    "url": "https://github.com/VovanR/notes/issues"
+  },
+  "homepage": "https://vovanr.github.io/notes/",
   "xo": {
     "semicolon": false,
     "envs": [

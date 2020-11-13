@@ -3,7 +3,7 @@
 <img align="right" width="120" height="120"
      src="./logo.svg" alt="Notes logo">
 
-[![Build Status][travis-image]][travis-url]
+[![Build Status][build-image]][build-url]
 [![Dependency Status][depstat-image]][depstat-url]
 [![DevDependency Status][depstat-dev-image]][depstat-dev-url]
 
@@ -37,8 +37,8 @@ npm start
 ```
 Open [http://localhost:8080/](http://localhost:8080/)
 
-[travis-url]: https://travis-ci.org/VovanR/notes
-[travis-image]: https://img.shields.io/travis/VovanR/notes.svg?style=flat-square
+[build-url]: https://github.com/VovanR/notes/actions?query=workflow%3A%22Tests%22
+[build-image]: https://img.shields.io/github/workflow/status/VovanR/notes/Tests?style=flat-square
 
 [depstat-url]: https://david-dm.org/VovanR/notes
 [depstat-image]: https://david-dm.org/VovanR/notes.svg?style=flat-square
