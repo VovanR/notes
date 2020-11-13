@@ -214,7 +214,8 @@ sudo apt-get install \
     usb-creator-gtk \
     virtualbox \
     whois \
-    xclip
+    xclip \
+    jq
 ```
 
 Top
