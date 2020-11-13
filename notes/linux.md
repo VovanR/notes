@@ -1006,11 +1006,11 @@ sys     0m0,007s
 
 
 
-## Run window programm from terminal mode
+## Run window program from terminal mode
 
 - See: http://manpages.ubuntu.com/manpages/trusty/man1/xvfb-run.1.html
 
-xvfb-run - run specified X client or command in a virtual X server environment
+`xvfb-run` - run specified X client or command in a virtual X server environment
 
 ```
 xvfb-run --server-args="-screen 0 1280x720x24" npx testcafe
