@@ -1006,6 +1006,34 @@ sys     0m0,007s
 
 
 
+## Code Formatters
+
+### XML
+
+- See: https://stackoverflow.com/a/16090892/1284255
+
+Required `libxml2-utils`
+```shell
+sudo apt install libxml2-utils
+```
+
+```shell
+cat icon.svg | xmllint --format -
+```
+
+### JSON
+
+Required `jq`
+```shell
+sudo apt install jq
+```
+
+```shell
+cat data.json | jq
+```
+
+
+
 ## Run window program from terminal mode
 
 - See: http://manpages.ubuntu.com/manpages/trusty/man1/xvfb-run.1.html
