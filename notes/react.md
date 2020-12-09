@@ -44,6 +44,7 @@
 
 ### Формы
 - See: https://github.com/jaredpalmer/formik
+- See: https://github.com/react-hook-form/react-hook-form
 
 ### Inputs
 - See: https://github.com/JedWatson/react-input-autosize
