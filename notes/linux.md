@@ -242,9 +242,13 @@ sudo chmod u+s /usr/sbin/hddtemp
 sudo gem install tmuxinator
 ```
 
-Фото, видео
+Фото, видео, аудио
+
+- [Lightworks](https://www.lwks.com/index.php?option=com_lwks&view=download&layout=d&dtype=lin_public_deb&Itemid=206)
+
 ```shell
 sudo apt install \
+    audacity \
     gcolor2 \
     gimp \
     gpick \
