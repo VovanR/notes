@@ -17,6 +17,7 @@
 - See: [Пять правил использования ARIA](https://www.w3.org/TR/using-aria/)
 - See: [What Is ARIA?](https://blog.benmyers.dev/aria/)
 - See: [Недоступность в картинках](http://css.yoksel.ru/inaccessibility/)
+- See: [HTML vocabulary](http://apps.workflower.fi/vocabs/html/en)
 
 ## Polyfills
 
