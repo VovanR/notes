@@ -7,6 +7,7 @@
 - See: http://codeguide.co
 - See: https://atomiks.github.io/30-seconds-of-css
 - See: [Automated responsive font sizes](https://github.com/twbs/rfs)
+- See: [CSS vocabulary](http://apps.workflower.fi/vocabs/css/en)
 
 
 ## Вес селектора. Специфичность селектора
