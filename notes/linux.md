@@ -1053,3 +1053,27 @@ xvfb-run --server-args="-screen 0 1280x720x24" npx testcafe
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3
 ```
+
+
+
+## Xubuntu enable microphone noise cancellation
+
+- See: https://askubuntu.com/a/1222717
+- See: https://askubuntu.com/questions/18958/realtime-noise-removal-with-pulseaudio
+
+```shell
+sudo vim /etc/pulse/default.pa
+```
+
+Add bottom
+```
+### Enable Echo/Noise-Cancelation
+load-module module-echo-cancel source_name=logitechsource
+set-default-source logitechsource
+```
+
+Restart
+```shell
+pulseaudio -k
+pulseaudio --start
+```
