@@ -1077,3 +1077,33 @@ Restart
 pulseaudio -k
 pulseaudio --start
 ```
+
+
+
+## Create PDF from images
+
+- See: https://askubuntu.com/questions/303849/create-a-single-pdf-from-multiple-text-images-or-pdf-files
+
+```shell
+convert image1.jpg image2.png text.txt PDFfile.pdf outputFileName.pdf
+```
+
+Install ImageMagick
+```shell
+sudo apt install imagemagick
+```
+
+If convert command fails with this message
+```
+convert-im6.q16: attempt to perform an operation not allowed by the security policy `PDF' @ error/constitute.c/IsCoderAuthorized/408.
+```
+
+Edit ImageMagick policy
+```shell
+sudo vim /etc/ImageMagick-6/policy.xml
+```
+
+```diff
+-<policy domain="coder" rights="none" pattern="PDF" />
++<policy domain="coder" rights="read|write" pattern="PDF" />
+```
