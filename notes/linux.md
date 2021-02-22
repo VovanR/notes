@@ -1009,6 +1009,12 @@ sys     0m0,007s
 ```
 
 
+For multiple commands:
+```shell
+time sh -c "npm run test:lint; npm run test:unit"
+```
+
+
 
 ## Code Formatters
 
