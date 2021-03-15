@@ -10,13 +10,13 @@ function Menu({
 	const actual = []
 	const archive = []
 
-	notes.forEach(note => {
+	for (const note of notes) {
 		if (note.archive) {
 			archive.push(note)
 		} else {
 			actual.push(note)
 		}
-	})
+	}
 
 	function renderMenuItem(note) {
 		return createElement(MenuItem, {
