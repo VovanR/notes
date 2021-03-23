@@ -12,6 +12,7 @@
 - See: [Margin considered harmful](https://mxstbr.com/thoughts/margin)
 - See: [How to use React Context effectively](https://kentcdodds.com/blog/how-to-use-react-context-effectively)
 - See: [Your Guide to `React.useCallback()`](https://dmitripavlutin.com/dont-overuse-react-usecallback/)
+- See: [What if component reacts super super slowly?](https://twitter.com/iamakulov/status/1362397450456154114)
 
 
 

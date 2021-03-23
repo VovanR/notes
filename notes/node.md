@@ -4,6 +4,7 @@
 
 - See: [Таблица поддержки ECMAScript версиями Node.js](http://node.green/)
 - See: [Node.js Everywhere with Environment Variables!](https://medium.com/the-node-js-collection/making-your-node-js-work-everywhere-with-environment-variables-2da8cdf6e786)
+- See: [The Death of a Node.js Process](https://thomashunter.name/posts/2021-03-08-the-death-of-a-nodejs-process)
 
 ## Генераторы документации
 
