@@ -239,6 +239,34 @@ foo.splice(foo.indexOf('f'), 1); //=> ['f'] (replaced items)
 console.log(foo); //=> ['d', 'e']
 ```
 
+### Prefilled
+
+- See: https://exploringjs.com/impatient-js/ch_arrays.html#filling-arrays
+
+```javascript
+Array.from({length: 3}, (n, i) => i); //=> [0, 1, 2]
+[...Array(3).keys()]; //=> [0, 1, 2]
+
+new Array(3).fill(0); //=> [0, 0, 0]
+Array.from({length: 3}, () => 0); //=> [0, 0, 0]
+```
+
+### Range
+
+```javascript
+/**
+ * @param {number} start
+ * @param {number} end
+ * @returns {Array}
+ *
+ * @example
+ * createRange(2, 5); //=> [2, 3, 4]
+ */
+function createRange(start, end) {
+  return Array.from({length: end - start}, (_, i) => i + start);
+}
+```
+
 
 
 ### First N items
