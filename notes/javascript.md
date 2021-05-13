@@ -239,7 +239,7 @@ foo.splice(foo.indexOf('f'), 1); //=> ['f'] (replaced items)
 console.log(foo); //=> ['d', 'e']
 ```
 
-### Prefilled
+### Fill
 
 - See: https://exploringjs.com/impatient-js/ch_arrays.html#filling-arrays
 
