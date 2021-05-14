@@ -848,6 +848,12 @@ PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
 @reboot sudo /usr/bin/node /home/pi/Raspberry-Pi-Simple-Web-GPIO-GUI/app.js &
 ```
 
+### Daily reboot
+
+```cron
+@daily /sbin/shutdown -r now
+```
+
 
 
 ## WiFi
