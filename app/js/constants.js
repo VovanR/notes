@@ -101,6 +101,11 @@ export const NOTES = [
 		popular: false
 	},
 	{
+		name: 'MobX',
+		archive: false,
+		popular: false
+	},
+	{
 		name: 'MongoDB',
 		archive: false,
 		popular: false
