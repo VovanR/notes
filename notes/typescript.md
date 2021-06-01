@@ -12,6 +12,99 @@
 - See: http://habrahabr.ru/company/ivi/blog/256517/
 
 
+## Combine types (intersection)
+
+- See: https://www.typescriptlang.org/docs/handbook/2/objects.html#intersection-types
+
+```typescript
+interface Colorful {
+  color: string;
+}
+interface Circle {
+  radius: number;
+}
+
+type ColorfulCircle = Colorful & Circle;
+```
+
+
+## Predicates
+
+- See: https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates
+
+```typescript
+function isFish(pet: Fish | Bird): pet is Fish {
+  return (pet as Fish).swim !== undefined;
+}
+```
+
+
+## No null
+
+```typescript
+!
+```
+
+
+## Window object mock in tests
+
+```typescript
+describe('OAuthCallback', () => {
+  beforeEach(() => {
+    (global.window as any) = {};
+  });
+
+  afterEach(() => {
+    (global.window as any) = {};
+  });
+
+  it('should register global cb', () => {
+    assert.strictEqual(typeof (global.window as any).loginCallback, 'undefined');
+    new OAuthCallback(noop);
+    assert.strictEqual(typeof (global.window as any).loginCallback, 'function');
+  });
+});
+```
+
+
+## Optional param
+
+```typescript
+interface SequencePromiseOptions {
+  by?: number;
+  items: any[];
+  itemPromiseCreator: () => Promise<any>;
+}
+```
+
+## Array of
+
+```typescript
+let resolvers: Array<() => void> = [];
+
+const TEST_CASE: Array<[number, string]> = [
+  [100, '100.0 B'],
+];
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 More than 2 related Boolean properties on a type should be turned into a flag.
 
