@@ -58,6 +58,7 @@
 ### Базы данных
 
 - See: https://github.com/typicode/lowdb
+- See: https://github.com/sequelize/sequelize
 
 
 
