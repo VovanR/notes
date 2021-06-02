@@ -6,6 +6,7 @@
 - See: https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines
 - See: https://github.com/Microsoft/TypeScript/blob/master/src/compiler/core.ts
 - See: [TypeScript Deep Dive](https://basarat.gitbooks.io/typescript/)
+- See: [TypeDoc](https://typedoc.org/guides/doccomments/#document-your-code)
 
 **TDD**
 - See: https://github.com/koroandr/decoupling_habr
@@ -67,7 +68,7 @@ describe('OAuthCallback', () => {
 ```
 
 
-## Optional param
+## Optional parameter
 
 ```typescript
 interface SequencePromiseOptions {
