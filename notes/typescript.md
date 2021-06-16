@@ -40,6 +40,45 @@ function isFish(pet: Fish | Bird): pet is Fish {
 ```
 
 
+## Collect Hash-map
+
+See: https://twitter.com/kuflash/status/1400846728664956928
+
+```typescript
+enum BookGroup {
+    Cool = 'cool',
+    Trash = 'trash',
+}
+
+type BookGroupType = BookGroup.Cool | BookGroup.Trash;
+
+interface BookType {
+    id: string;
+    group: BookGroupType;
+}
+
+const books: BookType[] = [
+    {id: '1', group: BookGroup.Cool},
+    {id: '2', group: BookGroup.Trash},
+    {id: '3', group: BookGroup.Cool},
+]
+
+const booksByGroups: Partial<Record<BookGroupType, BookType[]>> = {};
+
+for (const book of books) {
+    const {group} = book;
+
+    const booksByGroup = booksByGroups[group];
+
+    if (booksByGroup) {
+        booksByGroup.push(book);
+    } else {
+        booksByGroups[group] = [book];
+    }
+}
+```
+
+
 ## No null
 
 ```typescript
@@ -130,12 +169,6 @@ z.p(); // Prints 'x is 10'
 var p = z.p;
 p(); // Prints 'x is undefined'
 ```
-
-
-```typescript
-window.addEventListener('click', () => x.printThing(), 10);
-```
-
 
 
 ## Red Flags for this
@@ -403,65 +436,3 @@ class B extends A {
 new A(); // Error!
 new B(); // OK
 ```
-
-
-
-Листы с ключами надо писать так:
-```typescript
-// Correct :)
-var ListItemWrapper = React.createClass({
-    render: function() {
-        return <li>{this.props.data.text}</li>;
-    }
-});
-var MyComponent = React.createClass({
-    render: function() {
-        return (
-            <ul>
-                {this.props.results.map(function(result) {
-                    return <ListItemWrapper key={result.id} data={result}/>;
-                })}
-            </ul>
-        );
-    }
-});
-```
-
-
-
-- See: https://github.com/Microsoft/TypeScriptSamples/blob/master/todomvc/js/todos.ts
-- See: http://staxmanade.com/2015/08/playing-with-typescript-and-jsx/
-
-```typescript
-/// <reference path='./typings/react/react.d.ts' />
-import React = __React;
-declare var mountNode: any;
-
-interface HelloWorldProps extends React.Props<any> {
-    name: string;
-}
-
-class HelloMessage extends React.Component<HelloWorldProps, {}> {
-    render() {
-        return <div>Hello {this.props.name}</div>;
-    }
-}
-
-React.render(<HelloMessage name='John' />, mountNode);
-```
-
-
-
-- See: http://blog.wolksoftware.com/working-with-react-and-typescript
-
-```typescript
-class SomeComponent extends React.Component<ISomeComponentProps, ISomeComponentState> {
-    // ...
-}
-```
-
-
-
-## ООП
-
-- See: http://www.codebelt.com/typescript/typescript-classes-object-oriented-programming/
