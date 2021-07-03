@@ -1119,3 +1119,14 @@ sudo vim /etc/ImageMagick-6/policy.xml
 -<policy domain="coder" rights="none" pattern="PDF" />
 +<policy domain="coder" rights="read|write" pattern="PDF" />
 ```
+
+
+
+# Compress PDF
+
+- See: https://stackoverflow.com/a/9864308/1284255
+
+```shell
+pdf2ps large.pdf very_large.ps
+ps2pdf very_large.ps small.pdf
+```
