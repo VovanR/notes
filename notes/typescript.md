@@ -7,6 +7,7 @@
 - See: https://github.com/Microsoft/TypeScript/blob/master/src/compiler/core.ts
 - See: [TypeScript Deep Dive](https://basarat.gitbooks.io/typescript/)
 - See: [TypeDoc](https://typedoc.org/guides/doccomments/#document-your-code)
+- See: [Types vs. interfaces in TypeScript](https://blog.logrocket.com/types-vs-interfaces-in-typescript/)
 
 **TDD**
 - See: https://github.com/koroandr/decoupling_habr
@@ -125,6 +126,126 @@ let resolvers: Array<() => void> = [];
 const TEST_CASE: Array<[number, string]> = [
   [100, '100.0 B'],
 ];
+```
+
+
+
+## The `in` operator narrowing
+
+- See: https://www.typescriptlang.org/docs/handbook/2/narrowing.html#the-in-operator-narrowing
+
+```typescript
+type Fish = { swim: () => void };
+type Bird = { fly: () => void };
+
+function move(animal: Fish | Bird) {
+  if ("swim" in animal) {
+    return animal.swim();
+  }
+
+  return animal.fly();
+}
+```
+
+```typescript
+type Fish = { swim: () => void };
+type Bird = { fly: () => void };
+type Human = {  swim?: () => void, fly?: () => void };
+
+function move(animal: Fish | Bird | Human) {
+  if ("swim" in animal) {
+    animal // (parameter) animal: Fish | Human
+  } else {
+    animal // (parameter) animal: Bird | Human
+  }
+}
+```
+
+
+
+## Generics
+
+- See: https://habr.com/ru/post/455473/
+
+Тождественная функция — это функция, возвращающая значение переданного в неё аргумента.
+```javascript
+function identity (value) {
+    return value;
+}
+
+console.log(identity(1)) // 1
+```
+
+```typescript
+function identity <T>(value: T) : T {
+    return value;
+}
+
+console.log(identity<Number>(1)) // 1
+```
+
+
+Generic Class
+```typescript
+interface GenericInterface<U> {
+  value: U
+  getIdentity: () => U
+}
+
+class IdentityClass<T> implements GenericInterface<T> {
+  value: T
+
+  constructor(value: T) {
+    this.value = value
+  }
+
+  getIdentity () : T {
+    return this.value
+  }
+
+}
+
+const myNumberClass = new IdentityClass<Number>(1)
+console.log(myNumberClass.getIdentity()) // 1
+
+const myStringClass = new IdentityClass<string>("Hello!")
+console.log(myStringClass.getIdentity()) // Hello!
+```
+
+
+Usage
+```typescript
+class Car {
+  label: string = 'Generic Car'
+  numWheels: Number = 4
+  horn() {
+    return "beep beep!"
+  }
+}
+
+class Truck extends Car {
+  label = 'Truck'
+  numWheels = 18
+}
+
+class Vespa extends Car {
+  label = 'Vespa'
+  numWheels = 2
+}
+
+function washCar <T extends Car> (car: T) : T {
+  console.log(`Received a ${car.label} in the car wash.`)
+  console.log(`Cleaning all ${car.numWheels} tires.`)
+  console.log('Beeping horn -', car.horn())
+  console.log('Returning your car now')
+  return car
+}
+
+const myVespa = new Vespa()
+washCar<Vespa>(myVespa)
+
+const myTruck = new Truck()
+washCar<Truck>(myTruck)
 ```
 
 
