@@ -66,3 +66,7 @@ go get github.com/boyter/lc
 ```shell
 go clean -i github.com/boyter/lc
 ```
+
+## Test section
+
+Hello world!
