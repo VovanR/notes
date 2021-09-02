@@ -201,6 +201,25 @@ docker build -f ./Dockerfile-test .
 docker run -it --rm <c_name>
 ```
 
+## Run image with environment variables
+
+- See: https://docs.docker.com/engine/reference/commandline/run/#set-environment-variables--e---env---env-file
+
+From file
+```shell
+docker run --env-file .env -it --rm <image_name>
+```
+
+Pass variable value
+```shell
+docker run --env VARNAME=<value> -it --rm <image_name>
+```
+
+Pass current environment variable
+```shell
+docker run --env VARNAME -it --rm <image_name>
+```
+
 ## Запустить слой
 
 ```shell
