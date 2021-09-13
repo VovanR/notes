@@ -15,10 +15,10 @@
   "devDependencies": {
     "ava": "^3.15.0",
     "esm": "^3.2.25",
-    "http-server": "^0.12.3",
+    "http-server": "^13.0.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
-    "xo": "^0.40.3",
+    "xo": "^0.44.0",
     "yaspeller": "^7.0.0"
   },
   "ava": {
@@ -36,7 +36,11 @@
       "browser"
     ],
     "rules": {
-      "import/extensions": 0
+      "import/extensions": 0,
+      "operator-linebreak": [
+        "error",
+        "after"
+      ]
     }
   }
 }

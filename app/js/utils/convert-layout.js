@@ -24,7 +24,7 @@ const CHAR_MAP = {
 	м: 'v',
 	и: 'b',
 	т: 'n',
-	ь: 'm'
+	ь: 'm',
 }
 
 function convertCharLayout(char) {

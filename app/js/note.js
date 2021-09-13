@@ -8,17 +8,17 @@ function Notes({
 	data,
 	htmlData,
 	url,
-	urlName
+	urlName,
 }) {
 	return createElement(React.Fragment, {},
 		createElement(NoteSource, {
 			url,
-			name: urlName
+			name: urlName,
 		}),
 		createElement(RenderedNote, {
 			data,
-			htmlData
-		})
+			htmlData,
+		}),
 	)
 }
 

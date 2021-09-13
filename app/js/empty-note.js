@@ -10,10 +10,10 @@ function EmptyNote() {
 		data: createElement(React.Fragment, {},
 			createElement('h1', {}, 'Notes'),
 			createElement('hr'),
-			createElement(Progress)
+			createElement(Progress),
 		),
 		url: REPOSITORY_URL,
-		urlName: 'See on GitHub'
+		urlName: 'See on GitHub',
 	})
 }
 

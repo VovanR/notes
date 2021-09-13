@@ -20,13 +20,13 @@ function renderView(props) {
 
 function CustomScrollbars({
 	className,
-	children
+	children,
 }) {
 	return createElement(Scrollbars, {
 		renderTrackVertical,
 		renderThumbVertical,
 		renderView,
-		className: 'custom-scrollbars ' + (className || '')
+		className: 'custom-scrollbars ' + (className || ''),
 	}, children)
 }
 

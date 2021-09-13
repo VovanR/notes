@@ -1,12 +1,12 @@
 import {
 	SITE_SOURCE_URL,
-	NOTES_DIRECTORY
+	NOTES_DIRECTORY,
 } from '../constants.js'
 
 function processNote({
 	name,
 	archive,
-	popular
+	popular,
 }) {
 	const filename = `${NOTES_DIRECTORY}/${name.toLowerCase()}.md`
 
@@ -18,7 +18,7 @@ function processNote({
 		data: null,
 		subitems: null,
 		archive,
-		popular
+		popular,
 	}
 }
 

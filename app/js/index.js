@@ -2,7 +2,7 @@
 
 import {
 	NOTES,
-	REPOSITORY_URL
+	REPOSITORY_URL,
 } from './constants.js'
 import createElement from './utils/create-element.js'
 import processNote from './utils/process-note.js'
@@ -16,7 +16,7 @@ import EmptyNote from './empty-note.js'
 const {
 	useCallback,
 	useEffect,
-	useState
+	useState,
 } = React
 
 const collection = NOTES.map(note => processNote(note))
@@ -30,7 +30,7 @@ function App() {
 	const [readme, setReadme] = useState({
 		url: new URL('README.md', location).href,
 		data: null,
-		h2: null
+		h2: null,
 	})
 
 	useEffect(() => {
@@ -42,7 +42,7 @@ function App() {
 				setReadme({
 					...readme,
 					data,
-					h2
+					h2,
 				})
 				setLoading(false)
 			})
@@ -140,13 +140,13 @@ function App() {
 	if (active.data) {
 		note = createElement(Note, {
 			htmlData: active.data,
-			url: active.sourceURL
+			url: active.sourceURL,
 		})
 	} else if (readme.data) {
 		note = createElement(Note, {
 			htmlData: readme.data,
 			url: REPOSITORY_URL,
-			urlName: 'See on GitHub'
+			urlName: 'See on GitHub',
 		})
 	} else {
 		note = createElement(EmptyNote)
@@ -158,7 +158,7 @@ function App() {
 				createElement('div', {className: 'nav-menu-panel'},
 					createElement(NotesFilter, {
 						onSubmit: handleFilterSubmit,
-						onChange: handleFilterNotes
+						onChange: handleFilterNotes,
 					}),
 					createElement(CustomScrollbars, {className: 'nav-menu-panel__scrollbars'},
 						createElement(Menu, {
@@ -166,16 +166,16 @@ function App() {
 							activeNoteId,
 							loading,
 							loadingNoteId,
-							onSelect: handleSelect
-						})
-					)
-				)
+							onSelect: handleSelect,
+						}),
+					),
+				),
 			),
 
 			createElement('div', {className: 'col-md-9'},
-				createElement('div', {}, note)
-			)
-		)
+				createElement('div', {}, note),
+			),
+		),
 	)
 }
 

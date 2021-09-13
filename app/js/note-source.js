@@ -10,8 +10,8 @@ function NoteSource({url, name = 'Edit on GitHub'}) {
 			className: 'text-muted small',
 			href: url,
 			target: '_blank',
-			rel: 'noopener'
-		}, name)
+			rel: 'noopener',
+		}, name),
 	)
 }
 

@@ -15,7 +15,7 @@ markedRenderer.heading = (text, level) => {
 	if (level === 2) {
 		h2s.push({
 			name: text,
-			url
+			url,
 		})
 	}
 
@@ -30,8 +30,8 @@ const processMDNote = text => {
 		{
 			gfm: true,
 			highlight: code => hljs.highlightAuto(code).value,
-			renderer: markedRenderer
-		}
+			renderer: markedRenderer,
+		},
 	)
 	// Write `h2` collection
 	const h2 = h2s

@@ -7,12 +7,12 @@ const {
 	useCallback,
 	useEffect,
 	useRef,
-	useState
+	useState,
 } = React
 
 function NotesFilter({
 	onChange,
-	onSubmit
+	onSubmit,
 }) {
 	const [value, setValue] = useState('')
 	const inputRef = useRef()
@@ -87,21 +87,21 @@ function NotesFilter({
 				autoCorrect: 'off',
 				autoCapitalize: 'off',
 				cpellcheck: 'false',
-				autoFocus: true
+				autoFocus: true,
 			}),
 			createElement('button', {
 				className: 'btn notes-filter__clear',
 				type: 'button',
 				title: 'Clear filter',
 				tabIndex: -1,
-				onClick: handleClickClear
+				onClick: handleClickClear,
 			}, '×'),
 			createElement('span', {
 				className: 'notes-filter__focus-help',
 				title: 'Press `/` key to focus on filter',
-				onClick: handleClickHelp
-			}, '/')
-		)
+				onClick: handleClickHelp,
+			}, '/'),
+		),
 	)
 }
 

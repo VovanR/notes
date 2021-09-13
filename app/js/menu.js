@@ -5,7 +5,7 @@ function Menu({
 	activeNoteId,
 	loadingNoteId,
 	notes,
-	onSelect
+	onSelect,
 }) {
 	const actual = []
 	const archive = []
@@ -24,7 +24,7 @@ function Menu({
 			loading: note.id === loadingNoteId,
 			active: note.id === activeNoteId,
 			note,
-			onSelect
+			onSelect,
 		})
 	}
 
@@ -32,16 +32,16 @@ function Menu({
 
 	return createElement('nav', {className: 'nav-menu'},
 		createElement('ul', {},
-			actual.map(note => renderMenuItem(note))
+			actual.map(note => renderMenuItem(note)),
 		),
 
 		showArchive && createElement('div', {
-			className: 'nav-menu__archive-title'
+			className: 'nav-menu__archive-title',
 		}, 'Archive'),
 
 		showArchive && createElement('ul', {},
-			archive.map(note => renderMenuItem(note))
-		)
+			archive.map(note => renderMenuItem(note)),
+		),
 	)
 }
 

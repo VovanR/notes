@@ -3,13 +3,13 @@ import processNote from './process-note.js'
 
 test('process note', t => {
 	global.window = {
-		location: 'http://test_location'
+		location: 'http://test_location',
 	}
 
 	const note = {
 		name: 'Test_name',
 		archive: true,
-		popular: true
+		popular: true,
 	}
 
 	const processedNote = {
@@ -20,7 +20,7 @@ test('process note', t => {
 		data: null,
 		subitems: null,
 		archive: true,
-		popular: true
+		popular: true,
 	}
 
 	t.deepEqual(processNote(note), processedNote)

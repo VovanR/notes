@@ -7,14 +7,14 @@ import SubMenu from './sub-menu.js'
 const {
 	useCallback,
 	useEffect,
-	useState
+	useState,
 } = React
 
 function MenuItem({
 	note,
 	active,
 	loading,
-	onSelect
+	onSelect,
 }) {
 	const [showSubmenu, setShowSubmenu] = useState(true)
 
@@ -42,24 +42,24 @@ function MenuItem({
 		{
 			className: classNames({
 				popular: note.popular,
-				active
-			})
+				active,
+			}),
 		},
 		createElement(
 			'a',
 			{
 				href: note.url,
-				onClick: handleSelect
+				onClick: handleSelect,
 			},
 			note.name,
 			loading && createElement(
 				'span',
 				{
-					className: 'nav-menu__spinner'
-				}
-			)
+					className: 'nav-menu__spinner',
+				},
+			),
 		),
-		showSubmenu && note.h2 && createElement(SubMenu, {items: note.h2})
+		showSubmenu && note.h2 && createElement(SubMenu, {items: note.h2}),
 	)
 }
 
