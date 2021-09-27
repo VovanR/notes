@@ -985,14 +985,14 @@ exit 0
 - See: https://www.tldp.org/LDP/abs/html/io-redirection.html
 - See: [`STDOUT` vs `STDERR`](https://google.github.io/styleguide/shell.xml?showone=STDOUT_vs_STDERR#STDOUT_vs_STDERR)
 
-
+Note:
 - `0` — `stdin`
 - `1` — `stdout`
 - `2` — `stderr`
   ```shell
   echo "my errz" >&2
   ```
-  или
+  or
   ```shell
   echo "my errz" > /dev/stderr
   ```
