@@ -265,6 +265,36 @@ git rebase master
 
 
 
+## Rebase branch on tag
+
+- See: https://stackoverflow.com/a/39768253/1284255
+- See: https://git-scm.com/docs/git-rebase
+
+We need to move "topic" branch to tag "v2".  
+Current state:
+```nohighlight
+          o---o  topic
+         /
+    o---o---o---o  master (origin/master)
+            ^ v2
+```
+
+Run command:
+```shell
+git switch topic
+git rebase --onto=v2 origin/master
+```
+
+Result state:
+```nohighlight
+              o---o  topic
+             /
+    o---o---o---o  master (origin/master)
+            ^ v2
+```
+
+
+
 ## Что такое `origin`
 
 ```shell
