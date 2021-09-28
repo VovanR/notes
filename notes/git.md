@@ -295,7 +295,7 @@ Result state:
 
 
 
-## Что такое `origin`
+## What is `origin`?
 
 ```shell
 git remote
@@ -304,14 +304,14 @@ git remote show origin
 
 
 
-## Удалённые ветки
+## Remote branches
 
-Локальные ветки
+Local branches
 ```shell
 git branch
 ```
 
-Все ветки
+All branches (local and remote)
 ```shell
 git branch -a
 ```
