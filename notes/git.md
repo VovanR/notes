@@ -270,7 +270,7 @@ git rebase master
 - See: https://stackoverflow.com/a/39768253/1284255
 - See: https://git-scm.com/docs/git-rebase
 
-We need to move "topic" branch to tag "v2".  
+We need to move `topic` branch to tag `v2`.  
 Current state:
 ```nohighlight
           o---o  topic
