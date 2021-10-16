@@ -1122,7 +1122,7 @@ sudo vim /etc/ImageMagick-6/policy.xml
 
 
 
-# Compress PDF
+## Compress PDF
 
 - See: https://stackoverflow.com/a/9864308/1284255
 
@@ -1130,3 +1130,11 @@ sudo vim /etc/ImageMagick-6/policy.xml
 pdf2ps large.pdf very_large.ps
 ps2pdf very_large.ps small.pdf
 ```
+
+
+
+## Turn off search highlighting in `less` after a search
+
+- See: https://unix.stackexchange.com/a/179207
+
+Press `Esc` `u`.
