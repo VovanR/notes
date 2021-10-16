@@ -667,7 +667,7 @@ git checkout d67577f^ -- <file_path>
 
 
 
-## log строки файла
+## Log file line. log строки файла
 
 ```shell
 git log -L 1,1:<file_path>
@@ -685,10 +685,17 @@ git log -U0 -S “my code fragment" path/to/file
 
 
 
-## Посмотреть файл из другой ветки
+## Show filt from another branch. Посмотреть файл из другой ветки
 
 ```shell
 git show <some-branch-name>:<file_path>
+```
+
+
+## Copy file from another branch
+
+```shell
+git show <some-branch-name>:<file_path> > <file_name>
 ```
 
 
