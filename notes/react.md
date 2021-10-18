@@ -551,6 +551,7 @@ class GlobalNav extends React.Component {
 - See: https://facebook.github.io/react/docs/test-utils.html
 - See: https://github.com/VovanR/react-decinc/blob/master/test.js
 - See: https://github.com/reactjs/react-tabs/blob/master/lib/components/__tests__/Tabs-test.js
+- See: [Как тестировать React-приложения](https://okusov.ru/kak-testirovat-react-prilozheniya)
 
 
 
