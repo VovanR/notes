@@ -685,7 +685,7 @@ git log -U0 -S “my code fragment" path/to/file
 
 
 
-## Show filt from another branch. Посмотреть файл из другой ветки
+## Show file from another branch. Посмотреть файл из другой ветки
 
 ```shell
 git show <some-branch-name>:<file_path>

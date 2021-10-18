@@ -411,7 +411,7 @@
 `#` — Найти слово назад
 
 
-`:noh` || `:nohlsearch` — [Отключить подсветку найденого](https://www.endpoint.com/blog/2013/12/highlighting-search-pattern-matches-in/)
+`:noh` || `:nohlsearch` — [Отключить подсветку найденного](https://www.endpoint.com/blog/2013/12/highlighting-search-pattern-matches-in/)
 
 
 `:vimgrep /lol/gj ./**/*.js` — Поиск текста по проекту
