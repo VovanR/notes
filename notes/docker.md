@@ -278,3 +278,61 @@ docker network inspect bridge
                 }
             ]
 ```
+
+
+## Docker ignore `.dockerignore`
+
+```
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.idea/
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+```
+
+
+## Create React App
+
+- See: https://typeofnan.dev/how-to-serve-a-react-app-with-nginx-in-docker/
+
+`Dockerfile`
+```
+FROM node:16-alpine AS builder
+WORKDIR /app
+# Copy package files and install dependencies before copy all project
+# to prevent redundant container rebuilds
+COPY package.json .
+COPY package-lock.json .
+RUN npm ci
+# Copy all from current directory to working directory in image
+COPY . .
+RUN npm run build
+
+FROM nginx:alpine
+# Set working directory to nginx assets directory
+WORKDIR /usr/share/nginx/html
+# Remove default nginx static assets
+RUN rm -rf ./*
+# Copy static assets from builder stage
+COPY --from=builder /app/build .
+# Replace builded environment variables with actual if set
+COPY ./entrypoint.sh /entrypoint.sh
+ENTRYPOINT [ "/entrypoint.sh" ]
+# Containers run nginx with global directives and daemon off
+CMD ["nginx", "-g", "daemon off;"]
+```
