@@ -336,3 +336,21 @@ ENTRYPOINT [ "/entrypoint.sh" ]
 # Containers run nginx with global directives and daemon off
 CMD ["nginx", "-g", "daemon off;"]
 ```
+
+
+## Docker Copy
+
+- See: https://docs.docker.com/engine/reference/commandline/cp/
+- See: https://stackoverflow.com/questions/22907231/how-to-copy-files-from-host-to-docker-container
+
+### Copy container file or directory to host
+
+```shell
+docker cp <container_id>:/www ./www
+```
+
+### Copy file from host to container
+
+```shell
+docker cp file_name.txt <container_id>:/file_name.txt
+```
