@@ -31,3 +31,15 @@ void loop() {
 
 - See: https://playground.arduino.cc/Main/I2cScanner/
 - See: https://gist.github.com/VovanR/48163f521102ce3861223bf1f9987714
+
+
+## Array
+
+- See: https://www.arduino.cc/reference/en/language/variables/data-types/array/
+
+
+### Fill array with zero
+
+```ino
+memset(array, 0, sizeof(array));
+```
