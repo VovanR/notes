@@ -354,3 +354,30 @@ docker cp <container_id>:/www ./www
 ```shell
 docker cp file_name.txt <container_id>:/file_name.txt
 ```
+
+
+## Compare containers
+
+- See: https://twitter.com/VovanR/status/1443864220878217216
+
+Run images
+```shell
+docker run -it --rm <image_1> sh
+docker run -it --rm <image_2> sh
+```
+
+See container IDs
+```shell
+docker ps
+```
+
+Copy container results to host
+```shell
+docker cp <container_1>:/www ./www-1
+docker cp <container_2>:/www ./www-2
+```
+
+Compare directories
+```shell
+meld ./www-1 ./www-2
+```
