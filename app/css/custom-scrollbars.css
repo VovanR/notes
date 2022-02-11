@@ -24,15 +24,15 @@
 }
 
 .custom-scrollbars__thumb:hover {
-  background-color: rgba(38, 50, 56, 0.3);
+  background-color: rgba(38 50 56 3%);
 }
 
 .custom-scrollbars:hover .custom-scrollbars__thumb {
-  background-color: rgba(38, 50, 56, 0.1);
+  background-color: rgba(38 50 56 1%);
 }
 
 .custom-scrollbars__track:hover .custom-scrollbars__thumb {
-  background-color: rgba(38, 50, 56, 0.2);
+  background-color: rgba(38 50 56 2%);
 }
 
 .custom-scrollbars__view:hover .custom-scrollbars__thumb {

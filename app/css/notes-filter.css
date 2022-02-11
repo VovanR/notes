@@ -45,7 +45,7 @@
 .notes-filter__focus-help::before {
   --padding: 5px;
 
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: var(--padding);
