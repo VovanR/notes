@@ -473,6 +473,17 @@ for (const [key, value] of Object.entries(object)) {
 //=> "b", 2
 ```
 
+```javascript
+const booksById = new Map();
+booksById.set('a', 'Foo');
+booksById.set('b', 'Bar');
+for (const [id, book] of booksById) {
+    console.log(id, book);
+}
+//=> "a", "Foo"
+//=> "b", "Bar"
+```
+
 
 
 ## Number
