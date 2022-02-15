@@ -1135,6 +1135,15 @@ class Person {
 }
 ```
 
+Using symbols for object keys
+```javascript
+const data = {a: 1};
+const b = Symbol('b');
+data[b] = 2;
+data[4] = 3;
+Object.keys(data); //=> ['4', 'a']
+```
+
 
 ## Reselect
 
