@@ -1138,3 +1138,16 @@ ps2pdf very_large.ps small.pdf
 - See: https://unix.stackexchange.com/a/179207
 
 Press `Esc` `u`.
+
+
+
+## XFCE4 prompt command password in modal window
+
+- See: https://askubuntu.com/questions/1042344/i-need-an-equivalent-of-gksu-in-18-04
+
+XFCE `gksu` alternative.  
+Bash open password prompt.
+
+```shell
+pkexec ls /root/
+```
