@@ -1141,11 +1141,11 @@ Press `Esc` `u`.
 
 
 
-## XFCE prompt command password in modal window
+## Xfce prompt command password in modal window
 
 - See: https://askubuntu.com/questions/1042344/i-need-an-equivalent-of-gksu-in-18-04
 
-XFCE `gksu` alternative.  
+Xfce `gksu` alternative.  
 Bash open password prompt.
 
 ```shell
