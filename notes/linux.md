@@ -1141,7 +1141,7 @@ Press `Esc` `u`.
 
 
 
-## XFCE4 prompt command password in modal window
+## XFCE prompt command password in modal window
 
 - See: https://askubuntu.com/questions/1042344/i-need-an-equivalent-of-gksu-in-18-04
 
