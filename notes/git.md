@@ -773,6 +773,15 @@ git clone -b develop git@github.com:VovanR/notes.git
 ```
 
 
+## Clone repository not deep. Shallow clone
+
+- See: https://linuxhint.com/git-shallow-clone-and-clone-depth/
+
+```shell
+git clone --depth=1 git@github.com:VovanR/notes.git
+```
+
+
 
 ## Замержить изменения из мастера, не переключаясь из текущей ветки
 
