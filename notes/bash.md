@@ -1470,3 +1470,15 @@ xdg-open "https://vovanr.com/from-date-to-date/?from=${from}&to=${to}"
 
 exit 0
 ```
+
+
+
+## AWK
+
+```shell
+pulseaudio --version
+pulseaudio 13.99.1
+
+pulseaudio --version | awk '{print $2}'
+13.99.1
+```
