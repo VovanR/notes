@@ -1156,3 +1156,18 @@ Bash open password prompt.
 ```shell
 pkexec ls /root/
 ```
+
+
+
+## Units package
+
+- See: https://linux.die.net/man/1/units
+
+Convert seconds to time
+```shell
+units 4639sec time
+```
+Outputs
+```
+1 hr + 17 min + 19 sec
+```
