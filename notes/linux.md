@@ -1132,12 +1132,17 @@ ps2pdf very_large.ps small.pdf
 ```
 
 
+## Less
 
-## Turn off search highlighting in `less` after a search
+### Turn off search highlighting in `less` after a search
 
 - See: https://unix.stackexchange.com/a/179207
 
 Press `Esc` `u`.
+
+`/` — Search
+
+`&` — Filter
 
 
 
