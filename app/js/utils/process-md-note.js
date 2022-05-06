@@ -25,7 +25,7 @@ markedRenderer.heading = (text, level) => {
 const processMDNote = text => {
 	// Clear `h2` collection
 	h2s = []
-	const data = marked(
+	const data = marked.parse(
 		text,
 		{
 			gfm: true,
