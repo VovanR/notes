@@ -59,21 +59,21 @@ git push --force
 - See: https://help.github.com/articles/configuring-a-remote-for-a-fork
 - See: https://gun.io/blog/how-to-github-fork-branch-and-pull-request/
 
-Список удаленных реп нашего форка
+List of remote repositories of our fork
 ```shell
 git remote -v
 ```
 
-Получаем новый удаленный `upstream` репозиторий, который будем синхронизованный с нашим
+Get actual remote `upstream` repository which will be synchronized with our
 ```shell
 git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
 ```
 
 
 
-## Принятие пулреквеста
+## Accept an pull-request
 
-Fetch and Merge (скачать и слить)
+Fetch and Merge  
 
 Основной метод вливания изменений. Он требует добавления `remote`,  
 ведущего к репозиторию человека, отправившего пулреквест,  
@@ -89,7 +89,7 @@ git push origin master
 
 
 
-## Настройка
+## Git config. Git settings
 
 ```shell
 git config --global user.name "Your Name"
@@ -113,7 +113,7 @@ Global Ignore
 git config --global core.excludesfile ~/.gitignore_global
 ```
 
-## Создание проекта
+## Create a new project
 
 ```shell
 mkdir hello
@@ -123,43 +123,45 @@ git init
 git add hello.html
 git commit -m "First Commit"
 ```
-Если вы опустите метку `-m` из командной строки, git перенесет вас в редактор
-по вашему выбору. Редактор выбирается из следующего списка (в порядке приоритета)
-- переменная среды `GIT_EDITOR`
-- параметр конфигурации `core.editor`
-- переменная среды `VISUAL`
-- переменная среды `EDITOR`
+
+If you omit an `-m` from command, Git will open your default editor to fill an commit message.
+Editor will be chosen by this list (sorted by priority):
+
+- environment variable `GIT_EDITOR`
+- git config parameter `core.editor`
+- environment variable `VISUAL`
+- environment variable `EDITOR`
 
 
 
-## git tag (тэг, тег)
+## git tag
 
-Добавить тэг
+Create new tag
 ```shell
 git tag v0.1.0
 ```
 
-Запушить тэг
+Push tag to remote
 ```shell
 git push origin v0.1.0
 ```
 
-Показать тэги
+Show tags
 ```shell
 git tag
 ```
 
-Перейти к тэгу
+Checkout to tag
 ```shell
 git checkout v0.1.0
 ```
 
-Перейти к предыдущему тэгу
+Checkout to previous tag
 ```shell
 git checkout v0.1.0^
 ```
 
-Удаление тэга
+Remove tag. Delete tag
 ```shell
 git tag -d v0.1.0
 git push origin :refs/tags/v0.1.0
@@ -167,7 +169,7 @@ git push origin :refs/tags/v0.1.0
 
 
 
-## В какой тэг входит коммит
+## Show which tag contains current commit
 
 ```shell
 git describe
@@ -181,7 +183,7 @@ git describe --contains cc98ddd
 
 
 
-## Отмена локальных изменений (до индексации)
+## Cancel local changes (before index)
 
 ```shell
 git checkout hello.html
@@ -189,53 +191,53 @@ git checkout hello.html
 
 
 
-## Отмена коммитов
+## Cancel commit.
 
-Отменить последний коммит. При этом появится новый отменяющий коммит.  
-Сообщение такого будет `Revert "<reverted_commit_message>"\n\nThis reverts commmit <hash>`
+Cancel last commit. In this case new cancellation commit will be created.  
+Commit message will be `Revert "<reverted_commit_message>"\n\nThis reverts commmit <hash>`
 ```shell
 git revert HEAD --no-edit
 ```
 
-Отменить последний коммит. При этом изменения из коммита появятся в индексе
+Cancel last commit. In this case all commit changes will appear in index
 ```shell
 git reset --soft HEAD^
 ```
 
 
 
-## Узнать `commit message` отменённого коммита
+## Show commit message of canceled commit
 
 ```shell
 git reflog
 ```
 
-Находим нужный хэш, например
+Find needed hash. For example:
 ```
 34215450 HEAD@{2}: commit: Fix `FormControl`
 ```
 
-И смотрим
+And show
 ```shell
 git show 34215450
 ```
 
 
 
-## Изменение предыдущего коммита
+## Change previous commit
 
 ```shell
 git commit --amend
 ```
 
-Не открывать редактор сообщения коммита
+Without opening an commit message editor
 ```shell
 git commit --amend --no-edit
 ```
 
 
 
-## Изменить данные автора коммита. git edit commit author email
+## Edit commit author email
 
 ```shell
 git commit --amend --author="Foo Bar <mail@example.com>"
@@ -243,7 +245,7 @@ git commit --amend --author="Foo Bar <mail@example.com>"
 
 
 
-## Перемещение файлов
+## Move files
 
 ```shell
 git mv hello.html lib/
@@ -251,12 +253,13 @@ git mv hello.html lib/
 
 
 
-## Перебазирование `rebase`
+## Rebase `rebase`
 
 ```shell
 git checkout style
 git rebase master
 ```
+
 Не используйте перебазирование:
 1. Если ветка является публичной и расшаренной. Переписывание общих веток будет мешать работе других членов команды.
 2. Когда важна точная история коммитов ветки (так как команда `rebase` переписывает историю коммитов).
@@ -318,20 +321,20 @@ git branch -a
 
 
 
-## Если удалённая ветка всё ещё отображается в `git branch -a`
+## If removed branch still show in `git branch -a`
 
 ```shell
 git remote prune origin
 ```
 
-Показать какие ветки пропадут
+Show list of branches will updated
 ```shell
 git remote prune origin --dry-run
 ```
 
 
 
-## Обновить список всех веток
+## Update list of all branches
 
 ```shell
 git remote update origin --prune
@@ -339,7 +342,7 @@ git remote update origin --prune
 
 
 
-## Извлечение изменений из удаленной репы
+## Get changes from remote
 
 ```shell
 git fetch
@@ -583,7 +586,7 @@ git remote set-url origin <new_url>
 
 
 
-## Добавление модуля
+## Add an module
 
 ```shell
 git submodule add https://github.com/gilsondev/searchtasks.vim.git vim/bundle/searchtasks.vim
@@ -1004,7 +1007,7 @@ git diff --name-only stash@{0} HEAD
 
 
 
-## Фича от фичи
+## Feature from feature
 
 - See: https://github.com/VovanR/test-rebase/wiki  
 
@@ -1014,28 +1017,28 @@ git diff --name-only stash@{0} HEAD
 
 
 
-## Удалить remove `untracked` files
+## Remove `untracked` files
 
 ```shell
 git clean -f
 ```
 
-Удалить файлы и директории
+Remove files and directories
 ```shell
 git clean -fd
 ```
 
-Удалить `ignored` файлы
+Remove `ignored` files
 ```shell
 git clean -fX
 ```
 
-Удалить `ignored` и `untracked` файлы
+Remove `ignored` and `untracked` files
 ```shell
 git clean -fX
 ```
 
-Показать список файлов, которые будут удалены
+Show list of files that will be deleted
 ```shell
 git clean -n
 git clean --dry-run
@@ -1043,37 +1046,37 @@ git clean --dry-run
 
 
 
-## `git bisect`. Поиск коммита, в котором был поломан функционал
+## `git bisect`. Find commit contains broken functionality
 
-Начинаем поиск
+Start search
 ```shell
 git bisect start
 ```
 
-Помечаем, что в текущем месте проблема присутствует
+Mark that problem exists in current commit
 ```shell
 git bisect bad
 ```
 
-Помечаем коммит, в котором всё работало
+Mark that no problems in current commit
 ```shell
 git bisect good cc98ddd
 ```
 
-Теперь смотрим наш функционал, если он сломан, выполняем `git bisect bad`, если исправен `git bisect good`
+Now look on our functionality. If it broken do `git bisect bad`, if works fine do `git bisect good`
 
-В конце концов мы доберёмся до коммита, в котором было поломано:
+Finally we find an commit which contains our bug:
 ```shell
 git bisect good
   d28c20f is the first bad commit
 ```
 
-Смотрим что там было сделано
+Look what this commit contains
 ```shell
 git show d28c20f
 ```
 
-Заканчиваем поиск
+End of our search
 ```shell
 git bisect reset
 ```
@@ -1085,7 +1088,7 @@ git bisect reset
 - See: https://git-scm.com/docs/git-worktree
 - See: https://stacktoheap.com/blog/2016/01/19/using-multiple-worktrees-with-git/
 
-Например необходимо срочно сделать фикс, но не хочется останавливать работу в текущей ветке
+If you need to make hot-fix for example, but you don't need to stop work in current branch
 ```shell
 git worktree add -b emergency-fix ../temp master
 cd ../temp
@@ -1097,7 +1100,7 @@ rm -rf ../temp
 git worktree prune
 ```
 
-Показать список созданных
+Show list of created
 ```shell
 git worktree list
 ```
@@ -1135,23 +1138,23 @@ bfg --replace-text passwords.txt
 - See: https://developer.atlassian.com/blog/2015/04/force-with-lease/
 - See: [Опасность `git push --force` и полезность `git push --force-with-lease`](https://urvanov.ru/2017/09/19/%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D1%8C-git-push-force-%D0%B8-%D0%BF%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D0%BE%D1%81%D1%82%D1%8C-git-push-force-with-lease/)
 
-В отличие от `git push --force`, сначала проверяет актуальность локального `ref`
+It checks actuality of local `ref` before.
 
 ```shell
 git push --force-with-lease
 ```
 
-Если выдало ошибку
+If throws an error
 ```
 error: failed to push some refs to '/tmp/repo'
 ```
 
-Подтягиваем изменения
+Get remote changes
 ```shell
 git fetch
 ```
 
-И повторяем
+And repeat
 ```shell
 git push --force-with-lease
 ```
@@ -1170,15 +1173,16 @@ git cherry-pick <commit-1> <commit-4> <commit-15>
 
 
 
-## Количество коммитов на разработчика
+## Count of commits per developer
 
 - See: https://git-scm.com/docs/git-shortlog
+- See: https://vovanr.com/posts/git-mailmap/
 
 ```shell
 git shortlog -s -n -e
 ```
 
-Если один разработчик коммитил под разными мейлами или именами, то вывод будет таким:
+If one developer committed with different emails or usernames this command outputs:
 ```
 10 Foo Bar <foo.bar@gmail.com>
 3 Foo Bar <foo.bar@ya.ru>
@@ -1186,15 +1190,15 @@ git shortlog -s -n -e
 1 Foobar <foo.bar@baz.com>
 ```
 
-Можно объединить такие записи.  
-Для этого создаём файл `.mailmap` и описываем маппинги.
-Например мы хотим объединить разработчика из вывода выше в такой вид: `Foo Bar <foo.bar@gmail.com>`.
+Join developer data by linking developer data.  
+Create `.mailmap` file in repository directory with mappings.  
+For example we need to join developer data from output above to: `Foo Bar <foo.bar@gmail.com>`.
 
-Для этого надо:
-1. Обновить имя для мейлов `<foo.bar@example.com>` и `<foo.bar@baz.com>` на `Foo Bar`.
-2. Объединить мейлы `<foo.bar@ya.ru>`, `<foo.bar@example.com>` и `<foo.bar@baz.com>` на `<foo.bar@gmail.com>`.
+Steps to join data:
+1. Update username for email `<foo.bar@example.com>` and `<foo.bar@baz.com>` to `Foo Bar`.
+2. Join emails `<foo.bar@ya.ru>`, `<foo.bar@example.com>` and `<foo.bar@baz.com>` to `<foo.bar@gmail.com>`.
 
-Файл `.mailmap` будет выглядеть так:
+File `.mailmap` will looks like:
 ```
 Foo Bar <foo.bar@example.com>
 Foo Bar <foo.bar@baz.com>
@@ -1203,12 +1207,12 @@ Foo Bar <foo.bar@baz.com>
 <foo.bar@gmail.com> <foo.bar@baz.com>
 ```
 
-Теперь вывод команды будет правильным
+Now output will be right:
 ```
 18 Foo Bar <foo.bar@gmail.com>
 ```
 
-В файле можно оставлять комментарии, может быть полезно, если пользователей много:
+You can leave comments in this file (it can be helpful for a lot of users):
 ```
 # See: https://git-scm.com/docs/git-shortlog#_mapping_authors
 # git shortlog -s -n -e
@@ -1228,7 +1232,7 @@ Baz Qux <baz.qux@example.com>
 
 - See: https://github.com/fboender/multi-git-status
 
-Показать состояние всех репозиториев в директории
+Show all repositories status in current directory
 
 
 
@@ -1236,7 +1240,7 @@ Baz Qux <baz.qux@example.com>
 
 - See: https://github.com/kamranahmedse/git-standup
 
-Показать список коммитов за последние несколько дней
+Show my commits for last work week
 
 ```shell
 git standup -d 5
@@ -1259,6 +1263,7 @@ ls | xargs -I{} git -C {} pull
 - See: https://git-scm.com/docs/git-describe
 
 Show current last tag
+
 ```shell
 git describe --tags
 ```
