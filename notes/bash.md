@@ -600,7 +600,7 @@ cat archive.?? > archive.tar.gz
 
 ## `rsync`
 
-### Забрать каталог `data` с удаленного сервера
+### Get directory `data` from remote server
 
 ```shell
 rsync -avz USER@HOST:/usr/local/www/data/foo.ru/www/data/ ./
@@ -608,14 +608,23 @@ rsync -avz -e ssh USER@HOST:~/www/data ./
 rsync -avz -e "ssh -p 6666" USER@HOST:~/www/data ./
 ```
 
-### Загрузить файл на сервер
+
+### Path with spaces
+
+Wrap path with quotes `"` and escape spaces with back slash `\`
+```shell
+rsync -avz USER@HOST:"~/Documents/Some\ directory\ with\ spaces/notes" ./
+```
+
+
+### Upload file to server
 
 ```shell
 rsync -a www/css/main.css USER@HOST:www/css/
 ```
 
 
-### Бэкапим папку "Мои документы"
+### Backup directory "Мои документы"
 
 ```shell
 rsync -avz --progress --delete '/media/username/Documents/Мои документы' /media/My-Book-Live/backup --exclude ".*" --exclude "Thumbs.db"
