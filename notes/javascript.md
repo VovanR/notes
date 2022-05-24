@@ -32,6 +32,12 @@
 
 
 
+## Performance
+
+- See: [Array.includes vs Set.has vs Map.has vs Object[]](https://jsbench.me/wwl3ijswla/1)
+
+
+
 ## Libs, Библиотеки
 
 ### Работа с цветом
