@@ -1171,3 +1171,20 @@ Outputs
 ```
 1 hr + 17 min + 19 sec
 ```
+
+
+
+## OBS Studio as virtual camera on Ubuntu
+
+- See: https://linuxgamecast.com/2021/07/obs-linux-basics-virtual-webcam/
+- See: https://ubunlog.com/en/obs-studio-26-0-llega-con-soporte-para-camara-virtual-y-mas/
+
+It's allow us to use OBS scene as virtual camera in Zoom calls.
+
+```shell
+sudo add-apt-repository ppa:obsproject/obs-studio
+sudo apt update
+sudo apt install obs-studio
+sudo apt install ffmpeg
+sudo apt install linux-headers-$(uname -r) v4l2loopback-dkms
+```
