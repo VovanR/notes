@@ -1188,3 +1188,50 @@ sudo apt install obs-studio
 sudo apt install ffmpeg
 sudo apt install linux-headers-$(uname -r) v4l2loopback-dkms
 ```
+
+
+
+## Remote desktop
+
+- See: [How to Install and Configure VNC on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-20-04)
+- See: [LUKS encryption: Enable remote ssh unlocking](https://iotechonline.com/luks-encryption-enable-remote-ssh-unlocking/)
+- See: [How to install LUKS encrypted Ubuntu 18.04.x Server and enable remote unlocking](https://hamy.io/post/0009/how-to-install-luks-encrypted-ubuntu-18.04.x-server-and-enable-remote-unlocking/#remote-unlocking-overview)
+
+
+```shell
+sudo apt install dropbear-initramfs
+```
+
+Edit `/etc/dropbear-initramfs/config` with:
+```
+DROPBEAR_OPTIONS="-p 5678 -s -j -k -I 60"
+```
+Options explanation, change them to fit your needs, type ‘man dropbear’ for further info:
+- `-p 5678`: port where the ssh process will be listening.
+- `-s`: disable password logins.
+- `-j`: disable local port forwarding.
+- `-k`: disable remote port forwarding.
+- `-I 60`: idle timeout. Disconnect after 60 idle seconds.
+
+Create the file `/etc/dropbear-initramfs/authorized_keys` and put your public key. 
+Limit shell access to unlocking encrypted root partition only: add at start of public key
+```
+no-port-forwarding,no-agent-forwarding,no-x11-forwarding,command="/bin/cryptroot-unlock" ssh-rsa . . .
+```
+
+Then update initramfs with command:
+```shell
+update-initramfs -u
+```
+
+### Connect
+```shell
+ssh -p5678 root@192.168.0.100
+```
+
+Which brings us to the BusyBox built-in shell. 
+Enter `cryptroot-unlock` command.
+
+### RDP
+
+Use Remmina program
