@@ -1918,6 +1918,60 @@ function runAnimation() {
 
 
 
+## Install PWA
+
+- See: https://github.com/liyasthomas/mnmlurl/blob/master/src/index.html
+
+```js
+let pwaInstalled = localStorage.getItem('pwaInstalled') == 'yes'
+
+if (window.matchMedia('(display-mode: standalone)').matches) {
+    localStorage.setItem('pwaInstalled', 'yes')
+    pwaInstalled = true
+}
+
+if (window.navigator.standalone === true) {
+    localStorage.setItem('pwaInstalled', 'yes')
+    pwaInstalled = true
+}
+
+if (pwaInstalled) {
+    document.getElementById('installPWA').style.display = 'none'
+} else {
+    document.getElementById('installPWA').style.display = 'inline-flex'
+}
+
+let deferredPrompt = null
+window.addEventListener('beforeinstallprompt', (e) => {
+    deferredPrompt = e
+})
+
+async function installPWA() {
+    if (!deferredPrompt) {
+        return
+    }
+
+    deferredPrompt.prompt()
+
+    deferredPrompt.userChoice.then(({outcome}) => {
+        if (outcome === 'accepted') {
+            console.log('Your PWA has been installed')
+        } else {
+            console.log('User chose to not install your PWA')
+        }
+        deferredPrompt = null
+    })
+}
+
+window.addEventListener('appinstalled', () => {
+    localStorage.setItem('pwaInstalled', 'yes')
+    pwaInstalled = true
+    document.getElementById('installPWA').style.display = 'none'
+})
+```
+
+
+
 ## `.valueOf`, `.toString`
 
 - See: [Object.prototype.valueOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf)
