@@ -1235,3 +1235,20 @@ Enter `cryptroot-unlock` command.
 ### RDP
 
 Use Remmina program
+
+
+
+## Certificate
+
+
+```shell
+sudo update-ca-certificates
+trust list | wc -l
+/usr/local/share/ca-certificates
+```
+
+
+
+## organize - The file management automation tool
+
+- See: https://github.com/tfeldmann/organize
