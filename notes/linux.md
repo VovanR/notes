@@ -1253,3 +1253,20 @@ trust list | wc -l
 ## organize - The file management automation tool
 
 - See: https://github.com/tfeldmann/organize
+
+
+
+## Convert MP4 to GIF. Convert video to GIF
+
+```shell
+ffmpeg -i video.mp4 video.gif
+```
+
+
+## Convert WebP to PNG
+
+- See: https://unix.stackexchange.com/questions/70622/command-line-convert-webp-to-jpg
+
+```shell
+ffmpeg -i file.webp out.png
+```

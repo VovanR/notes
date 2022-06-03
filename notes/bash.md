@@ -562,15 +562,6 @@ convert -delay 32 -loop 0 anim* anim.gif
 ```
 
 
-## Convert WebP to PNG
-
-- See: https://unix.stackexchange.com/questions/70622/command-line-convert-webp-to-jpg
-
-```shell
-ffmpeg -i file.webp out.png
-```
-
-
 ## `base64`
 
 ```shell
