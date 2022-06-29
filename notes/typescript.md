@@ -22,6 +22,7 @@
 interface Colorful {
   color: string;
 }
+
 interface Circle {
   radius: number;
 }
@@ -47,35 +48,35 @@ See: https://twitter.com/kuflash/status/1400846728664956928
 
 ```typescript
 enum BookGroup {
-    Cool = 'cool',
-    Trash = 'trash',
+  Cool = 'cool',
+  Trash = 'trash',
 }
 
 type BookGroupType = BookGroup.Cool | BookGroup.Trash;
 
 interface BookType {
-    id: string;
-    group: BookGroupType;
+  id: string;
+  group: BookGroupType;
 }
 
 const books: BookType[] = [
-    {id: '1', group: BookGroup.Cool},
-    {id: '2', group: BookGroup.Trash},
-    {id: '3', group: BookGroup.Cool},
+  {id: '1', group: BookGroup.Cool},
+  {id: '2', group: BookGroup.Trash},
+  {id: '3', group: BookGroup.Cool},
 ]
 
 const booksByGroups: Partial<Record<BookGroupType, BookType[]>> = {};
 
 for (const book of books) {
-    const {group} = book;
+  const {group} = book;
 
-    const booksByGroup = booksByGroups[group];
+  const booksByGroup = booksByGroups[group];
 
-    if (booksByGroup) {
-        booksByGroup.push(book);
-    } else {
-        booksByGroups[group] = [book];
-    }
+  if (booksByGroup) {
+    booksByGroup.push(book);
+  } else {
+    booksByGroups[group] = [book];
+  }
 }
 ```
 
@@ -170,7 +171,7 @@ function move(animal: Fish | Bird | Human) {
 Тождественная функция — это функция, возвращающая значение переданного в неё аргумента.
 ```javascript
 function identity (value) {
-    return value;
+  return value;
 }
 
 console.log(identity(1)) // 1
@@ -178,7 +179,7 @@ console.log(identity(1)) // 1
 
 ```typescript
 function identity <T>(value: T) : T {
-    return value;
+  return value;
 }
 
 console.log(identity<Number>(1)) // 1
