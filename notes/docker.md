@@ -381,3 +381,17 @@ Compare directories
 ```shell
 meld ./www-1 ./www-2
 ```
+
+
+## Container already in use but not listed
+
+```
+docker: Error response from daemon: Conflict. The container name "container-name" is already in use by container "b2a023". You have to remove (or rename) that container to be able to reuse that name.
+```
+
+But container not listed by `docker container ls`. 
+Use `docker container ls -a` instead to see this container. And remove container.
+
+```shell
+docker rm container-name
+```
