@@ -87,7 +87,7 @@ function NotesFilter({
 				autoComplete: 'off',
 				autoCorrect: 'off',
 				autoCapitalize: 'off',
-				cpellcheck: 'false',
+				spellcheck: 'false',
 				autoFocus: true,
 			}),
 			createElement('button', {
