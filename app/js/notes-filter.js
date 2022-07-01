@@ -39,6 +39,7 @@ function NotesFilter({
 		const processedValue = value
 			.split('')
 			.map(char => convertCharLayout(char))
+			.filter(char => /[\w\d]/.test(char))
 			.join('')
 
 		saveValue(processedValue)
