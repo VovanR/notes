@@ -1267,3 +1267,11 @@ Show current last tag
 ```shell
 git describe --tags
 ```
+
+
+
+## Log removed file
+
+```shell
+git log --all --full-history  -- src/components/shared/Select/index.jsx
+```
