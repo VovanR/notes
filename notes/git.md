@@ -181,6 +181,16 @@ git describe --contains cc98ddd
     1.1.0^2~2^2
 ```
 
+If you see error message - it means that last tag is before this commit
+```
+fatal: cannot describe 'cc98ddd'
+```
+
+Run
+```shell
+git fetch --tags
+```
+
 
 
 ## Cancel local changes (before index)
