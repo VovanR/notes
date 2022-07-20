@@ -1270,3 +1270,10 @@ ffmpeg -i video.mp4 video.gif
 ```shell
 ffmpeg -i file.webp out.png
 ```
+
+
+## Journal
+Services log journal
+```shell
+journalctl -xe
+```
