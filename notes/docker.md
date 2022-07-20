@@ -133,7 +133,7 @@ docker --version
 
 
 
-## Check some programm version on running container
+## Check some program version on running container
 
 ```shell
 docker exec -it <container_name> sh
