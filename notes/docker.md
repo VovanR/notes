@@ -65,10 +65,10 @@ docker image ls
 
 
 
-## Запустить, остановить, подключиться
+## Start, stop, attach
 
-Чтобы остановить активный контейнер, жмем `Ctrl + c`  
-Свернуть активный контейнер `Ctrl + p` + `Ctrl + q`  
+To stop active container press `Ctrl + c` key  
+Collapse active container press `Ctrl + p` + `Ctrl + q` key  
 
 ```shell
 docker start my_docker_container
@@ -86,7 +86,7 @@ docker attach my_docker_container
 
 
 
-## Перезагрузить Nginx в запущенном контейнере
+## Restart Nginx in running container
 
 - See: https://www.shellhacks.com/docker-reload-nginx-inside-container/
 
@@ -96,7 +96,7 @@ docker container exec <container> nginx -s reload
 
 
 
-## Проверить корректность Nginx конфига
+## Check Nginx config is correct
 
 ```shell
 docker container exec <container> nginx -t
@@ -104,17 +104,17 @@ docker container exec <container> nginx -t
 
 
 
-## Установка *Docker* на виртуальную машину с *Ubuntu Server*
+## Install *Docker* on virtual machine with *Ubuntu Server*
 
-Установить *VirtualBox*
+Install *VirtualBox*
 
 ```shell
 sudo apt-get install virtualbox
 ```
 
-Создать виртуальную машину с [Ubuntu 18.04 LTS (Bionic Beaver)](https://www.ubuntu.com/download/server)
+Create virtual machine with [Ubuntu 18.04 LTS (Bionic Beaver)](https://www.ubuntu.com/download/server)
 
-Запускаем виртуальную машину
+Run virtual machine
 
 - See: [Install Docker CE](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce)
 
@@ -133,20 +133,20 @@ docker --version
 
 
 
-## Узнать версию программы на запущенном контейнере
+## Check some programm version on running container
 
 ```shell
 docker exec -it <container_name> sh
 ```
 
-Запустится шелл, где можно проверить версии
+It will start an shell session where you can run command like that
 ```shell
 perl --version
 ```
 
 
 
-## Просмотрщик слоёв
+## Explore layers in a Docker image
 
 - See: https://github.com/wagoodman/dive
 
@@ -167,16 +167,16 @@ If the directory doesn't exist, it'll be created automatically.
 Any RUN, COPY or ADD instructions that follow the `WORKDIR` instruction in
 the Docker file will be executed within the specified directory.
 
-Следующий `WORKDIR` относителен предыдущему
+Next `WORKDIR` is relative to previous
 
 
-## Освободить место
+## Clear disk space
 
 ```shell
 docker system prune
 ```
 
-Стереть все images
+Remove all images
 
 ```shell
 docker rmi $(docker images --format '{{.ID}}')
@@ -184,18 +184,18 @@ docker rmi $(docker images --format '{{.ID}}')
 
 
 
-## Сборка
+## Build
 
 ```shell
 docker build -t <c_name> .
 ```
 
-Сборка с указанием докер-файла
+Build with Docker-file name
 ```shell
 docker build -f ./Dockerfile-test .
 ```
 
-## Запуск
+## Run
 
 ```shell
 docker run -it --rm <c_name>
@@ -220,21 +220,21 @@ Pass current environment variable
 docker run --env VARNAME -it --rm <image_name>
 ```
 
-## Запустить слой
+## Run a layer of image
 
 ```shell
 docker run -it --rm <layer_id> bash
 ```
 
-Где `<layer_id>` — хеш из `Step 11/15` (который отображается при сборке)  
-или даже так
+Where `<layer_id>` is hash from `Step 11/15` (which shown in building process)  
+or you can:
 
 ```shell
 docker run -it --rm <layer_id> -- gulp -v
 ```
 
 
-## Пересобрать
+## Rebuild
 
 ```shell
 docker rmi <c_name>
