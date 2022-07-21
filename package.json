@@ -14,11 +14,11 @@
     "test:css": "stylelint app/css/*.css"
   },
   "devDependencies": {
-    "ava": "^4.3.0",
+    "ava": "^4.3.1",
     "http-server": "^14.1.1",
     "stylelint": "^14.9.1",
     "stylelint-config-standard": "^26.0.0",
-    "xo": "0.50.0",
+    "xo": "0.51.0",
     "yaspeller": "^8.0.1"
   },
   "bugs": {
