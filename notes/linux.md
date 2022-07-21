@@ -1277,3 +1277,42 @@ Services log journal
 ```shell
 journalctl -xe
 ```
+
+
+## Computer uptime
+
+```shell
+uptime --pretty
+```
+
+Outputs
+```
+up 3 days, 4 hours, 53 minutes
+```
+
+
+## User session uptime
+
+### `w` command
+```shell
+w
+```
+
+Outputs
+```
+ 17:22:43 up 3 days,  4:54, 17 users,  load average: 3,65, 3,41, 3,30
+ USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+ vovanr   tty7     :0               10:41    3days 29:51   5.72s xfce4-session
+ . . .
+```
+
+### `who` command
+```shell
+who
+```
+
+Outputs
+```
+vovanr   tty7         2022-07-21 10:41 (:0)
+. . .
+```
