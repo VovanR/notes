@@ -185,22 +185,28 @@ foo = foo.substring(0, foo.lastIndexOf('\n')); //=> 'a\nb\nc'
 ### Remove first character
 
 ```js
-var foo = 'foo';
-foo.slice(1); //=> 'oo'
+var foo = 'abc';
+foo.slice(1); //=> 'bc'
 ```
 
 ### Remove last character
 
 ```js
-var foo = 'foo';
-foo.slice(0, -1); //=> 'fo'
+var foo = 'abc';
+foo.slice(0, -1); //=> 'ab'
 ```
 
 ### Remove first and last character
 
 ```js
-var foo = 'foo';
-foo.slice(1, -1); //=> 'o'
+var foo = 'abc';
+foo.slice(1, -1); //=> 'b'
+```
+
+### Get last character
+```javascript
+var foo = 'abc';
+foo.slice(-1); //=> 'c'
 ```
 
 
