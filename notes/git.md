@@ -649,7 +649,7 @@ git apply ./patch.patch
 
 
 
-## Сравнить измененный файл с веткой 'master'
+## Сравнить измененный файл с веткой `master`
 
 ```shell
 git diff master~20:project/file.js project/file.js
