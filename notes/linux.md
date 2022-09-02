@@ -551,10 +551,9 @@ sudo apt-get install network-manager-openvpn network-manager-openvpn-gnome
 - See: https://www.digitalocean.com/community/tutorials/how-to-use-ssh-to-connect-to-a-remote-server-in-ubuntu#how-to-configure-ssh
 
 
+## Run remote commands via SSH
 
-## Выполнение команд по SSH
-
--See: https://malcontentcomics.com/systemsboy/2006/07/send-remote-commands-via-ssh.html
+- See: https://malcontentcomics.com/systemsboy/2006/07/send-remote-commands-via-ssh.html
 
 ```shell
 ssh user@host "ls -al"
@@ -565,7 +564,7 @@ ssh user@orangepilite "sleep 1 && cat /sys/class/thermal/thermal_zone0/temp | se
 //=> 67 °C
 ```
 
-Для интерактивных команд
+For interactive commands:
 ```shell
 ssh -t user@host "top"
 ```
