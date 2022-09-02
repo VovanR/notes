@@ -629,6 +629,11 @@ ssh -R [удаленный_адрес:]удаленный_порт:локаль�
 ```
 
 
+## SSH remove host from `known_hosts`
+```shell
+ssh-keygen -R orangepilite.local
+```
+
 
 ## Languages
 
