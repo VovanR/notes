@@ -190,3 +190,9 @@ npm install bootstrap@3
 Для этого используют пространства имён [`npm-scope`](https://docs.npmjs.com/misc/scope).  
 Например у тебя есть пакет `"utils"`, но это имя уже занято.
 Принято добавить пространство имени организации или пользователя, например `"@vovanr/utils"`.
+
+
+## npm clear cache
+```shell
+npm cache clean --force
+```
