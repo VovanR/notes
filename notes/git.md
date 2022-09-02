@@ -656,6 +656,17 @@ git diff master~20:project/file.js project/file.js
 ```
 
 
+## Compare tags
+- See: https://stackoverflow.com/a/53282352/1284255
+
+```shell
+git difftool tags/<tag_1> tags/<tag_2>
+```
+Compare specific files in tags:
+```shell
+git difftool tags/<tag_1>:<file_path> tags/<tag_2>:<file_path>
+```
+
 
 ## Показать изменения добавленного в коммит файла
 
