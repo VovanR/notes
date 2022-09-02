@@ -186,7 +186,6 @@ foo = foo.substring(0, foo.lastIndexOf('\n')); //=> 'a\nb\nc'
 
 ```js
 var foo = 'foo';
-foo.substr(1); //=> 'oo'
 foo.slice(1); //=> 'oo'
 ```
 
