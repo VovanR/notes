@@ -1483,6 +1483,10 @@ pulseaudio --version | awk '{print $2}'
 13.99.1
 ```
 
+## AWK parse semver major version
+```shell
+echo "1.2.3" | awk -F '.' '{print $1}'
+```
 
 
 ## Install script example
