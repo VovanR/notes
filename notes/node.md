@@ -196,3 +196,24 @@ npm install bootstrap@3
 ```shell
 npm cache clean --force
 ```
+
+## npm link
+Test locally changed package
+```shell
+npm link
+```
+
+Use this package in another package (`<package_name>` is name of package in their `package.json`)
+```shell
+npm link <package_name>
+```
+
+To unlink in package:
+```shell
+npm unlink
+```
+
+Remove link
+```shell
+npm rm --global <package_name>
+```
