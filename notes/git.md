@@ -1042,6 +1042,14 @@ git diff --name-only stash@{0} HEAD
 - `git stash --all` — скрывает игнорируемые, неотслеживаемые и отслеживаемые файлы
 
 
+### `git stash pop` conflict sides
+
+If you have conflicts after stash pop, in diff tool sides means:
+
+|left|center|right|
+|---|---|---|
+|remote|merge|local|
+|from stash pop|result|current local state|
 
 ## Feature from feature
 
