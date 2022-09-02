@@ -571,7 +571,20 @@ ssh -t user@host "top"
 
 
 
-## Подключение по SSH без ввода пароля. SSH login without password
+## SSH login without password
+
+### Variant 1
+
+- See: https://linux.die.net/man/1/ssh-copy-id
+
+Run on host:
+```shell
+ssh-copy-id user@host
+```
+On remote will appear file `~/.ssh/authorized_keys` with host public key
+
+
+### Variant 2
 
 - See: http://www.linuxproblem.org/art_9.html
 
@@ -590,7 +603,7 @@ a@A~$ ssh b@B mkdir .ssh
 
 Добавляем публичный ключ в список авторизованных
 ```shell
-a@A:~$ cat ~/.ssh/id_rsa.pub | ssh b@B "cat >> .ssh/authorized_keys"
+a@A~$ cat ~/.ssh/id_rsa.pub | ssh b@B "cat >> .ssh/authorized_keys"
 ```
 
 
