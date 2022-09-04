@@ -116,7 +116,7 @@ git config --global core.excludesfile ~/.gitignore_global
 ## Git config for subdirectories
 - See: https://stackoverflow.com/a/48088291/1284255
 
-For example if I place all my personal repos to `~/projects/vovanr/` I need to set my personal email for commits.
+For example if I place all my personal repositories `~/projects/vovanr/` I need to set my personal email for commits.
 I can create `~/projects/vovanr/.gitconfig_include` file with content:
 ```gitconfig
 [user]

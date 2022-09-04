@@ -192,12 +192,12 @@ npm install bootstrap@3
 Принято добавить пространство имени организации или пользователя, например `"@vovanr/utils"`.
 
 
-## npm clear cache
+## `npm clear cache`
 ```shell
 npm cache clean --force
 ```
 
-## npm link
+## `npm link`
 Test locally changed package
 ```shell
 npm link

@@ -1335,7 +1335,7 @@ vovanr   tty7         2022-07-21 10:41 (:0)
 ```
 
 
-## Unarchive `.xz`
+## Extract `.xz`
 ```shell
 unxz archive_name.img.xz
 ```
