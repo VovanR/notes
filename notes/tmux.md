@@ -18,6 +18,15 @@
 `C-S-b` — Backward find text on the screen
 
 
+### Control Tmux in Tmux
+
+- See: https://superuser.com/questions/249659/how-to-detach-a-tmux-session-that-itself-already-in-a-tmux
+
+For example when you attach Tmux session over SSH connection.
+
+`C-b` + `C-b` + `d` — Detach from session
+
+
 
 ## Sessions
 
