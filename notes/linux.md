@@ -1339,3 +1339,26 @@ vovanr   tty7         2022-07-21 10:41 (:0)
 ```shell
 unxz archive_name.img.xz
 ```
+
+
+## Configure Wi-Fi connection
+
+- See: https://wiki.archlinux.org/title/NetworkManager
+
+List nearby Wi-Fi networks:
+```shell
+nmcli device wifi list
+```
+
+Connect to a Wi-Fi network:
+```shell
+nmcli device wifi connect <SSID_or_BSSID> password <password>
+```
+
+Connect to a hidden Wi-Fi network:
+```shell
+nmcli device wifi connect <SSID_or_BSSID> password <password> hidden yes
+```
+
+All configured connections are stored in `/etc/NetworkManager/system-connections/*.nmconnection` files.  
+You can edit this files and reload connection `nmcli connection reload`.
