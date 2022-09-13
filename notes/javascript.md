@@ -215,8 +215,8 @@ foo.slice(-1); //=> 'c'
 
 ```javascript
 fetch('https://api.github.com/users/vovanr')
-    .then(x => x.json())
-    .then(x => {console.log(x)})
+  .then(x => x.json())
+  .then(x => {console.log(x)})
 ```
 
 
@@ -335,7 +335,7 @@ a[0] = 3;
 var arr = ['a', 'b', 'c'];
 var i = arr.length;
 while (i--) {
-    arr[i] //=> 'c', 'b', 'a'
+  arr[i] //=> 'c', 'b', 'a'
 }
 ```
 
@@ -356,7 +356,7 @@ console.log(m); //=> [{id: 3}, {id: 2}, {id: 8}]
 
 - See: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 
-
+Arguments:
 - `callback`
   - `accumulator`
   - `currentValue`
@@ -433,13 +433,13 @@ console.log(o1);  //=> { a: 1, b: 2, c: 3 }, target object itself is changed.
 
 ```js
 Object.keys(object).forEach(key => {
-    console.log(object[key]);
+  console.log(object[key]);
 });
 ```
 
 ```js
 Object.entries(object).forEach(([key, value]) => {
-    console.log(key, value);
+   console.log(key, value);
 });
 ```
 
@@ -451,21 +451,21 @@ Object.entries(object).forEach(([key, value]) => {
 
 ```javascript
 for (key in object) {
-    if (!Object.prototype.hasOwnProperty.call(object, key)) {
-        continue;
-    }
+  if (!Object.prototype.hasOwnProperty.call(object, key)) {
+    continue;
+  }
 
-    console.log(object[key]);
+  console.log(object[key]);
 }
 
 for (key in object) {
-    if (!Object.prototype.hasOwnProperty.call(object, key)) continue;
+  if (!Object.prototype.hasOwnProperty.call(object, key)) continue;
 
-    console.log(object[key]);
+  console.log(object[key]);
 }
 
 for (key in object) if (Object.prototype.hasOwnProperty.call(object, key)) {
-    console.log(object[key]);
+  console.log(object[key]);
 }
 ```
 
@@ -478,7 +478,7 @@ for (key in object) if (Object.prototype.hasOwnProperty.call(object, key)) {
 ```javascript
 const object = {a: 1, b: 2};
 for (const [key, value] of Object.entries(object)) {
-    console.log(key, value);
+  console.log(key, value);
 }
 //=> "a", 1
 //=> "b", 2
@@ -489,7 +489,7 @@ const booksById = new Map();
 booksById.set('a', 'Foo');
 booksById.set('b', 'Bar');
 for (const [id, book] of booksById) {
-    console.log(id, book);
+  console.log(id, book);
 }
 //=> "a", "Foo"
 //=> "b", "Bar"
@@ -511,7 +511,7 @@ for (const [id, book] of booksById) {
  * @return {Number} Целое число
  */
 var mathRound = function (num) {
-    return (0.5 + num) << 0;
+  return (0.5 + num) << 0;
 };
 ```
 
@@ -550,11 +550,11 @@ Object.getOwnPropertyNames(a.constructor.prototype).filter(i => i !== 'construct
 
 ```html
 <input
-    type="text"
-    readonly
-    onfocus="this.select();"
-    onclick="this.select();"
-    value="Hello World!"
+  type="text"
+  readonly
+  onfocus="this.select();"
+  onclick="this.select();"
+  value="Hello World!"
 >
 ```
 
@@ -640,13 +640,13 @@ document.body.appendChild(frag);
 ```js
 var iframe = element[0].childNodes[0];
 iframe.onload = function () {
-    var height;
-    height = iframe.contentWindow.document.body.offsetHeight;
-    var marginTop = iframe.contentWindow.window.getComputedStyle(iframe.contentWindow.document.body).marginTop;
-    marginTop = parseInt(marginTop, 10);
-    var marginBottom = iframe.contentWindow.window.getComputedStyle(iframe.contentWindow.document.body).marginBottom;
-    marginBottom = parseInt(marginBottom, 10);
-    iframe.style.height = height + marginTop + marginBottom + 'px';
+  var height;
+  height = iframe.contentWindow.document.body.offsetHeight;
+  var marginTop = iframe.contentWindow.window.getComputedStyle(iframe.contentWindow.document.body).marginTop;
+  marginTop = parseInt(marginTop, 10);
+  var marginBottom = iframe.contentWindow.window.getComputedStyle(iframe.contentWindow.document.body).marginBottom;
+  marginBottom = parseInt(marginBottom, 10);
+  iframe.style.height = height + marginTop + marginBottom + 'px';
 };
 ```
 
@@ -741,9 +741,9 @@ const booleanToNumber = boolean => +boolean; // Приведение типов
 
 ```js
 document.addEventListener('mousewheel', function (e) {
-    if (e.deltaY % 1 !== 0) {
-        e.preventDefault();
-    }
+  if (e.deltaY % 1 !== 0) {
+    e.preventDefault();
+  }
 });
 ```
 
@@ -817,10 +817,10 @@ const createList = (arr) => arr.length > 0 ? `<ul><li>${arr.join('</li><li>')}</
 
 ```javascript
 for (var i = 0; i < 10; i++) {
-    if (не подходит) {
-        continue;
-    }
-    // ...
+  if (не подходит) {
+    continue;
+  }
+  // ...
 }
 ```
 
@@ -831,23 +831,23 @@ for (var i = 0; i < 10; i++) {
 ```html
 <script>
 if (document.getElementById('noselect')) {
-    disableSelection(document.getElementById('noselect'));
+  disableSelection(document.getElementById('noselect'));
 }
 
 function disableSelection(target) {
-    if (typeof target.onselectstart !== 'undefined') {
-        target.onselectstart = function () {
-            return false;
-        };
-    } else if (typeof target.style.MozUserSelect !== 'undefined') {
-        target.style.MozUserSelect = 'none';
-    } else {
-        target.onmousedown = function () {
-            return false;
-        };
-    }
+  if (typeof target.onselectstart !== 'undefined') {
+    target.onselectstart = function () {
+      return false;
+    };
+  } else if (typeof target.style.MozUserSelect !== 'undefined') {
+    target.style.MozUserSelect = 'none';
+  } else {
+    target.onmousedown = function () {
+      return false;
+    };
+  }
 
-    target.style.cursor = 'default';
+  target.style.cursor = 'default';
 }
 </script>
 ```
@@ -866,12 +866,12 @@ Math.floor(Math.random() * 4)
 
 ```js
 function getRandomGreeting() {
-    switch (Math.floor(Math.random() * 4)) {
-        case 0: return 'Hello';
-        case 1: return 'Howdy';
-        case 2: return 'Greetings to you';
-        case 3: return 'Hail';
-    }
+  switch (Math.floor(Math.random() * 4)) {
+    case 0: return 'Hello';
+    case 1: return 'Howdy';
+    case 2: return 'Greetings to you';
+    case 3: return 'Hail';
+  }
 }
 ```
 
@@ -890,22 +890,22 @@ const random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 ```javascript
 var Person = {
-    constructor: function (name, age, gender) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
-        return this;
-    },
-    greet: function () {
-        console.log('Hi, my name is ' + this.name);
-    },
+  constructor: function (name, age, gender) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+    return this;
+  },
+  greet: function () {
+    console.log('Hi, my name is ' + this.name);
+  },
 };
 
 var WebDeveloper = Object.create(Person);
 WebDeveloper.constructor = function (name, age, gender, skills) {
-    Person.constructor.apply(this, arguments);
-    this.skills = skills || [];
-    return this;
+  Person.constructor.apply(this, arguments);
+  this.skills = skills || [];
+  return this;
 };
 
 var developer = Object.create(WebDeveloper).constructor('Jack', 21, 'male', ['html', 'css']);
@@ -919,7 +919,7 @@ var developer = Object.create(WebDeveloper).constructor('Jack', 21, 'male', ['ht
 
 ```javascript
 var classof = function (object) {
-    return Object.prototype.toString.call(object).slice(8, -1);
+  return Object.prototype.toString.call(object).slice(8, -1);
 };
 ```
 
@@ -931,7 +931,7 @@ var classof = function (object) {
 
 ```javascript
 if (e.defaultPrevented) {
-    return false;
+  return false;
 }
 ```
 
@@ -1008,10 +1008,10 @@ new URLSearchParams({foo: 1, bar: 2})
 
 ```js
 function inc(object) {
-    return {
-        ...object,
-        value: object.value + 1
-    };
+  return {
+    ...object,
+    value: object.value + 1
+  };
 }
 ```
 
@@ -1038,53 +1038,53 @@ npm i -g phantomjs webpage
 var webshot = require('webshot');
 
 phantom.addCookie({
-    name: 'sessionid',
-    value: '<SESSION_ID>',
-    domain: '.example.com'
+  name: 'sessionid',
+  value: '<SESSION_ID>',
+  domain: '.example.com'
 });
 var ids = [
-    37,
-    204,
-    224
+  37,
+  204,
+  224
 ];
 var length = ids.length;
 var lastIndex = length - 1;
 
 function screenshot(index, isLast) {
-    console.log('Item:', index);
+  console.log('Item:', index);
 
-    var id = ids[index];
+  var id = ids[index];
 
-	var options = {
-		screenSize: {
-			width: 1366,
-			height: 1800
-		},
-		shotSize: {
-			width: 'window',
-			height: 'all'
-		},
-		// renderDelay: 5000,
-		userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/2.1.1 (development) Safari/534.34'
-	};
+  var options = {
+    screenSize: {
+      width: 1366,
+      height: 1800
+    },
+    shotSize: {
+      width: 'window',
+      height: 'all'
+    },
+    // renderDelay: 5000,
+    userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/2.1.1 (development) Safari/534.34'
+  };
 
-	webshot(
-		'https://example.com/admin/pages/' + id + '/preview/',
-		'screenshots/' + id + '.png',
-		options,
-		function () {
-			setTimeout(function () {
-				var newIndex = index - 1;
+  webshot(
+    'https://example.com/admin/pages/' + id + '/preview/',
+    'screenshots/' + id + '.png',
+    options,
+    function () {
+      setTimeout(function () {
+        var newIndex = index - 1;
 
-				if (isLast || newIndex < 0) {
-					console.log('exit');
-				} else {
-					isLast = newIndex === 0;
-					screenshot(newIndex, isLast);
-				}
-			}, 200);
-		}
-	);
+        if (isLast || newIndex < 0) {
+          console.log('exit');
+        } else {
+          isLast = newIndex === 0;
+          screenshot(newIndex, isLast);
+        }
+      }, 200);
+    }
+  );
 }
 
 screenshot(lastIndex, false);
@@ -1132,17 +1132,17 @@ Using symbols for private attributes
 ```js
 var _name = Symbol();
 class Person {
-    constructor(name) {
-        this[_name] = name;
-    }
+  constructor(name) {
+    this[_name] = name;
+  }
 
-    get name() {
-        return this[_name];
-    }
+  get name() {
+    return this[_name];
+  }
 
-    set name(value) {
-        this[_name] = value;
-    }
+  set name(value) {
+    this[_name] = value;
+  }
 }
 ```
 
@@ -1216,13 +1216,13 @@ Promise.reject('foo')
 const tasks = getTaskArray()
 
 return tasks.reduce((promiseChain, currentTask) => {
-    return promiseChain.then(chainResults =>
-        currentTask.then(currentResult =>
-            [ ...chainResults, currentResult ]
-        )
+  return promiseChain.then(chainResults =>
+    currentTask.then(currentResult =>
+      [ ...chainResults, currentResult ]
     )
+  )
 }, Promise.resolve([])).then(arrayOfResults => {
-    // Do something with all results
+  // Do something with all results
 })
 ```
 
@@ -1255,20 +1255,20 @@ Promise.all([Promise.resolve(1), Promise.reject(2), Promise.resolve(3)])
 
 ```js
 Promise.reject('Failed')
-    .then(() => {
-        console.log(0)
-    })
-    .catch(err => {
-        console.log(1, err)
-        return Promise.reject(err)
-    })
-    .catch(err => {
-        console.log(2, err)
-        return 'Processed Fail'
-    })
-    .then(data => {
-        console.log(3, data)
-    })
+  .then(() => {
+    console.log(0)
+  })
+  .catch(err => {
+    console.log(1, err)
+    return Promise.reject(err)
+  })
+  .catch(err => {
+    console.log(2, err)
+    return 'Processed Fail'
+  })
+  .then(data => {
+    console.log(3, data)
+  })
 //=> 1 "Failed"
 //=> 2 "Failed"
 //=> 3 "Processed Fail"
@@ -1456,17 +1456,17 @@ export { default as baz } from './baz';
  * @param {Array} urls
  */
 function batchDownload(urls) {
-    const $link = document.createElement('a');
-    $link.setAttribute('download', null);
-    $link.style.display = 'none';
-    document.body.appendChild($link);
+  const $link = document.createElement('a');
+  $link.setAttribute('download', null);
+  $link.style.display = 'none';
+  document.body.appendChild($link);
 
-    urls.forEach(url => {
-        $link.setAttribute('href', url);
-        $link.click();
-    });
+  urls.forEach(url => {
+    $link.setAttribute('href', url);
+    $link.click();
+  });
 
-    document.body.removeChild($link);
+  document.body.removeChild($link);
 }
 ```
 
@@ -1480,7 +1480,6 @@ function batchDownload(urls) {
 /**
  * Defer
  */
-
 var defer = typeof process !== 'undefined' && process && typeof process.nextTick === 'function'
   ? process.nextTick
   : fn => setTimeout(fn);
@@ -1500,35 +1499,35 @@ const nodes = document.querySelectorAll('p');
 [`forEach`](https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach)
 ```js
 nodes.forEach(node => {
-    node.style.color = 'red';
+  node.style.color = 'red';
 });
 ```
 
 [`Array.prototype.forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
 ```js
 Array.prototype.forEach.call(nodes, node => {
-    node.style.color = 'red';
+  node.style.color = 'red';
 });
 ```
 
 [`Array.from`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
 ```js
 Array.from(nodes).forEach(node => {
-    node.style.color = 'red';
+  node.style.color = 'red';
 });
 ```
 
 [`for..of`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
 ```js
 for (let node of nodes) {
-    node.style.color = 'red';
+  node.style.color = 'red';
 }
 ```
 
 `for`
 ```js
 for (let i = 0; i < nodes.length; i += 1) {
-    nodes[i].style.color = 'red';
+  nodes[i].style.color = 'red';
 }
 ```
 
@@ -1622,12 +1621,12 @@ R.reject(R.isNil, {a: 1, b: undefined, c: 0, d: null})
 var promise = document.querySelector('video').play();
 
 if (promise !== undefined) {
-    promise.then(() => {
-        // Auto-play started
-    }).catch(error => {
-        // Auto-play was prevented
-        // Show a UI element to let the user manually start playback
-    });
+  promise.then(() => {
+    // Auto-play started
+  }).catch(error => {
+    // Auto-play was prevented
+    // Show a UI element to let the user manually start playback
+  });
 }
 ```
 
@@ -1650,17 +1649,17 @@ Fetch & Play
 
   function fetchVideoAndPlay() {
     fetch('https://example.com/file.mp4')
-    .then(response => response.blob())
-    .then(blob => {
-      video.srcObject = blob;
-      return video.play();
-    })
-    .then(_ => {
-      // Video playback started ;)
-    })
-    .catch(e => {
-      // Video playback failed ;(
-    })
+      .then(response => response.blob())
+      .then(blob => {
+        video.srcObject = blob;
+        return video.play();
+      })
+      .then(_ => {
+        // Video playback started ;)
+      })
+      .catch(e => {
+        // Video playback failed ;(
+      })
   }
 </script>
 ```
@@ -1715,13 +1714,13 @@ testSet.size
 
 ```js
 function setToObject(set) {
-    const obj = new Object(null)
+  const obj = new Object(null)
 
-    for (const [key, value] of set) {
-        obj[key] = value
-    }
+  for (const [key, value] of set) {
+    obj[key] = value
+  }
 
-    return obj
+  return obj
 }
 ```
 
@@ -1730,21 +1729,21 @@ function setToObject(set) {
 
 ```js
 class Foo {
-    constructor() {
-        this._callbacks = new Set()
-    }
+  constructor() {
+    this._callbacks = new Set()
+  }
 
-    onChange(cb) {
-        this._callbacks.add(cb)
-    }
+  onChange(cb) {
+    this._callbacks.add(cb)
+  }
 
-    offChange(cb) {
-        this._callbacks.delete(cb)
-    }
+  offChange(cb) {
+    this._callbacks.delete(cb)
+  }
 
-    _fireOnChange() {
-        this._callbacks.forEach(cb => cb())
-    }
+  _fireOnChange() {
+    this._callbacks.forEach(cb => cb())
+  }
 }
 ```
 
@@ -1764,12 +1763,12 @@ formElement.dispatchEvent(new Event('change'))
 
 ```javascript
 try {
-    foo();
+  foo();
 } catch (e) {
-    console.group('foo failing');
-    console.log(e);
-    console.trace();
-    console.groupEnd();
+  console.group('foo failing');
+  console.log(e);
+  console.trace();
+  console.groupEnd();
 }
 ```
 
@@ -1900,17 +1899,17 @@ function read(id, file) {
 
 ```js
 function runAnimation() {
-    let animCount = 0
-    const interval = setInterval(() => {
-        switch (animCount++ & 3) {
-            case 0: console.log('Download occuring; waiting for video player to be constructed'); break;
-            case 1: console.log('Download occuring; waiting for video player to be constructed.'); break;
-            case 2: console.log('Download occuring; waiting for video player to be constructed..'); break;
-            case 3: console.log('Download occuring; waiting for video player to be constructed...'); break;
-        }
-    }, 300);
+  let animCount = 0
+  const interval = setInterval(() => {
+    switch (animCount++ & 3) {
+      case 0: console.log('Download occuring; waiting for video player to be constructed'); break;
+      case 1: console.log('Download occuring; waiting for video player to be constructed.'); break;
+      case 2: console.log('Download occuring; waiting for video player to be constructed..'); break;
+      case 3: console.log('Download occuring; waiting for video player to be constructed...'); break;
+    }
+  }, 300);
 
-    return () => clearInterval(interval);
+  return () => clearInterval(interval);
 }
 ```
 
@@ -1931,47 +1930,47 @@ function runAnimation() {
 let pwaInstalled = localStorage.getItem('pwaInstalled') == 'yes'
 
 if (window.matchMedia('(display-mode: standalone)').matches) {
-    localStorage.setItem('pwaInstalled', 'yes')
-    pwaInstalled = true
+  localStorage.setItem('pwaInstalled', 'yes')
+  pwaInstalled = true
 }
 
 if (window.navigator.standalone === true) {
-    localStorage.setItem('pwaInstalled', 'yes')
-    pwaInstalled = true
+  localStorage.setItem('pwaInstalled', 'yes')
+  pwaInstalled = true
 }
 
 if (pwaInstalled) {
-    document.getElementById('installPWA').style.display = 'none'
+  document.getElementById('installPWA').style.display = 'none'
 } else {
-    document.getElementById('installPWA').style.display = 'inline-flex'
+  document.getElementById('installPWA').style.display = 'inline-flex'
 }
 
 let deferredPrompt = null
 window.addEventListener('beforeinstallprompt', (e) => {
-    deferredPrompt = e
+  deferredPrompt = e
 })
 
 async function installPWA() {
-    if (!deferredPrompt) {
-        return
+  if (!deferredPrompt) {
+    return
+  }
+
+  deferredPrompt.prompt()
+
+  deferredPrompt.userChoice.then(({outcome}) => {
+    if (outcome === 'accepted') {
+      console.log('Your PWA has been installed')
+    } else {
+      console.log('User chose to not install your PWA')
     }
-
-    deferredPrompt.prompt()
-
-    deferredPrompt.userChoice.then(({outcome}) => {
-        if (outcome === 'accepted') {
-            console.log('Your PWA has been installed')
-        } else {
-            console.log('User chose to not install your PWA')
-        }
-        deferredPrompt = null
-    })
+    deferredPrompt = null
+  })
 }
 
 window.addEventListener('appinstalled', () => {
-    localStorage.setItem('pwaInstalled', 'yes')
-    pwaInstalled = true
-    document.getElementById('installPWA').style.display = 'none'
+  localStorage.setItem('pwaInstalled', 'yes')
+  pwaInstalled = true
+  document.getElementById('installPWA').style.display = 'none'
 })
 ```
 
@@ -1984,35 +1983,35 @@ window.addEventListener('appinstalled', () => {
 
 ```js
 class Minutes {
-    constructor(value) {
-        this._value = value * 60 * 1000
-    }
+  constructor(value) {
+    this._value = value * 60 * 1000
+  }
 
-    valueOf() {
-        return this._value
-    }
+  valueOf() {
+    return this._value
+  }
 
-    toString() {
-        return String(this._value)
-    }
+  toString() {
+    return String(this._value)
+  }
 }
 ```
 
 ```js
 class Seconds {
-    constructor(value) {
-        this._value = value
-    }
+  constructor(value) {
+    this._value = value
+  }
 
-    [Symbol.Primitive](hint) {
-        switch (hint) {
-            case 'string':
-                return `${this._value} sec`
-            case 'number':
-            default:
-                return this._value * 1000
-        }
+  [Symbol.Primitive](hint) {
+    switch (hint) {
+      case 'string':
+        return `${this._value} sec`
+      case 'number':
+      default:
+        return this._value * 1000
     }
+  }
 }
 ```
 
@@ -2152,8 +2151,15 @@ getNewId.next()
 - See: [Using microtasks in JavaScript with `queueMicrotask()`](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide)
 
 
-- Tasks: `setTimeout`, `setInterval`, `setImmediate`
-- Microtasks: `process.nextTick`, `Promise callback`, `queueMicrotask`
+Tasks:
+- `setTimeout`
+- `setInterval`
+- `setImmediate`
+
+Microtasks:
+- `process.nextTick`
+- `Promise callback`
+- `queueMicrotask`
 
 
 
