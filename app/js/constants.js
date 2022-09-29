@@ -181,6 +181,11 @@ export const NOTES = [
 		popular: false,
 	},
 	{
+		name: 'Vue',
+		archive: false,
+		popular: false,
+	},
+	{
 		name: 'webpack',
 		archive: false,
 		popular: false,
