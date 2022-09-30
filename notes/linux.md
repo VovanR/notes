@@ -1362,3 +1362,16 @@ nmcli device wifi connect <SSID_or_BSSID> password <password> hidden yes
 
 All configured connections are stored in `/etc/NetworkManager/system-connections/*.nmconnection` files.  
 You can edit this files and reload connection `nmcli connection reload`.
+
+
+
+## Run command after system started
+
+### Set CPU frequences on Armbian for Orange Pi Lite for example
+
+`sudo vim /etc/rc.local`  
+
+Add this line before before `exit 0`:
+```
+cpufreq-set --related --min  1.20GHz --max  1.20GHz
+```
