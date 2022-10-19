@@ -9,10 +9,12 @@
 
 - `<div :id="dynamicId">` === `<div v-bind:id="dynamicId">`
 - `<a @click="doSomething">` === `<a v-on:click="doSomething">`
+- `<template #footer>` === `<template v-slot:footer>`
 
 **Dynamic Arguments**
 - `<a :[attributeName]="url">` === `<a v-bind:[attributeName]="url">`
 - `<a @[eventName]="doSomething">` === `<a v-on:[eventName]="doSomething">`
+- `<template #[dynamicSlotName]>` === `<template v-slot:[dynamicSlotName]>`
 
 
 ## Base
