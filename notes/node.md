@@ -198,22 +198,23 @@ npm cache clean --force
 ```
 
 ## `npm link`
-Test locally changed package
+Test locally changed package.  
+In package directory run:
 ```shell
 npm link
 ```
 
-Use this package in another package (`<package_name>` is name of package in their `package.json`)
+Use this package in project (`<package_name>` is name of package in their `package.json`)
 ```shell
 npm link <package_name>
 ```
 
-To unlink in package:
+To unlink in project:
 ```shell
-npm unlink
+npm unlink <package_name>
 ```
 
-Remove link
+Remove package link
 ```shell
 npm rm --global <package_name>
 ```
