@@ -4,8 +4,6 @@
      src="./logo.svg" alt="Notes logo">
 
 [![Build Status][build-image]][build-url]
-[![Dependency Status][depstat-image]][depstat-url]
-[![DevDependency Status][depstat-dev-image]][depstat-dev-url]
 
 > My notes
 
@@ -37,11 +35,5 @@ npm start
 ```
 Open [http://localhost:8080/](http://localhost:8080/)
 
-[build-url]: https://github.com/VovanR/notes/actions?query=workflow%3A%22Tests%22
-[build-image]: https://img.shields.io/github/workflow/status/VovanR/notes/Tests?style=flat-square
-
-[depstat-url]: https://david-dm.org/VovanR/notes
-[depstat-image]: https://david-dm.org/VovanR/notes.svg?style=flat-square
-
-[depstat-dev-url]: https://david-dm.org/VovanR/notes
-[depstat-dev-image]: https://david-dm.org/VovanR/notes/dev-status.svg?style=flat-square
+[build-url]: https://github.com/VovanR/notes/actions?query=workflow%3A%22Node.js%20CI%22
+[build-image]: https://img.shields.io/github/workflow/status/VovanR/notes/Node.js%20CI?style=flat-square
