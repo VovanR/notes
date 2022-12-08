@@ -805,7 +805,7 @@ Git будет просто игнорировать все изменения, 
 
 
 
-## Клонировать репозиторий с конкретной веткой
+## Clone repository specific branch
 
 ```shell
 git clone -b develop git@github.com:VovanR/notes.git
@@ -818,6 +818,12 @@ git clone -b develop git@github.com:VovanR/notes.git
 
 ```shell
 git clone --depth=1 git@github.com:VovanR/notes.git
+```
+
+## Clone repository specific tag
+
+```shell
+git clone git@github.com:VovanR/notes.git --branch=v1.1.3 --depth=1
 ```
 
 
