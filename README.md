@@ -35,5 +35,5 @@ npm start
 ```
 Open [http://localhost:8080/](http://localhost:8080/)
 
-[build-url]: https://github.com/VovanR/notes/actions?query=workflow%3A%22Node.js%20CI%22
-[build-image]: https://img.shields.io/github/workflow/status/VovanR/notes/Node.js%20CI?style=flat-square
+[build-url]: https://github.com/VovanR/notes/actions/workflows/node.js.yml
+[build-image]: https://img.shields.io/github/actions/workflow/status/vovanr/notes/node.js.yml?branch=master&style=flat-square
