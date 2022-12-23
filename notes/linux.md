@@ -1375,3 +1375,25 @@ Add this line before before `exit 0`:
 ```
 cpufreq-set --related --min  1.20GHz --max  1.20GHz
 ```
+
+
+## Mount disk automatically to directory
+
+- See: https://askubuntu.com/a/352800
+
+```shell
+sudo groupadd backup_disk
+sudo usermod -a -G backup_disk <USERNAME>
+```
+
+```shell
+sudo mkdir /media/backup_disk
+sudo chown :backup_disk /media/backup_disk
+sudo chmod 660 /media/backup_disk
+```
+
+Add this disk to `fstab`: add string to `/etc/fstab` file.
+
+```
+UUID=<DISK_UUID> /media/backup_disk ext4 owner,nofail,relatime,x-systemd.device-timeout=10s 0 0
+```
