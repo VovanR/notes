@@ -1397,3 +1397,11 @@ Add this disk to `fstab`: add string to `/etc/fstab` file.
 ```
 UUID=<DISK_UUID> /media/backup_disk ext4 owner,nofail,relatime,x-systemd.device-timeout=10s 0 0
 ```
+
+
+
+## Command placement, command path
+
+`command -V <some_command>` or `type -a <some_command>`  
+`which <some_command>`  
+`whereis <some_command>`  
