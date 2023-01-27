@@ -51,6 +51,11 @@ export const NOTES = [
 		popular: false,
 	},
 	{
+		name: 'Fedora',
+		archive: false,
+		popular: false,
+	},
+	{
 		name: 'FreeBSD',
 		archive: true,
 		popular: false,
