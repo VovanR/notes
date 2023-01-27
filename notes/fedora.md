@@ -24,7 +24,7 @@ sudo dnf group install 'Fedora Workstation'
 dnf -y group install "Basic Desktop" GNOME 
 ```
 
-Relogin and run:
+Re-login and run:
 ```shell
 startx
 ```
