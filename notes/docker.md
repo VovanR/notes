@@ -11,6 +11,7 @@
 - See: [`ENTRYPOINT` vs `CMD`: назад к основам](https://habr.com/ru/company/southbridge/blog/329138/)
 - See: [Как и для чего использовать Docker](https://guides.hexlet.io/docker/)
 - See: [Portus](https://github.com/SUSE/Portus)
+- See: [Convert Docker run to Docker compose](https://www.composerize.com/)
 
 
 
