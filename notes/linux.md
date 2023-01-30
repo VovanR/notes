@@ -1405,3 +1405,49 @@ UUID=<DISK_UUID> /media/backup_disk ext4 owner,nofail,relatime,x-systemd.device-
 `command -V <some_command>` or `type -a <some_command>`  
 `which <some_command>`  
 `whereis <some_command>`  
+
+
+
+## Mount/unmount USB-disk
+
+Install `udisksctl`
+```shell
+sudo apt install udisks2
+```
+
+Show disks
+```shell
+lsblk
+```
+```
+NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda           8:0    0 111.8G  0 disk
+└─sda1        8:1    0 111.8G  0 part
+```
+
+Get UUID of the disk
+``shell
+udisksctl info -b /dev/sda1
+```
+
+### Power off USB-disk
+```shell
+udisksctl unmount -b /dev/sda1
+udisksctl power-off -b /dev/sda
+```
+
+### Mount encrypted USB-disk
+```shell
+sudo apt install libblockdev-crypto2
+systemctl restart udisks2.service
+udisksctl unlock -b /dev/sda1
+```
+
+Without LUKS encryption
+```shell
+udisksctl mount -b /dev/sda1
+```
+Outputs
+```
+Mounted /dev/sda1 at /media/user_name/backup
+```
