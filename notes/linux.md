@@ -1426,7 +1426,7 @@ sda           8:0    0 111.8G  0 disk
 ```
 
 Get UUID of the disk
-``shell
+```shell
 udisksctl info -b /dev/sda1
 ```
 
