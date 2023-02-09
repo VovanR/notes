@@ -126,6 +126,11 @@ export const NOTES = [
 		popular: false,
 	},
 	{
+		name: 'Podman',
+		archive: false,
+		popular: false,
+	},
+	{
 		name: 'PostgreSQL',
 		archive: false,
 		popular: false,
