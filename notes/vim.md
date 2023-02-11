@@ -8,6 +8,8 @@
 - See: [Vim documentation](http://vimdoc.sourceforge.net/htmldoc/)
 - See: [Vimways 2018](https://vimways.org/2018/)
 
+`:` + `Ctrl + d` — Show all available commands
+
 `V` — Выделение строки
 
 `Ctrl + v` — Вертикальное выделение
