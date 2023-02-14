@@ -3,33 +3,33 @@
 ----
 
 - See: [JS Tips](https://github.com/loverajoel/jstips)
-- See: [You Don't Need jQuery](https://github.com/oneuijs/You-Dont-Need-jQuery)
+- See: [You Don't Need jQuery](https://github.com/camsong/You-Dont-Need-jQuery)
 - See: [You might not need jQuery](https://github.com/HubSpot/youmightnotneedjquery)
 - See: [You don't (may not) need Lodash/Underscore](https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore)
 - See: [You Don't Need JavaScript](https://github.com/you-dont-need/You-Dont-Need-JavaScript)
 - See: [You Don't Know JS (book series)](https://github.com/getify/You-Dont-Know-JS)
-- See: https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
+- See: https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules
 - See: [JavaScript Data Structures and Algorithms](https://github.com/loiane/javascript-datastructures-algorithms)
 - See: [Content Security Policies](https://frontendian.co/csp)
 - See: [Asynchronous iteration](http://exploringjs.com/es2018-es2019/ch_asynchronous-iteration.html)
 - See: [Вопросы кандидату на должность front-end разработчика](https://h5bp.org/Front-end-Developer-Interview-Questions/translations/russian/) https://github.com/h5bp/Front-end-Developer-Interview-Questions
 - See: [`dat.GUI`](https://github.com/dataarts/dat.gui)
 - See: http://codeguide.co
-- See: https://githubengineering.com/removing-jquery-from-github-frontend/
+- See: [Removing jQuery from GitHub.com frontend](https://github.blog/2018-09-06-removing-jquery-from-github-frontend/)
 - See: [Preload, prefetch and other `<link>` tags](https://3perf.com/blog/link-rels/)
 - See: [Browser extension](https://24ways.org/2018/my-first-chrome-extension/)
-- See: http://blog.csssr.ru/2018/08/16/candidates-mistakes
+- See: [«И так сойдёт!» или главные ошибки кандидатов](https://blog.csssr.com/ru/article/candidates-mistakes/)
 - See: [Performance (KharkivCSS 20 апреля 2019 года Слайды)](https://silentimp.github.io/performance/)
 - See: [What forces layout / reflow](https://gist.github.com/paulirish/5d52fb081b3570c81e3a)
 - See: https://30secondsofcode.org/
 - See: [An introduction to JSDoc](http://2ality.com/2011/08/jsdoc-intro.html)
-- See: https://habr.com/ru/company/mailru/blog/452906/
+- See: [JavaScript-движки: как они работают? От стека вызовов до промисов — (почти) всё, что вам нужно знать](https://habr.com/ru/company/vk/blog/452906/)
 - See: [Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)
 - See: [Callback Hell](http://callbackhell.com/)
 - See: [Web Performance 101](https://3perf.com/talks/web-perf-101/)
 - See: [`String.prototype.normalize()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize)
 - See: [Remainder operator vs. modulo operator (with JavaScript code)](https://2ality.com/2019/08/remainder-vs-modulo.html)
-
+- See: [ECMAScript features by version](https://github.com/sudheerj/ECMAScript-features)
 
 
 ## Performance
