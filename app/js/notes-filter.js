@@ -47,14 +47,19 @@ function NotesFilter({
 
 	const handleKeyDown = useCallback(event => {
 		switch (event.key) {
-			case 'Enter':
+			case 'Enter': {
 				onSubmit()
 				break
-			case 'Escape':
+			}
+
+			case 'Escape': {
 				resetValue()
 				break
-			default:
+			}
+
+			default: {
 				break
+			}
 		}
 	})
 

@@ -1,13 +1,13 @@
-@import "bootstrap.css";
+@import url("bootstrap.css");
 
-@import "nav-menu-panel.css";
-@import "notes-filter.css";
-@import "custom-scrollbars.css";
-@import "nav-menu.css";
-@import "nav-submenu.css";
+@import url("nav-menu-panel.css");
+@import url("notes-filter.css");
+@import url("custom-scrollbars.css");
+@import url("nav-menu.css");
+@import url("nav-submenu.css");
 
-@import "rendered-note.css";
-@import "note-source.css";
-@import "source-code.css";
+@import url("rendered-note.css");
+@import url("note-source.css");
+@import url("source-code.css");
 
-@import "back-to-top.css";
+@import url("back-to-top.css");
