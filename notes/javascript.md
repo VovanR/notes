@@ -15,7 +15,7 @@
 - See: [Вопросы кандидату на должность front-end разработчика](https://h5bp.org/Front-end-Developer-Interview-Questions/translations/russian/) https://github.com/h5bp/Front-end-Developer-Interview-Questions
 - See: [`dat.GUI`](https://github.com/dataarts/dat.gui)
 - See: http://codeguide.co
-- See: [Removing jQuery from GitHub.com frontend](https://github.blog/2018-09-06-removing-jquery-from-github-frontend/)
+- See: [Removing jQuery from GitHub.com front-end](https://github.blog/2018-09-06-removing-jquery-from-github-frontend/)
 - See: [Preload, prefetch and other `<link>` tags](https://3perf.com/blog/link-rels/)
 - See: [Browser extension](https://24ways.org/2018/my-first-chrome-extension/)
 - See: [«И так сойдёт!» или главные ошибки кандидатов](https://blog.csssr.com/ru/article/candidates-mistakes/)

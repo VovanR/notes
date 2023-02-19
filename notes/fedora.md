@@ -96,14 +96,14 @@ sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-releas
 
 ### Flatpack
 
-Setup Flatpack repo
+Setup Flatpack repository
 ```
 obsidian
 zoom
 ```
 
 
-### VSCode
+### Visual Studio Code
 
 - See: https://code.visualstudio.com/docs/setup/linux
 
@@ -126,7 +126,7 @@ Install from site https://discord.com/ because Flatpack disallow to share screen
 wmctrl
 ulauncher
 ```
-`wmctrl` needs for keybinding on Wayland Win+Space
+`wmctrl` needs for key binding on Wayland Win+Space
 
 
 ### Fonts
