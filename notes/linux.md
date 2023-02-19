@@ -134,6 +134,13 @@ sudo usermod -a -G <group_name> <username>
 ```
 
 
+## Show all groups
+
+```shell
+less /etc/group
+```
+
+
 
 ## locale
 
