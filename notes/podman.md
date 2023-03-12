@@ -101,3 +101,89 @@ spec:
       type: Directory
     name: home-myuser-Homer-host-0
 ```
+
+
+
+## Yacht
+
+- See: https://yacht.sh/docs/Installation/Podman/
+- See: https://yacht.sh/docs/Installation/Getting_Started/
+
+```shell
+sudo podman volume create yacht
+```
+
+Create `yacht.yaml`
+```yaml
+# Save the output of this file and use kubectl create -f to import
+# it into Kubernetes.
+#
+# Created with podman-4.3.1
+
+# NOTE: If you generated this yaml from an unprivileged and rootless podman container on an SELinux
+# enabled system, check the podman generate kube man page for steps to follow to ensure that your pod/container
+# has the right permissions to access the volumes added.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: foo
+data:
+  PUID: 0
+  PGID: 0
+  UID: 0
+  GID: 0
+  COMPOSE_DIR: /compose
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    io.kubernetes.cri-o.TTY/Yacht: "false"
+    io.podman.annotations.autoremove/Yacht: "FALSE"
+    io.podman.annotations.init/Yacht: "TRUE"
+    io.podman.annotations.privileged/Yacht: "TRUE"
+    io.podman.annotations.publish-all/Yacht: "FALSE"
+  creationTimestamp: "2023-02-12T18:31:16Z"
+  labels:
+    app: Yacht-pod
+  name: Yacht-pod
+spec:
+  automountServiceAccountToken: false
+  containers:
+  - image: docker.io/selfhostedpro/yacht:latest
+    name: Yacht
+    # env:
+    # - name: PUID
+    #   value: 0
+    # - name: PGID
+    #   value: 0
+    envFrom:
+    - configMapRef:
+        name: foo
+        optional: false
+    ports:
+    - containerPort: 8000
+      hostPort: 8282
+    securityContext:
+      privileged: true
+    restartPolicy: always
+    volumeMounts:
+    - mountPath: /var/run/docker.sock
+      name: var-run-podman-podman.sock-host-0
+    - mountPath: /config
+      name: yacht-pvc
+  enableServiceLinks: false
+  volumes:
+  - hostPath:
+      path: /var/run/podman/podman.sock
+      type: File
+    name: var-run-podman-podman.sock-host-0
+  - name: yacht-pvc
+    persistentVolumeClaim:
+      claimName: yacht
+```
+
+Run
+```shell
+sudo podman play kube yacht.yaml
+```
