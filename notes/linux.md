@@ -1458,3 +1458,12 @@ Outputs
 ```
 Mounted /dev/sda1 at /media/user_name/backup
 ```
+
+
+## Check port usage
+
+- See: https://www.cyberciti.biz/faq/unix-linux-check-if-port-is-in-use-command/
+
+```shell
+lsof -i:8080
+```
