@@ -31,7 +31,7 @@ startx
 
 If you want to run GUI on system load:
 ```shell
-systemctl set-default graphical.target
+sudo systemctl set-default graphical.target
 ```
 
 
