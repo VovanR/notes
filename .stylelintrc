@@ -3,6 +3,7 @@
   "rules": {
     "at-rule-empty-line-before": null,
     "block-no-empty": null,
+    "declaration-block-no-redundant-longhand-properties": null,
     "property-no-vendor-prefix": null,
     "selector-class-pattern": null
   }
