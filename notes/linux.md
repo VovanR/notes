@@ -1467,3 +1467,21 @@ Mounted /dev/sda1 at /media/user_name/backup
 ```shell
 lsof -i:8080
 ```
+
+
+
+## `mdadm`
+
+- See: https://fedoramagazine.org/performing-storage-management-tasks-in-cockpit/
+- See: https://fedoramagazine.org/managing-raid-arrays-with-mdadm/
+- See: https://www.digitalocean.com/community/tutorials/how-to-create-raid-arrays-with-mdadm-on-ubuntu-16-04
+- See: https://superuser.com/questions/1078393/linux-mdadm-does-not-assemble-array-but-recreation-of-array-does-it
+
+```shell
+blkid
+cat /proc/mdstat
+sudo mdadm --detail --scan
+mdadm --examine /dev/sdb
+sudo mdadm --manage /dev/md127 --add /dev/sdb
+sudo sgdisk --zap-all /dev/sdb
+```
