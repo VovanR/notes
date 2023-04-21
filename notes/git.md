@@ -182,6 +182,16 @@ git tag -d v0.1.0
 git push origin :refs/tags/v0.1.0
 ```
 
+Remove all remote tags
+```shell
+git tag -l | xargs -n 1 git push --delete origin
+```
+
+Remove all local tags
+```shell
+git tag | xargs git tag -d
+```
+
 
 
 ## Show which tag contains current commit
