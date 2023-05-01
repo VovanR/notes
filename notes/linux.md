@@ -1296,6 +1296,13 @@ ffmpeg -i file.webp out.png
 ```
 
 
+## Convert SVG to PNG
+
+```shell
+convert -density 1200 -resize 256 -background none image.svg image.png
+```
+
+
 ## Journal
 Services log journal
 ```shell
