@@ -224,10 +224,27 @@ npm rm --global <package_name>
 
 - See: https://pm2.keymetrics.io/docs/usage/quick-start/
 
+Install:
 ```shell
 npm install --global pm2
 ```
 
+Start application with `pm2`:
 ```shell
 pm2 start "npm start" --name "project-name"
+```
+
+Save list of applications:
+```shell
+pm2 save
+```
+
+After system reboot:
+```shell
+pm2 resurrect
+```
+
+List of applications:
+```shell
+pm2 ls
 ```
