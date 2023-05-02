@@ -248,3 +248,8 @@ List of applications:
 ```shell
 pm2 ls
 ```
+
+Show application logs:
+```shell
+pm2 logs <application id or name>
+```
