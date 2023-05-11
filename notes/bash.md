@@ -132,7 +132,7 @@ If regular expression does not contain single quotes `'` - wrap it to single quo
 find ./ -type f -name "*.js" -exec perl -pi -e 's/^    \$\, _\, Backbone/    \$,\n    _,\n    Backbone/g' '{}' \;
 ```
 
-### Исправить права файлов и директорий
+### Fix files and directories permissions
 
 ```shell
 find . -type f -not -path "*node_modules*" -exec chmod 664 {} \;
@@ -140,18 +140,18 @@ find . -type d -not -path "*node_modules*" -exec chmod 775 {} \;
 ```
 
 
-### cut
+### `cut`
 
-Вывести нужные колонки
+Show only needed columns
 ```shell
 cut -d ' ' -f3,5,8 ./foo.txt
 ```
-Выводит 3, 5 и 8 колонки из файла. Разделитель задаётся через `-d`
+Will show 3, 5 and 8 columns from file. The divider sets in `-d` property
 
 
 ### tree
 
-Выводит дерево каталога, исключая 2 папки
+Show directory tree exept 2 ignored directories
 ```shell
 tree -I 'node_modules|vendor'
 ```
