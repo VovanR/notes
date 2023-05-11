@@ -1492,3 +1492,15 @@ mdadm --examine /dev/sdb
 sudo mdadm --manage /dev/md127 --add /dev/sdb
 sudo sgdisk --zap-all /dev/sdb
 ```
+
+
+## Ubuntu 20.04 file context menu action
+
+- See: https://askubuntu.com/a/1349584
+
+Add your script to `~/.local/bin/` directory.  
+Then create symbolic link to this script
+```shell
+ln -s ~/.local/bin/v-image-size.sh ~/.local/share/nautilus/scripts/
+```
+Now your script will available by right click on file -> Scripts -> `v-image-size.sh`
