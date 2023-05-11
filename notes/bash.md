@@ -1709,3 +1709,11 @@ exit_error() {
 trap exit_error EXIT
 install_dnote
 ```
+
+
+
+## Convert relative path to absolute
+
+```shell
+realpath -s ./preview.png
+```
