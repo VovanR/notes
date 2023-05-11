@@ -6,6 +6,15 @@
 - See: [A guide to SVG `<use>` elements](http://taye.me/blog/svg/a-guide-to-svg-use-elements/)
 - See: [Convert stroke to path](https://elrumordelaluz.github.io/micro-outline-stroke/)
 
+
+
+## Editors
+
+- See: https://inkscape.org/
+- See: https://figma.com
+
+
+
 ## Circle
 
 ```svg
@@ -20,7 +29,7 @@
 - See: https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths
 - See: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/fill-rule
 
-Квадрат:
+Square:
 
 ```svg
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
@@ -41,12 +50,12 @@
     fill="inherit"
     fill-rule="evenodd"
   />
-</svg   >
+</svg>
 ```
 
 
 
-## Вращение относительно центра
+## Rotate around the center
 
 ```svg
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
@@ -58,7 +67,7 @@
 ```
 
 
-## Маска
+## Mask
 
 ```svg
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
@@ -76,7 +85,7 @@
 ```
 
 
-## Градиент
+## Linear gradient
 
 ```svg
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
@@ -102,16 +111,10 @@
 ```
 
 
-## Оптимизация
+## Optimize
 
 - See: https://github.com/svg/svgo
 
 ```shell
 svgo test.svg
 ```
-
-
-## Редактор
-
-- See: https://inkscape.org/
-- See: https://figma.com
