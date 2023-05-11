@@ -11,9 +11,9 @@
 
 
 
-## Как разделить длинную команду на несколько строк
+## Split long line command to multiline command
 
-Добавляем обратный слэш `\` и переносим строку
+Simply add backslash `\` at end of each line
 
 ```shell
 docker run --rm -it -p 7272:7272 \
@@ -25,7 +25,7 @@ docker run --rm -it -p 7272:7272 \
 
 
 
-## Создать копию файла с добавлением `.bak` в конце имени
+## Make copy of file with `.bak` at end of name
 
 ```shell
 sudo cp /etc/ssh/sshd_config{,.bak}
@@ -33,7 +33,7 @@ sudo cp /etc/ssh/sshd_config{,.bak}
 
 
 
-## Открытые порты
+## Show opened ports
 
 ```shell
 netstat -ntlp | grep LISTEN
@@ -45,17 +45,26 @@ netstat -atun
 
 
 
-## Копирование текста в терминале
+## Copy text in terminal commands
 
+Install `xclip`
 ```shell
 sudo apt-get install xclip
+```
+
+Middle mouse click to paste copied text:
+```shell
 uptime | xclip
 ```
-Вставлять скопированное средним кликом
+
+`Ctrl + v` to paste copied text:
+```shell
+uptime | xclip -selection clipboard
+```
 
 
 
-## Создать папку и сразу перейти в нее
+## Create directory and go to it. Open newly created directory
 
 ```shell
 mkdir my-new-project && cd $_
@@ -63,7 +72,7 @@ mkdir my-new-project && cd $_
 
 
 
-## Записать gif
+## Record an gif
 
 ```shell
 sudo apt-get install byzanz
@@ -73,88 +82,23 @@ sudo apt-get install byzanz
 byzanz-record -c --duration 8 -w 400 -h 150 -x 67 -y 197 ./preview/example.gif
 ```
 
-Записать весь экран
+Full screen recording
 ```shell
 byzanz-record --duration=8 ./test.gif
 ```
 
 
 
-## Оптимизация gif
+## Optimize gif image
 
 ```shell
 sudo apt-get install gifsicle
 ```
 
 
+## Files
 
-## Установка старой версии пакета
-
-```shell
-apt-cache showpkg libnss3-tools
-sudo apt-get install libnss3-tools=2:3.15.1-1ubuntu1
-```
-
-
-
-## Удалить старое ядро
-
-```shell
-ls /boot/
-sudo apt-get purge -f linux-image-3.5.0-17-generic
-sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade
-```
-
-
-
-## Как добавлять и удалять драйверы и модули ядра в ОС Linux
-
-```shell
-ls /lib/modules/$(uname -r)
-```
-
-
-### Добавление модуля
-
-```shell
-sudo modprobe foo
-```
-
-
-### Список всех загруженных модулей
-
-```shell
-lsmod
-```
-
-
-### Удаление модуля
-
-Добавьте опцию `-r` к команде `modprob`, чтобы удалить модуль
-
-```shell
-sudo modprobe -r foo
-```
-
-Так же можно использовать команду `rmmod`, которая является простой программой для удаления модуля из ядра Linux
-
-```shell
-sudo rmmod foo
-```
-
-
-
-## Обращение к компьютеру по сети
-
-```shell
-avahi-browse -a
-```
-
-
-
-## Файлы
-
-### Список файлов
+### List of files
 
 ```shell
 find ./ -type f -exec echo {} \;
@@ -168,7 +112,7 @@ find ./ -iregex '.*\(mp3\|mp4\|exe\)'
 ```
 
 
-### Количество файлов определённого типа в проекте
+### Count of files with some file type in your project
 
 ```shell
 find ./ -type f -name "*.coffee" -not -path "*node_modules*" | wc -l
@@ -176,15 +120,14 @@ find ./src -type f -name "*.js" -o -name "*.jsx" | wc -l
 ```
 
 
-### Найти и заменить в файлах
+### Find and replace text in all files
 
 ```shell
 find ./ -type f -name "*.js" -print0 | xargs -0 sed -i '' -e 's/foo/bar/g'
 find ./ -type f -name "*.js" -exec perl -pi -e "s/ {4,4}'AjaxLinks',?\n//g" '{}' \;
 ```
 
-Если в регулярном выражении нет одинарных кавычек, то она оборачивается не в двойные, а одинарные:
-
+If regular expression does not contain single quotes `'` - wrap it to single quotes `'` instead of double `"`:
 ```shell
 find ./ -type f -name "*.js" -exec perl -pi -e 's/^    \$\, _\, Backbone/    \$,\n    _,\n    Backbone/g' '{}' \;
 ```
