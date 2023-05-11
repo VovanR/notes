@@ -1504,3 +1504,65 @@ Then create symbolic link to this script
 ln -s ~/.local/bin/v-image-size.sh ~/.local/share/nautilus/scripts/
 ```
 Now your script will available by right click on file -> Scripts -> `v-image-size.sh`
+
+
+
+## Install an old version of programm
+
+```shell
+apt-cache showpkg libnss3-tools
+sudo apt-get install libnss3-tools=2:3.15.1-1ubuntu1
+```
+
+
+
+## Remove old kernel
+
+```shell
+ls /boot/
+sudo apt-get purge -f linux-image-3.5.0-17-generic
+sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade
+```
+
+
+
+## Add and remove drivers or kernel modules
+
+```shell
+ls /lib/modules/$(uname -r)
+```
+
+
+### Add module
+
+```shell
+sudo modprobe foo
+```
+
+
+### List of all modules
+
+```shell
+lsmod
+```
+
+
+### Remove module
+
+```shell
+sudo modprobe -r foo
+```
+
+Also you can use `rmmod`
+
+```shell
+sudo rmmod foo
+```
+
+
+
+## Local network hosts list
+
+```shell
+avahi-browse -a
+```
