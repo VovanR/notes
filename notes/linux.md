@@ -1507,7 +1507,7 @@ Now your script will available by right click on file -> Scripts -> `v-image-siz
 
 
 
-## Install an old version of programm
+## Install an old version of program
 
 ```shell
 apt-cache showpkg libnss3-tools
