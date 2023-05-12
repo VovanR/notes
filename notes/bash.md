@@ -151,7 +151,7 @@ Will show 3, 5 and 8 columns from file. The divider sets in `-d` property
 
 ### tree
 
-Show directory tree exept 2 ignored directories
+Show directory tree except 2 ignored directories
 ```shell
 tree -I 'node_modules|vendor'
 ```
