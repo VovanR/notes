@@ -171,7 +171,7 @@ export const NOTES = [
 		popular: false,
 	},
 	{
-		name: 'Translate Tools',
+		name: 'Translate_Tools',
 		archive: false,
 		popular: false,
 	},
