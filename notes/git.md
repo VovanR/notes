@@ -421,7 +421,7 @@ git merge origin/master
 
 
 
-## Показать лог ветки
+## Show log of some branch
 
 ```shell
 git log master..<branch_name>
@@ -645,19 +645,19 @@ git submodule foreach git pull
 
 
 
-## Сбор мусора
+## Garbage collection
 
 ```shell
 git gc
 ```
 
-Если выдает ошибку https://stackoverflow.com/questions/37145151/how-to-handle-git-gc-fatal-bad-object-refs-remotes-origin-head-error-failed-to
+If it fails with this error ([See](https://stackoverflow.com/questions/37145151/how-to-handle-git-gc-fatal-bad-object-refs-remotes-origin-head-error-failed-to)):
 ```
 fatal: bad object refs/remotes/origin/HEAD
 error: failed to run repack
 ```
 
-Запустить
+Run this command and repeat `git gc`
 ```shell
 git remote set-head origin --auto
 ```
@@ -673,7 +673,7 @@ git apply ./patch.patch
 
 
 
-## Сравнить измененный файл с веткой `master`
+## Compare edited file with same on branch `master`
 
 ```shell
 git diff master~20:project/file.js project/file.js
