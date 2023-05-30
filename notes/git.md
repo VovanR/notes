@@ -376,6 +376,20 @@ git remote update origin --prune
 ```
 
 
+## Remove all merged branches
+
+- See: https://stackoverflow.com/questions/6127328/how-do-i-delete-all-git-branches-which-have-been-merged
+
+Show merged branches to "main" branch
+```shell
+git branch --merged main
+```
+
+```shell
+git branch --merged master | grep -E -v "(master|main)" | xargs git branch -d
+```
+
+
 
 ## Get changes from remote
 
