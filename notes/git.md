@@ -1002,74 +1002,84 @@ git push origin dev:dev
 
 ## `git stash`
 
-### Как пользоваться
+### Usage
 
-Изменили файл. Надо переключиться на другую ветку, но работу над файлом не закончили.  
-Для этого сохраняем текущие изменения в `stash`, потом их можно будет восстановить:  
+Edit file. Now if you need to switch current branch but current work is not completed.  
+You can save current changes to `stash`, then you can restore saved changes:  
 
-Сохранить изменения
+Save changes to stash
 ```shell
 git stash
 ```
 
-Восстановить изменения
+Load changes from stash
 ```shell
 git stash pop
 ```
 
-Список сохранённых изменений
+List
 ```shell
 git stash list
 ```
 
-Удалить
+Delete stash item
 ```shell
 git stash drop stash@{3}
 ```
 
-Применить изменения, не удаляя из списка
+Apply last stash changes without delete it from stash
 ```shell
 git stash apply
 ```
 
-Можно пользоваться индексом, например надо восстановить `stash@{3}`  
-Чем больше индекс, тем старее. Последний добавленный `stash` имеет индекс `stash@{0}`
+You can use index, for example when you need to apply `stash@{3}`  
+Greater index means oldest changes. Last `stash` have index `stash@{0}`
 ```shell
 git stash apply stash@{3}
 ```
 
-Список изменённых файлов
+List of changed files in stash
 ```shell
 git stash show stash@{0}
 ```
 
-Показать изменения в файлах (diff)
+Show full diff of changed files in stash (diff)
 ```shell
 git stash show stash@{0} -p
 ```
 
-Применить изменения из одного файла в стэше
+Apply changes from one file from stash
 ```shell
 git checkout stash@{0} -- ./src/index.js
 ```
 
-Отличия в `stash` от текущего состояния
+Get patch of single file from stash
+```shell
+git diff HEAD..stash@{0} ./package.json > pkg.patch
+```
+
+Diff with current state
+```shell
+git diff stash@{0}
+```
+
+Diff with current HEAD
 ```shell
 git diff stash@{0} HEAD
 ```
 
-Показать только имена файлов
+Show only chanted file names
 ```shell
 git diff --name-only stash@{0} HEAD
 ```
 
 
-### Ключи
+### Command keys
 
-- `git stash --keep-index` — скрывает только непроиндексированные изменения в отслеживаемых файлах
-- `git stash` — скрывает все изменения в отслеживаемых файлах 
-- `git stash --include-untracked` — скрывает неотслеживаемые и отслеживаемые файлы
-- `git stash --all` — скрывает игнорируемые, неотслеживаемые и отслеживаемые файлы
+- `git stash --keep-index` — save only not staged changes
+- `git stash` — save all changes
+- `git stash --include-untracked` — save all tracked and untracked files
+- `git stash --all` — save all ignored, tracked and untracked files
 
 
 ### `git stash pop` conflict sides
