@@ -1078,8 +1078,8 @@ git diff --name-only stash@{0} HEAD
 
 - `git stash --keep-index` — save only not staged changes
 - `git stash` — save all changes
-- `git stash --include-untracked` — save all tracked and untracked files
-- `git stash --all` — save all ignored, tracked and untracked files
+- `git stash --include-untracked` — save all tracked and not tracked files
+- `git stash --all` — save all ignored, tracked and not tracked files
 
 
 ### `git stash pop` conflict sides
