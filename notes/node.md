@@ -253,3 +253,8 @@ Show application logs:
 ```shell
 pm2 logs <application id or name>
 ```
+
+Rename application:
+```shell
+pm2 restart <application id or name> --name <new_name>
+```
