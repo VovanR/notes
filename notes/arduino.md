@@ -50,12 +50,12 @@ memset(array, 0, sizeof(array));
 
 -  See: http://arduinet.ru/datchiki-dht11-dht22.html
 
-- DHT11: 0..50°С, 20..90%
-- DHT22: -40..+125°С, 0..100%
+- `DHT11`: 0..50°С, 20..90%
+- `DHT22`: -40..+125°С, 0..100%
 
 
 ## Clock
 
 - See: http://arduinet.ru/module-ds3231.html
 
-### RTC DS3231
+### `RTC DS3231`
