@@ -565,6 +565,18 @@ rsync -avz --progress --delete '/media/username/Documents/Мои докумен�
 ```
 
 
+### Error `protocol version mismatch -- is your shell clean?`
+
+- See: https://unix.stackexchange.com/a/689751
+
+```
+protocol version mismatch -- is your shell clean?
+(see the rsync man page for an explanation)
+rsync error: protocol incompatibility (code 2) at compat.c(178) [sender=3.1.3]
+```
+Check that `~/.bashrc` on remote is not contains `echo`.
+
+
 
 ## `scp` copy over SSH
 
