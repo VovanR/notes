@@ -16,7 +16,7 @@
   "devDependencies": {
     "ava": "^5.2.0",
     "http-server": "^14.1.1",
-    "stylelint": "^15.6.1",
+    "stylelint": "^15.10.1",
     "stylelint-config-standard": "^33.0.0",
     "xo": "0.54.2",
     "yaspeller": "^8.0.1"
