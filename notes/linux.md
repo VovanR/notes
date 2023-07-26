@@ -1566,3 +1566,19 @@ sudo rmmod foo
 ```shell
 avahi-browse -a
 ```
+
+
+
+## GPG
+
+- See: https://docs.github.com/en/authentication/managing-commit-signature-verification/checking-for-existing-gpg-keys
+
+List of local keys
+```shell
+gpg --list-secret-keys --keyid-format=long
+```
+
+Print public key
+```shell
+gpg --armor --export <gpg_key_id>
+```
