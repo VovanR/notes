@@ -1582,3 +1582,49 @@ Print public key
 ```shell
 gpg --armor --export <gpg_key_id>
 ```
+
+
+
+## `rsync`
+
+### Get directory `data` from remote server
+
+```shell
+rsync -avz USER@HOST:/usr/local/www/data/foo.ru/www/data/ ./
+rsync -avz -e ssh USER@HOST:~/www/data ./
+rsync -avz -e "ssh -p 6666" USER@HOST:~/www/data ./
+```
+
+
+### Path with spaces
+
+Wrap path with quotes `"` and escape spaces with back slash `\`
+```shell
+rsync -avz USER@HOST:"~/Documents/Some\ directory\ with\ spaces/notes" ./
+```
+
+
+### Upload file to server
+
+```shell
+rsync -a www/css/main.css USER@HOST:www/css/
+```
+
+
+### Backup directory "Мои документы"
+
+```shell
+rsync -avz --progress --delete '/media/username/Documents/Мои документы' /media/My-Book-Live/backup --exclude ".*" --exclude "Thumbs.db"
+```
+
+
+### Error `protocol version mismatch -- is your shell clean?`
+
+- See: https://unix.stackexchange.com/a/689751
+
+```
+protocol version mismatch -- is your shell clean?
+(see the rsync man page for an explanation)
+rsync error: protocol incompatibility (code 2) at compat.c(178) [sender=3.1.3]
+```
+Check that `~/.bashrc` on remote is not contains `echo`.
