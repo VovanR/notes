@@ -179,4 +179,5 @@ function App() {
 	)
 }
 
-ReactDOM.render(createElement(App), document.querySelector('#app'))
+const root = ReactDOM.createRoot(document.querySelector('#app'))
+root.render(createElement(App))

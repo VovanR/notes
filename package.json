@@ -18,9 +18,9 @@
   },
   "devDependencies": {
     "http-server": "^14.1.1",
-    "stylelint": "^15.6.1",
-    "stylelint-config-standard": "^33.0.0",
-    "xo": "0.54.2",
+    "stylelint": "^15.10.2",
+    "stylelint-config-standard": "^34.0.0",
+    "xo": "0.55.0",
     "yaspeller": "^8.0.1"
   },
   "bugs": {

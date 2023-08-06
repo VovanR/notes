@@ -89,7 +89,7 @@
 
 - See: https://reactjs.org/docs/dom-elements.html#differences-in-attributes
 
-
+Attributes:
 - `class` -> `className`
 - `for` -> `htmlFor`
 - `key`

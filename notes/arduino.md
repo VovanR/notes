@@ -50,6 +50,7 @@ memset(array, 0, sizeof(array));
 
 -  See: http://arduinet.ru/datchiki-dht11-dht22.html
 
+Modules
 - `DHT11`: 0..50°С, 20..90%
 - `DHT22`: -40..+125°С, 0..100%
 

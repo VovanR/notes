@@ -312,7 +312,7 @@ yarn-error.log*
 - See: https://typeofnan.dev/how-to-serve-a-react-app-with-nginx-in-docker/
 
 `Dockerfile`
-```
+```dockerfile
 FROM node:16-alpine AS builder
 WORKDIR /app
 # Copy package files and install dependencies before copy all project
