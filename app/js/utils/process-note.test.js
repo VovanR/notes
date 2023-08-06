@@ -1,7 +1,8 @@
-import test from 'ava'
+import test from 'node:test'
+import assert from 'node:assert'
 import processNote from './process-note.js'
 
-test('process note', t => {
+test('process note', () => {
 	global.window = {
 		location: 'http://test_location',
 	}
@@ -23,5 +24,5 @@ test('process note', t => {
 		popular: true,
 	}
 
-	t.deepEqual(processNote(note), processedNote)
+	assert.deepEqual(processNote(note), processedNote)
 })

@@ -6,15 +6,17 @@
   "type": "module",
   "repository": "VovanR/notes",
   "author": "Vladimir Rodkin <mail@vovanr.com> (https://github.com/VovanR)",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "start": "http-server .",
     "test": "npm run test:js && npm run test:css && npm run test:spellcheck",
     "test:spellcheck": "yaspeller --dictionary ./dictionary.json ./notes/*.md",
-    "test:js": "xo && ava",
+    "test:js": "xo && node --test",
     "test:css": "stylelint app/css/*.css"
   },
   "devDependencies": {
-    "ava": "^5.2.0",
     "http-server": "^14.1.1",
     "stylelint": "^15.6.1",
     "stylelint-config-standard": "^33.0.0",

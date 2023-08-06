@@ -35,9 +35,8 @@ function NotesFilter({
 	}
 
 	const handleChange = useCallback(event => {
-		const value = event.target.value
-		const processedValue = value
-			.split('')
+		const {value} = event.target
+		const processedValue = [...value]
 			.map(char => convertCharLayout(char))
 			.filter(char => /[\w\d]/.test(char))
 			.join('')

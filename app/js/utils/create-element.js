@@ -1,5 +1,5 @@
 /* global React */
 
-const createElement = React.createElement
+const {createElement} = React
 
 export default createElement

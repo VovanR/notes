@@ -120,7 +120,7 @@ function App() {
 		}
 
 		// From 'jspt' makes 'j.*s.*p.*t' to match 'JavaScript'
-		const pattern = notesFilterValue.split('').join('.*')
+		const pattern = [...notesFilterValue].join('.*')
 		const regexp = new RegExp(pattern, 'i')
 
 		const filteredNotes = notes
