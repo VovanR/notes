@@ -558,3 +558,25 @@ class B extends A {
 new A(); // Error!
 new B(); // OK
 ```
+
+
+## Values of object
+
+- See: [Playground](https://www.typescriptlang.org/play?#code/MYewdgzgLgBAylAhlArhGBeGBvAUDeFYYAUwggC4YAiEAa2oBp8YAxRASwBsUAnEqtQBmnLk1wBfGInShIUANy5cUAJ4AHEjADSJVeix09IITDWaT8JKghKA9HYIwAegH5l5rQDVEPMphgACk9LBGQ0AEoAbV19AF17RwI3XCA)
+
+```typescript
+const Status = {
+  Success: "ok",
+  Failure: "fail",
+} as const;
+
+type Keys = keyof typeof Status;
+//   ^? type Keys = "Success" | "Failure"
+
+type Values = (typeof Status)[Keys];
+//   ^? type Values = "ok" | "fail"
+
+type Values = (typeof Status)[keyof typeof Status];
+//   ^? type Values = "ok" | "fail"
+```
+
