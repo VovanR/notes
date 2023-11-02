@@ -521,6 +521,11 @@ gpg --full-gen-key
   key does not expire
 ```
 
+Public key for GitHub:
+```shell
+gpg --armor --export 1234567890123456
+```
+
 Добавить ключ в гит
 ```shell
 git config --global user.signingkey "1234567890123456"
