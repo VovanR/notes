@@ -1628,3 +1628,18 @@ protocol version mismatch -- is your shell clean?
 rsync error: protocol incompatibility (code 2) at compat.c(178) [sender=3.1.3]
 ```
 Check that `~/.bashrc` on remote is not contains `echo`.
+
+
+
+## Replace characters with another. `tr`
+
+```shell
+echo "a b c" | tr " " "\n"
+```
+
+Outputs
+```
+a
+b
+c
+```
