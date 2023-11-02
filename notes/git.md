@@ -12,7 +12,7 @@
 ## Влить изменения в форк из оригинального репозитория (Syncing a fork)
 
 - See: https://gun.io/blog/how-to-github-fork-branch-and-pull-request/
-- See: https://help.github.com/articles/syncing-a-fork
+- See: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork
 
 Добавляем оригинальный проект как удаленный `remote`, названный `upstream`
 ```shell
@@ -56,7 +56,7 @@ git push --force
 
 ## Configuring a remote for a fork
 
-- See: https://help.github.com/articles/configuring-a-remote-for-a-fork
+- See: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/configuring-a-remote-repository-for-a-fork
 - See: https://gun.io/blog/how-to-github-fork-branch-and-pull-request/
 
 List of remote repositories of our fork
@@ -431,7 +431,7 @@ git log master..<branch_name>
 
 ## Генерация нового ключа
 
-- See: https://help.github.com/articles/error-permission-denied-publickey
+- See: https://docs.github.com/en/authentication/troubleshooting-ssh/error-permission-denied-publickey
 
 ```shell
 ssh-keygen -f ~/.ssh/username -C "username"
@@ -504,9 +504,9 @@ Host personalid
 
 ## Генерация нового `GPG` ключа
 
-- See: https://help.github.com/articles/generating-a-new-gpg-key/
-- See: https://help.github.com/articles/adding-a-new-gpg-key-to-your-github-account/#adding-a-gpg-key
-- See: https://help.github.com/articles/signing-commits-using-gpg/
+- See: https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
+- See: https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account#adding-a-gpg-key
+- See: https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits
 
 Список существующих ключей
 ```shell
@@ -1193,7 +1193,7 @@ git worktree list
 
 ## `git-filter-branch` - Rewrite branches
 
-- See: https://help.github.com/articles/removing-sensitive-data-from-a-repository/
+- See: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository
 - See: https://git-scm.com/docs/git-filter-branch
 
 ```shell
