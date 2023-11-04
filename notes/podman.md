@@ -187,3 +187,19 @@ Run
 ```shell
 sudo podman play kube yacht.yaml
 ```
+
+
+## Image
+
+```shell
+podman image ls
+```
+
+```shell
+podman image rm <image_hash>
+```
+
+Update image
+```shell
+podman pull docker.io/filebrowser/filebrowser:latest
+```
