@@ -222,7 +222,8 @@ sudo apt-get install \
     virtualbox \
     whois \
     xclip \
-    jq
+    jq \
+    fzf
 ```
 
 Top
