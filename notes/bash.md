@@ -314,7 +314,7 @@ cat backup.tar.bz2.enc.* | openssl aes-256-cbc -d -kfile /path/to/enc.key | tar 
 ```
 
 
-### Архивация
+### Archive
 
 - See: http://www.thegeekstuff.com/2010/04/unix-tar-command-examples/
 
@@ -324,8 +324,19 @@ tar cvzf archive_name.tar.gz dirname/
 tar cvfj archive_name.tar.bz2 dirname/
 ```
 
+Exclude directories and files
+```shell
+tar --exclude="node_modules" -cvzf archive_name.tar.gz dirname/
+```
 
-### Разархивация разархивировать
+### List of archive
+
+```shell
+tar -ztvf archive_name.tar.gz
+```
+
+
+### Unarchive
 
 ```shell
 tar xvf archive_name.tar
