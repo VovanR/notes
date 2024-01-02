@@ -4,6 +4,9 @@
 
 - See: https://getfedora.org/en/
 
+## Install
+
+- See: https://torrent.fedoraproject.org/
 
 ## `dnf group`
 
