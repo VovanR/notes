@@ -8,6 +8,14 @@
 
 - See: https://torrent.fedoraproject.org/
 
+**Verify** https://fedoraproject.org/security
+```shell
+curl -O https://fedoraproject.org/fedora.gpg
+gpg --with-fingerprint --show-keys --keyid-format long fedora.gpg
+gpgv --keyring ./fedora.gpg *-CHECKSUM
+sha256sum -c *-CHECKSUM
+```
+
 ## `dnf group`
 
 ```shell
