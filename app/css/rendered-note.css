@@ -111,3 +111,7 @@ h6 {
 .rendered-note *:hover > a[href^="#anchor-"] {
   color: rgba(0 0 0 25%);
 }
+
+.rendered-note [id] {
+  scroll-margin: 1rem;
+}
