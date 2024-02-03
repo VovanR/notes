@@ -18,10 +18,10 @@
   },
   "devDependencies": {
     "http-server": "^14.1.1",
-    "stylelint": "^15.10.2",
-    "stylelint-config-standard": "^34.0.0",
-    "xo": "0.55.0",
-    "yaspeller": "^8.0.1"
+    "stylelint": "^16.2.1",
+    "stylelint-config-standard": "^36.0.0",
+    "xo": "0.56.0",
+    "yaspeller": "^10.0.1"
   },
   "bugs": {
     "url": "https://github.com/VovanR/notes/issues"
