@@ -1364,3 +1364,15 @@ git describe --tags
 ```shell
 git log --all --full-history  -- src/components/shared/Select/index.jsx
 ```
+
+
+
+## Move branch start from branch to another one
+
+- See: https://stackoverflow.com/questions/21459197/move-branch-to-another-branch
+
+If you accidentally branched from wrong base branch
+
+```shell
+git rebase old-base your-branch --onto new-base
+```
