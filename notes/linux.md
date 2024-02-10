@@ -1468,6 +1468,25 @@ Mounted /dev/sda1 at /media/user_name/backup
 ```
 
 
+## Mount LVM volume
+
+For example when you booted from USB live cd and want to edit some files on your system HDD.
+
+```shell
+sudo lvscan
+```
+outputs:
+```
+  ACTIVE            '/dev/fedora_server/home' [<79,18 GiB] inherit
+  ACTIVE            '/dev/fedora_server/root' [39,06 GiB] inherit
+```
+
+```shell
+sudo mkdir /mnt/fedora_server/root
+sudo mount /dev/fedora_server/root /mnt/fedora_server_root
+```
+
+
 ## Check port usage
 
 - See: https://www.cyberciti.biz/faq/unix-linux-check-if-port-is-in-use-command/
