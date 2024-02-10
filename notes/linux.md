@@ -1513,6 +1513,29 @@ sudo mdadm --manage /dev/md127 --add /dev/sdb
 sudo sgdisk --zap-all /dev/sdb
 ```
 
+### `mdadm` readd missed disks
+
+- See: https://bbs.archlinux.org/viewtopic.php?id=196686
+
+```shell
+sudo mdadm --manage /dev/md127 --re-add /dev/sdb --re-add /dev/sdc
+```
+
+
+## Show disks serial numbers
+
+```shell
+lsblk --nodeps -o name,serial
+```
+```
+NAME    SERIAL
+sda     08267489F0021
+sdb     WY2151HH
+sdc     WY2153YT
+zram0
+nvme0n1 12047489B9824
+```
+
 
 ## Ubuntu 20.04 file context menu action
 
