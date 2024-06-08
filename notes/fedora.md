@@ -2,7 +2,7 @@
 
 ----
 
-- See: https://getfedora.org/en/
+- See: https://fedoraproject.org/en/
 
 ## Install
 
@@ -45,14 +45,6 @@ If you want to run GUI on system load:
 sudo systemctl set-default graphical.target
 ```
 
-
-```shell
-dnf search nodejs
-```
-
-```shell
-dnf info nodejs
-```
 
 ## Last update history
 
@@ -203,6 +195,14 @@ python3 -m pip3 install --user --upgrade pynvim
 
 
 ### Node.js
+
+```shell
+dnf search nodejs
+```
+
+```shell
+dnf info nodejs
+```
 
 ```
 sudo dnf install nodejs
