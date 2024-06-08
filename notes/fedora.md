@@ -220,3 +220,14 @@ sudo dnf install neovim
 cd ~/.cache/dein/repos/github.com/neoclide/coc.nvim_master
 yarn install
 ```
+
+
+## Fedora Server
+
+### Connect to hidden Wi-Fi network
+
+- See: https://fedoraproject.org/wiki/Networking/CLI#Wifi
+
+```shell
+nmcli dev wifi connect "My Secure Net" password 123456 hidden yes
+```
