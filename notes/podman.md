@@ -211,3 +211,13 @@ Update image
 ```shell
 podman pull docker.io/filebrowser/filebrowser:latest
 ```
+
+
+## Add port to firewall
+
+- See: https://jellyfin.org/docs/general/installation/container/
+
+```shell
+sudo firewall-cmd --add-port=8096/tcp --permanent
+sudo firewall-cmd --reload
+```
