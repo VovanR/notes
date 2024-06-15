@@ -6,6 +6,14 @@
 
 
 
+## Start containers after system reboot
+
+```shell
+sudo systemctl enable podman-restart.service
+```
+
+
+
 ## File Browser
 
 - See: https://filebrowser.org/installation#docker
