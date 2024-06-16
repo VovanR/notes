@@ -221,3 +221,143 @@ podman pull docker.io/filebrowser/filebrowser:latest
 sudo firewall-cmd --add-port=8096/tcp --permanent
 sudo firewall-cmd --reload
 ```
+
+
+## [WIP] Photoview
+
+- See: https://github.com/photoview/photoview
+
+Create dirs:
+```shell
+mkdir -p ~/Containers/Photoview/{storage,database/mariadb}
+```
+
+Create `photoview.yaml`:
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: photoview-env
+data:
+  PHOTOPRISM_ADMIN_USER: "admin"
+  # PHOTOVIEW_MYSQL_URL: "${MARIADB_USER}:${MARIADB_PASSWORD}@tcp(photoview-mariadb)/${MARIADB_DATABASE}"
+  PHOTOVIEW_MYSQL_URL: "photoview:photosecret@tcp(photoview-mariadb)/photoview"
+  PHOTOVIEW_LISTEN_IP: "photoview"
+  HOST_PHOTOVIEW_BACKUP: "/mnt/backups/Photoview"
+  PHOTOVIEW_DATABASE_DRIVER: "mysql"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mariadb-env
+data:
+  MARIADB_AUTO_UPGRADE: "1"
+  MARIADB_DATABASE: "photoview"
+  MARIADB_USER: "photoview"
+  MARIADB_PASSWORD: "photosecret"
+  MARIADB_ROOT_PASSWORD: "superphotosecret"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    bind-mount-options: /home/vovanr/Containers/Photoview:z
+  creationTimestamp: "2023-03-12T14:38:00Z"
+  labels:
+    app: photoview-pod
+  name: photoview-pod
+spec:
+  containers:
+  - image: docker.io/viktorstrate/photoview:latest
+    name: Photoview
+    securityContext:
+      privileged: true
+    tty: true
+    ports:
+    - containerPort: 80
+      hostPort: 2342
+    restartPolicy: unless-stopped
+    envFrom:
+    - configMapRef:
+        name: photoview-env
+        optional: false
+    volumeMounts:
+    - mountPath: /etc/localtime:ro
+      name: localtime
+    - mountPath: /etc/timezone:ro
+      name: timezone
+    - mountPath: /home/photoview/media-cache
+      name: mediaCache
+    - mountPath: /photos
+      name: photos
+
+  - image: docker.io/library/mariadb:lts
+    name: photoview-mariadb
+    restartPolicy: unless-stopped
+    ## Optimized MariaDB startup command for better performance and compatibility
+    args:
+      - mariadbd
+      - --innodb-buffer-pool-size=512M
+      - --transaction-isolation=READ-COMMITTED
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --max-connections=512
+      - --innodb-rollback-on-timeout=OFF
+      - --innodb-lock-wait-timeout=120
+    ## Uncomment next 2 lines if you want to access the database directly
+    # ports:
+      # - "3306:3306"
+    securityContext:
+      privileged: true
+    envFrom:
+    - configMapRef:
+        name: mariadb-env
+        optional: false
+    volumeMounts:
+    - mountPath: /etc/localtime:ro
+      name: localtime
+    - mountPath: /etc/timezone:ro
+      name: timezone
+    - mountPath: /var/lib/mysql
+      name: database
+    livenessProbe:
+      exec:
+        command:
+          - healthcheck.sh
+          - --connect
+          - --innodb_initialized
+      periodSeconds: 60
+      timeoutSeconds: 5
+      failureThreshold: 5
+      # initialDelaySeconds: 180
+
+  volumes:
+    - name: localtime
+      hostPath:
+        path: /etc/localtime
+        type: File
+    - name: timezone
+      hostPath:
+        path: /etc/timezone
+        type: File
+    ## This is the current folder, where all Photoview files and folders (except of your media library) are located
+    - name: mediaCache
+      hostPath:
+        path: /home/vovanr/Containers/Photoview/storage
+        type: Directory
+    ## This is where your original photos and videos located.
+    ## Provide here the path to single root folder for your media collection.
+    - name: photos
+      hostPath:
+        path: /mnt/photos/vovanr
+        type: Directory
+    - name: database
+      hostPath:
+        path: /home/vovanr/Containers/Photoview/database/mariadb
+        type: Directory
+```
+
+Start:
+```shell
+sudo podman kube play photoview.yaml
+```
