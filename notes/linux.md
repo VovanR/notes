@@ -1686,3 +1686,61 @@ a
 b
 c
 ```
+
+
+## LVM (Logical Volume Manager)
+
+### Resize logical volume
+
+I have LVM partition 110 Gb with one logical volume "fedora/root" 15 Gb.  
+I need to extend my "fedora/root" logical volume to 95.2 Gb.  
+
+Show volume groups
+```shell
+$ sudo vgs
+  VG     #PV #LV #SN Attr   VSize    VFree
+  fedora   1   1   0 wz--n- <110.20g <95.20g
+```
+
+Show logical volumes
+```shell
+$ sudo lvs
+  LV   VG     Attr       LSize  Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  root fedora -wi-ao---- 15.00g
+```
+
+Add space to logical volume
+```shell
+$ sudo lvextend --resizefs -L 95.20g fedora
+  Rounding size to boundary between physical extents: 95.20 GiB.
+  Size of logical volume fedora/root changed from 15.00 GiB (3840 extents) to 95.20 GiB (24372 extents).
+  File system xfs found on fedora/root mounted at /.
+  Extending file system xfs to 95.20 GiB (102223577088 bytes) on fedora/root...
+xfs_growfs /dev/fedora/root
+meta-data=/dev/mapper/fedora-root isize=512    agcount=4, agsize=983040 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=1, sparse=1, rmapbt=1
+         =                       reflink=1    bigtime=1 inobtcount=1 nrext64=1
+data     =                       bsize=4096   blocks=3932160, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0, ftype=1
+log      =internal log           bsize=4096   blocks=16384, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+data blocks changed from 3932160 to 24956928
+xfs_growfs done
+  Extended file system xfs on fedora/root.
+  Logical volume fedora/root successfully resized.
+```
+
+```shell
+$ sudo lvs
+  LV   VG     Attr       LSize  Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  root fedora -wi-ao---- 95.20g
+```
+
+```shell
+$ sudo vgs
+  VG     #PV #LV #SN Attr   VSize    VFree
+  fedora   1   1   0 wz--n- <110.20g <15.00g
+```
