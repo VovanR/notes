@@ -1508,7 +1508,7 @@ lsof -i:8080
 blkid
 cat /proc/mdstat
 sudo mdadm --detail --scan
-mdadm --examine /dev/sdb
+sudo mdadm --examine /dev/sdb
 sudo mdadm --manage /dev/md127 --add /dev/sdb
 sudo sgdisk --zap-all /dev/sdb
 ```
@@ -1521,6 +1521,30 @@ sudo sgdisk --zap-all /dev/sdb
 sudo mdadm --manage /dev/md127 --re-add /dev/sdb --re-add /dev/sdc
 ```
 
+### `mdadm` remove disk from RAID1 array
+
+- See: https://delightlylinux.wordpress.com/2020/12/22/how-to-remove-a-drive-from-a-raid-array/
+- See: https://unix.stackexchange.com/questions/332061/remove-drive-from-soft-raid
+
+Stop all my Podman containers used this array
+```shell
+sudo podman stop --all
+```
+
+Unmount array
+```shell
+sudo umount /mnt/storage
+```
+
+If disk is already removed
+```shell
+sudo mdadm --zero-superblock /dev/sdb
+```
+
+Update size of array
+```shell
+sudo mdadm /dev/md127 --grow --raid-devices=2
+```
 
 ## Show disks serial numbers
 
