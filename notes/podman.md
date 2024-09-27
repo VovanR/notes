@@ -5,6 +5,41 @@
 - See: [Podman](https://podman.io/)
 
 
+## Run Node.js project
+
+### Dockerfile
+
+```
+# Use the official Node.js image as the base image
+FROM node:22
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy package.json and package-lock.json files to the container
+COPY package*.json ./
+
+# Install project dependencies
+RUN npm install
+
+# Copy the rest of the application code to the container
+COPY . .
+
+# Specify the command to start the Node.js app
+CMD ["npm", "start"]
+```
+
+## Build container image
+```shell
+podman build -t nodejs-app .
+```
+
+## Run container
+```shell
+podman run -p 3000:3000 --rm --detach onair-app:latest
+```
+
+
 
 ## Start containers after system reboot
 
