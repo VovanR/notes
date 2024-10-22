@@ -642,6 +642,11 @@ ssh -R [удаленный_адрес:]удаленный_порт:локаль�
 ssh-keygen -R orangepilite.local
 ```
 
+## SSH connection speed test
+```shell
+yes | pv | ssh user@host "cat >/dev/null"
+```
+
 
 ## Languages
 
