@@ -5,6 +5,26 @@
 - See: [Podman](https://podman.io/)
 
 
+## Disk usage
+
+```shell
+ podman system df -v
+```
+
+```
+Images space usage:
+Containers space usage:
+Local Volumes space usage:
+```
+
+
+## Remove unused Local Volumes
+
+```shell
+podman system prune --volumes
+```
+
+
 ## Run Node.js project
 
 ### Dockerfile
