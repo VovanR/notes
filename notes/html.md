@@ -19,6 +19,28 @@
 - See: [Недоступность в картинках](http://css.yoksel.ru/inaccessibility/)
 - See: [HTML vocabulary](http://apps.workflower.fi/vocabs/html/en)
 
+
+## Light/Dark Theme
+
+- See: https://developer.mozilla.org/en-US/docs/Web/CSS/color-scheme
+
+```html
+<meta name="color-scheme" content="light dark">
+```
+
+- See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color
+
+```html
+<meta name="theme-color" content="#4285f4" />
+```
+
+```html
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="cyan" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="black" />
+```
+
+
+
 ## Polyfills
 
 - See: https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills
